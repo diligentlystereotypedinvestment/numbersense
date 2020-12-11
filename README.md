@@ -1,6 +1,6 @@
 # Number Sense Test Generator Code
 
-Needs to be run through a LaTeX compiler. Texmaker is good and I think Overlead is popular. Here is a list of problems that still need to be coded:
+Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf is popular. Here is a list of problems that still need to be coded:
 
 # Problem 1 - 20
 
