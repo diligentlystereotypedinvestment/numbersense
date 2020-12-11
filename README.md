@@ -2,7 +2,7 @@
 
 Here is a list of problems that still need to be coded:
 
-#Problem 1 - 20
+# Problem 1 - 20
 
 1) Addition, subtraction, multiplication, & division of
 Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done
@@ -41,7 +41,7 @@ Least Common Multiple (LCM)~~
 Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 
-#Problems 21 - 40 *
+# Problems 21 - 40 *
 
 ~~1) Powers of Numbers~~
 
@@ -75,7 +75,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 16) Quadratic & Cubic Equation Problems - I think this is done
 
-#Problems 41 - 60 *
+# Problems 41 - 60 *
 
 1) Laws of Exponents
 
@@ -111,7 +111,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 17) Polygonal numbers
 
-#Problems 61 - 70 *
+# Problems 61 - 70 *
 
 1) Volume & Surface Area
 
@@ -133,7 +133,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 10) Polar/Rectangular Coordinates
 
-#Problems 71 -80 *
+# Problems 71 -80 *
 
 1) Function domains and ranges
 
