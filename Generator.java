@@ -348,26 +348,26 @@ public class Generator {
 						int percent = rand.nextInt(100) + 1;
 						if (choosefirstunit == 1) {
 							printmess = ("(" + i + ") What is " + percent + "$\\frac{" + num + "}{" + denom
-									+ "}$ \% as a decimal?");
+									+ "}$ \\% as a decimal?");
 							answers.add(String.valueOf((percent + (num / (1.0 * denom))) / 100.0));
 						}
 						if (choosefirstunit == 2) {
 							printmess = ("(" + i + ") What is " + num2 * 100 / denom2 + "$\\frac{" + num2 + "}{"
-									+ denom2 + "}\%$ as a fraction?");
-							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}%");
+									+ denom2 + "}\\%$ as a fraction?");
+							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%");
 						}
 						if (choosefirstunit == 3) {
 							printmess = ("(" + i + ") What is " + "$\\frac{" + num + "}{" + denom
-									+ "}$ \% as a percent?");
+									+ "}$ \\% as a percent?");
 							answers.add(String.valueOf(num * 100.0 / denom));
 						}
 						if (choosefirstunit == 4) {
-							printmess = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\% as a fraction?");
-							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}%");
+							printmess = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\\% as a fraction?");
+							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%");
 						}
 						if (choosefirstunit == 5) {
 							printmess = ("(" + i + ") What is " + "$\\frac{" + num2 + "}{" + denom2
-									+ "}$ \% as a decimal?");
+									+ "}$ \\% as a decimal?");
 							answers.add(String.valueOf(num2 / denom2));
 						}
 					} else {
