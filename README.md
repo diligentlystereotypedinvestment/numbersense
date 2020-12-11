@@ -6,8 +6,7 @@ Approximation Problems are also incomplete
 
 # Problem 1 - 20
 
-1) Addition, subtraction, multiplication, & division of
-Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done
+1) Addition, subtraction, multiplication, & division of Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done
 
 ~~2) Order of Operations~~
 
@@ -38,9 +37,7 @@ Least Common Multiple (LCM)~~
 
 13) Consumer Type Problems
 
-~~14) Number Theory Problems Involving:
-
-Prime Numbers, Divisors, Sums of Divisors, etc.~~
+~~14) Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 
 # Problems 21 - 40
