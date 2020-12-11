@@ -354,7 +354,7 @@ public class Generator {
 						if (choosefirstunit == 2) {
 							printmess = ("(" + i + ") What is " + num2 * 100 / denom2 + "$\\frac{" + num2 + "}{"
 									+ denom2 + "}\\%$ as a fraction?");
-							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%");
+							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
 						}
 						if (choosefirstunit == 3) {
 							printmess = ("(" + i + ") What is " + "$\\frac{" + num + "}{" + denom
@@ -363,7 +363,7 @@ public class Generator {
 						}
 						if (choosefirstunit == 4) {
 							printmess = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\\% as a fraction?");
-							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%");
+							answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
 						}
 						if (choosefirstunit == 5) {
 							printmess = ("(" + i + ") What is " + "$\\frac{" + num2 + "}{" + denom2
