@@ -15,19 +15,19 @@ public class OofO {
 		String firstmess = "";
 		if (operands.length >= 2) {
 			if (mathsign == 1) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] + operands[1];
 			}
 			if (mathsign == 2) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] - operands[1];
 			}
 			if (mathsign == 3) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] * operands[1];
 			}
 			if (mathsign == 4) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] / operands[1];
 			}
 		}
@@ -96,16 +96,16 @@ public class OofO {
 		String finalmess = "";
 		outsolution = solution;
 		if (operands.length == 2) {
-			return (String.valueOf(firstmess) + "$");
+			return ("$" + String.valueOf(firstmess) + "$");
 		}
 		if (operands.length == 3) {
-			return (String.valueOf(secondmess) + "$");
+			return ("$" + String.valueOf(secondmess) + "$");
 		}
 		if (operands.length == 4) {
-			return (String.valueOf(thirdmess) + "$");
+			return ("$" + String.valueOf(thirdmess) + "$");
 		}
 		if (operands.length == 5) {
-			return (String.valueOf(fourthmess) + "$");
+			return ("$" + String.valueOf(fourthmess) + "$");
 		}
 		return finalmess;
 
@@ -122,19 +122,19 @@ public class OofO {
 		String firstmess = "";
 		if (operands.length >= 2) {
 			if (mathsign == 1) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] + operands[1];
 			}
 			if (mathsign == 2) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] - operands[1];
 			}
 			if (mathsign == 3) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] * operands[1];
 			}
 			if (mathsign == 4) {
-				firstmess = ("$(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
+				firstmess = ("(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] / operands[1];
 			}
 		}
@@ -203,16 +203,16 @@ public class OofO {
 		String finalmess = "";
 		outsolution = solution;
 		if (operands.length == 2) {
-			return (String.valueOf(firstmess) + "$");
+			return ("$" + String.valueOf(firstmess) + "$");
 		}
 		if (operands.length == 3) {
-			return (String.valueOf(secondmess) + "$");
+			return ("$" + String.valueOf(secondmess) + "$");
 		}
 		if (operands.length == 4) {
-			return (String.valueOf(thirdmess) + "$");
+			return ("$" + String.valueOf(thirdmess) + "$");
 		}
 		if (operands.length == 5) {
-			return (String.valueOf(fourthmess) + "$");
+			return ("$" + String.valueOf(fourthmess) + "$");
 		}
 		return finalmess;
 
