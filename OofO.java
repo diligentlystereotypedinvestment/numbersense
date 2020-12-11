@@ -122,19 +122,19 @@ public class OofO {
 		String firstmess = "";
 		if (operands.length >= 2) {
 			if (mathsign == 1) {
-				firstmess = ("(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
+				firstmess = ("$(" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] + operands[1];
 			}
 			if (mathsign == 2) {
-				firstmess = ("(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
+				firstmess = ("$(" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] - operands[1];
 			}
 			if (mathsign == 3) {
-				firstmess = ("(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
+				firstmess = ("$(" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] * operands[1];
 			}
 			if (mathsign == 4) {
-				firstmess = ("(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
+				firstmess = ("$(" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + ")");
 				solution = operands[0] / operands[1];
 			}
 		}
