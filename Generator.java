@@ -533,7 +533,7 @@ public class Generator {
 						answers.add(String.valueOf(exponentr % dividend));
 					} else if (dividend == 13) {// expression
 						OofO remainderex = new OofO();
-						printmess = ("(" + i + ") What is the remainder of $" + remainderex.remainder() + "\\div"
+						printmess = ("(" + i + ") What is the remainder of " + remainderex.remainder() + "$\\div"
 								+ dividend + "?$");
 						answers.add(String.valueOf(remainderex.outsolution % dividend));
 					}
