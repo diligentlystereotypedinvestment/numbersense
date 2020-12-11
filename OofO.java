@@ -106,7 +106,7 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
-	}
+		return "";
 }
 
 	public String remainder() {
@@ -212,6 +212,6 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
+		return "";
 	}
-}
 }
