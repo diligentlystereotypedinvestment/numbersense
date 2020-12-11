@@ -48,7 +48,7 @@ Least Common Multiple (LCM)~~
 
 3) Word Problems
 
-4) Inverses - Can't remember if additive inverse is in yet
+~~4) Inverses~~
 
 ~~5) Absolute Value~~
 
