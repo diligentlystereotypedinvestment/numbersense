@@ -106,7 +106,6 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
-
 	}
 	public String remainder() {
 		Random rand = new Random();
@@ -211,6 +210,5 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
-
 	}
 }
