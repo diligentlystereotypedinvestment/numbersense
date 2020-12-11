@@ -93,7 +93,6 @@ public class OofO {
 				solution = solution / operands[length];
 			}
 		}
-		String finalmess = "";
 		outsolution = solution;
 		if (operands.length == 2) {
 			return ("$" + String.valueOf(firstmess) + "$");
@@ -107,7 +106,6 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
-		return finalmess;
 
 	}
 	public String remainder() {
@@ -200,7 +198,6 @@ public class OofO {
 				solution = solution / operands[length];
 			}
 		}
-		String finalmess = "";
 		outsolution = solution;
 		if (operands.length == 2) {
 			return ("$" + String.valueOf(firstmess) + "$");
@@ -214,7 +211,6 @@ public class OofO {
 		if (operands.length == 5) {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
-		return finalmess;
 
 	}
 }
