@@ -43,7 +43,7 @@ Least Common Multiple (LCM)~~
 Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 
-# Problems 21 - 40 *
+# Problems 21 - 40
 
 ~~1) Powers of Numbers~~
 
@@ -77,7 +77,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 16) Quadratic & Cubic Equation Problems - I think this is done
 
-# Problems 41 - 60 *
+# Problems 41 - 60
 
 1) Laws of Exponents
 
@@ -113,7 +113,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 17) Polygonal numbers
 
-# Problems 61 - 70 *
+# Problems 61 - 70
 
 1) Volume & Surface Area
 
@@ -135,7 +135,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 10) Polar/Rectangular Coordinates
 
-# Problems 71 -80 *
+# Problems 71 -80
 
 1) Function domains and ranges
 
