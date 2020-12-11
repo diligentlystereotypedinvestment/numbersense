@@ -107,6 +107,8 @@ public class OofO {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
 	}
+}
+
 	public String remainder() {
 		Random rand = new Random();
 		int Operations = 3;
@@ -211,4 +213,5 @@ public class OofO {
 			return ("$" + String.valueOf(fourthmess) + "$");
 		}
 	}
+}
 }
