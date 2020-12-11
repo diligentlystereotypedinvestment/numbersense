@@ -1,6 +1,6 @@
 # Number Sense Test Generator Code
 
-Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf is popular. Generator is the runner file. Here is a list of problems that still need to be coded:
+Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf is popular. Generator.java is the runner file. Here is a list of problems that still need to be coded:
 
 Approximation Problems are also incomplete
 
