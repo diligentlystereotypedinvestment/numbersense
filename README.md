@@ -37,7 +37,7 @@ Least Common Multiple (LCM)~~
 
 13) Consumer Type Problems
 
-~~14) Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors, etc.~~
+14) Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors, etc.- Almost done, just needs numbers like happy, abundant, etc
 
 
 # Problems 21 - 40
