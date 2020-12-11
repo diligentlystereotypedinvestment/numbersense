@@ -2,6 +2,8 @@
 
 Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf is popular. Generator is the runner file. Here is a list of problems that still need to be coded:
 
+Approximation Problems are also incomplete
+
 # Problem 1 - 20
 
 1) Addition, subtraction, multiplication, & division of
@@ -67,7 +69,7 @@ Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
 12) Repeating Decimals to Fractions - I think this is done
 
-13) More Remainder Type Problems
+13) More Remainder Type Problems - I think this is done
 
 14) Perimeter & Area of Polygons and Circles
 
