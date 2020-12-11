@@ -62,7 +62,7 @@ Least Common Multiple (LCM)~~
 
 ~~10) Solving Simple Equations~~
 
-~~11) Systems of Equations~~
+11) Systems of Equations
 
 12) Repeating Decimals to Fractions - I think this is done
 
@@ -70,7 +70,7 @@ Least Common Multiple (LCM)~~
 
 14) Perimeter & Area of Polygons and Circles
 
-~~15) Sequences~~
+15) Sequences
 
 16) Quadratic & Cubic Equation Problems - I think this is done
 
