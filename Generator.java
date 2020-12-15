@@ -27,13 +27,15 @@ public class Generator {
 				+ "\\\\\n"
 				+ "\\noindent \\textbf{before beginning test} \\hfill{ \\textbf{UNTIL TOLD TO BEGIN} \\hfill{}\n"
 				+ "\\\\\n" + "\\\\\n"
-				+ "Directions:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED   MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n"
-				+ "\\\\\n" + "The person conducting this contest should explain these directions to the contestants.\n"
-				+ "\\center{STOP -- WAIT FOR SIGNAL!}\n" + "\\\\\n" + "\\noindent\n" + "\\\\\n" + "\\begin{flushleft}");
+				+ "\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED   MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n"
+				+ "\\\\\n\n" + "\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n"
+				+ "\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n" + "\\\\\n" + "\\noindent\n" + "\\\\\n" + "\\begin{flushleft}");
 		System.out.println("  \\begin{tabular}{p{0.445\\linewidth}p{0.445\\linewidth}}\n");
 		System.out.println("\\doublespace");
 		for (int i = 1; i <= 80; i++) {
-			// i = scan.nextInt();
+			if(i == 36){
+				System.out.println("\\clearpage");
+			}
 			if (i % 10 == 0) {// Estimation problems
 				Estimation estimate = new Estimation(i);
 				tempQNum.add(i);
@@ -46,6 +48,7 @@ public class Generator {
 				System.out.println();
 				continue;
 			}
+			
 			if (i < 21) {
 				int random = rand.nextInt(14) + 1;
 				// random = scan.nextInt();
@@ -789,7 +792,7 @@ public class Generator {
 					if (choose == 5) {// choose
 						Combinations chose = new Combinations();
 						int chooselength = rand.nextInt(2) + 1;
-						int doublechoose = rand.nextInt(2) + 1;
+					       	int doublechoose = rand.nextInt(2) + 1;
 						if (doublechoose == 1) {
 							printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in "
 									+ setA + "?");
@@ -955,11 +958,22 @@ public class Generator {
 			
 			//chances for further problems
 		}
+		while(answers.size() <= 80){
+			answers.add("0");
+		}
 		System.out.println("\\enddoublespace");
-		System.out.println("\\end{tabular}\n");
+		System.out.println("\\end{tabular}\n\\clearpage");
+		/*
 		for (int i = 0; i < answers.size(); i++) {
 			System.out.println(tempQNum.get(i) + ") " + answers.get(i) + "\\\\");
 		}
+		*/
+		//System.out.println("\\end{flushleft}\n" + "\\end{document}");
+		System.out.println("\\begin{center}\n\\begin{tabular}{c c c c}");
+		for(int i = 1; i < 21; i++){
+			System.out.println(i + ") " + String.valueOf(answers.get(i)) + " & " + String.valueOf(i + 20) + ") " + String.valueOf(answers.get(i + 20)) + " & " + String.valueOf(i + 40) + ") " + String.valueOf(answers.get(i + 40)) + " & " + String.valueOf(i + 60) + ") " + String.valueOf(answers.get(i + 60)) + "\\\\");
+		}
+		System.out.println("\\end{tabular}\n\\end{center}");
 		System.out.println("\\end{flushleft}\n" + "\\end{document}");
 	}
 }
