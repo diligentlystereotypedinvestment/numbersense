@@ -568,7 +568,7 @@ public class Generator {
 						postPrice = price * 16 * pounds / oz;
 					}
 					if(choose == 1) {
-						printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + price + " then how much does " + pounds + "cost?";
+						printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + price + " then how much does " + pounds + " cost?";
 						answers.add(String.valueOf(postPrice));
 					}
 					if(choose == 2) {
