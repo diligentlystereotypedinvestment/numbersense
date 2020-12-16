@@ -7,11 +7,11 @@ public class Generator {
 		ArrayList<String> answers = new ArrayList<>();
 		ArrayList<Integer> tempQNum = new ArrayList<>();
 		Random rand = new Random();
-		System.out.println("\\documentclass{article}\n" + "\\usepackage[margin=1.0in]{geometry}\n"
+		System.out.println("\\documentclass{article}\n" + "\\usepackage[margin=.5in]{geometry}\n"
 				+ "\\usepackage{lipsum}\n" + "\\usepackage{setspace}" + "\\newcommand\\textbox[1]{%\n"
 				+ "  \\parbox{.333\\textwidth}{#1}%\n" + "}\n" + "\\begin{document}\n" + "\\begin{center}\n"
 				+ "\\textbf{The University Interscholastic League\\\\\n"
-				+ "Number Sense Test $\\cdot$ HS District $\\cdot$ 2020}\n" + "\\end{center}\n"
+				+ "Number Sense Test $\\cdot$ HS District $\\cdot$ \\date}\n" + "\\end{center}\n"
 				+ "\\hfill Final \\textunderscore\\textunderscore\\textunderscore\\textunderscore \\textunderscore\\textunderscore\\textunderscore\\textunderscore\n"
 				+ "\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n"
 				+ "\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n"
@@ -24,18 +24,15 @@ public class Generator {
 				+ "\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n"
 				+ "\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n"
 				+ "\\\\\n"
-				+ "\\noindent \\textbf{Read directions carefully} \\hfill { \\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score   Initials}\n"
+				+ "\\noindent \\textbf{Read directions carefully} \\hfill {\\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score   Initials}\n"
 				+ "\\\\\n"
-				+ "\\noindent \\textbf{before beginning test} \\hfill{ \\textbf{UNTIL TOLD TO BEGIN}} \\hfill{}\n"
+				+ "\\noindent \\textbf{before beginning test} \\hfill{\\textbf{UNTIL TOLD TO BEGIN}} \\hfill{}\n"
 				+ "\\\\\n" + "\\\\\n"
 				+ "\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED   MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n"
 				+ "\\\\\n\n" + "\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n"
-				+ "\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n" + "\\\\\n" + "\\noindent\n" + "\\\\\n");
-		System.out.println("\\begin{tabular}{p{0.445\\linewidth}p{0.445\\linewidth}}\n");
+				+ "\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n\n" + "\\\n" + "\\noindent\n" + "\\\\\n");
+		System.out.println("\\doublespace\\begin{tabular}{p{0.445\\linewidth}p{0.445\\linewidth}}\n");
 		for (int i = 1; i <= 80; i++) {
-			//if(i == 36){
-			//	System.out.println("\\clearpage");
-			//}
 			if (i % 10 == 0) {// Estimation problems
 				Estimation estimate = new Estimation(i);
 				tempQNum.add(i);
@@ -568,7 +565,7 @@ public class Generator {
 						postPrice = price * 16 * pounds / oz;
 					}
 					if(choose == 1) {
-						printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + price + " then how much does " + pounds + " cost?";
+						printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + price + " then how much does " + pounds + "cost?";
 						answers.add(String.valueOf(postPrice));
 					}
 					if(choose == 2) {
@@ -586,7 +583,7 @@ public class Generator {
 				}
 				if (random == 14) {// Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors,
 									// etc.
-					int choose = rand.nextInt(6) + 1;
+					int choose = rand.nextInt(15) + 1;
 					int base = rand.nextInt(100) + 21;
 					PrimeDivisors primes = new PrimeDivisors();
 					SumOfDivisors composite = new SumOfDivisors();
@@ -615,6 +612,68 @@ public class Generator {
 					if (choose == 6) {// sum of prime divisors under n
 						printmess = ("(" + i + ") What is the sum of the composite integers in " + base + "?");
 						answers.add(String.valueOf(relative.sum(base)));
+					}
+					if(choose == 7){//abundant number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes abundant = new numberTypes(series, "abundant");
+                        printmess = ("(" + i + ") " + abundant.GenerateQuestion());
+                        answers.add(String.valueOf(abdundant.getAnswer()));
+					}
+					if(choose == 8){//deficient number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes deficient = new numberTypes(series, "deficient");
+                        printmess = ("(" + i + ") " + deficient.GenerateQuestion());
+                        answers.add(String.valueOf(deficient.getAnswer()));
+
+					}
+					if(choose == 9){//perfect number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes perfect = new numberTypes(series, "perfect");
+                        printmess = ("(" + i + ") " + perfect.GenerateQuestion());
+                        answers.add(String.valueOf(perfect.getAnswer()));
+
+					}
+					if(choose == 10){//lucky number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes lucky = new numberTypes(series, "lucky");
+                        printmess = ("(" + i + ") " + lucky.GenerateQuestion());
+                        answers.add(String.valueOf(lucky.getAnswer()));
+
+					}
+					if(choose == 11){//unlucky number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes unlucky = new numberTypes(series, "unlucky");
+                        printmess = ("(" + i + ") " + unlucky.GenerateQuestion());
+                        answers.add(String.valueOf(unlucky.getAnswer()));
+
+					}
+					if(choose == 12){//happy number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes happy = new numberTypes(series, "happy");
+                        printmess = ("(" + i + ") " + happy.GenerateQuestion());
+                        answers.add(String.valueOf(happy.getAnswer()));
+
+					}
+					if(choose == 13){//unhappy number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes unhappy = new numberTypes(series, "unhappy");
+                        printmess = ("(" + i + ") " + unhappy.GenerateQuestion());
+                        answers.add(String.valueOf(unhappy.getAnswer()));
+
+					}
+					if(choose == 14){//odious number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes odious = new numberTypes(series, "odious");
+                        printmess = ("(" + i + ") " + odious.GenerateQuestion());
+                        answers.add(String.valueOf(odious.getAnswer()));
+
+					}
+					if(choose == 15){//evil number
+                        ArrayList<> series = new ArrayList<>();
+                        numberTypes evil = new numberTypes(series, "evil");
+                        printmess = ("(" + i + ") " + evil.GenerateQuestion());
+                        answers.add(String.valueOf(evil.getAnswer()));
+
 					}
 					questions.add(printmess);//System.out.print(printmess);
 					for (int q = 0; q < 50 - printmess.length(); q++) {
@@ -967,7 +1026,7 @@ public class Generator {
 			for (int q = 0; q < 60 - questions.size(); q++) {
 				column1 = column1 + "\\textunderscore";
 			}
-			String column2 = questions.get(i + 19);
+			String column2 = questions.get(i + 18);
 			for(int q = 0; q < 60 - questions.size(); q++){
 				column2 = column2 + "\\textunderscore";
 			}
@@ -976,12 +1035,12 @@ public class Generator {
 				System.out.println("\\end{tabular}\n\\begin{tabular}{c c}");
 			}
 		}
-		for(int i = 38; i < 62; i++){
+		for(int i = 36; i < 60; i++){
 			String column1 = questions.get(i);
 			for(int q = 0; q < 60 - questions.size(); q++){
 				column1 = column1 + "\\textunderscore";
 			}
-			String column2 = questions.get(i + 19);
+			String column2 = questions.get(i + 18);
 			for(int q = 0; q < 60 - questions.size(); q++){
 				column2 = column2 + "\\textunderscore";
 			}
@@ -991,18 +1050,12 @@ public class Generator {
 		while(answers.size() <= 80){
 			answers.add("0");
 		}
-		System.out.println("\n\\clearpage");
-		/*
-		for (int i = 0; i < answers.size(); i++) {
-			System.out.println(tempQNum.get(i) + ") " + answers.get(i) + "\\\\");
-		}
-		*/
-		//System.out.println("\\end{flushleft}\n" + "\\end{document}");
+		System.out.println("\n\\clearpage");	
 		System.out.println("\\begin{center}\n\\begin{tabular}{c c c c}");
 		for(int i = 1; i < 21; i++){
 			System.out.println(i + ") " + String.valueOf(answers.get(i)) + " & " + String.valueOf(i + 20) + ") " + String.valueOf(answers.get(i + 20)) + " & " + String.valueOf(i + 40) + ") " + String.valueOf(answers.get(i + 40)) + " & " + String.valueOf(i + 60) + ") " + String.valueOf(answers.get(i + 60)) + "\\\\");
 		}
 		System.out.println("\\end{tabular}\n\\end{center}");
-		System.out.println("\n" + "\\end{document}");
+		System.out.println("\\enddoublespace"+ "\\end{document}");
 	}
 }
