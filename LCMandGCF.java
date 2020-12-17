@@ -1,6 +1,5 @@
-import java.util.*;
-import java.lang.*;
 import java.util.Random;
+
 public class LCMandGCF
 {  
 	Random rand = new Random();
@@ -31,6 +30,7 @@ public class LCMandGCF
         }
         return GCF(hcf,num3);
     }
+    
     void LCM3(int num1) {
     	double num2 = num1 * 1.5;
     	double num3 = num1 * 2;

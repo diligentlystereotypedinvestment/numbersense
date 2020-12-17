@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Generator {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		ArrayList<String> questions = new ArrayList<>();
 		ArrayList<String> answers = new ArrayList<>();
 		ArrayList<Integer> tempQNum = new ArrayList<>();
@@ -41,8 +40,8 @@ public class Generator {
 				for (int q = 0; q < 60 - estimate.getMess().length(); q++) {
 					//System.out.print("\\textunderscore");
 				}
-				System.out.println();
-				System.out.println();
+				//System.out.println();
+				//System.out.println();
 				continue;
 			}
 			
@@ -58,11 +57,11 @@ public class Generator {
 						answers.add(String.valueOf(add1.sum));
 						String printmess = ("$ " + "(" + i + ") " + add1.num1 + "+" + add1.num2 + " = " + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 2) {// addition of two mixed numbers
 						Addmix addmix = new Addmix();
@@ -71,11 +70,11 @@ public class Generator {
 								+ addmix.addfracd + "} " + "+" + addmix.addmix2 + "\\frac{" + addmix.addfracn2 + "}{"
 								+ addmix.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 3) {// addition of two improper fractions
 						AddImpro addimpro = new AddImpro();
@@ -84,11 +83,11 @@ public class Generator {
 								+ addimpro.addfracd + "} " + "+" + "\\frac{" + addimpro.addfracn2 + "}{"
 								+ addimpro.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 4) {// addition of two decimals
 						AddDeci adddeci = new AddDeci();
@@ -96,22 +95,22 @@ public class Generator {
 						String printmess = ("$ " + "(" + i + ") " + ((int) adddeci.adddeci / 100.0) + "+"
 								+ ((int) adddeci.adddeci2 / 100.0) + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 5) {// subtraction of two integers
 						Addition sub1 = new Addition();
 						answers.add(String.valueOf(sub1.d));
 						String printmess = ("$ " + "(" + i + ") " + sub1.num1 + "-" + sub1.num2 + " = " + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 
 					}
 					if (rand1_1 == 6) {// subtraction of two mixed numbers
@@ -121,11 +120,11 @@ public class Generator {
 								+ submix.addfracd + "} " + "-" + submix.addmix2 + "\\frac{" + submix.addfracn2 + "}{"
 								+ submix.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 7) {// subtract two improper fractions
 						AddImpro subimpro = new AddImpro();
@@ -134,11 +133,11 @@ public class Generator {
 								+ subimpro.addfracd + "} " + "-" + "\\frac{" + subimpro.addfracn2 + "}{"
 								+ subimpro.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 8) {// subtract two decimals
 						AddDeci subdeci = new AddDeci();
@@ -146,11 +145,11 @@ public class Generator {
 						String printmess = ("$ " + "(" + i + ") " + ((int) subdeci.adddeci / 100.0) + "-"
 								+ ((int) subdeci.adddeci2 / 100.0) + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 9) {// multiplication of two integers
 						Addition mult1 = new Addition();
@@ -158,11 +157,11 @@ public class Generator {
 						String printmess = ("$ " + "(" + i + ") " + mult1.num1 / 10 + "\\cdot" + mult1.num2 / 10 + " = "
 								+ "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 10) {// multiplication of two mixed numbers
 						Addmix multmix = new Addmix();
@@ -171,11 +170,11 @@ public class Generator {
 								+ "}{" + multmix.addfracd + "} " + "\\cdot" + multmix.addmix2 / 1000 + "\\frac{"
 								+ multmix.addfracn2 + "}{" + multmix.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 11) {// multiplication of two improper fractions
 						AddImpro multimpro = new AddImpro();
@@ -184,11 +183,11 @@ public class Generator {
 								+ multimpro.addfracd + "} " + "\\cdot" + "\\frac{" + multimpro.addfracn2 + "}{"
 								+ multimpro.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 12) {// multiplication of two decimals
 						AddDeci multdeci = new AddDeci();
@@ -196,11 +195,11 @@ public class Generator {
 						String printmess = ("$ " + "(" + i + ") " + ((int) (multdeci.adddeci / 100) / 100.0) + "\\cdot"
 								+ ((int) (multdeci.adddeci2 / 100) / 100.0) + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 13) {// division of two integers
 						Addition div1 = new Addition();
@@ -208,11 +207,11 @@ public class Generator {
 								+ "$");
 						answers.add(String.valueOf(div1.q));
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 14) {// division of two mixed numbers
 						Addmix divmix = new Addmix();
@@ -221,11 +220,11 @@ public class Generator {
 								+ "}{" + divmix.addfracd + "} " + "\\div" + divmix.addmix2 / 1000 + "\\frac{"
 								+ divmix.addfracn2 + "}{" + divmix.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 15) {// division of two improper fractions
 						AddImpro divimpro = new AddImpro();
@@ -234,11 +233,11 @@ public class Generator {
 								+ divimpro.addfracd + "} " + "\\div" + "\\frac{" + divimpro.addfracn2 + "}{"
 								+ divimpro.addfracd2 + "}" + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 					if (rand1_1 == 16) {// division of two decimals
 						AddDeci divdeci = new AddDeci();
@@ -246,23 +245,23 @@ public class Generator {
 						String printmess = ("$ " + "(" + i + ") " + ((int) divdeci.adddeci / 10.0) + "\\div"
 								+ ((int) divdeci.adddeci2 / 10.0) + "=" + "$");
 						questions.add(printmess);//System.out.print(printmess);
-						for (int q = 0; q < 60 - printmess.length(); q++) {
+						/*for (int q = 0; q < 60 - printmess.length(); q++) {
 							//System.out.print("\\textunderscore");
-						}
-						System.out.println();
-						System.out.println();
+						}*/
+						//System.out.println();
+						//System.out.println();
 					}
 				}
 				if (random == 2) {// order of operation
 					OofO ooo = new OofO();
 					String printmess = ("(" + i + ")" + ooo.fstringmess());
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
+					}*/
 					answers.add(String.valueOf(ooo.outsolution));
-					System.out.println();
-					System.out.println();
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 
@@ -270,12 +269,12 @@ public class Generator {
 					Distribution distro = new Distribution();
 					String printmess = ("(" + i + ")" + distro.getMess());
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
+					}*/
 					answers.add(String.valueOf(distro.getAnswer()));
-					System.out.println();
-					System.out.println();
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 
@@ -304,11 +303,11 @@ public class Generator {
 						}
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 5) {// multiplication shortcuts
@@ -316,11 +315,11 @@ public class Generator {
 					String printmess = ("(" + i + ") " + multshort.multishort());
 					answers.add(String.valueOf(multshort.getAns()));
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 6) {// squaring numbers
@@ -328,11 +327,11 @@ public class Generator {
 					answers.add(String.valueOf(square * square));
 					String printmess = ("$(" + i + ")" + (int) square + "^{2}$");
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 
@@ -374,11 +373,11 @@ public class Generator {
 						answers.add("0.");
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 
@@ -407,11 +406,11 @@ public class Generator {
 						answers.add(String.valueOf(6.0 * num1));
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 9) {// percent problems
@@ -421,17 +420,16 @@ public class Generator {
 					String printmess = ("(" + i + ") P is " + percent + "\\% of Q. Q is " + +percent2
 							+ "\\% of R. What percent is P of R?");
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 10) {// mean, mode, and median problems
 					ArrayList<Integer> integer = new ArrayList<>();
 					int sum = 0;
-					int mean = 0;
 					int choose = rand.nextInt(3) + 1;
 					String printmess = "";
 					String charseries = "";
@@ -483,11 +481,11 @@ public class Generator {
 						printmess = ("(" + i + ") What is the mode of " + charseries);
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 11) {// Sums of Integers
@@ -507,11 +505,11 @@ public class Generator {
 					}
 					String printmess = ("(" + i + ")" + charseries + "0");
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 12) {// Remainder Problems
@@ -538,11 +536,11 @@ public class Generator {
 						answers.add(String.valueOf(remainderex.outsolution % dividend));
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 13) {// Consumer Type Problems
@@ -574,11 +572,11 @@ public class Generator {
 					}
 					choose = rand.nextInt(2) + 1;
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 14) {// Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors,
@@ -614,73 +612,151 @@ public class Generator {
 						answers.add(String.valueOf(relative.sum(base)));
 					}
 					if(choose == 7){//abundant number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        series.add(12);
+                        series.add(18);
+                        series.add(20);
+                        series.add(24);
+                        series.add(30);
+                        series.add(36);
+                        series.add(40);
+                        series.add(42);
+                        series.add(48);
+                        series.add(54);
+                        series.add(56);
                         numberTypes abundant = new numberTypes(series, "abundant");
                         printmess = ("(" + i + ") " + abundant.GenerateQuestion());
-                        answers.add(String.valueOf(abdundant.getAnswer()));
+                        answers.add(String.valueOf(abundant.getAnswer()));
 					}
 					if(choose == 8){//deficient number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        series.add(1);
+                        series.add(2);
+                        series.add(3);
+                        series.add(4);
+                        series.add(5);
+                        series.add(7);
+                        series.add(8);
+                        series.add(9);
+                        series.add(10);
+                        series.add(11);
+                        series.add(13);
                         numberTypes deficient = new numberTypes(series, "deficient");
                         printmess = ("(" + i + ") " + deficient.GenerateQuestion());
                         answers.add(String.valueOf(deficient.getAnswer()));
 
 					}
 					if(choose == 9){//perfect number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        series.add(6);
+                        series.add(28);
+                        series.add(496);
                         numberTypes perfect = new numberTypes(series, "perfect");
                         printmess = ("(" + i + ") " + perfect.GenerateQuestion());
                         answers.add(String.valueOf(perfect.getAnswer()));
 
 					}
+                    ArrayList<Integer> lucky = new ArrayList<>();//ArrayList for lucky and its inverse
+                    lucky.add(2);
+                    lucky.add(3);
+                    lucky.add(5);
+                    lucky.add(11);
+                    lucky.add(17);
+                    lucky.add(41);
 					if(choose == 10){//lucky number
-                        ArrayList<> series = new ArrayList<>();
-                        numberTypes lucky = new numberTypes(series, "lucky");
-                        printmess = ("(" + i + ") " + lucky.GenerateQuestion());
-                        answers.add(String.valueOf(lucky.getAnswer()));
+                        numberTypes luckyType = new numberTypes(lucky, "lucky");
+                        printmess = ("(" + i + ") " + luckyType.GenerateQuestion());
+                        answers.add(String.valueOf(luckyType.getAnswer()));
 
 					}
 					if(choose == 11){//unlucky number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        for(int l = 0; l < 90; l++){
+                            if(lucky.indexOf(l) == -1){
+                                series.add(l);
+                            }
+                        }
                         numberTypes unlucky = new numberTypes(series, "unlucky");
                         printmess = ("(" + i + ") " + unlucky.GenerateQuestion());
                         answers.add(String.valueOf(unlucky.getAnswer()));
 
 					}
+					ArrayList<Integer> happy = new ArrayList<>();//ArrayList for happy and its inverse
+                        happy.add(1);
+                        happy.add(7);
+                        happy.add(10);
+                        happy.add(13);
+                        happy.add(19);
+                        happy.add(23);
+                        happy.add(28);
+                        happy.add(31);
+                        happy.add(32);
+                        happy.add(44);
+                        happy.add(49);
+                        happy.add(68);
+                        happy.add(70);
+                        happy.add(79);
+                        happy.add(82);
+                        happy.add(86);
 					if(choose == 12){//happy number
-                        ArrayList<> series = new ArrayList<>();
-                        numberTypes happy = new numberTypes(series, "happy");
-                        printmess = ("(" + i + ") " + happy.GenerateQuestion());
-                        answers.add(String.valueOf(happy.getAnswer()));
+                        numberTypes happyType = new numberTypes(happy, "happy");
+                        printmess = ("(" + i + ") " + happyType.GenerateQuestion());
+                        answers.add(String.valueOf(happyType.getAnswer()));
 
 					}
 					if(choose == 13){//unhappy number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        for(int l = 0; l < 90; l++){
+                            if(happy.indexOf(l) == -1){
+                                series.add(l);
+                            }
+                        }
                         numberTypes unhappy = new numberTypes(series, "unhappy");
                         printmess = ("(" + i + ") " + unhappy.GenerateQuestion());
                         answers.add(String.valueOf(unhappy.getAnswer()));
 
 					}
 					if(choose == 14){//odious number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        series.add(1);
+                        series.add(2);
+                        series.add(4);
+                        series.add(7);
+                        series.add(8);
+                        series.add(11);
+                        series.add(13);
+                        series.add(14);
+                        series.add(16);
+                        series.add(19);
                         numberTypes odious = new numberTypes(series, "odious");
                         printmess = ("(" + i + ") " + odious.GenerateQuestion());
                         answers.add(String.valueOf(odious.getAnswer()));
 
 					}
 					if(choose == 15){//evil number
-                        ArrayList<> series = new ArrayList<>();
+                        ArrayList<Integer> series = new ArrayList<>();
+                        series.add(0);
+                        series.add(3);
+                        series.add(5);
+                        series.add(6);
+                        series.add(9);
+                        series.add(10);
+                        series.add(12);
+                        series.add(15);
+                        series.add(17);
+                        series.add(18);
+                        series.add(20);
                         numberTypes evil = new numberTypes(series, "evil");
                         printmess = ("(" + i + ") " + evil.GenerateQuestion());
                         answers.add(String.valueOf(evil.getAnswer()));
 
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 			}
@@ -701,11 +777,11 @@ public class Generator {
 					double exponentr = Math.pow(base, power);
 					answers.add(String.valueOf(exponentr));
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 17 || random == 18) {// substitution
@@ -719,8 +795,8 @@ public class Generator {
 //					for (int q = 0; q < 60 - printmess.length(); q++) {
 //						//System.out.print("\\textunderscore");
 //					}
-//					System.out.println();
-//					System.out.println();
+//					//System.out.println();
+//					//System.out.println();
 //						tempQNum.add(i);
 				}
 				if (random == 19 || random == 20) {// Word Problems
@@ -734,8 +810,8 @@ public class Generator {
 //					for (int q = 0; q < 60 - printmess.length(); q++) {
 //						//System.out.print("\\textunderscore");
 //					}
-//					System.out.println();
-//					System.out.println();
+//					//System.out.println();
+//					//System.out.println();
 //						tempQNum.add(i);
 				}
 
@@ -752,11 +828,11 @@ public class Generator {
 						answers.add(String.valueOf(-1 * denominator));
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 60 - printmess.length(); q++) {
+					/*for (int q = 0; q < 60 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 23 || random == 24) {// Absolute value
@@ -764,11 +840,11 @@ public class Generator {
 					String printmess = ("$(" + i + ")" + "" + ooo.abolute());
 					questions.add(printmess);//System.out.print(printmess);
 					answers.add(String.valueOf(1.0 * ooo.outsolution));
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 25 || random == 26) {// Proportions
@@ -779,8 +855,8 @@ public class Generator {
 //					for (int q = 0; q < 50 - printmess.length(); q++) {
 //						//System.out.print("\\textunderscore");
 //					}
-//					System.out.println();
-//					System.out.println();
+//					//System.out.println();
+//					//System.out.println();
 //					tempQNum.add(i);
 				}
 				if (random == 27 || random == 28) {// Square roots/ cube roots
@@ -797,11 +873,11 @@ public class Generator {
 					}
 					questions.add(printmess);//System.out.print(printmess);
 					answers.add(String.valueOf(1.0 * base));
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 29 || random == 30) {// Sets
@@ -821,7 +897,6 @@ public class Generator {
 					setB.addAll(array2);
 					int choose = rand.nextInt(6) + 1;
 					String printmess = "";
-					int base = 0;
 					if (choose == 1) {// union
 						Set<String> union = new HashSet<String>(setA);
 						union.addAll(setB);
@@ -871,11 +946,11 @@ public class Generator {
 						answers.add(String.valueOf(1.0 * Math.pow(2, setA.size())));
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 				}
 				if (random == 31 || random == 32) {// Bases
 					int choose = rand.nextInt(3) + 1;
@@ -904,11 +979,11 @@ public class Generator {
 						answers.add(String.valueOf(basec.newnum(basec.ognum(newnum, choose2), secondchoose2)));
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}
 				if (random == 33 || random == 34) {// Solving Simple Equations
@@ -943,8 +1018,6 @@ public class Generator {
 						solve = " y ";
 					}
 					String printmess = "";
-					int base = 0;
-					int answer = 0;
 					printmess = ("(" + i + ")" + "$" + x1 + "x" + sign1 + y1 + "y " + " = " + equal1 + " , " + x2 + "x"
 							+ sign2 + y2 + "y " + " = " + equal2 + "$ What is the value of " + solve);
 					if (sign2.contains("-") && sign1.contains("+")) {
@@ -1004,11 +1077,11 @@ public class Generator {
 						}
 					}
 					questions.add(printmess);//System.out.print(printmess);
-					for (int q = 0; q < 50 - printmess.length(); q++) {
+					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
-					}
-					System.out.println();
-					System.out.println();
+					}*/
+					//System.out.println();
+					//System.out.println();
 					tempQNum.add(i);
 				}// chance for earlier problems
 				
@@ -1027,9 +1100,9 @@ public class Generator {
 				column1 = column1 + "\\textunderscore";
 			}
 			String column2 = questions.get(i + 18);
-			for(int q = 0; q < 60 - questions.size(); q++){
+			/*for(int q = 0; q < 60 - questions.size(); q++){
 				column2 = column2 + "\\textunderscore";
-			}
+			}*/
 			System.out.println(column1 + " & " + column2 + "\\\\");
 			if(i == 18){
 				System.out.println("\\end{tabular}\n\\begin{tabular}{c c}");
@@ -1041,9 +1114,9 @@ public class Generator {
 				column1 = column1 + "\\textunderscore";
 			}
 			String column2 = questions.get(i + 18);
-			for(int q = 0; q < 60 - questions.size(); q++){
+			/*for(int q = 0; q < 60 - questions.size(); q++){
 				column2 = column2 + "\\textunderscore";
-			}
+			}*/
 			System.out.println(column1 + " & " + column2 + "\\\\");
 		}
 		System.out.println("\\end{tabular}");

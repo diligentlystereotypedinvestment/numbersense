@@ -7,8 +7,12 @@ class numberTypes {
 	String nameType;
 	int answer;
 
-	public numberTypes(ArrayList series, String nameType){
-		this.series = (ArrayList) series.clone();
+	public numberTypes(ArrayList<Integer> series, String nameType){//may have a problem with the clone being a reference instead of real copy
+        for(int i = 0; i < series.size(); i++){
+            series.add(series.get(i));
+        }
+        series.clear();
+        //this.series.addAll(series);
 		this.nameType = nameType;
 	}
 
@@ -53,7 +57,8 @@ class numberTypes {
 		return "";
 	}
 
-	public int getAnswer(){
+	public int getAnswer(){   
+        series.clear();
         return answer;
 	}
 
