@@ -4,10 +4,9 @@ public class Generator {
 	public static void main(String[] args) {
 		ArrayList<String> questions = new ArrayList<>();
 		ArrayList<String> answers = new ArrayList<>();
-		ArrayList<Integer> tempQNum = new ArrayList<>();
 		Random rand = new Random();
-		System.out.println("\\documentclass{article}\n" + "\\usepackage[margin=.5in]{geometry}\n"
-				+ "\\usepackage{lipsum}\n" + "\\usepackage{setspace}" + "\\newcommand\\textbox[1]{%\n"
+		System.out.println("\\documentclass{article}\n" + "\\usepackage[margin=1.0in]{geometry}\n"
+				+ "\\usepackage{lipsum}\n" + "\\usepackage{setspace}\n\\usepackage{multicol}\n" + "\\newcommand\\textbox[1]{%\n"
 				+ "  \\parbox{.333\\textwidth}{#1}%\n" + "}\n" + "\\begin{document}\n" + "\\begin{center}\n"
 				+ "\\textbf{The University Interscholastic League\\\\\n"
 				+ "Number Sense Test $\\cdot$ HS District $\\cdot$ \\date}\n" + "\\end{center}\n"
@@ -25,16 +24,14 @@ public class Generator {
 				+ "\\\\\n"
 				+ "\\noindent \\textbf{Read directions carefully} \\hfill {\\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score   Initials}\n"
 				+ "\\\\\n"
-				+ "\\noindent \\textbf{before beginning test} \\hfill{\\textbf{UNTIL TOLD TO BEGIN}} \\hfill{}\n"
+				+ "\\noindent \\textbf{before beginning test} \\hfill{\\textbf{UNTIL TOLD TO BEGIN}}\n"
 				+ "\\\\\n" + "\\\\\n"
 				+ "\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED   MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n"
 				+ "\\\\\n\n" + "\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n"
-				+ "\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n\n" + "\\\n" + "\\noindent\n" + "\\\\\n");
-		System.out.println("\\doublespace\\begin{tabular}{p{0.445\\linewidth}p{0.445\\linewidth}}\n");
+				+ "\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n\n\n" + "\\doublespace\n\\begin{multicols}{2}\n\\begin{flushleft}");
 		for (int i = 1; i <= 80; i++) {
 			if (i % 10 == 0) {// Estimation problems
 				Estimation estimate = new Estimation(i);
-				tempQNum.add(i);
 				answers.add(String.valueOf(estimate.getAnswer()));
 				questions.add(("(" + i + ") " + estimate.getMess()));
 				for (int q = 0; q < 60 - estimate.getMess().length(); q++) {
@@ -50,7 +47,7 @@ public class Generator {
 				// random = scan.nextInt();
 				if (random == 1) {// addition of two integers
 					int rand1_1 = rand.nextInt(16) + 1;
-					tempQNum.add(i);
+					
 					if (rand1_1 == 1) {// addition of two integers
 						Addition add1 = new Addition();
 						;
@@ -262,7 +259,7 @@ public class Generator {
 					answers.add(String.valueOf(ooo.outsolution));
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 
 				if (random == 3) {// Distributive problems
@@ -275,7 +272,7 @@ public class Generator {
 					answers.add(String.valueOf(distro.getAnswer()));
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 
 				if (random == 4) {// comparison
@@ -308,7 +305,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 5) {// multiplication shortcuts
 					multshort multshort = new multshort();
@@ -320,7 +317,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 6) {// squaring numbers
 					double square = rand.nextInt(65) + 1;
@@ -332,7 +329,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 
 				if (random == 7) {// conversion
@@ -378,7 +375,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 
 				if (random == 8) {// gcf and lcm
@@ -411,7 +408,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 9) {// percent problems
 					int percent = (rand.nextInt(15) + 1) * 10;
@@ -425,7 +422,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 10) {// mean, mode, and median problems
 					ArrayList<Integer> integer = new ArrayList<>();
@@ -486,7 +483,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 11) {// Sums of Integers
 					ArrayList<Integer> integer = new ArrayList<>();
@@ -510,7 +507,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 12) {// Remainder Problems
 					int dividend = rand.nextInt(11) + 3;
@@ -541,7 +538,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 13) {// Consumer Type Problems
 					double price = 0;
@@ -577,7 +574,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 14) {// Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors,
 									// etc.
@@ -624,6 +621,7 @@ public class Generator {
                         series.add(48);
                         series.add(54);
                         series.add(56);
+                        series.trimToSize();
                         numberTypes abundant = new numberTypes(series, "abundant");
                         printmess = ("(" + i + ") " + abundant.GenerateQuestion());
                         answers.add(String.valueOf(abundant.getAnswer()));
@@ -641,6 +639,7 @@ public class Generator {
                         series.add(10);
                         series.add(11);
                         series.add(13);
+                        series.trimToSize();
                         numberTypes deficient = new numberTypes(series, "deficient");
                         printmess = ("(" + i + ") " + deficient.GenerateQuestion());
                         answers.add(String.valueOf(deficient.getAnswer()));
@@ -651,6 +650,7 @@ public class Generator {
                         series.add(6);
                         series.add(28);
                         series.add(496);
+                        series.trimToSize();
                         numberTypes perfect = new numberTypes(series, "perfect");
                         printmess = ("(" + i + ") " + perfect.GenerateQuestion());
                         answers.add(String.valueOf(perfect.getAnswer()));
@@ -663,6 +663,7 @@ public class Generator {
                     lucky.add(11);
                     lucky.add(17);
                     lucky.add(41);
+                    lucky.trimToSize();
 					if(choose == 10){//lucky number
                         numberTypes luckyType = new numberTypes(lucky, "lucky");
                         printmess = ("(" + i + ") " + luckyType.GenerateQuestion());
@@ -676,6 +677,7 @@ public class Generator {
                                 series.add(l);
                             }
                         }
+                        series.trimToSize();
                         numberTypes unlucky = new numberTypes(series, "unlucky");
                         printmess = ("(" + i + ") " + unlucky.GenerateQuestion());
                         answers.add(String.valueOf(unlucky.getAnswer()));
@@ -698,6 +700,7 @@ public class Generator {
                         happy.add(79);
                         happy.add(82);
                         happy.add(86);
+                        happy.trimToSize();
 					if(choose == 12){//happy number
                         numberTypes happyType = new numberTypes(happy, "happy");
                         printmess = ("(" + i + ") " + happyType.GenerateQuestion());
@@ -711,6 +714,7 @@ public class Generator {
                                 series.add(l);
                             }
                         }
+                        series.trimToSize();
                         numberTypes unhappy = new numberTypes(series, "unhappy");
                         printmess = ("(" + i + ") " + unhappy.GenerateQuestion());
                         answers.add(String.valueOf(unhappy.getAnswer()));
@@ -728,6 +732,7 @@ public class Generator {
                         series.add(14);
                         series.add(16);
                         series.add(19);
+                        series.trimToSize();
                         numberTypes odious = new numberTypes(series, "odious");
                         printmess = ("(" + i + ") " + odious.GenerateQuestion());
                         answers.add(String.valueOf(odious.getAnswer()));
@@ -746,6 +751,7 @@ public class Generator {
                         series.add(17);
                         series.add(18);
                         series.add(20);
+                        series.trimToSize();
                         numberTypes evil = new numberTypes(series, "evil");
                         printmess = ("(" + i + ") " + evil.GenerateQuestion());
                         answers.add(String.valueOf(evil.getAnswer()));
@@ -757,7 +763,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 			}
 			if (i > 20 && i < 41) {// Questions 21-40
@@ -782,7 +788,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 17 || random == 18) {// substitution
 //					String printmess = "";
@@ -797,7 +803,7 @@ public class Generator {
 //					}
 //					//System.out.println();
 //					//System.out.println();
-//						tempQNum.add(i);
+//						
 				}
 				if (random == 19 || random == 20) {// Word Problems
 //					String printmess = "";
@@ -812,7 +818,7 @@ public class Generator {
 //					}
 //					//System.out.println();
 //					//System.out.println();
-//						tempQNum.add(i);
+//						
 				}
 
 				if (random == 21 || random == 22) {// Inverses
@@ -833,7 +839,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 23 || random == 24) {// Absolute value
 					Absolute ooo = new Absolute();
@@ -845,7 +851,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 25 || random == 26) {// Proportions
 //					Absolute ooo = new Absolute();
@@ -857,7 +863,7 @@ public class Generator {
 //					}
 //					//System.out.println();
 //					//System.out.println();
-//					tempQNum.add(i);
+//					
 				}
 				if (random == 27 || random == 28) {// Square roots/ cube roots
 					int choose = rand.nextInt(2) + 1;
@@ -878,7 +884,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 29 || random == 30) {// Sets
 					Set<String> setA = new HashSet<String>();
@@ -902,7 +908,7 @@ public class Generator {
 						union.addAll(setB);
 						printmess = ("(" + i + ") How many elements are in the union of " + setA + " and " + setB
 								+ "?");
-						tempQNum.add(i);
+						
 						answers.add(String.valueOf(1.0 * union.size()));
 					}
 					if (choose == 2) {// intercept
@@ -910,17 +916,17 @@ public class Generator {
 						intersection.retainAll(setB);
 						printmess = ("(" + i + ") How many elements are in the intercept of " + setA + " and " + setB
 								+ "?");
-						tempQNum.add(i);
+						
 						answers.add(String.valueOf(1.0 * (intersection.size())));
 					}
 					if (choose == 3) {// proper
 						printmess = ("(" + i + ") How many proper subsets are in " + setA + "?");
-						tempQNum.add(i);
+						
 						answers.add(String.valueOf(1.0 * Math.pow(2, setA.size()) - 1));
 					}
 					if (choose == 4) {// improper
 						printmess = ("(" + i + ") How many improper subsets are in " + setA + "?");
-						tempQNum.add(i);
+						
 						answers.add(String.valueOf(1.0));
 					}
 					if (choose == 5) {// choose
@@ -930,19 +936,19 @@ public class Generator {
 						if (doublechoose == 1) {
 							printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in "
 									+ setA + "?");
-							tempQNum.add(i);
+							
 							answers.add(String.valueOf(1.0 * chose.choose(setA.size(), chooselength)));
 						} else if (doublechoose == 2) {
 							printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in "
 									+ setA + " + subsets of length " + (setA.size() - chooselength) + " in " + setA
 									+ "?");
-							tempQNum.add(i);
+							
 							answers.add(String.valueOf(2.0 * chose.choose(setA.size(), chooselength)));
 						}
 					}
 					if (choose == 6) {// number of subsets
 						printmess = ("(" + i + ") How many subsets are there in " + setA + "?");
-						tempQNum.add(i);
+						
 						answers.add(String.valueOf(1.0 * Math.pow(2, setA.size())));
 					}
 					questions.add(printmess);//System.out.print(printmess);
@@ -984,7 +990,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}
 				if (random == 33 || random == 34) {// Solving Simple Equations
 					int x1 = rand.nextInt(6) + 1;
@@ -1082,7 +1088,7 @@ public class Generator {
 					}*/
 					//System.out.println();
 					//System.out.println();
-					tempQNum.add(i);
+					
 				}// chance for earlier problems
 				
 				
@@ -1093,42 +1099,26 @@ public class Generator {
 		while(questions.size() <= 80){
 			questions.add("0");
 		}
-		
-		for(int i = 0; i < 20; i++) {
-			String column1 = questions.get(i);
-			for (int q = 0; q < 60 - questions.size(); q++) {
-				column1 = column1 + "\\textunderscore";
-			}
-			String column2 = questions.get(i + 18);
-			/*for(int q = 0; q < 60 - questions.size(); q++){
-				column2 = column2 + "\\textunderscore";
-			}*/
-			System.out.println(column1 + " & " + column2 + "\\\\");
-			if(i == 18){
-				System.out.println("\\end{tabular}\n\\begin{tabular}{c c}");
-			}
-		}
-		for(int i = 36; i < 60; i++){
-			String column1 = questions.get(i);
-			for(int q = 0; q < 60 - questions.size(); q++){
-				column1 = column1 + "\\textunderscore";
-			}
-			String column2 = questions.get(i + 18);
-			/*for(int q = 0; q < 60 - questions.size(); q++){
-				column2 = column2 + "\\textunderscore";
-			}*/
-			System.out.println(column1 + " & " + column2 + "\\\\");
-		}
-		System.out.println("\\end{tabular}");
 		while(answers.size() <= 80){
 			answers.add("0");
 		}
-		System.out.println("\n\\clearpage");	
-		System.out.println("\\begin{center}\n\\begin{tabular}{c c c c}");
-		for(int i = 1; i < 21; i++){
-			System.out.println(i + ") " + String.valueOf(answers.get(i)) + " & " + String.valueOf(i + 20) + ") " + String.valueOf(answers.get(i + 20)) + " & " + String.valueOf(i + 40) + ") " + String.valueOf(answers.get(i + 40)) + " & " + String.valueOf(i + 60) + ") " + String.valueOf(answers.get(i + 60)) + "\\\\");
+		questions.trimToSize();
+		answers.trimToSize();
+		for(String e: questions){
+            System.out.print(e);
+			for(int q = 0; q < 60 - questions.size(); q++){
+				System.out.print("\\textunderscore");
+			}
+			System.out.print("\n\n");
 		}
-		System.out.println("\\end{tabular}\n\\end{center}");
+		System.out.println("\\end{flushleft}\\end{multicols}");
+		System.out.println("\\clearpage\n\\begin{multicols}{4}\n\\doublespace");
+		int i = 1;
+		for(String e: answers){
+            System.out.print(i + ") " + e + "\n\n");
+            i++;
+		}
+		System.out.println("\\enddoublespace\n\\end{multicols}");
 		System.out.println("\\enddoublespace"+ "\\end{document}");
 	}
 }
