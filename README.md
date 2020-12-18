@@ -156,6 +156,6 @@ Least Common Multiple (LCM)~~
 
 # Formatting
 1) Horizontal line for each question
-2) Answer Key
-3) Dealing with second page of problems
+~~2) Answer Key~~
+~~3) Dealing with second page of problems~~
 4) Alignment problems in the introduction part
