@@ -34,11 +34,52 @@ class sequences {
         }
         if(choose == 5){//geometric
             int denom = rand.nextInt(3) + 2;
-            int num = rand.nextInt(denom - 2) + 1;
+            int num = rand.nextInt(denom - 1) + 1;
             double interval = (double)num/denom;
             int beginning = rand.nextInt(16) + 1;
-            question = (beginning + " + " + simp.getFraction((num * beginning) + "/" + denom) + " + " + simp.getFraction((Math.pow(num, 2) * beginning) + "/" + Math.pow(denom, 2)) + " + ... = ");
-            answer = (beginning * denom) + "/" + (denom / num);
+            question = (beginning + " + " + simp.getFraction((num * beginning) + "/" + denom) + " + " + simp.getFraction((int)(Math.pow(num, 2) * beginning) + "/" + (int)Math.pow(denom, 2)) + " + ... = ");
+            answer = simp.getFraction((beginning * denom) + "/" + (denom / num));
+        }
+        if(choose == 6){//first m squares
+            int length = rand.nextInt(3) + 5;
+            question = ("1 + 4 + 9 + ... " + (int)Math.pow(length,2) + " = ");
+            answer = String.valueOf((length * (length + 1) * (2 * length + 1)) / 6);
+        }
+        if(choose == 7){//first m cubes
+            int length = rand.nextInt(5) + 5;
+            question = ("1 + 8 + 27 + ... " + (int)Math.pow(length, 3) + " = ");
+            answer = String.valueOf((int)Math.pow((length * (length + 1)) / 2, 2));
+        }
+        if(choose == 8){//first m squares
+            int length = rand.nextInt(3) + 5;
+            int sign = rand.nextInt(2) + 1;
+            if(sign == 0){//first sign positive
+                if(length % 2 == 0){
+                    question = ("1 + 4 - 9 + ... + " + (int)Math.pow(length,2) + " = ");
+                    answer = String.valueOf(length * (length + 1) / 2);
+                } else{
+                    question = ("1 + 4 - 9 + ... - " + (int)Math.pow(length,2) + " = ");
+                    answer = String.valueOf(-1 * length * (length + 1) / 2);
+                }
+            } else {
+                if(length % 2 == 0){
+                    question = ("1 - 4 + 9 - ... - " + (int)Math.pow(length,2) + " = ");
+                    answer = String.valueOf(-1 * (length * (length + 1) / 2));
+                } else{
+                    question = ("1 - 4 + 9 - ... + " + (int)Math.pow(length,2) + " = ");
+                    answer = String.valueOf(length * (length + 1) / 2);
+                }
+            
+            }
+        }
+        if(choose == 1){//triangle reciprocals
+            int length = rand.nextInt(2) + 5;
+            question = ("$1");
+            for(int i = length - 1; i > 0; i--){
+                question = question + " + \\frac{1}{" + String.valueOf(i * (i-1));
+            }
+            question = question + " = $";
+            answer = ("\\frac{)");
         }
     }
     

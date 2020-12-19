@@ -19,7 +19,7 @@ class numberTypes {
 
 
 	public String GenerateQuestion(){
-        series.trimToSize();
+        //series.trimToSize();
 		int[] list = new int[3];
 		Random rand = new Random();
 		int chooser = rand.nextInt(3) + 1;

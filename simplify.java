@@ -1,14 +1,13 @@
 public class simplify{
-    int num;
-    int den;
     
-    public simplify(String fraction){
-        num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
-        den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
-    }
-    
-    public String getFraction(){
+    public static String getFraction(String fraction){
+        int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
+        int den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
         LCMandGCF GCF = new LCMandGCF();
-        return ("\\frac{" + (num/GCF.GCF(num, den)) + "}{" + (den/GCF.GCF(num, den)) + "}");
+        if(den/GCF.GCF(num, den) == 1){
+            return String.valueOf(num);
+        } else{
+            return ("$\\frac{" + (num/GCF.GCF(num, den)) + "}{" + (den/GCF.GCF(num, den)) + "}$");
+        }
     }
 }

@@ -643,7 +643,7 @@ public class Generator {
                                 series.add(l);
                             }
                         }
-                        series.trimToSize();
+                        //series.trimToSize();
                         numberTypes unlucky = new numberTypes(series, "unlucky");
                         printmess = ("(" + i + ") " + unlucky.GenerateQuestion());
                         answers.add(String.valueOf(unlucky.getAnswer()));
@@ -717,7 +717,7 @@ public class Generator {
                         series.add(17);
                         series.add(18);
                         series.add(20);
-                        series.trimToSize();
+                        //series.trimToSize();
                         numberTypes evil = new numberTypes(series, "evil");
                         printmess = ("(" + i + ") " + evil.GenerateQuestion());
                         answers.add(String.valueOf(evil.getAnswer()));

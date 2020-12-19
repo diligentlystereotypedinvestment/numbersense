@@ -1,11 +1,14 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Conversion {
 	Random rand = new Random();
 	String unit1 = "";
 	String unit2 = "";
+	String answers;
+	String question;
 	
-	public void questionGen(){
+	public void questionGen(int i){
         int choosesys = rand.nextInt(1) + 1;
         if (choosesys == 1) {
             int denom = (int) Math.pow(2, rand.nextInt(3) + 2);
@@ -15,36 +18,36 @@ public class Conversion {
             int choosefirstunit = rand.nextInt(4) + 1;
             int percent = rand.nextInt(100) + 1;
             if (choosefirstunit == 1) {
-                printmess = ("(" + i + ") What is " + percent + "$\\frac{" + num + "}{" + denom
+                question = ("(" + i + ") What is " + percent + "$\\frac{" + num + "}{" + denom
                             + "}$ \\% as a decimal?");
-                answers.add(String.valueOf((percent + (num / (1.0 * denom))) / 100.0));
+                answers = (String.valueOf((percent + (num / (1.0 * denom))) / 100.0));
             }
             if (choosefirstunit == 2) {
-                printmess = ("(" + i + ") What is " + num2 * 100 / denom2 + "$\\frac{" + num2 + "}{"
+                question = ("(" + i + ") What is " + num2 * 100 / denom2 + "$\\frac{" + num2 + "}{"
                             + denom2 + "}\\%$ as a fraction?");
-                answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
+                answers = ("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
             }
             if (choosefirstunit == 3) {
-                printmess = ("(" + i + ") What is " + "$\\frac{" + num + "}{" + denom
+                question = ("(" + i + ") What is " + "$\\frac{" + num + "}{" + denom
                             + "}$ \\% as a percent?");
-                answers.add(String.valueOf(num * 100.0 / denom));
+                answers = (String.valueOf(num * 100.0 / denom));
             }
             if (choosefirstunit == 4) {
-                printmess = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\\% as a fraction?");
-                    answers.add("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
+                question = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\\% as a fraction?");
+                answers = ("$\\frac{" + num2 + "}{" + denom2 + "}\\%$");
             }
             if (choosefirstunit == 5) {
-                    printmess = ("(" + i + ") What is " + "$\\frac{" + num2 + "}{" + denom2
+                    question = ("(" + i + ") What is " + "$\\frac{" + num2 + "}{" + denom2
                                 + "}$ \\% as a decimal?");
-                answers.add(String.valueOf(num2 / denom2));
+                answers = (String.valueOf(num2 / denom2));
             }
         } else {
-            answers.add("0.");
+            answers = "";
         }
     }
     
     public String getQuestion(){
-    
+        return question;
     }
 
 }
