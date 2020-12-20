@@ -35,7 +35,7 @@ Least Common Multiple (LCM)~~
 
 ~~12) Remainder Problems~~
 
-13) Consumer Type Problems - might be done, can't remember
+~~13) Consumer Type Problems~~
 
 ~~14) Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors, etc.~~
 
@@ -70,9 +70,9 @@ Least Common Multiple (LCM)~~
 
 14) Perimeter & Area of Polygons and Circles
 
-15) Sequences
+~~15) Sequences~~
 
-16) Quadratic & Cubic Equation Problems - I think this is done
+16) Quadratic & Cubic Equation Problems
 
 # Problems 41 - 60
 
