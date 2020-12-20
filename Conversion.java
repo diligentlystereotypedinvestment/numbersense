@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.ArrayList;
 
 public class Conversion {
 	Random rand = new Random();

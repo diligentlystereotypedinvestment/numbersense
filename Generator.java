@@ -476,7 +476,7 @@ public class Generator {
 					
 				}
 				if (random == 12) {// Remainder Problems
-					int dividend = rand.nextInt(11) + 3;
+					int dividend = rand.nextInt(10) + 3;
 					int number = rand.nextInt(89999) + 10000;
 					String printmess = "";
 					if (dividend <= 10) {
@@ -485,14 +485,16 @@ public class Generator {
 						}
 						printmess = ("(" + i + ") What is the remainder of " + number + "$\\div$" + dividend + "?");
 						answers.add(String.valueOf(1.0 * (number % dividend)));
-					} else if (dividend == 12) {// power
+					} /*else if (dividend == 12) {// power
 						int base = rand.nextInt(12) + 2;
 						int power = rand.nextInt(12) + 2;
 						printmess = ("(" + i + ") What is the remainder of $" + base + "^{" + power + "}" + "\\div"
 								+ dividend + "?$");
 						double exponentr = Math.pow(base, power);
 						answers.add(String.valueOf(exponentr % dividend));
-					} else if (dividend == 13) {// expression
+						*/
+					//}
+					else if (dividend == 12) {// expression
 						OofO remainderex = new OofO();
 						printmess = ("(" + i + ") What is the remainder of " + remainderex.remainder() + "$\\div"
 								+ dividend + "?$");
@@ -575,49 +577,49 @@ public class Generator {
 						answers.add(String.valueOf(relative.sum(base)));
 					}
 					if(choose == 7){//abundant number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        series.add(12);
-                        series.add(18);
-                        series.add(20);
-                        series.add(24);
-                        series.add(30);
-                        series.add(36);
-                        series.add(40);
-                        series.add(42);
-                        series.add(48);
-                        series.add(54);
-                        series.add(56);
-                        series.trimToSize();
-                        numberTypes abundant = new numberTypes(series, "abundant");
+                        ArrayList<Integer> series1 = new ArrayList<>();
+                        series1.add(12);
+                        series1.add(18);
+                        series1.add(20);
+                        series1.add(24);
+                        series1.add(30);
+                        series1.add(36);
+                        series1.add(40);
+                        series1.add(42);
+                        series1.add(48);
+                        series1.add(54);
+                        series1.add(56);
+                        series1.trimToSize();
+                        numberTypes abundant = new numberTypes(series1, "abundant");
                         printmess = ("(" + i + ") " + abundant.GenerateQuestion());
                         answers.add(String.valueOf(abundant.getAnswer()));
 					}
 					if(choose == 8){//deficient number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        series.add(1);
-                        series.add(2);
-                        series.add(3);
-                        series.add(4);
-                        series.add(5);
-                        series.add(7);
-                        series.add(8);
-                        series.add(9);
-                        series.add(10);
-                        series.add(11);
-                        series.add(13);
-                        series.trimToSize();
-                        numberTypes deficient = new numberTypes(series, "deficient");
+                        ArrayList<Integer> series2 = new ArrayList<>();
+                        series2.add(1);
+                        series2.add(2);
+                        series2.add(3);
+                        series2.add(4);
+                        series2.add(5);
+                        series2.add(7);
+                        series2.add(8);
+                        series2.add(9);
+                        series2.add(10);
+                        series2.add(11);
+                        series2.add(13);
+                        series2.trimToSize();
+                        numberTypes deficient = new numberTypes(series2, "deficient");
                         printmess = ("(" + i + ") " + deficient.GenerateQuestion());
                         answers.add(String.valueOf(deficient.getAnswer()));
 
 					}
 					if(choose == 9){//perfect number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        series.add(6);
-                        series.add(28);
-                        series.add(496);
-                        series.trimToSize();
-                        numberTypes perfect = new numberTypes(series, "perfect");
+                        ArrayList<Integer> series3 = new ArrayList<>();
+                        series3.add(6);
+                        series3.add(28);
+                        series3.add(496);
+                        series3.trimToSize();
+                        numberTypes perfect = new numberTypes(series3, "perfect");
                         printmess = ("(" + i + ") " + perfect.GenerateQuestion());
                         answers.add(String.valueOf(perfect.getAnswer()));
 
@@ -637,14 +639,14 @@ public class Generator {
 
 					}
 					if(choose == 11){//unlucky number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        for(int l = 0; l < 90; l++){
-                            if(lucky.indexOf(l) == -1){
-                                series.add(l);
+                        ArrayList<Integer> series5 = new ArrayList<>();
+                        for(int p = 1; p < 90; p++){
+                            if(lucky.indexOf(p) == -1){
+                                series5.add(p);
                             }
                         }
-                        //series.trimToSize();
-                        numberTypes unlucky = new numberTypes(series, "unlucky");
+                        series5.trimToSize();
+                        numberTypes unlucky = new numberTypes(series5, "unlucky");
                         printmess = ("(" + i + ") " + unlucky.GenerateQuestion());
                         answers.add(String.valueOf(unlucky.getAnswer()));
 
@@ -674,56 +676,57 @@ public class Generator {
 
 					}
 					if(choose == 13){//unhappy number
-                        ArrayList<Integer> series = new ArrayList<>();
+                        ArrayList<Integer> series6 = new ArrayList<>();
                         for(int l = 0; l < 90; l++){
                             if(happy.indexOf(l) == -1){
-                                series.add(l);
+                                series6.add(l);
                             }
                         }
-                        series.trimToSize();
-                        numberTypes unhappy = new numberTypes(series, "unhappy");
+                        series6.trimToSize();
+                        numberTypes unhappy = new numberTypes(series6, "unhappy");
                         printmess = ("(" + i + ") " + unhappy.GenerateQuestion());
                         answers.add(String.valueOf(unhappy.getAnswer()));
 
 					}
 					if(choose == 14){//odious number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        series.add(1);
-                        series.add(2);
-                        series.add(4);
-                        series.add(7);
-                        series.add(8);
-                        series.add(11);
-                        series.add(13);
-                        series.add(14);
-                        series.add(16);
-                        series.add(19);
-                        series.trimToSize();
-                        numberTypes odious = new numberTypes(series, "odious");
+                        ArrayList<Integer> series7 = new ArrayList<>();
+                        series7.add(1);
+                        series7.add(2);
+                        series7.add(4);
+                        series7.add(7);
+                        series7.add(8);
+                        series7.add(11);
+                        series7.add(13);
+                        series7.add(14);
+                        series7.add(16);
+                        series7.add(19);
+                        series7.trimToSize();
+                        numberTypes odious = new numberTypes(series7, "odious");
                         printmess = ("(" + i + ") " + odious.GenerateQuestion());
                         answers.add(String.valueOf(odious.getAnswer()));
 
 					}
 					if(choose == 15){//evil number
-                        ArrayList<Integer> series = new ArrayList<>();
-                        series.add(0);
-                        series.add(3);
-                        series.add(5);
-                        series.add(6);
-                        series.add(9);
-                        series.add(10);
-                        series.add(12);
-                        series.add(15);
-                        series.add(17);
-                        series.add(18);
-                        series.add(20);
-                        //series.trimToSize();
-                        numberTypes evil = new numberTypes(series, "evil");
+                        ArrayList<Integer> series8 = new ArrayList<>();
+                        series8.add(0);
+                        series8.add(3);
+                        series8.add(5);
+                        series8.add(6);
+                        series8.add(9);
+                        series8.add(10);
+                        series8.add(12);
+                        series8.add(15);
+                        series8.add(17);
+                        series8.add(18);
+                        series8.add(20);
+                        series8.trimToSize();
+                        numberTypes evil = new numberTypes(series8, "evil");
                         printmess = ("(" + i + ") " + evil.GenerateQuestion());
                         answers.add(String.valueOf(evil.getAnswer()));
+                        questions.add(printmess);
 
 					}
-					questions.add(printmess);//System.out.print(printmess);
+					//System.out.print(printmess);
 					/*for (int q = 0; q < 50 - printmess.length(); q++) {
 						//System.out.print("\\textunderscore");
 					}*/
@@ -1055,13 +1058,30 @@ public class Generator {
 					//System.out.println();
 					//System.out.println();
 					
-				}// chance for earlier problems
+				}
+				if(random == 35 || random == 36){//system of equations
 				
+				}
+				if(random == 37 || random == 38){//repeating decimal to fraction
 				
+				}
+				// power
+				if(random == 39 || random ==40){//I think this is more remainder problems
+                    int dividend = rand.nextInt(4) + 3;
+                    int base = rand.nextInt(12) + 2;
+                    int power = rand.nextInt(12) + 2;
+                    String printmess = ("(" + i + ") What is the remainder of $" + base + "^{" + power + "}" + "\\div"
+                            + dividend + "?$");
+                    double exponentr = Math.pow(base, power);
+                    questions.add(printmess);
+                    answers.add(String.valueOf(exponentr % dividend));
+				
+				}
+            
+				// chance for earlier problems
 			}
-			
 			//chances for further problems
-		}
+        }
 		while(questions.size() <= 80){
 			questions.add("0");
 		}

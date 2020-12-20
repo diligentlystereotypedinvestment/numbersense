@@ -1,12 +1,11 @@
 import java.util.Random;
 
-class sequences {
+public class sequences {
 
     private String question;
     private String answer;
     
     public void questionGen(){//reciprocals of triangle numbers, general arithmetic, geometric, even, odd, square, cube, alternating square, first m integers
-        simplify simp = new simplify();
         Random rand = new Random();
         int choose = rand.nextInt(9) + 1;
         if(choose == 1){//first m integers
@@ -35,9 +34,8 @@ class sequences {
         if(choose == 5){//geometric
             int denom = rand.nextInt(3) + 2;
             int num = rand.nextInt(denom - 1) + 1;
-            double interval = (double)num/denom;
             int beginning = rand.nextInt(16) + 1;
-            question = (beginning + " + " + simp.getFraction((num * beginning) + "/" + denom) + " + " + simp.getFraction((int)(Math.pow(num, 2) * beginning) + "/" + (int)Math.pow(denom, 2)) + " + ... = ");
+            question = (beginning + " + " + simplify.getFraction((num * beginning) + "/" + denom) + " + " + simplify.getFraction((int)(Math.pow(num, 2) * beginning) + "/" + (int)Math.pow(denom, 2)) + " + ... = ");
             answer = fracOperations.fracMult(beginning + "/1", denom + "/" + (denom - num));
         }
         if(choose == 6){//first m squares

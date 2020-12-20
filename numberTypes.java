@@ -2,19 +2,19 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class numberTypes {
-	ArrayList<Integer> series;
-	String nameType;
-	int answer;
+public class numberTypes {
+	private ArrayList<Integer> series;
+	private String nameType;
+	private int answer;
 
-	public numberTypes(ArrayList<Integer> series, String nameType){//may have a problem with the clone being a reference instead of real copy
-        for(int i = 0; i < series.size(); i++){
-            this.series.add(series.get(i));
-        }
-        series.clear();
-        //this.series.addAll(series);
+	public numberTypes(ArrayList<Integer> tempSeries, String nameType){//may have a problem with the clone being a reference instead of real copy
+        //for(int i = 0; i < tempSeries.size(); i++){
+        //    this.series.add(tempSeries.get(i));
+        //}
+        //this.series.addAll(tempSeries);
+        this.series = tempSeries;
 		this.nameType = nameType;
-		series.trimToSize();
+		//series.trimToSize();
 	}
 
 
@@ -27,10 +27,16 @@ class numberTypes {
 		if(chooser == 1){//pick one of three
 			int non1 = 0;
 			int non2 = 0;
-			do{
+			/*do{
 				non1 = rand.nextInt(series.get(series.size() - 1));
 				non2 = rand.nextInt(series.get(series.size() - 1));
             } while(series.indexOf(non1) != -1 || series.indexOf(non2) != -1);
+            */
+            non1 = series.get(rand.nextInt(series.size() - 1));
+            non2 = series.get(rand.nextInt(series.size() - 1));
+            while(non2 == non1){
+                non2 = series.get(rand.nextInt(series.size() - 1));
+            }
 			list[0] = non1;
 			list[1] = non2;
 			list[2] = series.get(n);

@@ -1,7 +1,6 @@
 import java.util.Random;
 
 /*
-125 Multiplying by Any Fraction of 100, 1000, etc 
 132 Factoring of Numerical Problems
 138 Multiplying Mixed Numbers
 
@@ -154,10 +153,41 @@ public class multshort {
 			}
 			answer = second * first;
 		}
-//		i++;
-//		if (choose == i) {
-//
-//		}
+		i++;
+		if (choose == i) {//fraction of 1000(333.3333, 125, 166.6666, 375, 666.6666, 111.11111)
+            int chooser = rand.nextInt(6) + 1;
+            int multiple2;
+            if(chooser == 1){
+                multiple2 = 3 * (rand.nextInt(163) + 124);
+                problem = 333 + "\\frac{1}{3} \\times " + multiple2;
+                answer = multiple2 / 3 * 1000;
+            }
+            if(chooser == 2){
+                multiple2 = 8 * (rand.nextInt(163) + 124);
+                problem = 123 + " \\times " + multiple2;
+                answer = multiple2 / 8 * 1000;
+            }
+            if(chooser == 3){
+                multiple2 = 6 * (rand.nextInt(163) + 124);
+                problem = 166 + "\\frac{2}{3} \\times " + multiple2;
+                answer = multiple2 / 6 * 1000;
+            }
+            if(chooser == 4){
+                multiple2 = 8 * (rand.nextInt(163) + 124);
+                problem = 375 + " \\times " + multiple2;
+                answer = multiple2 / 8 * 3000;
+            }
+            if(chooser == 5){
+                multiple2 = 3 * (rand.nextInt(163) + 124);
+                problem = 666 + "\\frac{2}{3} \\times " + multiple2;
+                answer = multiple2 / 3 * 1000;
+            }
+            if(chooser == 6){
+                multiple2 = 9 * (rand.nextInt(163) + 124);
+                problem = 111 + "\\frac{1}{9} \\times " + multiple2;
+                answer = multiple2 / 9 * 1000;
+            }
+		}
 //		i++;
 //		if (choose == i) {
 //
