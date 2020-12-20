@@ -22,7 +22,7 @@ class sequences {
         if(choose == 3){//first m odd integers
             int length = 2 * (rand.nextInt(15) + 5) + 1;
             question = ("1 + 3 + 5 + ... " + length + " = ");
-            answer = String.valueOf(Math.pow((length - 1)/2, 2));
+            answer = String.valueOf((int)Math.pow((length - 1)/2, 2));
         }
         if(choose == 4){//general arithmetic
             int length = rand.nextInt(3) + 5;
@@ -38,7 +38,7 @@ class sequences {
             double interval = (double)num/denom;
             int beginning = rand.nextInt(16) + 1;
             question = (beginning + " + " + simp.getFraction((num * beginning) + "/" + denom) + " + " + simp.getFraction((int)(Math.pow(num, 2) * beginning) + "/" + (int)Math.pow(denom, 2)) + " + ... = ");
-            answer = simp.getFraction((beginning * denom) + "/" + (denom / num));
+            answer = fracOperations.fracMult(beginning + "/1", denom + "/" + (denom - num));
         }
         if(choose == 6){//first m squares
             int length = rand.nextInt(3) + 5;
@@ -72,14 +72,15 @@ class sequences {
             
             }
         }
-        if(choose == 1){//triangle reciprocals
+        if(choose == 9){//triangle reciprocals
             int length = rand.nextInt(2) + 5;
-            question = ("$1");
-            for(int i = length - 1; i > 0; i--){
-                question = question + " + \\frac{1}{" + String.valueOf(i * (i-1));
-            }
+            int initial = rand.nextInt(3) + 1;
+                question = ("$" + simplify.getFraction("1/" + (initial * (initial + 1)/2), true));
+                for(int i = initial + 1; i < initial + length; i++){
+                    question = question + " + \\frac{1}{" + String.valueOf(i * (i+1)/2) + "}";
+                }
             question = question + " = $";
-            answer = ("\\frac{)");
+            answer = (fracOperations.fracSub("2/" + initial, "2/" + (initial + length)));
         }
     }
     
