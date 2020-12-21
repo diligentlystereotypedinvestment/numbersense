@@ -7,8 +7,8 @@ import java.util.Random;
 134 Sum of Squares: Factoring Method
 */
 public class multshort {
-	private double answer = 0.0;
-
+	private double answer;
+	private String fullAnswer;
 	public String multishort() {
 		Random rand = new Random();
 		String problem = "";
@@ -159,39 +159,82 @@ public class multshort {
             int multiple2;
             if(chooser == 1){
                 multiple2 = 3 * (rand.nextInt(163) + 124);
-                problem = 333 + "\\frac{1}{3} \\times " + multiple2;
+                problem = "$ 333\\frac{1}{3} \\times " + multiple2 + " = $";
                 answer = multiple2 / 3 * 1000;
             }
             if(chooser == 2){
                 multiple2 = 8 * (rand.nextInt(163) + 124);
-                problem = 123 + " \\times " + multiple2;
+                problem = "$123\\times " + multiple2 + " = $";
                 answer = multiple2 / 8 * 1000;
             }
             if(chooser == 3){
                 multiple2 = 6 * (rand.nextInt(163) + 124);
-                problem = 166 + "\\frac{2}{3} \\times " + multiple2;
+                problem = "$166\\frac{2}{3} \\times " + multiple2 + " = $";
                 answer = multiple2 / 6 * 1000;
             }
             if(chooser == 4){
                 multiple2 = 8 * (rand.nextInt(163) + 124);
-                problem = 375 + " \\times " + multiple2;
+                problem = "$375 \\times " + multiple2 + " = $";
                 answer = multiple2 / 8 * 3000;
             }
             if(chooser == 5){
                 multiple2 = 3 * (rand.nextInt(163) + 124);
-                problem = 666 + "\\frac{2}{3} \\times " + multiple2;
+                problem = "$666\\frac{2}{3} \\times " + multiple2 + " = $";
                 answer = multiple2 / 3 * 1000;
             }
             if(chooser == 6){
                 multiple2 = 9 * (rand.nextInt(163) + 124);
-                problem = 111 + "\\frac{1}{9} \\times " + multiple2;
+                problem = "$111\\frac{1}{9} \\times " + multiple2 + " = $";
                 answer = multiple2 / 9 * 1000;
             }
 		}
-//		i++;
-//		if (choose == i) {
-//
-//		}
+		i++;
+		if (choose == i) {//factoring of numerical problems
+            int chooser = rand.nextInt(5) + 1;
+            if(chooser == 1){
+                double beforeMult = (rand.nextInt(40) + 1) / (10 * rand.nextInt(2));
+                int scalar = 3 * rand.nextInt(2) + 2;
+                problem = "$" + (beforeMult * scalar) + "^2 + " + beforeMult + "^2 = $";
+                answer = (beforeMult * (Math.pow(scalar, 2) + 1));
+            }
+            if(chooser == 2){
+                int multicand = rand.nextInt(11) + 2000;
+                int small = rand.nextInt(2) * 5 + 4;
+                problem = "$" + multicand + " + " + small + "\\times" + multicand + " = $";
+                answer = multicand + small * multicand;
+            }
+            if(chooser == 3){
+                int multicand = rand.nextInt(11) + 2000;
+                int small = rand.nextInt(2) * 5 + 6;
+                problem = "$" + multicand + " - " + small + "\\times" + multicand + " = $";
+                answer = multicand - small * multicand;
+            }
+            if(chooser == 4){
+            }
+            if(chooser == 5){
+            
+            }
+            
+		}
+		i++;
+		if(choose == i){//mixed numbers
+            int chooser = rand.nextInt(2) + 1;
+            if(chooser == 1){
+                int denom = rand.nextInt(3) + 3;
+                int num = rand.nextInt(denom-1) + 1;
+                int wholeNum = rand.nextInt(7) + 4;
+                problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{" + (denom - num) + "}{" + denom + "} = ";
+                fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom), (wholeNum + " " + (denom - num) + "/" + denom));
+            }
+            if(chooser == 2){
+                int denom = rand.nextInt(3) + 3;
+                int num = rand.nextInt(denom-1) + 1;
+                int wholeNum = rand.nextInt(7) + 4;
+                int scalar = rand.nextInt(2) + 2;
+                problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{" + num + "}{" + denom + "} = ";
+                fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom), (wholeNum * scalar + " " + num + "/" + denom));
+            }
+		}
 		i++;
 		if (choose == i) {//special numbers
 			int chooser = rand.nextInt(7) + 1;
@@ -295,7 +338,8 @@ public class multshort {
 		return problem;
 	}
 	
-	public double getAns() {
-		return answer;
+	public String getAns() {
+        fullAnswer = String.valueOf(answer);
+		return fullAnswer;
 	}
 }
