@@ -14,7 +14,7 @@ Approximation Problems are also incomplete
 
 ~~4) Comparison of Fractions and Decimals~~
 
-5) Multiplication Short-Cuts - Mostly Done
+~~5) Multiplication Short-Cuts~~
 
 ~~6) Squaring Numbers~~
 
