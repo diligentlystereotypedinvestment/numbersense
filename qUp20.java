@@ -6,7 +6,7 @@ class qUp20{
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 	Random rand = new Random();
 				int random = rand.nextInt(14) + 1;
-					System.out.println(random);
+					//System.out.println(random);
 				// random = scan.nextInt();
 				if (random == 1) {// addition of two integers
 					int rand1_1 = rand.nextInt(16) + 1;
