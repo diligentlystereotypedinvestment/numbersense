@@ -24,7 +24,7 @@ public class Generator {
 				+ "\\\\\n"
 				+ "\\noindent \\textbf{Read directions carefully} \\hfill {\\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score   Initials}\n"
 				+ "\\\\\n"
-				+ "\\noindent \\textbf{before beginning test} \\hfill{\\textbf{UNTIL TOLD TO BEGIN}}\n"
+				+ "\\noindent \\textbf{before beginning test} \\hfill{\\textbf{UNTIL TOLD TO BEGIN}}\\hfill{}\n"
 				+ "\\\\\n" + "\\\\\n"
 				+ "\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED   MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n"
 				+ "\\\\\n\n" + "\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n"
@@ -77,9 +77,7 @@ public class Generator {
             if(e.equals(null)){
                 continue;
             }
-			for(int q = 0; q < 60 - e.length(); q++){
-				System.out.print("\\textunderscore");
-			}
+			System.out.println("\\hrulefill");
 			System.out.print("\n\n");
 		}
 		System.out.println("\\end{flushleft}\\end{multicols}");

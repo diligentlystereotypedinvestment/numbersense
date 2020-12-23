@@ -210,8 +210,45 @@ public class multshort {
                 answer = multicand - small * multicand;
             }
             if(chooser == 4){
+                int differ2000 = rand.nextInt(10) + 1;
+                int add1 = rand.nextInt(10) + 1;
+                int add2 = rand.nextInt(10) + 1;
+                int chooser2 = rand.nextInt(3);
+                if(chooser2 == 0){
+                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " + " + add2 + " \\times " + (2000 + differ2000) + " = $";
+                    answer = (add1 + add2) * (2000 + differ2000);
+                }
+                if(chooser2 == 1){
+                    add1 = rand.nextInt(29) + 11;
+                    problem = "$" + (add1 * 1000 - 2 * add1) + " + " + (2 * add2) + " = $";
+                    answer = add1 * 1000;
+                }
+                if(chooser2 == 2){
+                    add1 = rand.nextInt(29) + 11;
+                    problem = "$" + add1 + " \\times " + (2000 - differ2000) + " + " + add1 + " \\times " + (differ2000) + " = $";
+                    answer = add1 * 2000;
+                }
+            
             }
             if(chooser == 5){
+                int differ2000 = rand.nextInt(10) + 1;
+                int add1 = rand.nextInt(10) + 1;
+                int add2 = rand.nextInt(10) + 1;
+                int chooser2 = rand.nextInt(3);
+                if(chooser2 == 0){
+                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add2 + " \\times " + (2000 + differ2000) + " = $";
+                    answer = (add1 - add2) * (2000 + differ2000);
+                }
+                if(chooser2 == 1){
+                    add1 = rand.nextInt(29) + 11;
+                    problem = "$" + (add1 * 1000 + 2 * add1) + " - " + (2 * add2) + " = $";
+                    answer = add1 * 1000;
+                }
+                if(chooser2 == 2){
+                    add1 = rand.nextInt(29) + 11;
+                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add1 + " \\times " + (differ2000) + " = $";
+                    answer = add1 * 2000;
+                }
             
             }
             
