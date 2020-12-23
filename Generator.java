@@ -404,7 +404,10 @@ if (i % 10 == 0) {// Estimation problems
 		answers.trimToSize();
 		for(String e: questions){
             System.out.print(e);
-			for(int q = 0; q < 60 - questions.size(); q++){
+            if(e.equals(null)){
+                continue;
+            }
+			for(int q = 0; q < 60 - e.length(); q++){
 				System.out.print("\\textunderscore");
 			}
 			System.out.print("\n\n");

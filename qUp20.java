@@ -6,6 +6,7 @@ class qUp20{
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 	Random rand = new Random();
 				int random = rand.nextInt(14) + 1;
+					System.out.println(random);
 				// random = scan.nextInt();
 				if (random == 1) {// addition of two integers
 					int rand1_1 = rand.nextInt(16) + 1;
@@ -297,12 +298,13 @@ class qUp20{
 				if (random == 7) {// conversion
                     Conversion convert = new Conversion();
 					String printmess = convert.getQuestion();
-					questions.add(printmess);//System.out.print(printmess);
-					/*for (int q = 0; q < 60 - printmess.length(); q++) {
-						//System.out.print("\\textunderscore");
-					}*/
-					//System.out.println();
-					//System.out.println();
+					//questions.add(printmess);
+					System.out.print(printmess);
+					//for (int q = 0; q < 60 - printmess.length(); q++) {
+					//	System.out.print("\\textunderscore");
+					//}
+					System.out.println();
+					System.out.println();
 					
 				}
 
@@ -696,5 +698,20 @@ class qUp20{
 					//System.out.println();
 					
 			}
+	}
+	public static void main(String[] args){
+        ArrayList<String> temp = new ArrayList<>();
+        ArrayList<String> temp2 = new ArrayList<>();
+        int i = 1;
+        qUp20 q = new qUp20();
+        for(int a = 0; a < 40; a++){
+            q.Gen(temp, temp2, i);
+        }
+        for(String e: temp){
+            System.out.println(e);
+        }
+        for(String e: temp2){
+            System.out.println(e);
+        }
 	}
 }
