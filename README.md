@@ -66,13 +66,13 @@ Least Common Multiple (LCM)~~
 
 12) Repeating Decimals to Fractions - I think this is done
 
-13) More Remainder Type Problems - I think this is done
+~~13) More Remainder Type Problems - I think this is done~~
 
 14) Perimeter & Area of Polygons and Circles
 
 ~~15) Sequences~~
 
-16) Quadratic & Cubic Equation Problems
+~~16) Quadratic & Cubic Equation Problems~~
 
 # Problems 41 - 60
 
