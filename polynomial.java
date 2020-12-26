@@ -27,7 +27,7 @@ public class polynomial {
 		choose = rand.nextInt(3);
 		if (choose == 0) {
 			problem = "What is the sum of roots of " + problem + "?";
-			answer = simplify.getFraction(problem.substring(8, 9) + "/" + problem.substring(0, 1));
+			answer = simplify.getFraction(problem.substring(9, 10) + "/" + problem.substring(1, 2));
 		}
 		if (choose == 1 && power == 2) {
 			int decrimType = rand.nextInt(2);
@@ -50,12 +50,18 @@ public class polynomial {
 			problem = "What is the discriminate of " + problem + "?";
 		} else if (choose == 1 && power == 3) {
 			problem = "What is the sum of the roots of " + problem + " taken two at a time?";
-			answer = simplify.getFraction(problem.substring(15, 16) + "/" + problem.substring(0, 1));
+			answer = simplify.getFraction(problem.substring(16, 17) + "/" + problem.substring(1, 2));
 		}
 		if (choose == 2) {
 			problem = "What is the product of the roots of " + problem;
 			answer = simplify.getFraction(problem.substring(problem.length() - 1) + "/" + ((int) Math.pow(-1, power)));
 		}
 
+	}
+	public String getQuestion(){
+        return problem;
+	}
+	public String getAnswer(){
+        return answer;
 	}
 }

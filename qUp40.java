@@ -348,6 +348,12 @@ class qUp40 {
 			answers.add(String.valueOf(exponentr % dividend));
 
 		}
+		if(random == 41 || random == 42){
+            polynomial poly = new polynomial();
+            poly.Gen();
+            questions.add(String.valueOf(poly.getQuestion()));
+            answers.add(String.valueOf(poly.getAnswer()));
+		}
 		if (random < 15) {
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);
