@@ -2,10 +2,11 @@ import java.util.Random;
 
 public class Absolute {
 	public double outsolution = 0;
+
 	public String abolute() {
 		Random rand = new Random();
 		int Operations = rand.nextInt(3) + 2;
-		double [] operands = new double[Operations];
+		double[] operands = new double[Operations];
 		double solution = 0;
 		for (int i = 0; i < Operations; i++) {
 			operands[i] = 1.0 * rand.nextInt(15);

@@ -11,5 +11,5 @@ public class Addition {
 	double sum = num1 + num2;
 	double d = num1 - num2;
 	double p = num1 * num2;
-	double q = 1.000 * (num1/100) / (num2/100);
+	double q = 1.000 * (num1 / 100) / (num2 / 100);
 }

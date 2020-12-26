@@ -9,6 +9,7 @@ import java.util.Random;
 public class multshort {
 	private double answer;
 	private String fullAnswer;
+
 	public String multishort() {
 		Random rand = new Random();
 		String problem = "";
@@ -118,16 +119,16 @@ public class multshort {
 			answer = Math.pow(square, 2) + Math.pow(square2, 2);
 		}
 		i++;
-		if (choose == i) {//sum of squares(factoring)
+		if (choose == i) {// sum of squares(factoring)
 			int chooser = rand.nextInt(2) + 1;
-			if(chooser == 1) {
+			if (chooser == 1) {
 				int square1 = rand.nextInt(32) + 9;
 				int times = rand.nextInt(2) + 3;
 				int square2 = square1 * times;
 				problem = "$" + square1 + "^2 + " + square2 + "^2 =$ ?";
 				answer = Math.pow(square1, 2) + Math.pow(square2, 2);
 			}
-			if(chooser == 2) {
+			if (chooser == 2) {
 				int square1 = rand.nextInt(32) + 8;
 				int square2 = square1 * 3;
 				problem = "$" + square1 + "^2 + " + square2 + "^2 =$ ?";
@@ -135,17 +136,17 @@ public class multshort {
 			}
 		}
 		i++;
-		if (choose == i) {//double and half
+		if (choose == i) {// double and half
 			int chooser = rand.nextInt() + 1;
 			int first = rand.nextInt(28) + 12;
 			int second = 0;
-			if(chooser == 1) {
+			if (chooser == 1) {
 				second = 4 * first;
 				problem = "$" + first + " \\cdot " + second + " =$ ?";
 			}
-			if(chooser == 2) {
+			if (chooser == 2) {
 				int five = 10 * (rand.nextInt(3) + 2) + 5;
-				while(five != 25) {
+				while (five != 25) {
 					five = 5 * (rand.nextInt(7) + 2) + 5;
 				}
 				second = 2 * (rand.nextInt(40) + 11);
@@ -154,219 +155,227 @@ public class multshort {
 			answer = second * first;
 		}
 		i++;
-		if (choose == i) {//fraction of 1000(333.3333, 125, 166.6666, 375, 666.6666, 111.11111)
-            int chooser = rand.nextInt(6) + 1;
-            int multiple2;
-            if(chooser == 1){
-                multiple2 = 3 * (rand.nextInt(163) + 124);
-                problem = "$ 333\\frac{1}{3} \\times " + multiple2 + " = $";
-                answer = multiple2 / 3 * 1000;
-            }
-            if(chooser == 2){
-                multiple2 = 8 * (rand.nextInt(163) + 124);
-                problem = "$123\\times " + multiple2 + " = $";
-                answer = multiple2 / 8 * 1000;
-            }
-            if(chooser == 3){
-                multiple2 = 6 * (rand.nextInt(163) + 124);
-                problem = "$166\\frac{2}{3} \\times " + multiple2 + " = $";
-                answer = multiple2 / 6 * 1000;
-            }
-            if(chooser == 4){
-                multiple2 = 8 * (rand.nextInt(163) + 124);
-                problem = "$375 \\times " + multiple2 + " = $";
-                answer = multiple2 / 8 * 3000;
-            }
-            if(chooser == 5){
-                multiple2 = 3 * (rand.nextInt(163) + 124);
-                problem = "$666\\frac{2}{3} \\times " + multiple2 + " = $";
-                answer = multiple2 / 3 * 1000;
-            }
-            if(chooser == 6){
-                multiple2 = 9 * (rand.nextInt(163) + 124);
-                problem = "$111\\frac{1}{9} \\times " + multiple2 + " = $";
-                answer = multiple2 / 9 * 1000;
-            }
+		if (choose == i) {// fraction of 1000(333.3333, 125, 166.6666, 375, 666.6666, 111.11111)
+			int chooser = rand.nextInt(6) + 1;
+			int multiple2;
+			if (chooser == 1) {
+				multiple2 = 3 * (rand.nextInt(163) + 124);
+				problem = "$ 333\\frac{1}{3} \\times " + multiple2 + " = $";
+				answer = multiple2 / 3 * 1000;
+			}
+			if (chooser == 2) {
+				multiple2 = 8 * (rand.nextInt(163) + 124);
+				problem = "$123\\times " + multiple2 + " = $";
+				answer = multiple2 / 8 * 1000;
+			}
+			if (chooser == 3) {
+				multiple2 = 6 * (rand.nextInt(163) + 124);
+				problem = "$166\\frac{2}{3} \\times " + multiple2 + " = $";
+				answer = multiple2 / 6 * 1000;
+			}
+			if (chooser == 4) {
+				multiple2 = 8 * (rand.nextInt(163) + 124);
+				problem = "$375 \\times " + multiple2 + " = $";
+				answer = multiple2 / 8 * 3000;
+			}
+			if (chooser == 5) {
+				multiple2 = 3 * (rand.nextInt(163) + 124);
+				problem = "$666\\frac{2}{3} \\times " + multiple2 + " = $";
+				answer = multiple2 / 3 * 1000;
+			}
+			if (chooser == 6) {
+				multiple2 = 9 * (rand.nextInt(163) + 124);
+				problem = "$111\\frac{1}{9} \\times " + multiple2 + " = $";
+				answer = multiple2 / 9 * 1000;
+			}
 		}
 		i++;
-		if (choose == i) {//factoring of numerical problems
-            int chooser = rand.nextInt(5) + 1;
-            if(chooser == 1){
-                double beforeMult = (rand.nextInt(40) + 1) / (10 * rand.nextInt(2));
-                int scalar = 3 * rand.nextInt(2) + 2;
-                problem = "$" + (beforeMult * scalar) + "^2 + " + beforeMult + "^2 = $";
-                answer = (beforeMult * (Math.pow(scalar, 2) + 1));
-            }
-            if(chooser == 2){
-                int multicand = rand.nextInt(11) + 2000;
-                int small = rand.nextInt(2) * 5 + 4;
-                problem = "$" + multicand + " + " + small + "\\times" + multicand + " = $";
-                answer = multicand + small * multicand;
-            }
-            if(chooser == 3){
-                int multicand = rand.nextInt(11) + 2000;
-                int small = rand.nextInt(2) * 5 + 6;
-                problem = "$" + multicand + " - " + small + "\\times" + multicand + " = $";
-                answer = multicand - small * multicand;
-            }
-            if(chooser == 4){
-                int differ2000 = rand.nextInt(10) + 1;
-                int add1 = rand.nextInt(10) + 1;
-                int add2 = rand.nextInt(10) + 1;
-                int chooser2 = rand.nextInt(3);
-                if(chooser2 == 0){
-                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " + " + add2 + " \\times " + (2000 + differ2000) + " = $";
-                    answer = (add1 + add2) * (2000 + differ2000);
-                }
-                if(chooser2 == 1){
-                    add1 = rand.nextInt(29) + 11;
-                    problem = "$" + (add1 * 1000 - 2 * add1) + " + " + (2 * add2) + " = $";
-                    answer = add1 * 1000;
-                }
-                if(chooser2 == 2){
-                    add1 = rand.nextInt(29) + 11;
-                    problem = "$" + add1 + " \\times " + (2000 - differ2000) + " + " + add1 + " \\times " + (differ2000) + " = $";
-                    answer = add1 * 2000;
-                }
-            
-            }
-            if(chooser == 5){
-                int differ2000 = rand.nextInt(10) + 1;
-                int add1 = rand.nextInt(10) + 1;
-                int add2 = rand.nextInt(10) + 1;
-                int chooser2 = rand.nextInt(3);
-                if(chooser2 == 0){
-                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add2 + " \\times " + (2000 + differ2000) + " = $";
-                    answer = (add1 - add2) * (2000 + differ2000);
-                }
-                if(chooser2 == 1){
-                    add1 = rand.nextInt(29) + 11;
-                    problem = "$" + (add1 * 1000 + 2 * add1) + " - " + (2 * add2) + " = $";
-                    answer = add1 * 1000;
-                }
-                if(chooser2 == 2){
-                    add1 = rand.nextInt(29) + 11;
-                    problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add1 + " \\times " + (differ2000) + " = $";
-                    answer = add1 * 2000;
-                }
-            
-            }
-            
+		if (choose == i) {// factoring of numerical problems
+			int chooser = rand.nextInt(5) + 1;
+			if (chooser == 1) {
+				double beforeMult = (rand.nextInt(40) + 1) / (10 * rand.nextInt(2));
+				int scalar = 3 * rand.nextInt(2) + 2;
+				problem = "$" + (beforeMult * scalar) + "^2 + " + beforeMult + "^2 = $";
+				answer = (beforeMult * (Math.pow(scalar, 2) + 1));
+			}
+			if (chooser == 2) {
+				int multicand = rand.nextInt(11) + 2000;
+				int small = rand.nextInt(2) * 5 + 4;
+				problem = "$" + multicand + " + " + small + "\\times" + multicand + " = $";
+				answer = multicand + small * multicand;
+			}
+			if (chooser == 3) {
+				int multicand = rand.nextInt(11) + 2000;
+				int small = rand.nextInt(2) * 5 + 6;
+				problem = "$" + multicand + " - " + small + "\\times" + multicand + " = $";
+				answer = multicand - small * multicand;
+			}
+			if (chooser == 4) {
+				int differ2000 = rand.nextInt(10) + 1;
+				int add1 = rand.nextInt(10) + 1;
+				int add2 = rand.nextInt(10) + 1;
+				int chooser2 = rand.nextInt(3);
+				if (chooser2 == 0) {
+					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " + " + add2 + " \\times "
+							+ (2000 + differ2000) + " = $";
+					answer = (add1 + add2) * (2000 + differ2000);
+				}
+				if (chooser2 == 1) {
+					add1 = rand.nextInt(29) + 11;
+					problem = "$" + (add1 * 1000 - 2 * add1) + " + " + (2 * add2) + " = $";
+					answer = add1 * 1000;
+				}
+				if (chooser2 == 2) {
+					add1 = rand.nextInt(29) + 11;
+					problem = "$" + add1 + " \\times " + (2000 - differ2000) + " + " + add1 + " \\times " + (differ2000)
+							+ " = $";
+					answer = add1 * 2000;
+				}
+
+			}
+			if (chooser == 5) {
+				int differ2000 = rand.nextInt(10) + 1;
+				int add1 = rand.nextInt(10) + 1;
+				int add2 = rand.nextInt(10) + 1;
+				int chooser2 = rand.nextInt(3);
+				if (chooser2 == 0) {
+					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add2 + " \\times "
+							+ (2000 + differ2000) + " = $";
+					answer = (add1 - add2) * (2000 + differ2000);
+				}
+				if (chooser2 == 1) {
+					add1 = rand.nextInt(29) + 11;
+					problem = "$" + (add1 * 1000 + 2 * add1) + " - " + (2 * add2) + " = $";
+					answer = add1 * 1000;
+				}
+				if (chooser2 == 2) {
+					add1 = rand.nextInt(29) + 11;
+					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add1 + " \\times " + (differ2000)
+							+ " = $";
+					answer = add1 * 2000;
+				}
+
+			}
+
 		}
 		i++;
-		if(choose == i){//mixed numbers
-            int chooser = rand.nextInt(2) + 1;
-            if(chooser == 1){
-                int denom = rand.nextInt(3) + 3;
-                int num = rand.nextInt(denom-1) + 1;
-                int wholeNum = rand.nextInt(7) + 4;
-                problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{" + (denom - num) + "}{" + denom + "} = ";
-                fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom), (wholeNum + " " + (denom - num) + "/" + denom));
-            }
-            if(chooser == 2){
-                int denom = rand.nextInt(3) + 3;
-                int num = rand.nextInt(denom-1) + 1;
-                int wholeNum = rand.nextInt(7) + 4;
-                int scalar = rand.nextInt(2) + 2;
-                problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{" + num + "}{" + denom + "} = ";
-                fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom), (wholeNum * scalar + " " + num + "/" + denom));
-            }
+		if (choose == i) {// mixed numbers
+			int chooser = rand.nextInt(2) + 1;
+			if (chooser == 1) {
+				int denom = rand.nextInt(3) + 3;
+				int num = rand.nextInt(denom - 1) + 1;
+				int wholeNum = rand.nextInt(7) + 4;
+				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{"
+						+ (denom - num) + "}{" + denom + "} = ";
+				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
+						(wholeNum + " " + (denom - num) + "/" + denom));
+			}
+			if (chooser == 2) {
+				int denom = rand.nextInt(3) + 3;
+				int num = rand.nextInt(denom - 1) + 1;
+				int wholeNum = rand.nextInt(7) + 4;
+				int scalar = rand.nextInt(2) + 2;
+				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{"
+						+ num + "}{" + denom + "} = ";
+				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
+						(wholeNum * scalar + " " + num + "/" + denom));
+			}
 		}
 		i++;
-		if (choose == i) {//special numbers
+		if (choose == i) {// special numbers
 			int chooser = rand.nextInt(7) + 1;
 			int convert = rand.nextInt(2) + 1;
-			if(chooser == 1) {
+			if (chooser == 1) {
 				int multiplicand = 10 * rand.nextInt(2) + 27;
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + 1073 + " \\div" + multiplicand + " =$ ?";
 					answer = 1073 / multiplicand;
 				}
-				if(convert == 2) {
-					problem = "$" + "37 \\cot 27"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "37 \\cot 27" + " =$ ?";
 					answer = 1073;
 				}
 			}
-			if(chooser == 2) {
+			if (chooser == 2) {
 				int multiplicand = 8 * rand.nextInt(2) + 29;
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + 1073 + " \\div" + multiplicand + " = $ ?";
 					answer = 1073 / multiplicand;
 				}
-				if(convert == 2) {
-					problem = "$" + "37 \\cot 29"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "37 \\cot 29" + " =$ ?";
 					answer = 1073;
 				}
 			}
-			if(chooser == 4) {
+			if (chooser == 4) {
 				int multiplicand = 4 * rand.nextInt(2) + 3;
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + "10101 \\div" + multiplicand + " = $ ?";
 					answer = 10101 / multiplicand;
 				}
-				if(convert == 2) {
-					problem = "$" + "3367 \\cot 3"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "3367 \\cot 3" + " =$ ?";
 					answer = 10101;
 				}
 			}
 			convert = rand.nextInt(3) + 1;
-			if(chooser == 3) {
+			if (chooser == 3) {
 				int multiplicand = rand.nextInt(9) + 1;
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + (1001 * multiplicand) + " \\div" + 13 + " = $ ?";
 					answer = (1001 * multiplicand) / 13;
 				}
-				if(convert == 2) {
-					problem = "$" + (77 * multiplicand) + " \\cot 13"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + (77 * multiplicand) + " \\cot 13" + " =$ ?";
 					answer = (77 * multiplicand) * 13;
 				}
-				if(convert == 2) {
-					problem = "$" + (13 * multiplicand) + " \\cot 77"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + (13 * multiplicand) + " \\cot 77" + " =$ ?";
 					answer = (13 * multiplicand) * 77;
 				}
 			}
-			if(chooser == 5) {
-				if(convert == 1) {
+			if (chooser == 5) {
+				if (convert == 1) {
 					problem = "$" + "10101 \\div 3" + " = $ ?";
 					answer = 3367;
 				}
-				if(convert == 2) {
-					problem = "$" + "3367 \\cot 3"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "3367 \\cot 3" + " =$ ?";
 					answer = 10101;
 				}
 				int multiplicand = 3 * (rand.nextInt(5) + 1);
-				if(convert == 3) {
-					problem = "$" + "3367 \\cot "+ multiplicand + " =$ ?";
+				if (convert == 3) {
+					problem = "$" + "3367 \\cot " + multiplicand + " =$ ?";
 					answer = 3367 * multiplicand;
 				}
 			}
-			if(chooser == 6) {
+			if (chooser == 6) {
 				int multiplicand = 7 * (rand.nextInt(3) + 1);
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + "10101 \\div 7" + " = $ ?";
 					answer = 1443;
 				}
-				if(convert == 2) {
-					problem = "$" + "1443 \\cot 7"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "1443 \\cot 7" + " =$ ?";
 					answer = 10101;
 				}
-				if(convert == 3) {
-					problem = "$" + "1443 \\cot "+ multiplicand + " =$ ?";
+				if (convert == 3) {
+					problem = "$" + "1443 \\cot " + multiplicand + " =$ ?";
 					answer = 1443 * multiplicand;
 				}
 			}
-			if(chooser == 7) {
+			if (chooser == 7) {
 				int multiplicand = 7 * (rand.nextInt(3) + 1);
-				if(convert == 1) {
+				if (convert == 1) {
 					problem = "$" + "10010 \\div 7" + " = $ ?";
 					answer = 1430;
 				}
-				if(convert == 2) {
-					problem = "$" + "1430 \\cot 7"+ " =$ ?";
+				if (convert == 2) {
+					problem = "$" + "1430 \\cot 7" + " =$ ?";
 					answer = 10010;
 				}
-				if(convert == 3) {
-					problem = "$" + "1430 \\cot "+ multiplicand + " =$ ?";
+				if (convert == 3) {
+					problem = "$" + "1430 \\cot " + multiplicand + " =$ ?";
 					answer = 1430 * multiplicand;
 				}
 			}
@@ -374,9 +383,9 @@ public class multshort {
 		i++;
 		return problem;
 	}
-	
+
 	public String getAns() {
-        fullAnswer = String.valueOf(answer);
+		fullAnswer = String.valueOf(answer);
 		return fullAnswer;
 	}
 }
