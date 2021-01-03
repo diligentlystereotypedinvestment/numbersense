@@ -7,4 +7,8 @@ class eliminateZero {
 			return String.valueOf(zero);
 		}
 	}
+
+	public static double money(double amount){
+		return (int)(amount * 100) / 100.0;
+	}
 }

@@ -11,17 +11,17 @@ public class sequences {
 		int choose = rand.nextInt(9) + 1;
 		if (choose == 1) {// first m integers
 			int length = rand.nextInt(30) + 10;
-			question = ("1 + 2 + 3 + ... " + length + " = ");
+			question = ("1 + 2 + 3 + \\ldots " + length + " = ");
 			answer = String.valueOf((length * (length + 1)) / 2);
 		}
 		if (choose == 2) {// first m even integers
 			int length = rand.nextInt(15) + 5;
-			question = ("2 + 4 + 6 + ... " + length * 2 + " = ");
+			question = ("2 + 4 + 6 + \\ldots " + length * 2 + " = ");
 			answer = String.valueOf(length * (length + 1));
 		}
 		if (choose == 3) {// first m odd integers
 			int length = 2 * (rand.nextInt(15) + 5) + 1;
-			question = ("1 + 3 + 5 + ... " + length + " = ");
+			question = ("1 + 3 + 5 + \\ldots " + length + " = ");
 			answer = String.valueOf((int) Math.pow((length - 1) / 2, 2));
 		}
 		if (choose == 4) {// general arithmetic
@@ -29,7 +29,7 @@ public class sequences {
 			int interval = rand.nextInt(7) + 3;
 			int beginning = rand.nextInt(15) + 3;
 			int finalnum = (interval * (length - 1) + beginning);
-			question = (beginning + " + " + (interval + beginning) + " + " + (interval * 2 + beginning) + " + ... "
+			question = (beginning + " + " + (interval + beginning) + " + " + (interval * 2 + beginning) + " + \\ldots "
 					+ finalnum + " = ");
 			answer = String.valueOf(((finalnum + beginning) / 2) * ((finalnum - beginning) / interval + 1));
 		}
@@ -39,17 +39,17 @@ public class sequences {
 			int beginning = rand.nextInt(16) + 1;
 			question = (beginning + " + " + simplify.getFraction((num * beginning) + "/" + denom) + " + "
 					+ simplify.getFraction((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))
-					+ " + ... = ");
+					+ " + \\ldots = ");
 			answer = fracOperations.fracMult(beginning + "/1", denom + "/" + (denom - num));
 		}
 		if (choose == 6) {// first m squares
 			int length = rand.nextInt(3) + 5;
-			question = ("1 + 4 + 9 + ... " + (int) Math.pow(length, 2) + " = ");
+			question = ("1 + 4 + 9 + \\ldots " + (int) Math.pow(length, 2) + " = ");
 			answer = String.valueOf((length * (length + 1) * (2 * length + 1)) / 6);
 		}
 		if (choose == 7) {// first m cubes
 			int length = rand.nextInt(5) + 5;
-			question = ("1 + 8 + 27 + ... " + (int) Math.pow(length, 3) + " = ");
+			question = ("1 + 8 + 27 + \\ldots " + (int) Math.pow(length, 3) + " = ");
 			answer = String.valueOf((int) Math.pow((length * (length + 1)) / 2, 2));
 		}
 		if (choose == 8) {// first m squares
@@ -57,18 +57,18 @@ public class sequences {
 			int sign = rand.nextInt(2) + 1;
 			if (sign == 0) {// first sign positive
 				if (length % 2 == 0) {
-					question = ("1 + 4 - 9 + ... + " + (int) Math.pow(length, 2) + " = ");
+					question = ("1 + 4 - 9 + \\ldots + " + (int) Math.pow(length, 2) + " = ");
 					answer = String.valueOf(length * (length + 1) / 2);
 				} else {
-					question = ("1 + 4 - 9 + ... - " + (int) Math.pow(length, 2) + " = ");
+					question = ("1 + 4 - 9 + \\ldots - " + (int) Math.pow(length, 2) + " = ");
 					answer = String.valueOf(-1 * length * (length + 1) / 2);
 				}
 			} else {
 				if (length % 2 == 0) {
-					question = ("1 - 4 + 9 - ... - " + (int) Math.pow(length, 2) + " = ");
+					question = ("1 - 4 + 9 - \\ldots - " + (int) Math.pow(length, 2) + " = ");
 					answer = String.valueOf(-1 * (length * (length + 1) / 2));
 				} else {
-					question = ("1 - 4 + 9 - ... + " + (int) Math.pow(length, 2) + " = ");
+					question = ("1 - 4 + 9 - \\ldots + " + (int) Math.pow(length, 2) + " = ");
 					answer = String.valueOf(length * (length + 1) / 2);
 				}
 

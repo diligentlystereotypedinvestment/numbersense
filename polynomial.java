@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class polynomial {
 
-	public String problem;
-	public String answer;
+	private String problem;
+	private String answer;
 
 	public void Gen() {
 
@@ -13,8 +13,8 @@ public class polynomial {
 		if (choose == 0) {
 			power = 2;
 		}
-		problem = "$";
-		for (int i = 1; i <= power; i++) {
+		problem = "";
+		for (int i = 2; i <= power; i++) {
 			int sign = rand.nextInt(2);
 			if (sign == 0) {
 				problem = (rand.nextInt(6) + 1) + "x^" + i + " + " + problem;
@@ -23,11 +23,18 @@ public class polynomial {
 				problem = (rand.nextInt(6) + 1) + "x^" + i + " - " + problem;
 			}
 		}
-		problem = "$" + problem + (rand.nextInt() + 1);
+		choose = rand.nextInt(2);
+		if(choose == 0){
+			problem = problem + (rand.nextInt(6) + 1) + "x" + " + ";
+		} else{
+			problem = problem + (rand.nextInt(6) + 1) + "x" + " - ";
+		}
+		problem = "$" + problem + (rand.nextInt(9) + 1) + "$";
+		String tempProblem = problem;
 		choose = rand.nextInt(3);
 		if (choose == 0) {
 			problem = "What is the sum of roots of " + problem + "?";
-			answer = simplify.getFraction(problem.substring(9, 10) + "/" + problem.substring(1, 2));
+			answer = simplify.getFraction(String.valueOf(-1 * Integer.valueOf(tempProblem.substring(8, 9))) + "/" + (tempProblem.substring(1, 2)));
 		}
 		if (choose == 1 && power == 2) {
 			int decrimType = rand.nextInt(2);
@@ -50,11 +57,11 @@ public class polynomial {
 			problem = "What is the discriminate of " + problem + "?";
 		} else if (choose == 1 && power == 3) {
 			problem = "What is the sum of the roots of " + problem + " taken two at a time?";
-			answer = simplify.getFraction(problem.substring(16, 17) + "/" + problem.substring(1, 2));
+			answer = simplify.getFraction(tempProblem.substring(16, 17) + "/" + tempProblem.substring(1, 2));
 		}
 		if (choose == 2) {
 			problem = "What is the product of the roots of " + problem;
-			answer = simplify.getFraction(problem.substring(problem.length() - 1) + "/" + ((int) Math.pow(-1, power)));
+			answer = simplify.getFraction(tempProblem.substring(tempProblem.length() - 2, tempProblem.length() - 1) + "/" + ((int) Math.pow(-1, power)));
 		}
 
 	}

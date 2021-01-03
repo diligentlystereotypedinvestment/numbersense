@@ -466,7 +466,7 @@ class qUp20 {
 				if (dividend == 7) {// traditional
 					number = rand.nextInt(8999) + 1000;
 				}
-				printmess = ("(" + i + ") What is the remainder of " + number + "$\\div$" + dividend + "?");
+				printmess = ("(" + i + ") What is the remainder of " + number + " $\\div$" + dividend + "?");
 				answers.add(String.valueOf(1.0 * (number % dividend)));
 			} /*
 				 * else if (dividend == 12) {// power int base = rand.nextInt(12) + 2; int power
@@ -477,7 +477,7 @@ class qUp20 {
 			// }
 			else if (dividend == 12) {// expression
 				OofO remainderex = new OofO();
-				printmess = ("(" + i + ") What is the remainder of " + remainderex.remainder() + "$\\div" + dividend
+				printmess = ("(" + i + ") What is the remainder of " + remainderex.remainder() + " $\\div" + dividend
 						+ "?$");
 				answers.add(String.valueOf(remainderex.outsolution % dividend));
 			}
@@ -509,14 +509,13 @@ class qUp20 {
 				pounds = .5 * (rand.nextInt(3) + 1);
 				postPrice = price * 16 * pounds / oz;
 			}
+			choose = rand.nextInt(2) + 1;
 			if (choose == 1) {
-				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + price + " then how much does "
-						+ pounds + "cost?";
-				answers.add(String.valueOf(postPrice));
+				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + eliminateZero.money(price) + " then how much does " + pounds + " cost?";
+				answers.add(String.valueOf(eliminateZero.money(postPrice)));
 			}
 			if (choose == 2) {
-				printmess = "(" + i + ") If " + pounds + " pounds of a liquid costs \\$ " + postPrice
-						+ " then how much does " + oz + " oz cost?";
+				printmess = "(" + i + ") If " + pounds + " pounds of a liquid costs \\$ " + eliminateZero.money(postPrice) + " then how much does " + oz + " oz cost?";
 				answers.add(String.valueOf(pounds));
 			}
 			choose = rand.nextInt(2) + 1;

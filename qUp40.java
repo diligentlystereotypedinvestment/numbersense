@@ -331,7 +331,10 @@ class qUp40 {
 
 		}
 		if (random == 35 || random == 36) {// system of equations
-
+			systemOfEquations sys = new systemOfEquations();
+			sys.Gen();
+			questions.add("(" + i + ")" + sys.getQuestion());
+			answers.add(String.valueOf(sys.getAnswer()));	
 		}
 		if (random == 37 || random == 38) {// repeating decimal to fraction
 
@@ -351,7 +354,7 @@ class qUp40 {
 		if(random == 41 || random == 42){
             polynomial poly = new polynomial();
             poly.Gen();
-            questions.add(String.valueOf(poly.getQuestion()));
+            questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
             answers.add(String.valueOf(poly.getAnswer()));
 		}
 		if (random < 15) {
