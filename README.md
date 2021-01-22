@@ -76,7 +76,7 @@ Least Common Multiple (LCM)~~
 
 # Problems 41 - 60
 
-1) Laws of Exponents
+~~1) Laws of Exponents~~
 
 2) Right Triangle Problems
 
@@ -155,10 +155,10 @@ Least Common Multiple (LCM)~~
 10) Inverse functions
 
 # Formatting
-1) Horizontal line for each question
+~~1) Horizontal line for each question~~
 
 ~~2) Answer Key~~
 
 ~~3) Dealing with second page of problems~~
 
-4) Alignment problems in the introduction part
+~~4) Alignment problems in the introduction part~~
