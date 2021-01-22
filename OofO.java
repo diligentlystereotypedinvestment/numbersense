@@ -214,4 +214,29 @@ public class OofO {
 		}
 		return "";
 	}
+
+	public String exponent(){
+		Random rand = new Random();
+		int base = rand.nextInt(6) + 3;
+		int[] exponent = new int[3];
+		for (int i = 0; i < 3; i++) {
+			exponent[i] = rand.nextInt(10);
+		}
+		String question = "$" + base + "^" + exponent[0];
+		double solution = 0;
+		for(int i = 1; i < 3; i++){
+			int mathsign = rand.nextInt(2);
+			if(mathsign == 0){
+				question = question + "\\times" + base + "^" + exponent[i];
+				solution = exponent[i] + solution;
+			}
+			if(mathsign == 1){
+				question = question + "\\div" + base + "^" + exponent[i];
+				solution = exponent[i] - solution;
+			}
+		}
+		question = question + "$";
+		outsolution = solution;
+		return question;
+	}
 }

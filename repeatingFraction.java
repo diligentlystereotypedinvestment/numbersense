@@ -5,26 +5,26 @@ public class repeatingFraction {
 	private String deci;
 
 	public void Gen(){
-       	 	Random rand = new Random();
-        	int denom;
-        	int num;
-        	String tempFrac;
-        	/*denominator don't know why this is here*/ int chooser = rand.nextInt(9);
-        	if(chooser == 0){
-            		denom = 3;
-            		num = rand.nextInt(denom - 1) + 1;
-            		tempFrac = num + "/" + denom;
-            		frac = simplify.getFraction(num + "/" + denom);
-            		if(LCMandGCF.GCF(denom, num) != 1){
-            			deci = repeatingDeci(frac);
-            		}
-        	}
-        	if(chooser == 1){
-            		denom = 6;
-            		num = rand.nextInt(denom - 1) + 1;
-            		frac = simplify.getFraction(num + "/" + denom);
-        	}
-        	if(chooser == 2){
+        Random rand = new Random();
+        int denom;
+        int num;
+        String tempFrac;
+        /*denominator don't know why this is here*/ int chooser = rand.nextInt(9);
+        if(chooser == 0){
+            denom = 3;
+            num = rand.nextInt(denom - 1) + 1;
+            tempFrac = num + "/" + denom;
+            frac = simplify.getFraction(num + "/" + denom);
+            if(LCMandGCF.GCF(denom, num) != 1){
+            
+            }
+        }
+        if(chooser == 1){
+            denom = 6;
+            num = rand.nextInt(denom - 1) + 1;
+            frac = simplify.getFraction(num + "/" + denom);
+        }
+        if(chooser == 2){
             denom = 9;
             num = rand.nextInt(denom - 1) + 1;
             frac = simplify.getFraction(num + "/" + denom);
@@ -63,33 +63,29 @@ public class repeatingFraction {
     }
 
     public String repeatingDeci(String frac){
-        int denom = Integer.valueOf(frac.substring(frac.indexOf("/") + 1));
+        int denom = Integer.valueOf(frac.substring(frac.indexOf("/")));
         int num = Integer.valueOf(frac.substring(0, frac.indexOf("/")));
-	/*
         if(denom == 3){
-		return (int)(100.0 * num / denom) + "...";
+            return "$" + "0.\\overline{" + (int)(10.0 * num/denom) + "}";
         }
         if(denom == 6){
-		return (int)(100.0 * num / denom) + "...";
+            return "$0.\\overline{" + (int)(100.0 * num/denom) + "}";
         }
         if(denom == 9){
-		return (int)(100.0 * num / denom) + "...";
+            return "$0.\\overline{" + (int)(10.0 * num/denom) + "}";
         }
         if(denom == 11){
-		
-		return (int)(100.0 * num / denom) + "...";
+            return "$0.\\overline{" + (int)(100.0 * num/denom) + "}";
         }
         if(denom == 12){
-		return "$0.\\overline{" + (int)(100.0 * num/denom) + "}";
+            return "$0.\\overline{" + (int)(100.0 * num/denom) + "}";
         }
         if(denom == 15){
-		return "$0.\\overline{" + (int)(10.0 * num/denom) + "}";
+            return "$0.\\overline{\\overline{0." + (int)(10.0 * num/denom) + "}";
         }
         if(denom == 30){
-		return "$0.\\overline{" + (int)(10.0 * num/denom) + "}";
+            return "$\\overline{0." + (int)(10.0 * num/denom) + "}";
         }
         return "";
-	*/
-	return (int)(100.0 * num / denom) + "...";
     }
 }

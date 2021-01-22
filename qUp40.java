@@ -357,6 +357,11 @@ class qUp40 {
             questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
             answers.add(String.valueOf(poly.getAnswer()));
 		}
+		if(random == 43 || random == 44){
+			OofO exponent = new OofO();
+			System.out.println(exponent.exponent());
+
+		}
 		if (random < 15) {
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);
