@@ -86,7 +86,7 @@ public class genRunner {
 		System.out.println("\\clearpage\n\\begin{multicols}{4}\n\\doublespace");
 		int i = 1;
 		for (String e : answers) {
-			System.out.print(i + ") " + e + "\n\n");
+			System.out.print(i + ") " + (e) + "\n\n");	
 			i++;
 		}
 		System.out.println("\\enddoublespace\n\\end{multicols}");

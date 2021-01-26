@@ -124,7 +124,6 @@ class qUp40 {
 			 */
 			// System.out.println();
 			// System.out.println();
-
 		}
 		if (random == 29 || random == 30) {// Sets
 			Set<String> setA = new HashSet<String>();
@@ -147,24 +146,20 @@ class qUp40 {
 				Set<String> union = new HashSet<String>(setA);
 				union.addAll(setB);
 				printmess = ("(" + i + ") How many elements are in the union of " + setA + " and " + setB + "?");
-
 				answers.add(String.valueOf(1.0 * union.size()));
 			}
 			if (choose == 2) {// intercept
 				Set<String> intersection = new HashSet<String>(setA);
 				intersection.retainAll(setB);
 				printmess = ("(" + i + ") How many elements are in the intercept of " + setA + " and " + setB + "?");
-
 				answers.add(String.valueOf(1.0 * (intersection.size())));
 			}
 			if (choose == 3) {// proper
 				printmess = ("(" + i + ") How many proper subsets are in " + setA + "?");
-
 				answers.add(String.valueOf(1.0 * Math.pow(2, setA.size()) - 1));
 			}
 			if (choose == 4) {// improper
 				printmess = ("(" + i + ") How many improper subsets are in " + setA + "?");
-
 				answers.add(String.valueOf(1.0));
 			}
 			if (choose == 5) {// choose
@@ -174,18 +169,15 @@ class qUp40 {
 				if (doublechoose == 1) {
 					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA
 							+ "?");
-
 					answers.add(String.valueOf(1.0 * chose.choose(setA.size(), chooselength)));
 				} else if (doublechoose == 2) {
 					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA
 							+ " + subsets of length " + (setA.size() - chooselength) + " in " + setA + "?");
-
 					answers.add(String.valueOf(2.0 * chose.choose(setA.size(), chooselength)));
 				}
 			}
 			if (choose == 6) {// number of subsets
 				printmess = ("(" + i + ") How many subsets are there in " + setA + "?");
-
 				answers.add(String.valueOf(1.0 * Math.pow(2, setA.size())));
 			}
 			questions.add(printmess);// System.out.print(printmess);
