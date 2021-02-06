@@ -6,7 +6,7 @@ class polygons{
 
 	public void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		Random rand = new Random();
-		int sides = rand.nextInt(9);
+		int sides = rand.nextInt(3);
 		int problem = rand.nextInt(3);
 		int sideLength = 2 * (rand.nextInt(3) + 1);
 		if(sides == 0){//equilateral triangle
@@ -46,6 +46,27 @@ class polygons{
 			}
 		}
 
+		if(sides == 2){//circles
+			if(problem == 0){//diameter to area
+				questions.add("What is the area of a circle with a diameter of " + (2 * sideLength) + "?");
+				answers.add("$" + (int)Math.pow(sideLength, 2)+ "\\pi$");
+			}	
+			if(problem == 1){//circumference
+				questions.add("What is the circumference of a circle with a radius of " + sideLength + "$\\sqrt{2}$?");
+				answers.add("$" + (2 * sideLength) + "\\pi$");
+			}
+			if(problem == 2){
+				questions.add("What is the area of a circle with a radius of " + sideLength + "?");
+				answers.add("$" + (int)Math.pow(sideLength, 2)+ "\\pi$");
+			}		
+		}
+	}
+
+	public void gen2(ArrayList<String> questions, ArrayList<String> answers, int i){
+		Random rand = new Random();
+		int sides = rand.nextInt(7) + 2;
+		int problem = rand.nextInt(3);
+		int sideLength = 2 * (rand.nextInt(3) + 1);
 		if(sides == 2){//pentagons
 			problem = rand.nextInt(4);
 			nagon penta = new nagon(5, sideLength, "pentagon");
