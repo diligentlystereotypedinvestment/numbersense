@@ -64,11 +64,11 @@ Least Common Multiple (LCM)~~
 
 11) Systems of Equations
 
-12) Repeating Decimals to Fractions - I think this is done
+~~12) Repeating Decimals to Fractions - I think this is done~~
 
 ~~13) More Remainder Type Problems - I think this is done~~
 
-14) Perimeter & Area of Polygons and Circles
+1~~4) Perimeter & Area of Polygons and Circles~~
 
 ~~15) Sequences~~
 
@@ -82,7 +82,7 @@ Least Common Multiple (LCM)~~
 
 3) Coordinate Geometry Problems
 
-4) Regular Polygon Problems
+~~4) Regular Polygon Problems~~
 
 5) Inequalities
 
