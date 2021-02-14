@@ -51,6 +51,9 @@ public class fracOperations {
 		//result.append(RIGHT_PARENTHESIS);
 		return result.toString();
 	}
+	public String toString(){
+		return simplify.getFraction(num + "/" + denom);	
+	}
 	// class should be pretty obvious
 	public static String fracAdd(String frac1, String frac2) {
 		int num1 = Integer.valueOf((frac1.substring(0, frac1.indexOf("/"))));
