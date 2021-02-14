@@ -66,9 +66,9 @@ public class polynomial {
 
 	}
 	public String getQuestion(){
-        return problem;
+		return problem;
 	}
 	public String getAnswer(){
-        return answer;
+		return answer;
 	}
 }

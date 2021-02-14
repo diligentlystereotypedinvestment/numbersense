@@ -47,7 +47,7 @@ class nagon{
 	public static void gen(int sides, int sideLength, int tracker, int realPolySides, String name, ArrayList<String> questions, ArrayList<String> answers){
 		Random rand2 = new Random();
 		if(sides == tracker){
-	int problem = rand2.nextInt(4);
+			int problem = rand2.nextInt(4);
 			nagon penta = new nagon(sides, sideLength, name);
 			if(problem == 0){//area
 				questions.add("What is the area of a " + penta.getName() + " with a side length of " + sideLength + " and an apothem of " + penta.getApothem() + "?");
@@ -65,6 +65,6 @@ class nagon{
 				questions.add("What is the center angle of a " + penta.getName() + "?");
 				answers.add(String.valueOf(penta.getCenter()));
 			}
-	}
+		}
 	}
 }

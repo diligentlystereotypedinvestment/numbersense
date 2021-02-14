@@ -469,11 +469,11 @@ class qUp20 {
 				printmess = ("(" + i + ") What is the remainder of " + number + " $\\div$" + dividend + "?");
 				answers.add(String.valueOf(1.0 * (number % dividend)));
 			} /*
-				 * else if (dividend == 12) {// power int base = rand.nextInt(12) + 2; int power
-				 * = rand.nextInt(12) + 2; printmess = ("(" + i + ") What is the remainder of $"
-				 * + base + "^{" + power + "}" + "\\div" + dividend + "?$"); double exponentr =
-				 * Math.pow(base, power); answers.add(String.valueOf(exponentr % dividend));
-				 */
+			   * else if (dividend == 12) {// power int base = rand.nextInt(12) + 2; int power
+			   * = rand.nextInt(12) + 2; printmess = ("(" + i + ") What is the remainder of $"
+			   * + base + "^{" + power + "}" + "\\div" + dividend + "?$"); double exponentr =
+			   * Math.pow(base, power); answers.add(String.valueOf(exponentr % dividend));
+			   */
 			// }
 			else if (dividend == 12) {// expression
 				OofO remainderex = new OofO();
@@ -529,7 +529,7 @@ class qUp20 {
 
 		}
 		if (random == 14) {// Number Theory Problems Involving: Prime Numbers, Divisors, Sums of Divisors,
-							// etc.
+			// etc.
 			int choose = rand.nextInt(15) + 1;
 			int base = rand.nextInt(100) + 21;
 			PrimeDivisors primes = new PrimeDivisors();

@@ -11,7 +11,7 @@ public class Distribution {
 		int variation = rand.nextInt(tensMultiple - 2) + 1;
 		int multiple = rand.nextInt(20) + 5;
 		stringmess = (tensMultiple - variation) + "$\\cdot$" + multiple + " + " + multiple + "$\\cdot$"
-				+ (tensMultiple + variation);
+			+ (tensMultiple + variation);
 		answer = tensMultiple * multiple;
 	}
 

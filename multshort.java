@@ -1,11 +1,11 @@
 import java.util.Random;
 
 /*
-132 Factoring of Numerical Problems
-138 Multiplying Mixed Numbers
+   132 Factoring of Numerical Problems
+   138 Multiplying Mixed Numbers
 
-134 Sum of Squares: Factoring Method
-*/
+   134 Sum of Squares: Factoring Method
+   */
 public class multshort {
 	private double answer;
 	private String fullAnswer;
@@ -217,7 +217,7 @@ public class multshort {
 				int chooser2 = rand.nextInt(3);
 				if (chooser2 == 0) {
 					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " + " + add2 + " \\times "
-							+ (2000 + differ2000) + " = $";
+						+ (2000 + differ2000) + " = $";
 					answer = (add1 + add2) * (2000 + differ2000);
 				}
 				if (chooser2 == 1) {
@@ -228,7 +228,7 @@ public class multshort {
 				if (chooser2 == 2) {
 					add1 = rand.nextInt(29) + 11;
 					problem = "$" + add1 + " \\times " + (2000 - differ2000) + " + " + add1 + " \\times " + (differ2000)
-							+ " = $";
+						+ " = $";
 					answer = add1 * 2000;
 				}
 
@@ -240,7 +240,7 @@ public class multshort {
 				int chooser2 = rand.nextInt(3);
 				if (chooser2 == 0) {
 					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add2 + " \\times "
-							+ (2000 + differ2000) + " = $";
+						+ (2000 + differ2000) + " = $";
 					answer = (add1 - add2) * (2000 + differ2000);
 				}
 				if (chooser2 == 1) {
@@ -251,7 +251,7 @@ public class multshort {
 				if (chooser2 == 2) {
 					add1 = rand.nextInt(29) + 11;
 					problem = "$" + add1 + " \\times " + (2000 + differ2000) + " - " + add1 + " \\times " + (differ2000)
-							+ " = $";
+						+ " = $";
 					answer = add1 * 2000;
 				}
 
@@ -266,7 +266,7 @@ public class multshort {
 				int num = rand.nextInt(denom - 1) + 1;
 				int wholeNum = rand.nextInt(7) + 4;
 				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{"
-						+ (denom - num) + "}{" + denom + "} = ";
+					+ (denom - num) + "}{" + denom + "} = ";
 				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
 						(wholeNum + " " + (denom - num) + "/" + denom));
 			}
@@ -276,7 +276,7 @@ public class multshort {
 				int wholeNum = rand.nextInt(7) + 4;
 				int scalar = rand.nextInt(2) + 2;
 				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{"
-						+ num + "}{" + denom + "} = ";
+					+ num + "}{" + denom + "} = ";
 				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
 						(wholeNum * scalar + " " + num + "/" + denom));
 			}

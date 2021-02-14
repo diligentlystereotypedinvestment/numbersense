@@ -6,7 +6,7 @@ public class sequences {
 	private String answer;
 
 	public void questionGen() {// reciprocals of triangle numbers, general arithmetic, geometric, even, odd,
-								// square, cube, alternating square, first m integers
+		// square, cube, alternating square, first m integers
 		Random rand = new Random();
 		int choose = rand.nextInt(9) + 1;
 		if (choose == 1) {// first m integers

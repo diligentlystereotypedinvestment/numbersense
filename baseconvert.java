@@ -58,21 +58,21 @@ public class baseconvert {
 				if (counter == 26) {
 					tempog = (int) (tempog + Integer.valueOf(eachdeci[eachdeci.length - j - 1]) * Math.pow(base, j));
 				}
-//				if (eachdeci[eachdeci.length - j - 1].equals("A")) {
-//					tempog = (int) (tempog + 10 * Math.pow(base, j));
-//				}
-//				if (eachdeci[eachdeci.length - j - 1].equals("B")) {
-//					tempog = (int) (tempog + 11 * Math.pow(base, j));
-//				}
-//				if (eachdeci[eachdeci.length - j - 1].equals("C")) {
-//					tempog = (int) (tempog + 12 * Math.pow(base, j));
-//				}
-//				if (eachdeci[eachdeci.length - j - 1].equals("D")) {
-//					tempog = (int) (tempog + 13 * Math.pow(base, j));
-//				}
-//				if (!eachdeci[eachdeci.length - j - 1].equals("A") && !eachdeci[eachdeci.length - j - 1].equals("B") && !eachdeci[eachdeci.length - j - 1].equals("C") && !eachdeci[eachdeci.length - j - 1].equals("D")) {
-//					tempog = (int) (tempog + Integer.valueOf(eachdeci[eachdeci.length - j - 1]) * Math.pow(base, j));
-//				}
+				//				if (eachdeci[eachdeci.length - j - 1].equals("A")) {
+				//					tempog = (int) (tempog + 10 * Math.pow(base, j));
+				//				}
+				//				if (eachdeci[eachdeci.length - j - 1].equals("B")) {
+				//					tempog = (int) (tempog + 11 * Math.pow(base, j));
+				//				}
+				//				if (eachdeci[eachdeci.length - j - 1].equals("C")) {
+				//					tempog = (int) (tempog + 12 * Math.pow(base, j));
+				//				}
+				//				if (eachdeci[eachdeci.length - j - 1].equals("D")) {
+				//					tempog = (int) (tempog + 13 * Math.pow(base, j));
+				//				}
+				//				if (!eachdeci[eachdeci.length - j - 1].equals("A") && !eachdeci[eachdeci.length - j - 1].equals("B") && !eachdeci[eachdeci.length - j - 1].equals("C") && !eachdeci[eachdeci.length - j - 1].equals("D")) {
+				//					tempog = (int) (tempog + Integer.valueOf(eachdeci[eachdeci.length - j - 1]) * Math.pow(base, j));
+				//				}
 
 			}
 		}

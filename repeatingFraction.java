@@ -4,23 +4,13 @@ public class repeatingFraction {
 	private String frac;
 	private String deci;
 
-	public void Gen(int i, ArrayList<String> questions, ArrayList<String> answers){
+	public void Gen(){
 		Random rand = new Random();
-		int denom = rand.nextInt(12) + 3;
-		int num = rand.nextInt(denom - 2) + 1;
-		fracOperations fraction = new fracOperations(num, denom);
-		int choose = rand.nextInt(2);
-		if(choose == 0){
-			questions.add(i + ") What is $\\frac{" + num + "}{" + denom + "} as a decimal?");
-			answers.add(fraction.toDeci());
-		}
-		if(choose == 1){
-			questions.add(i + ") What is " + fraction.toDeci() + " as a decimal?");
-			answers.add("$\\frac{" + num + "}{" + denom + "}");
-		}
+		int denom;
+		int num;
+		String tempFrac;
 		/*denominator don't know why this is here*/ int chooser = rand.nextInt(9);
-		/*
-		if(chooser == 0{
+		if(chooser == 0){
 			denom = 3;
 			num = rand.nextInt(denom - 1) + 1;
 			tempFrac = num + "/" + denom;
@@ -69,7 +59,7 @@ public class repeatingFraction {
 			num = rand.nextInt(denom - 1) + 1;
 			frac = simplify.getFraction(num + "/" + denom);
 		}
-	*/
+
 	}
 
 	public String repeatingDeci(String frac){

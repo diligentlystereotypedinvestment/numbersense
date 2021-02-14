@@ -28,34 +28,34 @@ class qUp40 {
 
 		}
 		if (random == 17 || random == 18) {// substitution
-//					String printmess = "";
-//					int base = rand.nextInt(12) + 2;
-//					int power = rand.nextInt(12) + 2;
-//					printmess = ("(" + i + ") What is " + base + "^{" + power + "}" + "?$");
-//					double exponentr = Math.pow(base, power);
-//					answers.add(String.valueOf(exponentr));
-//					questions.add(printmess);//System.out.print(printmess);
-//					for (int q = 0; q < 60 - printmess.length(); q++) {
-//						//System.out.print("\\textunderscore");
-//					}
-//					//System.out.println();
-//					//System.out.println();
-//						
+			//					String printmess = "";
+			//					int base = rand.nextInt(12) + 2;
+			//					int power = rand.nextInt(12) + 2;
+			//					printmess = ("(" + i + ") What is " + base + "^{" + power + "}" + "?$");
+			//					double exponentr = Math.pow(base, power);
+			//					answers.add(String.valueOf(exponentr));
+			//					questions.add(printmess);//System.out.print(printmess);
+			//					for (int q = 0; q < 60 - printmess.length(); q++) {
+			//						//System.out.print("\\textunderscore");
+			//					}
+			//					//System.out.println();
+			//					//System.out.println();
+			//						
 		}
 		if (random == 19 || random == 20) {// Word Problems
-//					String printmess = "";
-//					int base = rand.nextInt(12) + 2;
-//					int power = rand.nextInt(12) + 2;
-//					printmess = ("(" + i + ") What is " + base + "^{" + power + "}" + "?$");
-//					double exponentr = Math.pow(base, power);
-//					answers.add(String.valueOf(exponentr));
-//					questions.add(printmess);//System.out.print(printmess);
-//					for (int q = 0; q < 60 - printmess.length(); q++) {
-//						//System.out.print("\\textunderscore");
-//					}
-//					//System.out.println();
-//					//System.out.println();
-//						
+			//					String printmess = "";
+			//					int base = rand.nextInt(12) + 2;
+			//					int power = rand.nextInt(12) + 2;
+			//					printmess = ("(" + i + ") What is " + base + "^{" + power + "}" + "?$");
+			//					double exponentr = Math.pow(base, power);
+			//					answers.add(String.valueOf(exponentr));
+			//					questions.add(printmess);//System.out.print(printmess);
+			//					for (int q = 0; q < 60 - printmess.length(); q++) {
+			//						//System.out.print("\\textunderscore");
+			//					}
+			//					//System.out.println();
+			//					//System.out.println();
+			//						
 		}
 
 		if (random == 21 || random == 22) {// Inverses
@@ -93,16 +93,16 @@ class qUp40 {
 
 		}
 		if (random == 25 || random == 26) {// Proportions
-//					Absolute ooo = new Absolute();
-//					String printmess = ("$(" + i + ")" + "" + ooo.abolute());
-//					questions.add(printmess);//System.out.print(printmess);
-//					answers.add(String.valueOf(1.0 * ooo.outsolution));
-//					for (int q = 0; q < 50 - printmess.length(); q++) {
-//						//System.out.print("\\textunderscore");
-//					}
-//					//System.out.println();
-//					//System.out.println();
-//					
+			//					Absolute ooo = new Absolute();
+			//					String printmess = ("$(" + i + ")" + "" + ooo.abolute());
+			//					questions.add(printmess);//System.out.print(printmess);
+			//					answers.add(String.valueOf(1.0 * ooo.outsolution));
+			//					for (int q = 0; q < 50 - printmess.length(); q++) {
+			//						//System.out.print("\\textunderscore");
+			//					}
+			//					//System.out.println();
+			//					//System.out.println();
+			//					
 		}
 		if (random == 27 || random == 28) {// Square roots/ cube roots
 			int choose = rand.nextInt(2) + 1;
@@ -344,10 +344,10 @@ class qUp40 {
 
 		}
 		if(random == 41 || random == 42){
-            polynomial poly = new polynomial();
-            poly.Gen();
-            questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
-            answers.add(String.valueOf(poly.getAnswer()));
+			polynomial poly = new polynomial();
+			poly.Gen();
+			questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
+			answers.add(String.valueOf(poly.getAnswer()));
 		}
 		if(random == 43 || random == 44){
 			OofO exponent = new OofO();

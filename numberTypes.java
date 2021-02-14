@@ -8,7 +8,7 @@ public class numberTypes {
 	private int answer;
 
 	public numberTypes(ArrayList<Integer> tempSeries, String nameType) {// may have a problem with the clone being a
-																		// reference instead of real copy
+		// reference instead of real copy
 		this.series = new ArrayList<>(tempSeries);
 		this.nameType = nameType;
 	}
