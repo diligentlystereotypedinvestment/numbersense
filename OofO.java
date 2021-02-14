@@ -220,7 +220,7 @@ public class OofO {
 		int base = rand.nextInt(6) + 3;
 		int[] exponent = new int[3];
 		for (int i = 0; i < 3; i++) {
-			exponent[i] = rand.nextInt(10);
+			exponent[i] = rand.nextInt(10) + 2;
 		}
 		String question = "$" + base + "^" + exponent[0];
 		double solution = 0;

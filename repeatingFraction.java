@@ -1,5 +1,5 @@
 import java.util.Random;
-import java.util.ArrayLists;
+import java.util.ArrayList;
 
 public class repeatingFraction {
 	private String frac;
@@ -11,6 +11,6 @@ public class repeatingFraction {
 		int num = rand.nextInt(denom - 2) + 1;
 		fracOperations fraction = new fracOperations(num, denom);
 		questions.add(i + ") What is " + fraction.toDeci() + " as a fraction?");
-		answers.add(fraction);
+		answers.add(fraction.toString());
 	}
 }

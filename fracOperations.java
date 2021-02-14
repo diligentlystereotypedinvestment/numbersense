@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
 public class fracOperations {
 	private int num;
 	private int denom;
@@ -6,7 +11,7 @@ public class fracOperations {
 	private static final String LEFT_PARENTHESIS = "\\overline";
 	//private static final String RIGHT_PARENTHESIS = ")";
 
-	public class fracOperations(int num, int denom){
+	public fracOperations(int num, int denom){
 		this.num = num;
 		this.denom = denom;
 	}
@@ -25,7 +30,7 @@ public class fracOperations {
 		return String.valueOf(value) + DOT + divider(remainder, b);
 	}
 
-	public static String divider(){
+	public static String divider(final int a, final int b){
 		final Map<Integer, Integer> remainderIndexMap = new HashMap<>();
 		final List<Integer> values = new ArrayList<>();
 
@@ -50,9 +55,6 @@ public class fracOperations {
 		}
 		//result.append(RIGHT_PARENTHESIS);
 		return result.toString();
-	}
-	public String toString(){
-		return simplify.getFraction(num + "/" + denom);	
 	}
 	// class should be pretty obvious
 	public static String fracAdd(String frac1, String frac2) {
@@ -103,5 +105,8 @@ public class fracOperations {
 		answer[3] = fracMult(parts1[1], parts2[1], false);
 		return simplify
 			.getProper(fracAdd(fracAdd(answer[0], answer[1], false), fracAdd(answer[2], answer[3], false), false));
+	}
+	public String toString(){
+		return simplify.getFraction(num + "/" + denom);	
 	}
 }

@@ -223,7 +223,24 @@ class qUp40 {
 			// System.out.println();
 
 		}
-		if (random == 33 || random == 34) {// Solving Simple Equations
+		if (random == 33 || random == 34) {// Solving Simple Equations// System.out.print(printmess);
+            equations.gen(i, questions, answers);
+			/*
+			 * for (int q = 0; q < 50 - printmess.length(); q++) {
+			 * //System.out.print("\\textunderscore"); }
+			 */
+			// System.out.println();
+			// System.out.println();
+
+		}
+		if (random == 35 || random == 36) {// system of equations
+            int problem = rand.nextInt(2);
+            if(problem == 0){
+			systemOfEquations sys = new systemOfEquations();
+			sys.Gen();
+			questions.add("(" + i + ")" + sys.getQuestion());
+			answers.add(String.valueOf(sys.getAnswer()));
+			} else{
 			int x1 = rand.nextInt(6) + 1;
 			int x2 = rand.nextInt(6) + 1;
 			int y1 = rand.nextInt(6) + 1;
@@ -313,20 +330,9 @@ class qUp40 {
 					answers.add(String.valueOf(newequal / newy));
 				}
 			}
-			questions.add(printmess);// System.out.print(printmess);
-			/*
-			 * for (int q = 0; q < 50 - printmess.length(); q++) {
-			 * //System.out.print("\\textunderscore"); }
-			 */
-			// System.out.println();
-			// System.out.println();
-
-		}
-		if (random == 35 || random == 36) {// system of equations
-			systemOfEquations sys = new systemOfEquations();
-			sys.Gen();
-			questions.add("(" + i + ")" + sys.getQuestion());
-			answers.add(String.valueOf(sys.getAnswer()));	
+			questions.add(printmess);
+			}
+			
 		}
 		if (random == 37 || random == 38) {// repeating decimal to fraction
 
@@ -343,18 +349,19 @@ class qUp40 {
 			answers.add(String.valueOf(exponentr % dividend));
 
 		}
-		if(random == 41 || random == 42){
+		if(random == 41 || random == 42){//polynomial
 			polynomial poly = new polynomial();
 			poly.Gen();
 			questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
 			answers.add(String.valueOf(poly.getAnswer()));
 		}
-		if(random == 43 || random == 44){
+		if(random == 43 || random == 44){//exponents
 			OofO exponent = new OofO();
-			System.out.println(exponent.exponent());
+			questions.add("(" + i + ")" + exponent.exponent());
+			answers.add(String.valueOf(exponent.outsolution));
 
 		}
-		if (random < 15) {
+		if (random < 15) {//problem before it
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);
 		}
