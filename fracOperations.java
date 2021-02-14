@@ -3,8 +3,8 @@ public class fracOperations {
 	private int denom;
 	private static final String DOT = ".";
 	private static final String ERROR = "ERROR";
-	private static final String LEFT_PARENTHESIS = "(";
-	private static final String RIGHT_PARENTHESIS = ")";
+	private static final String LEFT_PARENTHESIS = "\\overline";
+	//private static final String RIGHT_PARENTHESIS = ")";
 
 	public class fracOperations(int num, int denom){
 		this.num = num;
@@ -45,11 +45,10 @@ public class fracOperations {
 		for (int i = 0; i < index; i++) {
 			result.append(values.get(i));
 		}
-		result.append(LEFT_PARENTHESIS);
 		for (int i = index; i < values.size(); i++) {
 			result.append(values.get(i));
 		}
-		result.append(RIGHT_PARENTHESIS);
+		//result.append(RIGHT_PARENTHESIS);
 		return result.toString();
 	}
 	// class should be pretty obvious
