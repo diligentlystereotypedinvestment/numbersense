@@ -222,16 +222,16 @@ public class OofO {
 		for (int i = 0; i < 3; i++) {
 			exponent[i] = rand.nextInt(10) + 2;
 		}
-		String question = "$" + base + "^" + exponent[0];
+		String question = "$" + base + "^{" + exponent[0] + "}";
 		double solution = 0;
 		for(int i = 1; i < 3; i++){
 			int mathsign = rand.nextInt(2);
 			if(mathsign == 0){
-				question = question + "\\times" + base + "^" + exponent[i];
+				question = question + "\\times" + base + "^{" + exponent[i] + "}";
 				solution = exponent[i] + solution;
 			}
 			if(mathsign == 1){
-				question = question + "\\div" + base + "^" + exponent[i];
+				question = question + "\\div" + base + "^{" + exponent[i] + "}";
 				solution = exponent[i] - solution;
 			}
 		}

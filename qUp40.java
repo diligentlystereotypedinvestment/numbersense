@@ -3,7 +3,7 @@ import java.util.*;
 class qUp40 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
-		int random = rand.nextInt(46) + 1;
+		int random = rand.nextInt(42) + 1;
 		if (random == 15 || random == 16) {// power of numbers
 			String printmess = "";
 			int base = rand.nextInt(19) + 2;
@@ -335,7 +335,7 @@ class qUp40 {
 			
 		}
 		if (random == 37 || random == 38) {// repeating decimal to fraction
-
+            		repeatingFraction.gen(i, questions, answers);
 		}
 		// power
 		if (random == 39 || random == 40) {// I think this is more remainder problems
@@ -355,13 +355,14 @@ class qUp40 {
 			questions.add("(" + i + ")" + String.valueOf(poly.getQuestion()));
 			answers.add(String.valueOf(poly.getAnswer()));
 		}
-		if(random == 43 || random == 44){//exponents
+		/*if(random == 43 || random == 44){//exponents
 			OofO exponent = new OofO();
 			questions.add("(" + i + ")" + exponent.exponent());
 			answers.add(String.valueOf(exponent.outsolution));
 
 		}
-		if (random < 15) {//problem before it
+		*/
+		if (random < 15) {//problems before it
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);
 		}

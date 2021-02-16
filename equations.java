@@ -19,7 +19,7 @@ public class equations{
 			sign = '-';	
 		}
 		if(choose == 0){//two variable with one being substituted
-			questions.add("(" + i + ") What is the value of $" + variable1 + " $ if $" + coef[0] + variable1 + " = " + coef[1] + variable2 + " " + sign + " " + coef[2] + "$ and $" + variable2 + " = " + variableVal);
+			questions.add("(" + i + ") What is the value of $" + variable1 + " $ if $" + coef[0] + variable1 + " = " + coef[1] + variable2 + " " + sign + " " + coef[2] + "$ and $" + variable2 + " = " + variableVal + "$?");
 			answers.add(simplify.getFraction((variableVal * coef[1] + coef[2]) + "/" + coef[0]));
 		}
 		if(choose == 1){//one variable

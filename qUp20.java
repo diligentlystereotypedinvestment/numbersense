@@ -312,14 +312,16 @@ class qUp20 {
 
 		if (random == 7) {// conversion
 			Conversion convert = new Conversion();
+			convert.questionGen(i);
 			String printmess = convert.getQuestion();
-			// questions.add(printmess);
-			System.out.print(printmess);
+			questions.add(printmess);
+			answers.add(convert.getAnswer());
+			//System.out.print(printmess);
 			// for (int q = 0; q < 60 - printmess.length(); q++) {
 			// System.out.print("\\textunderscore");
 			// }
-			System.out.println();
-			System.out.println();
+			//System.out.println();
+			//System.out.println();
 
 		}
 

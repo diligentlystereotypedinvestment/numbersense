@@ -8,8 +8,8 @@ public class fracOperations {
 	private int denom;
 	private static final String DOT = ".";
 	private static final String ERROR = "ERROR";
-	private static final String LEFT_PARENTHESIS = "\\overline";
-	//private static final String RIGHT_PARENTHESIS = ")";
+	private static final String LEFT_PARENTHESIS = "\\overline{";
+	private static final String RIGHT_PARENTHESIS = "}";
 
 	public fracOperations(int num, int denom){
 		this.num = num;
@@ -50,12 +50,21 @@ public class fracOperations {
 		for (int i = 0; i < index; i++) {
 			result.append(values.get(i));
 		}
+		result.append(LEFT_PARENTHESIS);
 		for (int i = index; i < values.size(); i++) {
 			result.append(values.get(i));
 		}
-		//result.append(RIGHT_PARENTHESIS);
+		result.append(RIGHT_PARENTHESIS);
 		return result.toString();
 	}
+
+	public static boolean repeating(int num, int den){
+		if(divide(num, den).indexOf("\\overline") == -1){
+			return false;
+		}
+		return true;
+	}
+
 	// class should be pretty obvious
 	public static String fracAdd(String frac1, String frac2) {
 		int num1 = Integer.valueOf((frac1.substring(0, frac1.indexOf("/"))));

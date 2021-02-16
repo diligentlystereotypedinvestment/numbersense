@@ -4,12 +4,12 @@ public class Conversion {
 	Random rand = new Random();
 	String unit1 = "";
 	String unit2 = "";
-	String answers;
-	String question;
+	String answers = "";
+	String question = "";
 
 	public void questionGen(int i) {
-		int choosesys = rand.nextInt(1) + 1;
-		if (choosesys == 1) {
+		int choosesys = rand.nextInt(2);
+		if (choosesys == 0) {//percent/fractions
 			int denom = (int) Math.pow(2, rand.nextInt(3) + 2);
 			int num = rand.nextInt(denom) + 1;
 			int denom2 = (rand.nextInt(4) + 1) * 3;
@@ -38,13 +38,19 @@ public class Conversion {
 				question = ("(" + i + ") What is " + "$\\frac{" + num2 + "}{" + denom2 + "}$ \\% as a decimal?");
 				answers = (String.valueOf(num2 / denom2));
 			}
-		} else {
-			answers = "";
+		}
+		if(choosesys == 1){
+			romanNum roman = new romanNum();
+			question = ("(" + i + ") What is " + roman.getRoman() + " in arabic?");
+			answers = String.valueOf(roman.getArabic());
 		}
 	}
 
 	public String getQuestion() {
 		return question;
+	}
+	public String getAnswer(){
+		return answers;
 	}
 
 }
