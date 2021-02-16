@@ -19,8 +19,9 @@ Approximation Problems are also incomplete
 ~~6) Squaring Numbers~~
 
 7) Conversion Problems (either way):
- Percent/Fractions, English/Metric,
- Roman Numerals/Arabic Numerals,
+ ~~Percent/Fractions,~~
+ English/Metric,
+ ~~Roman Numerals/Arabic Numerals,~~
  Measurement units
 (length, weight, capacity, time)
 
