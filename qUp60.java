@@ -26,6 +26,9 @@ class qUp60 {
 			questions.add(seq.getQuestion());
 			answers.add(seq.getAnswer());
 		}
+		if(random == 13 || random == 14 || random == 15){
+			polygonalNumbers.gen(questions, answers, i);
+		}
 
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();

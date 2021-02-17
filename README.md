@@ -109,7 +109,7 @@ Least Common Multiple (LCM)~~
 
 16) Roots of equations
 
-17) Polygonal numbers
+~~17) Polygonal numbers~~
 
 # Problems 61 - 70
 
