@@ -326,7 +326,6 @@ class qUp20 {
 		}
 
 		if (random == 8) {// gcf and lcm
-			LCMandGCF gcf = new LCMandGCF();
 			int choose = rand.nextInt(4) + 1;
 			int num1 = rand.nextInt(20) + 2;
 			int num2 = rand.nextInt(120) + num1;
@@ -334,15 +333,15 @@ class qUp20 {
 			String printmess = "";
 			if (choose == 1) {// gcf of two
 				printmess = ("(" + i + ")" + "The GCF of " + num1 + " and " + num2 + " is");
-				answers.add(String.valueOf(1.0 * gcf.GCF(num1, num2)));
+				answers.add(String.valueOf(1.0 * LCMandGCF.GCF(num1, num2)));
 			}
 			if (choose == 2) {// lcm of two
 				printmess = ("(" + i + ")" + "The LCM of " + num1 + " and " + num2 + " is");
-				answers.add(String.valueOf(1.0 * gcf.LCM(num1, num2)));
+				answers.add(String.valueOf(1.0 * LCMandGCF.LCM(num1, num2)));
 			}
 			if (choose == 3) {// gcf of three
 				printmess = ("(" + i + ")" + "The GCF of " + num1 + ", " + num2 + ", and " + num3 + " is");
-				answers.add(String.valueOf(1.0 * gcf.GCF3(num1, num2, num3)));
+				answers.add(String.valueOf(1.0 * LCMandGCF.GCF3(num1, num2, num3)));
 			}
 			if (choose == 4) {// lcm of three
 				printmess = ("(" + i + ")" + "The LCM of " + num1 + ", " + (num1 * 1.5) + ", and " + (num1 * 2)

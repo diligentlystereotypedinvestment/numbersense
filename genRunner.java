@@ -1,10 +1,9 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class genRunner {
 	public static void main(String[] args) {
 		ArrayList<String> questions = new ArrayList<>();
 		ArrayList<String> answers = new ArrayList<>();
-		Random rand = new Random();
 		System.out.println("\\documentclass{article}\n" + "\\usepackage[margin=1.0in]{geometry}\n"
 				+ "\\usepackage{lipsum}\n" + "\\usepackage{setspace}\n\\usepackage{multicol}\n"
 				+ "\\newcommand\\textbox[1]{%\n" + "  \\parbox{.333\\textwidth}{#1}%\n" + "}\n" + "\\begin{document}\n"

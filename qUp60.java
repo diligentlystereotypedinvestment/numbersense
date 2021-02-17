@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Random;
+import java.util.ArrayList;
 
 class qUp60 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
@@ -9,13 +10,19 @@ class qUp60 {
 			questions.add("(" + i + ")" + o.exponent());
 			answers.add(String.valueOf(o.outsolution));
 		}
+
 		if(random == 4 || random == 5 || random == 6){//polygons
 			polygons shapes = new polygons();
 			shapes.gen(questions, answers, i);
+		}
+
+		if(random == 7 || random == 8 || random == 9){
+			rightTriangle.gen(questions, answers, i);
 		}
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);
 		}
+
 	}
 }

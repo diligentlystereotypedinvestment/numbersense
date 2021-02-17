@@ -19,7 +19,7 @@ class nagon{
 		this.name = "regular " + name;
 		this.apothem = rand.nextInt(5) + 1;
 		this.sideLength = sideLength;
-		this.perimeter = sides * sideLength;
+		this.perimeter = sides * this.sideLength;
 		this.area = Double.valueOf(eliminateZero.zero(this.apothem * perimeter/2.0));
 	}
 

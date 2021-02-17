@@ -9,11 +9,11 @@ public class LCMandGCF {
 		return hcf;
 	}
 
-	public int LCM(int num1, int num2) {
-		return (num1 / this.GCF(num1, num2)) * num2;
+	public static int LCM(int num1, int num2) {
+		return (num1 / GCF(num1, num2)) * num2;
 	}
 
-	public int GCF3(int num1, int num2, int num3) {
+	public static int GCF3(int num1, int num2, int num3) {
 		int i, hcf = 0;
 		for (i = 1; i <= num1 || i <= num2; i++) {
 			if (num1 % i == 0 && num2 % i == 0) {
