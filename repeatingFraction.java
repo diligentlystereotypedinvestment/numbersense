@@ -7,8 +7,7 @@ public class repeatingFraction {
 		Random rand = new Random();
 		int denom = rand.nextInt(997) + 3;
 		int num = rand.nextInt(denom - 2) + 1;
-		while(!fracOperations.repeating(num, denom) && String.valueOf(fracOperations.divide(num, denom)).length() > 3){
-			System.out.println("asda");
+		while(!fracOperations.repeating(num, denom) && String.valueOf(fracOperations.divide(num, denom)).length() > 15){
 			denom = rand.nextInt(997) + 3;
 			num = rand.nextInt(denom - 2) + 1;
 		}
@@ -16,4 +15,5 @@ public class repeatingFraction {
 		questions.add("(" + i + ") What is $" + fraction.toDeci() + "$ as a fraction?");
 		answers.add(fraction.toString());
 	}
+
 }

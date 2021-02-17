@@ -91,7 +91,7 @@ Least Common Multiple (LCM)~~
 
 7) Direct and Inverse Variation
 
-8) Sequences & Series (Finite & Infinite)
+~~8) Sequences & Series (Finite & Infinite)~~
 
 9) Complex Numbers
 

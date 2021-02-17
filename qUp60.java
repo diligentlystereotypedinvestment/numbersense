@@ -19,6 +19,14 @@ class qUp60 {
 		if(random == 7 || random == 8 || random == 9){
 			rightTriangle.gen(questions, answers, i);
 		}
+
+		if(random == 10 || random == 11 || random == 12){
+			sequences seq = new sequences();
+			seq.questionGen(i);
+			questions.add(seq.getQuestion());
+			answers.add(seq.getAnswer());
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);

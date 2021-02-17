@@ -257,16 +257,16 @@ class qUp20 {
 			int comparison = rand.nextInt(2) + 1;
 			String printmess = "";
 			if (comparison == 1) {
-				printmess = ("(" + i + ")" + "Which is greater, " + "$\\frac{" + compare.addfracn + "}{"
-						+ compare.addfracd + "} or " + (double) ((int) (compare.addmix2 / 100)) / 100 + "$");
+				printmess = ("(" + i + ") Which is greater, " + "$\\frac{" + compare.addfracn + "}{"
+						+ compare.addfracd + "} \\text{ or } " + (double) ((int) (compare.addmix2 / 100)) / 100 + "$");
 				if ((1.0 * compare.addfracn / compare.addfracd) > (double) ((int) (compare.addmix2 / 100)) / 100) {
 					answers.add(String.valueOf((1.0 * compare.addfracn / compare.addfracd)));
 				} else {
 					answers.add(String.valueOf((double) ((int) (compare.addmix2 / 100)) / 100));
 				}
 			} else {
-				printmess = ("(" + i + ")" + "Which is greater, " + "$\\frac{" + compare.addfracn + "}{"
-						+ compare.addfracd + "} or " + "\\frac{" + compare.addfracn2 + "}{" + compare.addfracd2 + "}"
+				printmess = ("(" + i + ") Which is greater, $\\frac{" + compare.addfracn + "}{"
+						+ compare.addfracd + "} \\text{ or } \\frac{" + compare.addfracn2 + "}{" + compare.addfracd2 + "}"
 						+ "$");
 				if ((1.0 * compare.addfracn / compare.addfracd) > (1.0 * compare.addfracn2 / compare.addfracd2)) {
 					answers.add(String.valueOf((1.0 * compare.addfracn / compare.addfracd)));
@@ -360,7 +360,11 @@ class qUp20 {
 		if (random == 9) {// percent problems
 			int percent = (rand.nextInt(15) + 1) * 10;
 			int percent2 = (rand.nextInt(15) + 1) * 10;
-			answers.add(String.valueOf(1.0 * percent * percent2 / 100));
+			while(percent == 100 || percent2 == 100){
+				percent = (rand.nextInt(15) + 1) * 10;
+				percent2 = (rand.nextInt(15) + 1) * 10;
+			}
+			answers.add(String.valueOf(percent * percent2 / 100.0) + "\\%");
 			String printmess = ("(" + i + ") P is " + percent + "\\% of Q. Q is " + +percent2
 					+ "\\% of R. What percent is P of R?");
 			questions.add(printmess);// System.out.print(printmess);
