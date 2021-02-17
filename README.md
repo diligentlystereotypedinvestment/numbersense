@@ -79,7 +79,7 @@ Least Common Multiple (LCM)~~
 
 ~~1) Laws of Exponents~~
 
-2) Right Triangle Problems
+~~2) Right Triangle Problems~~
 
 3) Coordinate Geometry Problems
 
