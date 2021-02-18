@@ -27,6 +27,13 @@ class qUp60 {
 			answers.add(seq.getAnswer());
 		}
 
+		if(random == 13 || random == 14 || random == 15){
+			coord.gen(questions, answers, i);
+		}
+
+		if(random == 16 || random == 17 || random == 18){
+			OofO.baseGen(questions, answers, i);
+		}
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);

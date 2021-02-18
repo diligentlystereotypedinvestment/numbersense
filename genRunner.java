@@ -53,7 +53,9 @@ public class genRunner {
 			if (e.equals(null)) {
 				continue;
 			}
-			System.out.println("\\hrulefill");
+			if(e.indexOf("\\hrulefill") == -1){
+				System.out.println("\\hrulefill");
+			}
 			System.out.print("\n\n");
 		}
 		System.out.println("\\end{flushleft}\\end{multicols}");

@@ -1,6 +1,6 @@
 
 public class baseconvert {
-	String newnum(int deci, int base) {
+	public static String newnum(int deci, int base) {
 		String tempnew = "";
 		if (base > 10) {
 			for (int i = 1; i < 10; i++) {
@@ -28,7 +28,7 @@ public class baseconvert {
 		return tempnew;
 	}
 
-	int ognum(String deci, int base) {
+	public static int ognum(String deci, int base) {
 		int tempog = 0;
 		if (base < 10) {
 			for (int i = 1; i < 10; i++) {

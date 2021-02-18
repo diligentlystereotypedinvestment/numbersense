@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class OofO {
 	public double outsolution = 0;
@@ -238,5 +239,41 @@ public class OofO {
 		question = question + "$";
 		outsolution = solution;
 		return question;
+	}
+
+	public static void baseGen(ArrayList<String> questions, ArrayList<String> answers, int i){
+		Random rand = new Random();
+		int sign = rand.nextInt(4);
+		int first, second;
+		int base = rand.nextInt(7) + 3;
+		if(sign == 0){//addition
+			first = rand.nextInt(100) + 40;
+			second = rand.nextInt(100) + 40;
+			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " + " + baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(baseconvert.newnum(first + second, base));
+		}
+		if(sign == 1){//subtraction
+			first = rand.nextInt(100) + 40;
+			second = rand.nextInt(100) + 40;
+			if(second > first){
+				int temp = first;
+				first = second;
+				second = temp;
+			}
+			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " - " + baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(baseconvert.newnum(first - second, base));
+		}
+		if(sign == 2){//multiplication
+			first = rand.nextInt(100) + 40;
+			second = base - (rand.nextInt(base - 1) + 1);
+			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " \\cdot " + baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(baseconvert.newnum(first * second, base));
+		}
+		if(sign == 3){//division
+			second = base - (rand.nextInt(base - 1) + 1);
+			first = (rand.nextInt(40) + 40) * second;
+			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + "\\div" + baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(baseconvert.newnum(first / second, base));
+		}
 	}
 }

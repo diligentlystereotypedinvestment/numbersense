@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class coord{
 
-	public void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		Random rand = new Random();
 		int choose = rand.nextInt(4);
 		int solveFor = rand.nextInt(2);
