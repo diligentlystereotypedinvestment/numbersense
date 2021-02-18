@@ -190,7 +190,6 @@ class qUp40 {
 		}
 		if (random == 31 || random == 32) {// Bases
 			int choose = rand.nextInt(3) + 1;
-			baseconvert basec = new baseconvert();
 			String printmess = "";
 			int base = rand.nextInt(11) + 2;
 			int ognumber = 0;
@@ -198,11 +197,11 @@ class qUp40 {
 			if (choose == 1) {
 				ognumber = rand.nextInt(104) + 5;
 				printmess = ("(" + i + ") What is " + ognumber + " in base " + base);
-				answers.add(String.valueOf(basec.newnum(ognumber, base)));
+				answers.add(String.valueOf(baseconvert.newnum(ognumber, base)));
 			}
 			if (choose == 2) {
 				ognumber = rand.nextInt(104) + 5;
-				newnum = basec.newnum(ognumber, base);
+				newnum = baseconvert.newnum(ognumber, base);
 				printmess = ("(" + i + ") What is $" + newnum + "_ {" + base + "}$ in base 10");
 				answers.add(String.valueOf(1.0 * ognumber));
 			}
@@ -210,9 +209,9 @@ class qUp40 {
 				ognumber = rand.nextInt(104) + 5;
 				int choose2 = (int) Math.pow(2, rand.nextInt(3) + 1);
 				int secondchoose2 = (int) Math.pow(2, rand.nextInt(3) + 1);
-				newnum = basec.newnum(ognumber, choose2);
+				newnum = baseconvert.newnum(ognumber, choose2);
 				printmess = ("(" + i + ") What is $" + newnum + "_{" + choose2 + "}$ in base " + secondchoose2);
-				answers.add(String.valueOf(basec.newnum(basec.ognum(newnum, choose2), secondchoose2)));
+				answers.add(String.valueOf(baseconvert.newnum(baseconvert.ognum(newnum, choose2), secondchoose2)));
 			}
 			questions.add(printmess);// System.out.print(printmess);
 			/*

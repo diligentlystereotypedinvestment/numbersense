@@ -81,7 +81,7 @@ Least Common Multiple (LCM)~~
 
 ~~2) Right Triangle Problems~~
 
-3) Coordinate Geometry Problems
+~~3) Coordinate Geometry Problems~~
 
 ~~4) Regular Polygon Problems~~
 
@@ -105,7 +105,7 @@ Least Common Multiple (LCM)~~
 
 14) Binomial Theorem (Expansion)
 
-15) Base System Problems Using Operations
+~~15) Base System Problems Using Operations~~
 
 16) Roots of equations
 
