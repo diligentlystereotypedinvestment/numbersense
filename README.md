@@ -53,7 +53,7 @@ Least Common Multiple (LCM)~~
 
 ~~5) Absolute Value~~
 
-6) Ratio/Proportion
+~~6) Ratio/Proportion~~
 
 ~~7) Square Roots/Cube Roots~~
 
@@ -69,7 +69,7 @@ Least Common Multiple (LCM)~~
 
 ~~13) More Remainder Type Problems - I think this is done~~
 
-1~~4) Perimeter & Area of Polygons and Circles~~
+~~14) Perimeter & Area of Polygons and Circles~~
 
 ~~15) Sequences~~
 

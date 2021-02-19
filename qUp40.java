@@ -3,7 +3,7 @@ import java.util.*;
 class qUp40 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
-		int random = rand.nextInt(42) + 1;
+		int random = rand.nextInt(44) + 1;
 		if (random == 15 || random == 16) {// power of numbers
 			String printmess = "";
 			int base = rand.nextInt(19) + 2;
@@ -361,6 +361,9 @@ class qUp40 {
 
 		}
 		*/
+		if(random == 43 || random == 44){
+			ratio.gen(questions, answers, i);
+		}
 		if (random < 15) {//problems before it
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);

@@ -516,7 +516,7 @@ class qUp20 {
 			}
 			choose = rand.nextInt(2) + 1;
 			if (choose == 1) {
-				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + eliminateZero.money(price) + " then how much does " + pounds + " cost?";
+				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$ " + eliminateZero.money(price) + " then how much does " + pounds + " pounds cost?";
 				answers.add(String.valueOf(eliminateZero.money(postPrice)));
 			}
 			if (choose == 2) {
