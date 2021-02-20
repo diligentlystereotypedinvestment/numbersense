@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 
 class qUp40 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {

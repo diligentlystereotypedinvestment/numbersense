@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 class qUp80 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
