@@ -235,6 +235,7 @@ class qUp40 {
 			// System.out.println();
 
 		}
+		
 		if (random == 35 || random == 36) {// system of equations
             int problem = rand.nextInt(2);
             if(problem == 0){
@@ -364,8 +365,7 @@ class qUp40 {
 
 		}
 		*/
-		if(random == 43 || random == 44){
-			ratio.gen(questions, answers, i);
+		if(random == 43 || random == 44){//ratios/proportions
 		}
 		if (random < 15) {//problems before it
 			qUp20 questions20 = new qUp20();

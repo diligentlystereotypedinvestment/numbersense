@@ -53,7 +53,7 @@ Least Common Multiple (LCM)~~
 
 ~~5) Absolute Value~~
 
-~~6) Ratio/Proportion~~
+6) Ratio/Proportion
 
 ~~7) Square Roots/Cube Roots~~
 
@@ -85,11 +85,11 @@ Least Common Multiple (LCM)~~
 
 ~~4) Regular Polygon Problems~~
 
-5) Inequalities
+~~5) Inequalities~~
 
 6) Applications of Theorems from Geometry
 
-7) Direct and Inverse Variation
+~~7) Direct and Inverse Variation~~
 
 ~~8) Sequences & Series (Finite & Infinite)~~
 

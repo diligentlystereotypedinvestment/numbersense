@@ -11,9 +11,9 @@ public class genRunner {
 				Estimation estimate = new Estimation(i);
 				answers.add(String.valueOf(estimate.getAnswer()));
 				questions.add(("(" + i + ") " + estimate.getMess()));
-				for (int q = 0; q < 60 - estimate.getMess().length(); q++) {
+				//for (int q = 0; q < 60 - estimate.getMess().length(); q++) {
 					// System.out.print("\\textunderscore");
-				}
+				//}
 				// System.out.println();
 				// System.out.println();
 				continue;

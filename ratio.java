@@ -14,25 +14,25 @@ public class ratio{
 				while(postVar == y){
 					postVar = rand.nextInt(10) + 1;
 				}
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are proportional, what is the value of $x$ when $y = " + postVar + "$?");
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and vary directly, what is the value of $x$ when $y = " + postVar + "$?");
 				answers.add(simplify.getFraction(x * postVar + "/" + y));
 			}
 			if(solveFor == 1){//y
 				while(postVar == x){
 					postVar = rand.nextInt(10) + 1;
 				}
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are proportional, what is the value of $y$ when $x = " + postVar + "$?");
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and vary directly, what is the value of $y$ when $x = " + postVar + "$?");
 				answers.add(simplify.getFraction(y * postVar + "/" + x));
 			}
 		}
 		if(variation == 1){//inverse
 			int scalar  = rand.nextInt(10) + 1;
 			if(solveFor == 0){//x
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are proportional, what is the value of $x$ when $y = " + scalar * y+ "$?");
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are inverses, what is the value of $x$ when $y = " + scalar * y+ "$?");
 				answers.add(simplify.getFraction(x + "/" + scalar));
 			}
 			if(solveFor == 1){//y
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are proportional, what is the value of $y$ when $x = " + scalar * x + "$?");
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y + "$ and are inverses, what is the value of $y$ when $x = " + scalar * x + "$?");
 				answers.add(simplify.getFraction(y + "/" + scalar));
 			}
 		}

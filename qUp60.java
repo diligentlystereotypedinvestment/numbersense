@@ -16,27 +16,36 @@ class qUp60 {
 			shapes.gen(questions, answers, i);
 		}
 
-		if(random == 7 || random == 8 || random == 9){
+		if(random == 7 || random == 8 || random == 9){//right triangle problems
 			rightTriangle.gen(questions, answers, i);
 		}
 
-		if(random == 10 || random == 11 || random == 12){
+		if(random == 10 || random == 11 || random == 12){//sequences
 			sequences seq = new sequences();
 			seq.questionGen(i);
 			questions.add(seq.getQuestion());
 			answers.add(seq.getAnswer());
 		}
-		if(random == 13 || random == 14 || random == 15){
+		if(random == 13 || random == 14 || random == 15){//polygonal numbers
 			polygonalNumbers.gen(questions, answers, i);
 		}
 
-		if(random == 13 || random == 14 || random == 15){
+		if(random == 13 || random == 14 || random == 15){//coordinate problems
 			coord.gen(questions, answers, i);
 		}
 
-		if(random == 16 || random == 17 || random == 18){
+		if(random == 16 || random == 17 || random == 18){//base operations
 			OofO.baseGen(questions, answers, i);
 		}
+
+		if(random == 19 || random == 20 || random == 21){//inverses/direct
+			ratio.gen(questions, answers, i);
+		}
+
+		if(random == 22 || random == 23 || random == 24){//inequality problems (not polticial, mathematical)
+			equations.genInequal(i, questions, answers);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);
