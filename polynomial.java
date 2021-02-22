@@ -5,7 +5,7 @@ public class polynomial {
 
 	private String problem;
 	private String answer;
-	private int[] coefficients = new int[3];
+	private int[] coefficients = new int[4];
 	private int power;
 
 	public polynomial(){
@@ -13,26 +13,34 @@ public class polynomial {
 		power = 2;
 		int choose = rand.nextInt(2);
 		if (choose == 0) {
-			power = 2;
+			power = 3;
 		}
 		problem = "";
-		for (int i = 2; i <= power; i++) {
+		for (int i = power; i > 1; i--) {
 			int sign = rand.nextInt(2);
-			coefficients[i - 2] = sign;
+			coefficients[power - i] = rand.nextInt(6) + 1;
+			String term = "";
+			if(coefficients[power - i] == 1){
+				term = "x^" + i;
+			}else{
+				term = coefficients[power - i] + "x^" + i;
+			}
 			if (sign == 0) {
-				problem = (rand.nextInt(6) + 1) + "x^" + i + " + " + problem;
+				problem = term + " + " + problem;
 			}
 			if (sign == 1) {
-				problem = (rand.nextInt(6) + 1) + "x^" + i + " - " + problem;
+				problem = term + " - " + problem;
 			}
 		}
 		choose = rand.nextInt(2);
+		coefficients[power - 1] = rand.nextInt(6) + 1;
 		if(choose == 0){
-			problem = problem + (rand.nextInt(6) + 1) + "x" + " + ";
+			problem = problem + coefficients[power - 1] + "x" + " + ";
 		} else{
-			problem = problem + (rand.nextInt(6) + 1) + "x" + " - ";
+			problem = problem + coefficients[power - 1] + "x" + " - ";
 		}
-		problem = "$" + problem + (rand.nextInt(9) + 1) + "$";
+		coefficients[power] = rand.nextInt(6) + 1;
+		problem = "$" + problem + coefficients[power] + "$";
 	}
 
 	public void Gen() {
@@ -42,8 +50,8 @@ public class polynomial {
 		String tempProblem = problem.toString();
 		int choose = rand.nextInt(3);
 		if (choose == 0) {
-			this.problem = "What is the sum of roots of " + problem + "?";
-			answer = simplify.getFraction(String.valueOf(-1 * Integer.valueOf(tempProblem.substring(8, 9))) + "/" + (tempProblem.substring(1, 2)));
+			this.problem = "What is the sum of roots of " + tempProblem + "?";
+			answer = simplify.getFraction(String.valueOf(-1 * problem.getCoef(1)) + "/" + problem.getCoef(0) );
 		}
 		if (choose == 1 && power == 2) {
 			int decrimType = rand.nextInt(2);
@@ -79,14 +87,14 @@ public class polynomial {
 		polynomial poly = new polynomial();
 		Random rand = new Random();
 		int choose = rand.nextInt(2);
-		int a = coefficients[0];
-		int b = coefficients[1];
-		int c = coefficients[2];
+		int a = poly.getCoef(0);
+		int b = poly.getCoef(1);
+		int c = poly.getCoef(2);
 		if(choose == 0){
 			questions.add("What is the lowest root of " + poly + "?");
 			answers.add(simplify.getFraction((-1 * b - (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
 		}
-		if(choose == 0){
+		if(choose == 1){
 			questions.add("What is the largest root of " + poly + "?");
 			answers.add(simplify.getFraction((-1 * b + (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
 		}
@@ -97,6 +105,10 @@ public class polynomial {
 	}
 	public String getAnswer(){
 		return answer;
+	}
+
+	public int getCoef(int i){
+		return coefficients[i];
 	}
 
 	public String toString(){
