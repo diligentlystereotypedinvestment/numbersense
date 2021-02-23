@@ -74,11 +74,11 @@ public class polynomial {
 			this.problem = "What is the discriminate of " + problem + "?";
 		} else if (choose == 1 && power == 3) {
 			this.problem = "What is the sum of the roots of " + problem + " taken two at a time?";
-			answer = simplify.getFraction(tempProblem.substring(16, 17) + "/" + tempProblem.substring(1, 2));
+			answer = simplify.getFraction(problem.getCoef(2) + "/" + problem.getCoef(0));
 		}
 		if (choose == 2) {
 			this.problem = "What is the product of the roots of " + problem;
-			answer = simplify.getFraction(tempProblem.substring(tempProblem.length() - 2, tempProblem.length() - 1) + "/" + ((int) Math.pow(-1, power)));
+			answer = simplify.getFraction(problem.getCoef(power) + "/" + (problem.getCoef(0) * (int) Math.pow(-1, power)));
 		}
 
 	}

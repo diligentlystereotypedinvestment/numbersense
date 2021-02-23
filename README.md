@@ -103,11 +103,11 @@ Least Common Multiple (LCM)~~
 
 13) Conics
 
-14) Binomial Theorem (Expansion)
+~~14) Binomial Theorem (Expansion)~~
 
 ~~15) Base System Problems Using Operations~~
 
-16) Roots of equations
+~~16) Roots of equations~~
 
 ~~17) Polygonal numbers~~
 

@@ -46,6 +46,10 @@ class qUp60 {
 			equations.genInequal(i, questions, answers);
 		}
 
+		if(random == 25 || random == 26 || random == 27){
+			binomialTheorem.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);

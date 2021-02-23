@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class equations{
@@ -18,6 +19,7 @@ public class equations{
 				coef[a] = rand.nextInt(14) - 5;
 			}
 		}
+		System.out.println(Arrays.toString(coef) + "asdasdasdasdasatwetsrwrsegsdgbfhrtwetrdgdsgsg");
 		int signRand = rand.nextInt(2);
 		char sign = '+';
 		if(signRand == 1){
