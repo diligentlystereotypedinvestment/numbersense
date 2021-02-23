@@ -30,10 +30,6 @@ class qUp60 {
 			polygonalNumbers.gen(questions, answers, i);
 		}
 
-		if(random == 13 || random == 14 || random == 15){//coordinate problems
-			coord.gen(questions, answers, i);
-		}
-
 		if(random == 16 || random == 17 || random == 18){//base operations
 			OofO.baseGen(questions, answers, i);
 		}
@@ -46,8 +42,16 @@ class qUp60 {
 			equations.genInequal(i, questions, answers);
 		}
 
-		if(random == 25 || random == 26 || random == 27){
+		if(random == 25 || random == 26 || random == 27){//binomial theorem
 			binomialTheorem.gen(questions, answers, i);
+		}
+
+		if(random == 28 || random == 29 || random == 30){//polynomial roots
+			polynomial.polynomialRoots(questions, answers, i);
+		}
+
+		if(random == 31 || random == 32 || random == 33){//coordinate problems
+			coord.gen(questions, answers, i);
 		}
 
 		if (random < 46) {//older problems

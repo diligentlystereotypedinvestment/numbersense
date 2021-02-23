@@ -83,7 +83,7 @@ public class polynomial {
 
 	}
 
-	public void polynomialRoots(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void polynomialRoots(ArrayList<String> questions, ArrayList<String> answers, int i){
 		polynomial poly = new polynomial();
 		Random rand = new Random();
 		int choose = rand.nextInt(2);
