@@ -54,6 +54,10 @@ class qUp60 {
 			coord.gen(questions, answers, i);
 		}
 
+		if(random == 34 || random == 35 || random == 36){//complex num
+			complexNum.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);

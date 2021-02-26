@@ -53,7 +53,7 @@ Least Common Multiple (LCM)~~
 
 ~~5) Absolute Value~~
 
-6) Ratio/Proportion
+~~6) Ratio/Proportion~~
 
 ~~7) Square Roots/Cube Roots~~
 
