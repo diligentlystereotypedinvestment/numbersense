@@ -93,7 +93,7 @@ Least Common Multiple (LCM)~~
 
 ~~8) Sequences & Series (Finite & Infinite)~~
 
-9) Complex Numbers
+~~9) Complex Numbers~~
 
 10) Logarithms & Logarithmic Equations
 
