@@ -366,6 +366,13 @@ class qUp40 {
 		}
 		*/
 		if(random == 43 || random == 44){//ratios/proportions
+			proportion.gen(questions, answers, i);
+		}
+
+		if(random == 45 || random == 46){//word problems
+		}
+
+		if(random == 45 || random == 46){//substitution
 		}
 		if (random < 15) {//problems before it
 			qUp20 questions20 = new qUp20();

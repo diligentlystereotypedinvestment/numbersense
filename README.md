@@ -103,7 +103,7 @@ Least Common Multiple (LCM)~~
 
 13) Conics
 
-~~14) Binomial Theorem (Expansion)~~
+~~14) Binomial Theorem (Expansion)~~ number of terms
 
 ~~15) Base System Problems Using Operations~~
 

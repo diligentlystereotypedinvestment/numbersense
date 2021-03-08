@@ -283,6 +283,7 @@ class qUp20 {
 			// System.out.println();
 
 		}
+
 		if (random == 5) {// multiplication shortcuts
 			multshort multshort = new multshort();
 			String printmess = ("(" + i + ") " + multshort.multishort());
@@ -296,6 +297,7 @@ class qUp20 {
 			// System.out.println();
 
 		}
+
 		if (random == 6) {// squaring numbers
 			double square = rand.nextInt(65) + 1;
 			answers.add(String.valueOf(square * square));
