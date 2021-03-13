@@ -1,7 +1,9 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-public class OofO {
+public class OofO{
+	private String question;
+	private String answer;
 	public double outsolution = 0;
 
 	public String fstringmess() {
@@ -275,5 +277,78 @@ public class OofO {
 			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + "\\div" + baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
 			answers.add(baseconvert.newnum(first / second, base));
 		}
+	}
+	
+	public String getQuest(){
+		return question;
+	}
+
+	public String getAns(){
+		return String.valueOf(answer);
+	}
+
+	public void placeholder(Object add, Object mult, Object div, int length){
+		Random rand = new Random();
+		String problem = "(" + genOp(add, mult, div, true);
+		for(int i = 0; i < length; i++){
+			problem = "(" + problem + genOp(add, mult, div, false);
+		}
+		question = problem;
+	}
+
+	public String genOp(Object add, Object mult, Object div, boolean first){
+		Random rand = new Random();
+		int operation = rand.nextInt(4);
+		if(first){
+			if(operation == 0){
+				answer = fracOperations.fracAdd(toAns(add), toAns(add));
+				return add.toString() + " + " + add.toString() + ")";
+			}
+			if(operation == 1){
+				answer = fracOperations.fracSub(toAns(add), toAns(add));
+				return add.toString() + " - " + add.toString() + ")";
+			}
+			if(operation == 2){
+				answer = fracOperations.fracMult(toAns(mult), toAns(mult));
+				return mult.toString() + " \\cdot " + mult.toString() + ")";
+			}
+			if(operation == 3){
+				answer = fracOperations.fracDivide(toAns(div), toAns(div),false);
+				return " \\div " + div.toString() + ")";
+			}
+		}
+		if(operation == 0){
+			answer = fracOperations.fracAdd(answer, toAns(add));
+			return " + " + add.toString() + ")";
+		}
+		if(operation == 1){
+			answer = fracOperations.fracSub(answer, toAns(add));
+			return " - " + add.toString() + ")";
+		}
+		if(operation == 2){
+			answer = fracOperations.fracMult(answer, toAns(mult));
+			return " \\cdot " + mult.toString() + ")";
+		}
+		if(operation == 3){
+			answer = fracOperations.fracDivide(answer, toAns(div), false);
+			return " \\div " + div.toString() + ")";
+		}
+		return "";
+	}
+
+	public String toAns(Object unSolve){
+		if(unSolve instanceof log){
+			if(((log)unSolve).toAns().indexOf("/") != -1){
+				return ((log)unSolve).toAns();
+			}
+			return ((log)unSolve).toAns() + "/" + 1;
+		}
+		return "";
+	}
+
+	public static void main(String[] args){
+		OofO logar = new OofO();
+		logar.placeholder(log.random(), log.random(), log.random(), 3);
+		System.out.println(logar.getQuest() + logar.getAns());
 	}
 }

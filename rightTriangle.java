@@ -20,12 +20,12 @@ public class rightTriangle{
 		}
 		if(chooser == 0){//find one side
 			int sideToFind = rand.nextInt(3);
-			if(sideToFind == 0){//hypothenus
+			if(sideToFind == 0){//hypotenuse
 				questions.add("(" + i + ") What is the hypotenuse of a right triangle with integer side lengths and one leg being $" + side1 + "$?");
 				answers.add(String.valueOf(side3));
 			}
 			if(sideToFind == 1){//side1
-				questions.add("(" + i + ") What is the shortest leg of a right triangle with integer side lengths and the hypothenuse being $" + side3 + "$?");
+				questions.add("(" + i + ") What is the shortest leg of a right triangle with integer side lengths and the hypotenuse being $" + side3 + "$?");
 				answers.add(String.valueOf(side1));
 			}
 			if(sideToFind == 2){//side2
@@ -34,11 +34,11 @@ public class rightTriangle{
 			}
 		}
 		if(chooser == 1){//median length
-			questions.add("(" + i + ") What is the length of the median to the hypothenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
+			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
 			answers.add(simplify.getFraction(side3 + "/" + 2) + ", " + side3/2.0);
 		}
 		if(chooser == 2){//altitude length
-			questions.add("(" + i + ") What is the length of the altitude to the hypothenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
+			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
 			answers.add(simplify.getFraction((side1 * side2) + "/" + side3) + ", " + (side1 * side2)/side3);
 		}
 	}

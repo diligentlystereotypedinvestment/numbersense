@@ -16,6 +16,59 @@ public class fracOperations {
 		this.denom = denom;
 	}
 
+	public fracOperations(String fraction){
+		String[] parts = fraction.split("/");
+		this.num = Integer.parseInt(parts[0]);
+		this.denom = Integer.parseInt(parts[1]);
+	}
+
+	public int getNum(){
+		return num;
+	}
+
+	public int getDenom(){
+		return denom;
+	}
+
+	public fracOperations simp(fracOperations unSimp){
+		if(LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()) > 1){
+			return new fracOperations(unSimp.getNum()/LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()), unSimp.getDenom()/LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()));
+		}
+		return unSimp;
+	}
+
+	public fracOperations add(fracOperations frac1, fracOperations frac2){
+		int num1 = simp(frac1).getNum();
+		int num2 = simp(frac1).getNum();
+		int denom1 = simp(frac1).getDenom();
+		int denom2 = simp(frac1).getDenom();
+		return simp(new fracOperations(num1 * denom2 + num2 * denom1, denom1 * denom2));
+	}
+
+	public fracOperations sub(fracOperations frac1, fracOperations frac2){
+		int num1 = simp(frac1).getNum();
+		int num2 = simp(frac1).getNum();
+		int denom1 = simp(frac1).getDenom();
+		int denom2 = simp(frac1).getDenom();
+		return simp(new fracOperations(num1 * denom2 - num2 * denom1, denom1 * denom2));
+	}
+
+	public fracOperations mult(fracOperations frac1, fracOperations frac2){
+		int num1 = simp(frac1).getNum();
+		int num2 = simp(frac1).getNum();
+		int denom1 = simp(frac1).getDenom();
+		int denom2 = simp(frac1).getDenom();
+		return simp(new fracOperations(num1 * num2, denom1 * denom2));
+	}
+
+	public fracOperations div(fracOperations frac1, fracOperations frac2){
+		int num1 = simp(frac1).getNum();
+		int num2 = simp(frac1).getNum();
+		int denom1 = simp(frac1).getDenom();
+		int denom2 = simp(frac1).getDenom();
+		return simp(new fracOperations(num1 * denom2, denom1 * num2));
+	}
+
 	public String toDeci(){
 		return divide(num, denom);
 	}
@@ -99,7 +152,19 @@ public class fracOperations {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return (num1 * num2) + "/" + (denom1 * denom2);
+		return simplify.getFraction((num1 * num2) + "/" + (denom1 * denom2), false);
+	}
+	
+	public static String fracDivide(String frac1, String frac2, boolean latexFormat){
+		if(latexFormat){
+			return fracMult(frac1, reci(frac2));
+		} else{
+			return fracMult(frac1, reci(frac2), false);
+		}
+	}
+
+	public static String reci(String frac){
+		return Integer.valueOf((frac.substring(frac.indexOf("/") + 1))) + "/" + Integer.valueOf((frac.substring(0, frac.indexOf("/"))));
 	}
 	
 	public static String properAdd(String frac1, String frac2) {
@@ -119,6 +184,10 @@ public class fracOperations {
 	
 	public String toString(){
 		return simplify.getFraction(num + "/" + denom);	
+	}
+
+	public String toString(boolean a){
+		return num + "/" + denom;
 	}
 	
 }

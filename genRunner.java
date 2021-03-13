@@ -65,7 +65,7 @@ public class genRunner {
 			System.out.print(i + ") " + (e) + "\n\n");	
 			i++;
 		}
-		System.out.println("\\enddoublespace\n\\end{multicols}");
-		System.out.println("\\enddoublespace" + "\\end{document}");
+		System.out.println("\n\n\\enddoublespace\n\n\\end{multicols}\n");
+		System.out.println("\\enddoublespace\n\n\\end{document}");
 	}
 }

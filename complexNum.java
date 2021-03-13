@@ -25,7 +25,7 @@ public class complexNum{
 
 	public static complexNum divide(complexNum divisor, complexNum dividend){
 		complexNum product = complexNum.multiply(divisor, dividend);
-		int denom = Integer.valueOf(multiply(dividend, new complexNum(dividend.getReal(), String.valueOf(-1 * Integer.valueOf(dividend.getImaginary())))).toString());
+		int denom = Integer.valueOf(multiply(dividend, new complexNum(dividend.getReal(), String.valueOf(-1 * Integer.valueOf(dividend.getImaginary())))).toString().substring(2));
 		complexNum quotient = new complexNum(simplify.getFraction(product.getReal() + "/" + denom), simplify.getFraction(product.getReal() + "/" + denom));
 		return quotient;
 	}
@@ -65,11 +65,11 @@ public class complexNum{
 		}
 		if(solveFor == 6){//a + b
 			questions.add(question + "$a + b$?");
-			answers.add(String.valueOf(Integer.valueOf(quotient.getReal()) + Integer.valueOf(quotient.getImaginary())));
+			answers.add(fracOperations.fracAdd(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 		if(solveFor == 7){//a - b
 			questions.add(question + "$a - b$?");
-			answers.add(String.valueOf(Integer.valueOf(quotient.getReal()) - Integer.valueOf(quotient.getImaginary())));
+			answers.add(fracOperations.fracSub(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 	}
 

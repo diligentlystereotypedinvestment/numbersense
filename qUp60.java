@@ -58,6 +58,11 @@ class qUp60 {
 			complexNum.gen(questions, answers, i);
 		}
 
+		if(random == 37 || random == 38 || random == 39){//probability
+			prob probab = new prob();
+			probab.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);
