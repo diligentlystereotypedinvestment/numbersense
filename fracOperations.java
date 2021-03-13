@@ -189,5 +189,11 @@ public class fracOperations {
 	public String toString(boolean a){
 		return num + "/" + denom;
 	}
+
+	public void check(String frac){
+		if(frac.indexOf("/") == -1){
+			frac = frac + "/" + 1;
+		}
+	}
 	
 }
