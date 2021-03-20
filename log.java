@@ -13,7 +13,7 @@ public class log{
 	public static log random(){
 		Random rand = new Random();
 		String base = String.valueOf(rand.nextInt(9) + 3);
-		String arg = String.valueOf(rand.nextInt(12) + 1);
+		String arg = String.valueOf(rand.nextInt(11) + 1);
 		if(arg.equals("7")){
 			arg = "1/2";
 		}
@@ -29,10 +29,13 @@ public class log{
 		if(arg.equals("11")){
 			arg = "3/4";
 		}
-		if(arg.equals("12")){//e
+		if(base.equals("11")){//e
 			base = "e";
 		}
-		return new log(base, base + "^" + arg);
+		if(arg.equals("1")){
+			return new log(base, base);
+		}
+		return new log(base, base + "^{" + arg + "}");
 	}
 
 	public String getBase(){
@@ -42,7 +45,7 @@ public class log{
 	public double getArg(){
 		if(argument.indexOf("e") != -1){
 			String[] eSplit = argument.split("\\^");
-			return Double.valueOf(eSplit[1]);
+			return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
 		}
 		return Double.valueOf(argument);
 	}
@@ -50,13 +53,14 @@ public class log{
 	public String toAns(){
 		if(toString().indexOf("e") != -1){
 			String[] eSplit = argument.split("\\^");
-			return eSplit[1];
-		}
-		if(argument.indexOf("^") != -1){
-			String[] split = argument.split("\\^");
-			return split[1];
-		} else {
-			return "";
+			return eSplit[1].substring(1, eSplit[1].length() - 1);
+		} else{
+			if(argument.indexOf("^") != -1){
+				String[] eSplit = argument.split("\\^");
+				return eSplit[1].substring(1, eSplit[1].length() - 1);
+			} else {
+				return "1";
+			}
 		}
 		//return Math.log(Integer.valueOf(getArg()))/Math.log(Integer.valueOf(getBase()));
 	}
@@ -99,12 +103,16 @@ public class log{
 			answers.add(fracOperations.fracDivide(log1.toAns(), log2.toAns(), false));
 		}
 		if(problem == 5 || problem == 6 || problem == 7){//OofO
+			OofO logar = new OofO();
+			logar.placeholder(random(), random(), random(), 2);
+			questions.add(logar.getQuest());
+			answers.add(logar.getAns());
 		}
 	}
 
 	public String toString(){
 		if(base.equals("e")){
-			return "$\\ln " + argument;
+			return "\\ln " + argument;
 		}
 		return "\\log_{" + base + "}" + argument;
 			

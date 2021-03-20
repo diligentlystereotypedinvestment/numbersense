@@ -338,17 +338,8 @@ public class OofO{
 
 	public String toAns(Object unSolve){
 		if(unSolve instanceof log){
-			if(((log)unSolve).toAns().indexOf("/") != -1){
-				return ((log)unSolve).toAns();
-			}
-			return ((log)unSolve).toAns() + "/" + 1;
+			return ((log)unSolve).toAns();
 		}
 		return "";
-	}
-
-	public static void main(String[] args){
-		OofO logar = new OofO();
-		logar.placeholder(log.random(), log.random(), log.random(), 3);
-		System.out.println(logar.getQuest() + logar.getAns());
 	}
 }
