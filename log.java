@@ -42,15 +42,28 @@ public class log{
 		return base;
 	}
 
-	public double getArg(){
+	public String getArg(){
+		String[] eSplit = argument.split("\\^");
+		return eSplit[1].substring(1, eSplit[1].length() - 1);
+		/*
 		if(argument.indexOf("e") != -1){
 			String[] eSplit = argument.split("\\^");
 			return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
+		} else {
+			String[] eSplit = argument.split("\\^");
+			return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
 		}
-		return Double.valueOf(argument);
+		*/
 	}
 
 	public String toAns(){
+		if(argument.indexOf("^") != -1){
+			String[] eSplit = argument.split("\\^");
+			return eSplit[1].substring(1, eSplit[1].length() - 1);
+		} else {
+			return "1";
+		}
+		/*
 		if(toString().indexOf("e") != -1){
 			String[] eSplit = argument.split("\\^");
 			return eSplit[1].substring(1, eSplit[1].length() - 1);
@@ -63,20 +76,21 @@ public class log{
 			}
 		}
 		//return Math.log(Integer.valueOf(getArg()))/Math.log(Integer.valueOf(getBase()));
+		*/
 	}
 
 	public static log add(log add1, log add2){
 		if(add1.toString().indexOf("e") != -1){
-			return new log(add1.getBase(), "e^" + add1.getArg() * add2.getArg());
+			return new log(add1.getBase(), "e^" + fracOperations.fracMult(add1.getArg(), add2.getArg()));
 		}
-		return new log(add1.getBase(), String.valueOf(add1.getArg() * add2.getArg()));
+		return new log(add1.getBase(), fracOperations.fracMult(add1.getArg(), add2.getArg()));
 	}
 
 	public static log sub(log add1, log add2){
 		if(add1.toString().indexOf("e") != -1){
-			return new log(add1.getBase(), "e^" + add1.getArg() / add2.getArg());
+			return new log(add1.getBase(), "e^" + fracOperations.fracDivide(add1.getArg(), add2.getArg(), false));
 		}
-		return new log(add1.getBase(), String.valueOf(add1.getArg() / add2.getArg()));
+		return new log(add1.getBase(), fracOperations.fracDivide(add1.getArg(), add2.getArg(), false));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
@@ -105,7 +119,7 @@ public class log{
 		if(problem == 5 || problem == 6 || problem == 7){//OofO
 			OofO logar = new OofO();
 			logar.placeholder(random(), random(), random(), 2);
-			questions.add(logar.getQuest());
+			questions.add("$" + logar.getQuest() + "$");
 			answers.add(logar.getAns());
 		}
 	}

@@ -63,6 +63,10 @@ class qUp60 {
 			probab.gen(questions, answers, i);
 		}
 
+		if(random == 40 || random == 41 || random == 42){//logarithms
+			log.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);
