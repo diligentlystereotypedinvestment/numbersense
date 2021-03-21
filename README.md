@@ -95,7 +95,7 @@ Least Common Multiple (LCM)~~
 
 ~~9) Complex Numbers~~
 
-10) Logarithms & Logarithmic Equations
+~~10) Logarithms & Logarithmic Equations~~
 
 11) Factorials, Permutations, & Combinations
 

@@ -340,6 +340,9 @@ public class OofO{
 		if(unSolve instanceof log){
 			return ((log)unSolve).toAns();
 		}
+		if(unSolve instanceof combin){
+			return String.valueOf(((combin)unSolve).toAns());
+		}
 		return "";
 	}
 }
