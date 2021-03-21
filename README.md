@@ -97,9 +97,9 @@ Least Common Multiple (LCM)~~
 
 ~~10) Logarithms & Logarithmic Equations~~
 
-11) Factorials, Permutations, & Combinations
+~~11) Factorials, Permutations, & Combinations~~
 
-12) Probability/Odds
+~~12) Probability/Odds~~
 
 13) Conics
 

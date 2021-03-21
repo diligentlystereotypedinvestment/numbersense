@@ -60,7 +60,7 @@ public class combin{
 		if(problem == 1){
 			OofO comb = new OofO();
 			comb.placeholder(random(new range(3, 8)), random(new range(3, 6)), random(new range(3, 6)), 2);
-			questions.add(comb.getQuest());
+			questions.add("$" + comb.getQuest() + "$");
 			answers.add(comb.getAns());
 		}
 	}

@@ -67,6 +67,11 @@ class qUp60 {
 			log.gen(questions, answers, i);
 		}
 
+		if(random == 43 || random == 44 || random == 45){
+			//combin combinations = new combin();
+			combin.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);
