@@ -34,11 +34,11 @@ public class rightTriangle{
 			}
 		}
 		if(chooser == 1){//median length
-			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
+			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
 			answers.add(simplify.getFraction(side3 + "/" + 2) + ", " + side3/2.0);
 		}
 		if(chooser == 2){//altitude length
-			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", and " + side3 + "$?");
+			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a triangle with sides $" + side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
 			answers.add(simplify.getFraction((side1 * side2) + "/" + side3) + ", " + (side1 * side2)/side3);
 		}
 	}

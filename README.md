@@ -25,8 +25,7 @@ Approximation Problems are also incomplete
  Measurement units
 (length, weight, capacity, time)
 
-~~8) Greatest Common Divisor (GCD) and
-Least Common Multiple (LCM)~~
+~~8) Greatest Common Divisor (GCD) and Least Common Multiple (LCM)~~
 
 ~~9) Percent Problems~~
 
@@ -101,7 +100,7 @@ Least Common Multiple (LCM)~~
 
 ~~12) Probability/Odds~~
 
-13) Conics
+~~13) Conics~~
 
 ~~14) Binomial Theorem (Expansion)~~ number of terms
 

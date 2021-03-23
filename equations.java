@@ -5,7 +5,7 @@ import java.util.Random;
 public class equations{
 
 	public static void gen(int i, ArrayList<String> questions, ArrayList<String> answers){
-        	Random rand = new Random();
+        Random rand = new Random();
 		char variable1 = (char)(rand.nextInt(26) + 97);
 		char variable2 = (char)(rand.nextInt(26) + 97);
 		while(variable2 == (variable1)){
@@ -19,7 +19,7 @@ public class equations{
 				coef[a] = rand.nextInt(14) - 5;
 			}
 		}
-		System.out.println(Arrays.toString(coef) + "asdasdasdasdasatwetsrwrsegsdgbfhrtwetrdgdsgsg");
+		//System.out.println(Arrays.toString(coef) + "asdasdasdasdasatwetsrwrsegsdgbfhrtwetrdgdsgsg");
 		int signRand = rand.nextInt(2);
 		char sign = '+';
 		if(signRand == 1){

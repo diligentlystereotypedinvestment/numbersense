@@ -72,6 +72,10 @@ class qUp60 {
 			combin.gen(questions, answers, i);
 		}
 
+		if(random == 46 || random == 47 || random == 48){//conics
+			conic.gen(questions, answers, i);
+		}
+
 		if (random < 46) {//older problems
 			qUp40 questions40 = new qUp40();
 			questions40.Gen(questions, answers, i);

@@ -226,7 +226,7 @@ class qUp40 {
 
 		}
 		if (random == 33 || random == 34) {// Solving Simple Equations// System.out.print(printmess);
-            equations.gen(i, questions, answers);
+			equations.gen(i, questions, answers);
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
 			 * //System.out.print("\\textunderscore"); }
@@ -235,110 +235,110 @@ class qUp40 {
 			// System.out.println();
 
 		}
-		
+
 		if (random == 35 || random == 36) {// system of equations
-            int problem = rand.nextInt(2);
-            if(problem == 0){
-			systemOfEquations sys = new systemOfEquations();
-			sys.Gen();
-			questions.add("(" + i + ")" + sys.getQuestion());
-			answers.add(String.valueOf(sys.getAnswer()));
+			int problem = rand.nextInt(2);
+			if(problem == 0){
+				systemOfEquations sys = new systemOfEquations();
+				sys.Gen();
+				questions.add("(" + i + ")" + sys.getQuestion());
+				answers.add(String.valueOf(sys.getAnswer()));
 			} else{
-			int x1 = rand.nextInt(6) + 1;
-			int x2 = rand.nextInt(6) + 1;
-			int y1 = rand.nextInt(6) + 1;
-			int y2 = rand.nextInt(6) + 1;
-			int equal1 = rand.nextInt(10) + 1;
-			int equal2 = rand.nextInt(10) + 1;
-			String sign1 = "";
-			String sign2 = "";
-			String solve = "";
-			int choose = rand.nextInt(2) + 1;
-			if (choose == 1) {
-				sign1 = " + ";
-			}
-			if (choose == 2) {
-				sign1 = " - ";
-			}
-			choose = rand.nextInt(2) + 1;
-			if (choose == 1) {
-				sign2 = " - ";
-			}
-			if (choose == 2) {
-				sign2 = " + ";
-			}
-			choose = rand.nextInt(2) + 1;
-			if (choose == 1) {
-				solve = " x ";
-			}
-			if (choose == 2) {
-				solve = " y ";
-			}
-			String printmess = "";
-			printmess = ("(" + i + ")" + "$" + x1 + "x" + sign1 + y1 + "y " + " = " + equal1 + " , " + x2 + "x" + sign2
-					+ y2 + "y " + " = " + equal2 + "$ What is the value of " + solve);
-			if (sign2.contains("-") && sign1.contains("+")) {
-				if (solve.contains("x")) {
-					double ratio = y1 / y2;
-					double newequal = equal1 + (ratio * equal2);
-					double newx = x1 + (ratio * x2);
-					answers.add(String.valueOf(newequal / newx));
+				int x1 = rand.nextInt(6) + 1;
+				int x2 = rand.nextInt(6) + 1;
+				int y1 = rand.nextInt(6) + 1;
+				int y2 = rand.nextInt(6) + 1;
+				int equal1 = rand.nextInt(10) + 1;
+				int equal2 = rand.nextInt(10) + 1;
+				String sign1 = "";
+				String sign2 = "";
+				String solve = "";
+				int choose = rand.nextInt(2) + 1;
+				if (choose == 1) {
+					sign1 = " + ";
 				}
-				if (solve.contains("y")) {
-					double ratio = x1 / x2;
-					double newequal = equal1 + (ratio * equal2);
-					double newy = y1 + (ratio * y2);
-					answers.add(String.valueOf(newequal / newy));
+				if (choose == 2) {
+					sign1 = " - ";
 				}
+				choose = rand.nextInt(2) + 1;
+				if (choose == 1) {
+					sign2 = " - ";
+				}
+				if (choose == 2) {
+					sign2 = " + ";
+				}
+				choose = rand.nextInt(2) + 1;
+				if (choose == 1) {
+					solve = " x ";
+				}
+				if (choose == 2) {
+					solve = " y ";
+				}
+				String printmess = "";
+				printmess = ("(" + i + ")" + "$" + x1 + "x" + sign1 + y1 + "y " + " = " + equal1 + " , " + x2 + "x" + sign2
+						+ y2 + "y " + " = " + equal2 + "$ What is the value of " + solve);
+				if (sign2.contains("-") && sign1.contains("+")) {
+					if (solve.contains("x")) {
+						double ratio = y1 / y2;
+						double newequal = equal1 + (ratio * equal2);
+						double newx = x1 + (ratio * x2);
+						answers.add(String.valueOf(newequal / newx));
+					}
+					if (solve.contains("y")) {
+						double ratio = x1 / x2;
+						double newequal = equal1 + (ratio * equal2);
+						double newy = y1 + (ratio * y2);
+						answers.add(String.valueOf(newequal / newy));
+					}
+				}
+				if (sign2.contains("+") && sign1.contains("+")) {
+					if (solve.contains("x")) {
+						double ratio = -1.0 * y1 / y2;
+						double newequal = equal1 + (ratio * equal2);
+						double newx = x1 + (ratio * x2);
+						answers.add(String.valueOf(newequal / newx));
+					}
+					if (solve.contains("y")) {
+						double ratio = -1.0 * x1 / x2;
+						double newequal = equal1 + (ratio * equal2);
+						double newy = y1 + (ratio * y2);
+						answers.add(String.valueOf(newequal / newy));
+					}
+				}
+				if (sign2.contains("+") && sign1.contains("-")) {
+					if (solve.contains("x")) {
+						double ratio = y2 / y1;
+						double newequal = equal2 + (ratio * equal1);
+						double newx = x2 + (ratio * x1);
+						answers.add(String.valueOf(newequal / newx));
+					}
+					if (solve.contains("y")) {
+						double ratio = x2 / x1;
+						double newequal = equal2 + (ratio * equal1);
+						double newy = y2 - (ratio * y1);
+						answers.add(String.valueOf(newequal / newy));
+					}
+				}
+				if (sign2.contains("-") && sign1.contains("-")) {
+					if (solve.contains("x")) {
+						double ratio = -1.0 * y1 / y2;
+						double newequal = equal1 + (ratio * equal2);
+						double newx = x1 + (ratio * x2);
+						answers.add(String.valueOf(newequal / newx));
+					}
+					if (solve.contains("y")) {
+						double ratio = -1.0 * x1 / x2;
+						double newequal = equal1 + (ratio * equal2);
+						double newy = y1 + (ratio * y2);
+						answers.add(String.valueOf(newequal / newy));
+					}
+				}
+				questions.add(printmess);
 			}
-			if (sign2.contains("+") && sign1.contains("+")) {
-				if (solve.contains("x")) {
-					double ratio = -1.0 * y1 / y2;
-					double newequal = equal1 + (ratio * equal2);
-					double newx = x1 + (ratio * x2);
-					answers.add(String.valueOf(newequal / newx));
-				}
-				if (solve.contains("y")) {
-					double ratio = -1.0 * x1 / x2;
-					double newequal = equal1 + (ratio * equal2);
-					double newy = y1 + (ratio * y2);
-					answers.add(String.valueOf(newequal / newy));
-				}
-			}
-			if (sign2.contains("+") && sign1.contains("-")) {
-				if (solve.contains("x")) {
-					double ratio = y2 / y1;
-					double newequal = equal2 + (ratio * equal1);
-					double newx = x2 + (ratio * x1);
-					answers.add(String.valueOf(newequal / newx));
-				}
-				if (solve.contains("y")) {
-					double ratio = x2 / x1;
-					double newequal = equal2 + (ratio * equal1);
-					double newy = y2 - (ratio * y1);
-					answers.add(String.valueOf(newequal / newy));
-				}
-			}
-			if (sign2.contains("-") && sign1.contains("-")) {
-				if (solve.contains("x")) {
-					double ratio = -1.0 * y1 / y2;
-					double newequal = equal1 + (ratio * equal2);
-					double newx = x1 + (ratio * x2);
-					answers.add(String.valueOf(newequal / newx));
-				}
-				if (solve.contains("y")) {
-					double ratio = -1.0 * x1 / x2;
-					double newequal = equal1 + (ratio * equal2);
-					double newy = y1 + (ratio * y2);
-					answers.add(String.valueOf(newequal / newy));
-				}
-			}
-			questions.add(printmess);
-			}
-			
+
 		}
 		if (random == 37 || random == 38) {// repeating decimal to fraction
-            		repeatingFraction.gen(i, questions, answers);
+			repeatingFraction.gen(i, questions, answers);
 		}
 		// power
 		if (random == 39 || random == 40) {// I think this is more remainder problems
@@ -359,9 +359,9 @@ class qUp40 {
 			answers.add(String.valueOf(poly.getAnswer()));
 		}
 		/*if(random == 43 || random == 44){//exponents
-			OofO exponent = new OofO();
-			questions.add("(" + i + ")" + exponent.exponent());
-			answers.add(String.valueOf(exponent.outsolution));
+		  OofO exponent = new OofO();
+		  questions.add("(" + i + ")" + exponent.exponent());
+		  answers.add(String.valueOf(exponent.outsolution));
 
 		}
 		*/
@@ -369,11 +369,6 @@ class qUp40 {
 			proportion.gen(questions, answers, i);
 		}
 
-		if(random == 45 || random == 46){//word problems
-		}
-
-		if(random == 45 || random == 46){//substitution
-		}
 		if (random < 15) {//problems before it
 			qUp20 questions20 = new qUp20();
 			questions20.Gen(questions, answers, i);
