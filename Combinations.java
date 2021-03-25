@@ -1,3 +1,4 @@
+/*
 public class Combinations
 {
 	int choose (int left, int right)
@@ -8,3 +9,4 @@ public class Combinations
 		return num / denom;
 	}
 }
+*/

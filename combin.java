@@ -18,13 +18,17 @@ public class combin
 	{
 		//int n = combina.getN();
 		//int k = combina.getK();
-		if (isComb ())
+		if (comb)
 		{
 			return binomialTheorem.factorial (n) /
 				(binomialTheorem.factorial (k) * binomialTheorem.factorial (n - k));
 		}
 		return binomialTheorem.factorial (n) /
 			(binomialTheorem.factorial (n - k));
+	}
+	
+	public static int choose(int n, int k){
+        return new combin(n, k, true).toAns();
 	}
 
 	public boolean isComb ()

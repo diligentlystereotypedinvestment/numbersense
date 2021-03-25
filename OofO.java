@@ -500,4 +500,10 @@ public class OofO
 		}
 		return "";
 	}
+	
+	public static void main(String[] args){
+        OofO loga = new OofO();
+        loga.placeholder(log.random(), log.random(), log.random(), 2);
+        System.out.println(loga.getQuest() + ", " + loga.getAns());
+	}
 }

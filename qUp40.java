@@ -206,7 +206,7 @@ class qUp40
 			}
 			if (choose == 5)
 			{			// choose
-				Combinations chose = new Combinations ();
+				//Combinations chose = new Combinations ();
 				int chooselength = rand.nextInt (2) + 1;
 				int doublechoose = rand.nextInt (2) + 1;
 				if (doublechoose == 1)
@@ -216,7 +216,7 @@ class qUp40
 						 chooselength + " are there in " + setA + "?");
 					answers.add (String.
 							valueOf (1.0 *
-								chose.choose (setA.size (),
+								combin.choose (setA.size (),
 									chooselength)));
 				}
 				else if (doublechoose == 2)
@@ -228,7 +228,7 @@ class qUp40
 						 " in " + setA + "?");
 					answers.add (String.
 							valueOf (2.0 *
-								chose.choose (setA.size (),
+								combin.choose (setA.size (),
 									chooselength)));
 				}
 			}
