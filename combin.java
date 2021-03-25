@@ -87,8 +87,8 @@ public class combin
 	{
 		if (comb)
 		{
-			return "_" + n + "C_" + k;
+			return "_{" + n + "}C_{" + k + "}";
 		}
-		return "_" + n + "P_" + k;
+		return "_{" + n + "}P_{" + k + "}";
 	}
 }

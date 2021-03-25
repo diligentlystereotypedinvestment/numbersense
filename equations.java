@@ -102,19 +102,19 @@ public class equations
 			", " + variable;
 		if (coef[0] < 0 && directionChoose == 0)
 		{
-			questions.add ("(" + i + ") " + question + "<$");
+			questions.add (question + "<$");
 		}
 		if (coef[0] < 0 && directionChoose == 1)
 		{
-			questions.add ("(" + i + ") " + question + ">$");
+			questions.add (question + ">$");
 		}
 		if (coef[0] < 0 && directionChoose == 2)
 		{
-			questions.add ("(" + i + ") " + question + "\\leq$");
+			questions.add (question + "\\leq$");
 		}
 		if (coef[0] < 0 && directionChoose == 3)
 		{
-			questions.add ("(" + i + ") " + question + "\\geq$");
+			questions.add (question + "\\geq$");
 		}
 		answers.add (simplify.getFraction ((coef[2] - coef[1]) + "/" + coef[0]));
 	}

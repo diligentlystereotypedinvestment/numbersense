@@ -52,25 +52,27 @@ public class log
 	{
 		return base;
 	}
-
+    
+    /*
 	public String getArg ()
 	{
 		if (argument.indexOf ("\\^") == -1)
 		{
-			return argument;
+			return "1";//argument.substring(1, argument.length() - 1);
 		}
 		String[]eSplit = argument.split ("\\^");
 		return eSplit[1].substring (1, eSplit[1].length () - 1);
-		/*
-		   if(argument.indexOf("e") != -1){
-		   String[] eSplit = argument.split("\\^");
-		   return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
-		   } else {
-		   String[] eSplit = argument.split("\\^");
-		   return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
-		   }
-		   */
+		
+		   //if(argument.indexOf("e") != -1){
+		   //String[] eSplit = argument.split("\\^");
+		   //return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
+		   //} else {
+		   //String[] eSplit = argument.split("\\^");
+		   //return Double.valueOf(eSplit[1].substring(1, eSplit[1].length() - 1));
+           //}
+		   
 	}
+	*/
 
 	public String toAns ()
 	{
@@ -95,7 +97,7 @@ public class log
 		   return "1";
 		   }
 		   }
-		//return Math.log(Integer.valueOf(getArg()))/Math.log(Integer.valueOf(getBase()));
+		//return Math.log(Integer.valueOf(toAns()))/Math.log(Integer.valueOf(getBase()));
 		*/
 	}
 
@@ -104,11 +106,10 @@ public class log
 		if (add1.toString ().indexOf ("e") != -1)
 		{
 			return new log (add1.getBase (),
-					"e^" + fracOperations.fracMult (add1.getArg (),
-						add2.getArg ()));
+					"e^" + fracOperations.fracMult (add1.toAns (),
+						add2.toAns ()));
 		}
-		return new log (add1.getBase (),
-				fracOperations.fracMult (add1.getArg (), add2.getArg ()));
+		return new log (add1.getBase (), fracOperations.fracMult (add1.toAns (), add2.toAns ()));
 	}
 
 	public static log sub (log add1, log add2)
@@ -116,12 +117,12 @@ public class log
 		if (add1.toString ().indexOf ("e") != -1)
 		{
 			return new log (add1.getBase (),
-					"e^" + fracOperations.fracDivide (add1.getArg (),
-						add2.getArg (),
+					"e^" + fracOperations.fracDivide (add1.toAns (),
+						add2.toAns (),
 						false));
 		}
 		return new log (add1.getBase (),
-				fracOperations.fracDivide (add1.getArg (), add2.getArg (),
+				fracOperations.fracDivide (add1.toAns (), add2.toAns (),
 					false));
 	}
 

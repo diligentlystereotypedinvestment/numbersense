@@ -3,8 +3,7 @@ import java.util.ArrayList;
 
 class qUp60
 {
-	public void Gen (ArrayList < String > questions,
-			ArrayList < String > answers, int i)
+	public void Gen (ArrayList < String > questions, ArrayList <String> answers, int i)
 	{
 		Random rand = new Random ();
 		int random = rand.nextInt (97) + 1;
@@ -90,12 +89,14 @@ class qUp60
 			combin.gen (questions, answers, i);
 		}
 
-		if (random == 46 || random == 47 || random == 48)
+		int thirdEqual = 48;
+		if (random == thirdEqual - 2 || random == thirdEqual - 1 || random == thirdEqual)
 		{				//conics
 			conic.gen (questions, answers, i);
 		}
+		//thirdEqual += 3;
 
-		if (random < 46)
+		if (random > thirdEqual)
 		{				//older problems
 			qUp40 questions40 = new qUp40 ();
 			questions40.Gen (questions, answers, i);
