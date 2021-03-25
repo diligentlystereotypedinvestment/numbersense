@@ -4,6 +4,7 @@ public class genRunner
 {
 	public static void main (String[]args)
 	{
+		int hoohoh = 39;
 		ArrayList < String > questions = new ArrayList <> ();
 		ArrayList < String > answers = new ArrayList <> ();
 		System.out.
