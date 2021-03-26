@@ -57,11 +57,15 @@ public class log {
 	 */
 
 	public String toAns() {
-		if (argument.indexOf("\\^") != -1) {
-			String[] eSplit = argument.split("\\^");
-			return eSplit[1].substring(1, eSplit[1].length() - 1);
+		if (argument.substring(0, argument.indexOf("^")).equals(base)) { // if base == argument base
+			if (argument.indexOf("^") != -1) {
+				String[] eSplit = argument.split("\\^");
+				return eSplit[1].substring(1, eSplit[1].length() - 1);
+			} else {
+				return "1";
+			}
 		} else {
-			return "1";
+			return "-1"; //nothing right now
 		}
 		/*
 		 * if(toString().indexOf("e") != -1){ String[] eSplit = argument.split("\\^");
