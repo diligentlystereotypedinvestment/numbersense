@@ -34,7 +34,7 @@ fracOperations has methods for fraction arithmetic
     
     Exponents - I think answer key is wrong and question also needs "$=n^k$, what is $k$"
     
-    OofO's placeholder method
+    OofO's placeholder method, not generating a first term for the equation
     
 - More Add/Sub/Mult/Div Tricks/Common Problems
 
