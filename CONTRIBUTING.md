@@ -34,6 +34,8 @@ fracOperations has methods for fraction arithmetic
     
     Exponents - I think answer key is wrong and question also needs "$=n^k$, what is $k$"
     
+    OofO's placeholder method
+    
 - More Add/Sub/Mult/Div Tricks/Common Problems
 
 - Making the LaTeX formatting look more accurate
