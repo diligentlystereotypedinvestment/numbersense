@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class genRunner {
 	public static void main(String[] args) {
-		int teststuff = 123;
 		ArrayList<String> questions = new ArrayList<>();
 		ArrayList<String> answers = new ArrayList<>();
 		System.out.println(
