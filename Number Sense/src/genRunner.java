@@ -51,6 +51,7 @@ public class genRunner {
 		questions.trimToSize();
 		answers.trimToSize();
 		for (String e : questions) {
+			System.out.print("\\textbf{");
 			System.out.print(e);
 			if (e.equals(null)) {
 				continue;
@@ -58,12 +59,16 @@ public class genRunner {
 			if (e.indexOf("\\hrulefill") == -1) {
 				System.out.println("\\hrulefill");
 			}
-			System.out.print("\n\n");
+			System.out.print("}\n\n");
 		}
 		System.out.println("\\end{flushleft}\\end{multicols}");
-		System.out.println("\\clearpage\n\\begin{multicols}{4}\n");
+		System.out.println("\n\\clearpage\n\\textbf{DO NOT DISTRIBUTE TO STUDENTS BEFORE OR DURING THE CONTEST}\\vspace{.25in}\n\n\\textbf{University Interscholastic League - Number Sense Answer Key HS $\\cdot$ Generated $\\cdot$ \\the\\year{}}\n\n\\textbf{*number) $x-y$ means an integer between $x$ and $y$ inclusive}\n\n\\textbf{NOTE: If an answer is of the type like $\\frac{2}{3}$ it cannot be written as a repeating decimal}");
+		System.out.println("\n\\begin{multicols}{4}\n");
 		int i = 1;
 		for (String e : answers) {
+			if(i == 10){
+				System.out.print("*");
+			}
 			if (e.indexOf("$") == -1) {
 				System.out.print(i + ") $" + e + "$\n\n");
 			} else {

@@ -57,7 +57,8 @@ public class log {
 	 */
 
 	public String toAns() {
-		if (argument.substring(0, argument.indexOf("^")).equals(base)) { // if base == argument base
+		//still not too sure why we need this
+		if (argument.indexOf("^") != -1 && argument.substring(0, argument.indexOf("^")).equals(base)) { // if base == argument base
 			if (argument.indexOf("^") != -1) {
 				String[] eSplit = argument.split("\\^");
 				return eSplit[1].substring(1, eSplit[1].length() - 1);
