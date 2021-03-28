@@ -22,9 +22,9 @@ fracOperations has methods for fraction arithmetic
 
 - Bugs
 
-    Question numbers doubling up
+    ~~Question numbers doubling up I think this is done~~
     
-    Questions not fully genning? (questions generating lik 43=)
+    Questions not fully genning? (questions generating like 43=)
     
     Answer key being wrong for some problems
     
@@ -50,10 +50,14 @@ fracOperations has methods for fraction arithmetic
     
     Theorems from Geometry - angle bisector, what else?
     
-    Complex Numbers, there are a couple of problems with this (question number doubling up, $i$'s not printing)
+    ~~Complex Numbers, there are a couple of problems with this (question number doubling up, $i$'s not printing)~~
     
     Unnecessary 0's after doubles
+
+    Log - toString making the argument more simplified, i.e. 4^{3/2} -> 8, 3^3 -> 27, but 3^{3/2} -> 3^{3/2}, etc., needed for direct computation questions
 
 - Spaces after the question number
 
 - balance problems more, i.e. no more $2^2$
+
+- fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations

@@ -38,7 +38,7 @@ public class binomialTheorem {
 			} else {
 				superscript = "th";
 			}
-			questions.add("(" + i + ") What is the $" + term + "^{" + superscript + "}$ in the expansion of $(" + inside
+			questions.add("(" + i + ") What is the $" + term + "^{\\text{" + superscript + "}}$ term in the expansion of $(" + inside
 					+ ")^" + power + "$?");
 			answers.add(String.valueOf(factorial(power) / factorial(term + 1)));
 		}

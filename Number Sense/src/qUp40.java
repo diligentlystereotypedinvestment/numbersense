@@ -84,7 +84,7 @@ class qUp40 {
 		}
 		if (random == 23 || random == 24) { // Absolute value
 			Absolute ooo = new Absolute();
-			String printmess = ("$(" + i + ") " + "" + ooo.abolute());
+			String printmess = ("(" + i + ") $" + "" + ooo.abolute());
 			questions.add(printmess); // System.out.print(printmess);
 			answers.add(String.valueOf(1.0 * ooo.outsolution));
 			/*

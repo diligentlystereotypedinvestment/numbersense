@@ -71,7 +71,7 @@ public class equations {
 				coef[a] = rand.nextInt(14) - 5;
 			}
 		}
-		String question = "(" + i + ") $" + coef[0] + variable + coef[1] + direction + coef[2] + ", " + variable;
+		String question = "(" + i + ") $" + coef[0] + variable + " + " + coef[1] + direction + coef[2] + ", " + variable;
 		if (coef[0] < 0 && directionChoose == 0) {
 			questions.add(question + "<$");
 		}

@@ -10,8 +10,7 @@ public class Distribution {
 		tensMultiple = 10 * (rand.nextInt(3) + 1);
 		int variation = rand.nextInt(tensMultiple - 2) + 1;
 		int multiple = rand.nextInt(20) + 5;
-		stringmess = (tensMultiple - variation) + "$\\cdot$" + multiple + " + " + multiple + "$\\cdot$"
-				+ (tensMultiple + variation);
+		stringmess = (tensMultiple - variation) + "$\\cdot$" + multiple + " + " + multiple + "$\\cdot$" + (tensMultiple + variation);
 		answer = 2 * tensMultiple * multiple;
 	}
 

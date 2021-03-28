@@ -10,13 +10,16 @@ public class rightTriangle {
 		Random rand = new Random();
 		int chooser = rand.nextInt(3);
 		int sideConfig = rand.nextInt(6);
-		int side1 = leg1[rand.nextInt(leg1.length)];
-		int side2 = leg2[rand.nextInt(leg2.length)];
-		int side3 = hypo[rand.nextInt(hypo.length)];
-		if (sideConfig == 0) {
-			side1 = (rand.nextInt(4) + 1) * 3;
-			side2 = (rand.nextInt(4) + 1) * 4;
-			side3 = (rand.nextInt(4) + 1) * 5;
+		int side1, side2, side3;
+		if (sideConfig == 5) {
+			int scale = rand.nextInt(4) + 1;
+			side1 = scale * 3;
+			side2 = scale * 4;
+			side3 = scale * 5;
+		} else {
+			side1 = leg1[sideConfig];
+			side2 = leg2[sideConfig];
+			side3 = hypo[sideConfig];
 		}
 		if (chooser == 0) { // find one side
 			int sideToFind = rand.nextInt(3);
@@ -40,12 +43,12 @@ public class rightTriangle {
 			}
 		}
 		if (chooser == 1) { // median length
-			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a triangle with sides $"
+			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a right triangle with sides $"
 					+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
 			answers.add(simplify.getFraction(side3 + "/" + 2) + ", " + side3 / 2.0);
 		}
 		if (chooser == 2) { // altitude length
-			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a triangle with sides $"
+			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a right triangle with sides $"
 					+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
 			answers.add(simplify.getFraction((side1 * side2) + "/" + side3) + ", " + (side1 * side2) / side3);
 		}

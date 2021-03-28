@@ -4,7 +4,7 @@ public class simplify {
 		int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
 		int den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
 
-		if (den / LCMandGCF.GCF(num, den) == 1) {
+		if (1.0 * den / LCMandGCF.GCF(num, den) == 1.0) {
 			return String.valueOf(num / LCMandGCF.GCF(num, den));
 		} else {
 			return ("$\\frac{" + (num / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}$");

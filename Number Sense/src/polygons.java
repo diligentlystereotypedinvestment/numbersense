@@ -11,23 +11,23 @@ class polygons {
 		int sideLength = 2 * (rand.nextInt(3) + 1);
 		if (sides == 0) { // equilateral triangle
 			if (problem == 0) { // height
-				questions.add("(" + i + ") What is the height of a triangle with a side length of " + sideLength + "?");
+				questions.add("(" + i + ") What is the height of an equilateral triangle with a side length of " + sideLength + "?");
 				answers.add(sideLength / 2 + "$\\sqrt{3}$");
 			}
 			if (problem == 1) { // area
-				questions.add("(" + i + ") What is the area of a triangle with a side length of " + sideLength + "?");
+				questions.add("(" + i + ") What is the area of an equilateral triangle with a side length of " + sideLength + "?");
 				answers.add("$" + simplify.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false)
 						+ "\\cdot\\sqrt{3}$");
 			}
 			if (problem == 2) { // side length from area
-				questions.add("(" + i + ") What is the side length of a triangle with an area of $"
+				questions.add("(" + i + ") What is the side length of an equilateral triangle with an area of $"
 						+ simplify.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false) + "\\cdot\\sqrt{3} $?");
 				answers.add(String.valueOf(sideLength));
 			}
 		}
 		if (sides == 1) { // rectangle
 			if (problem == 0) { // diagonals
-				questions.add("(" + i + ") What is the diagonal length of a square  with an area of "
+				questions.add("(" + i + ") What is the diagonal length of a square with an area of "
 						+ (int) Math.pow(sideLength, 2) + "?");
 				answers.add("$" + sideLength + "\\sqrt{2}$");
 			}

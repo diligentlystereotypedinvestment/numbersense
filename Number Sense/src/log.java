@@ -59,14 +59,15 @@ public class log {
 	public String toAns() {
 		//still not too sure why we need this
 		if (argument.indexOf("^") != -1 && argument.substring(0, argument.indexOf("^")).equals(base)) { // if base == argument base
-			if (argument.indexOf("^") != -1) {
+			//if (argument.indexOf("^") != -1) {
 				String[] eSplit = argument.split("\\^");
 				return eSplit[1].substring(1, eSplit[1].length() - 1);
-			} else {
+			//}
+			/*else {
 				return "1";
-			}
+			}*/
 		} else {
-			return "-1"; //nothing right now
+			return "1"; //nothing right now
 		}
 		/*
 		 * if(toString().indexOf("e") != -1){ String[] eSplit = argument.split("\\^");
@@ -101,11 +102,11 @@ public class log {
 		}
 		if (problem == 1) { // add
 			questions.add("(" + i + ") What is $" + log1 + " + " + log2 + "$?");
-			answers.add((log.add(log1, log2).toAns()));
+			answers.add(fracOperations.fracAdd(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 2) { // sub
 			questions.add("(" + i + ") What is $" + log1 + " - " + log2 + "$?");
-			answers.add((log.sub(log1, log2).toAns()));
+			answers.add(fracOperations.fracSub(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 3) { // mult
 			questions.add("(" + i + ") What is $" + log1 + " \\cdot " + log2 + "$?");
