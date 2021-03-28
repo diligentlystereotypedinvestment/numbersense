@@ -36,28 +36,28 @@ public class conic {
 			int problem = rand.nextInt(2);
 			if (problem == 0) {
 				questions.add("(" + i + ") What is the area of a circle with the equation $x^2 + y^2 = "
-						+ Math.pow(radius, 2) + "?$");
+						+ (int)Math.pow(radius, 2) + "?$");
 				answers.add("$" + circ.getArea() + "\\pi$");
 			}
 			if (problem == 1) {
 				questions.add("(" + i + ") What is the circumference of a circle with the equation $x^2 + y^2 = "
-						+ Math.pow(radius, 2) + "?$");
+						+ (int)Math.pow(radius, 2) + "?$");
 				answers.add("$" + (2 * circ.getRadius()) + "\\pi$");
 			}
 		} else {
 			if (xLength == 1) {
 				questions.add("(" + i + ") What is the area of a conic with the equation $x^2 + " + Math.pow(yLength, 2)
-						+ "y^2 = " + Math.pow(radius, 2) + "?$");
+						+ "y^2 = " + (int)Math.pow(radius, 2) + "?$");
 				answers.add("$" + circ.getArea() + "\\pi$");
-			}
-			if (yLength == 1) {
+			} else if (yLength == 1) {
 				questions.add("(" + i + ") What is the area of a conic with the equation $" + Math.pow(xLength, 2)
-						+ "x^2 + y^2 = " + Math.pow(radius, 2) + "?$");
+						+ "x^2 + y^2 = " + (int)Math.pow(radius, 2) + "?$");
+				answers.add("$" + circ.getArea() + "\\pi$");
+			} else{
+				questions.add("(" + i + ") What is the area of a conic with the equation $" + Math.pow(xLength, 2)
+						+ "x^2 + " + Math.pow(yLength, 2) + "y^2 = " + (int)Math.pow(radius, 2) + "?$");
 				answers.add("$" + circ.getArea() + "\\pi$");
 			}
-			questions.add("(" + i + ") What is the area of a conic with the equation $" + Math.pow(xLength, 2)
-					+ "x^2 + " + Math.pow(yLength, 2) + "y^2 = " + Math.pow(radius, 2) + "?$");
-			answers.add("$" + circ.getArea() + "\\pi$");
 		}
 	}
 }
