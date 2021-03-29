@@ -61,3 +61,5 @@ fracOperations has methods for fraction arithmetic
 - balance problems more, i.e. no more $2^2$
 
 - fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations
+
+- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp
