@@ -77,7 +77,7 @@ public class Conversion {
 	public static void main(String[] args){
 		
 		Unit.init(); // once this is moved to normal genRunner, no need to include it, because it is called in setup() method at the very beginning
-		System.out.println(getProblemInLatex(4));
+		System.out.println(getUnitProblemInLatex(4));
 		
 //		Random rand = new Random();
 //		int type = 6;
