@@ -112,7 +112,7 @@ Approximation Problems are also incomplete
 
 # Problems 61 - 70
 
-1) Volume & Surface Area
+~~1) Volume & Surface Area~~
 
 2) Greatest Integer
 
