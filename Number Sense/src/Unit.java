@@ -79,6 +79,12 @@ public enum Unit {
 	private final static ArrayList<Unit> SPEED_UNITS = new ArrayList<>();
 
 	public static void init() {
+		LENGTH_UNITS.clear();
+		TIME_UNITS.clear();
+		WEIGHT_UNITS.clear();
+		AREA_UNITS.clear();
+		VOLUME_UNITS.clear();
+		SPEED_UNITS.clear();
 		for (Unit unit : values()) {
 			switch (unit.type) {
 			case 1:
