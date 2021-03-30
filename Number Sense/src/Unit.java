@@ -37,18 +37,6 @@ public enum Unit {
 	SQUARE_YARD(Unit.AREA, SQUARE_FOOT.value * 9),
 	ACRE(Unit.AREA, 6272646 * SQUARE_INCH.value),
 	SQUARE_MILE(Unit.AREA, 640 * ACRE.value),
-	//	SQUARE_METER(4, pow(10, -2)),
-	//	DECIGRAM(4, pow(10, -1)),
-	//	GRAM(4, pow(10, 0)),
-	//	DEKAGRAM(4, pow(10, 1)),
-	//	HECTOGRAM(4, pow(10, 2)),
-	//	KILOGRAM(4, pow(10, 3)),
-	//	METRIC_TON(4, KILOGRAM.value),
-	//	POUND(4, 453.59237),
-	//	STONE(4, POUND.value * 14),
-	//	OUNCE(4, POUND.value / 16),
-	//	TON(4, POUND.value * 2000),
-	//	LONG_TON(4, POUND.value * 2240),
 
 	// 5 : volume
 	CUBIC_METER(Unit.VOLUME, 1),
@@ -163,6 +151,10 @@ public enum Unit {
 
 	private static Unit getRandomUnitFromList(ArrayList<Unit> list) {
 		return list.get(random.nextInt(list.size()));
+	}
+	
+	public String getName() {
+		return toString().toLowerCase().replace("_", " ");
 	}
 
 }
