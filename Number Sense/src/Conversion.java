@@ -8,7 +8,7 @@ public class Conversion {
 	String question = "";
 
 	public void questionGen(int i) {
-		int choosesys = rand.nextInt(2);
+		int choosesys = rand.nextInt(3);
 		if (choosesys == 0) { // percent/fractions
 			int denom = (int) Math.pow(2, rand.nextInt(3) + 2);
 			int num = rand.nextInt(denom) + 1;
