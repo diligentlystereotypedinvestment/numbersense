@@ -93,7 +93,9 @@ public class genRunner {
 	
 	public static void printTime() {
 		System.out.println();
+		System.out.println("---------------------------------------------------------");
 		System.out.println("This program has ran for: " + (System.nanoTime() - startTime) / 1000000000.0 + " seconds");
+		System.out.println("---------------------------------------------------------");
 		System.out.println();
 	}
 	
