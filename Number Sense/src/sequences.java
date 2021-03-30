@@ -37,9 +37,9 @@ public class sequences {
 			int denom = rand.nextInt(3) + 2;
 			int num = rand.nextInt(denom - 1) + 1;
 			int beginning = rand.nextInt(16) + 1;
-			question = ("(" + i + ") " + beginning + " + " + simplify.getFraction((num * beginning) + "/" + denom)
+			question = ("(" + i + ") " + beginning + " + " + simp.getFraction((num * beginning) + "/" + denom)
 					+ " + "
-					+ simplify.getFraction((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))
+					+ simp.getFraction((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))
 					+ " + \\ldots = ");
 			answer = frac.fracMult(beginning + "/1", denom + "/" + (denom - num));
 		}
@@ -78,7 +78,7 @@ public class sequences {
 		if (choose == 9) { // triangle reciprocals
 			int length = rand.nextInt(2) + 5;
 			int initial = rand.nextInt(3) + 1;
-			question = ("$" + simplify.getFraction("1/" + (initial * (initial + 1) / 2), true));
+			question = ("$" + simp.getFraction("1/" + (initial * (initial + 1) / 2), true));
 			for (int ii = initial + 1; ii < initial + length; ii++) {
 				question = question + " + \\frac{1}{" + String.valueOf(ii * (ii + 1) / 2) + "}";
 			}

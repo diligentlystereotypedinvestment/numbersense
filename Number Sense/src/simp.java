@@ -1,4 +1,4 @@
-public class simplify {
+public class simp {
 
 	public static String getFraction(String fraction) {
 		int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));

@@ -16,7 +16,7 @@ public class ratio {
 				}
 				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
 						+ "$ and vary directly, what is the value of $x$ when $y = " + postVar + "$?");
-				answers.add(simplify.getFraction(x * postVar + "/" + y));
+				answers.add(simp.getFraction(x * postVar + "/" + y));
 			}
 			if (solveFor == 1) { // y
 				while (postVar == x) {
@@ -24,7 +24,7 @@ public class ratio {
 				}
 				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
 						+ "$ and vary directly, what is the value of $y$ when $x = " + postVar + "$?");
-				answers.add(simplify.getFraction(y * postVar + "/" + x));
+				answers.add(simp.getFraction(y * postVar + "/" + x));
 			}
 		}
 		if (variation == 1) { // inverse
@@ -32,12 +32,12 @@ public class ratio {
 			if (solveFor == 0) { // x
 				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
 						+ "$ and are inverses, what is the value of $x$ when $y = " + scalar * y + "$?");
-				answers.add(simplify.getFraction(x + "/" + scalar));
+				answers.add(simp.getFraction(x + "/" + scalar));
 			}
 			if (solveFor == 1) { // y
 				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
 						+ "$ and are inverses, what is the value of $y$ when $x = " + scalar * x + "$?");
-				answers.add(simplify.getFraction(y + "/" + scalar));
+				answers.add(simp.getFraction(y + "/" + scalar));
 			}
 		}
 	}

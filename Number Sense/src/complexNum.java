@@ -37,7 +37,7 @@ public class complexNum {
 		return quotient;
 		*/
 		int denom = (int)Math.pow(Integer.valueOf(dividend.getReal()), 2) - (int)Math.pow(Integer.valueOf(dividend.getImaginary()), 2);
-		return new complexNum(simplify.getFraction(Integer.valueOf(divisor.getReal()) * Integer.valueOf(dividend.getReal()) + Integer.valueOf(divisor.getImaginary()) * Integer.valueOf(dividend.getImaginary()) + "/" + denom), simplify.getFraction(Integer.valueOf(dividend.getImaginary()) * Integer.valueOf(divisor.getReal()) - Integer.valueOf(dividend.getReal()) * Integer.valueOf(divisor.getImaginary()) + "/" + denom));
+		return new complexNum(simp.getFraction(Integer.valueOf(divisor.getReal()) * Integer.valueOf(dividend.getReal()) + Integer.valueOf(divisor.getImaginary()) * Integer.valueOf(dividend.getImaginary()) + "/" + denom), simp.getFraction(Integer.valueOf(dividend.getImaginary()) * Integer.valueOf(divisor.getReal()) - Integer.valueOf(dividend.getReal()) * Integer.valueOf(divisor.getImaginary()) + "/" + denom));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {

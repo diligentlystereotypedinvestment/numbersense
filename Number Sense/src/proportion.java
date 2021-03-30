@@ -14,12 +14,12 @@ public class proportion {
 		if (solveFor == 0) { // w of x, _ of z
 			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2
 					+ "$ as \\textunderscore\\textunderscore\\textunderscore is to $" + number3 + "$");
-			answers.add(simplify.getFraction(number1 * number3 + "/" + number2));
+			answers.add(simp.getFraction(number1 * number3 + "/" + number2));
 		}
 		if (solveFor == 0) { // w of x, y of ___
 			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2 + "$ as $" + number3
 					+ "$ is to\\textunderscore\\textunderscore\\textunderscore?");
-			answers.add(simplify.getFraction(number2 * number3 + "/" + number1));
+			answers.add(simp.getFraction(number2 * number3 + "/" + number1));
 		}
 	}
 }

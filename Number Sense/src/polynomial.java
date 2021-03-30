@@ -51,7 +51,7 @@ public class polynomial {
 		int choose = rand.nextInt(3);
 		if (choose == 0) {
 			this.problem = "(" + i + ") What is the sum of roots of " + tempProblem + "?";
-			answer = simplify.getFraction(String.valueOf(-1 * problem.getCoef(1)) + "/" + problem.getCoef(0));
+			answer = simp.getFraction(String.valueOf(-1 * problem.getCoef(1)) + "/" + problem.getCoef(0));
 		}
 		if (choose == 1 && power == 2) {
 			int decrimType = rand.nextInt(2);
@@ -74,11 +74,11 @@ public class polynomial {
 			this.problem = "(" + i + ") What is the discriminate of " + problem + "?";
 		} else if (choose == 1 && power == 3) {
 			this.problem = "(" + i + ") What is the sum of the roots of " + problem + " taken two at a time?";
-			answer = simplify.getFraction(problem.getCoef(2) + "/" + problem.getCoef(0));
+			answer = simp.getFraction(problem.getCoef(2) + "/" + problem.getCoef(0));
 		}
 		if (choose == 2) {
 			this.problem = "(" + i + ") What is the product of the roots of " + problem;
-			answer = simplify
+			answer = simp
 					.getFraction(problem.getCoef(power) + "/" + (problem.getCoef(0) * (int) Math.pow(-1, power)));
 		}
 
@@ -93,11 +93,11 @@ public class polynomial {
 		int c = poly.getCoef(2);
 		if (choose == 0) {
 			questions.add("(" + i + ") What is the lowest root of " + poly + "?");
-			answers.add(simplify.getFraction((-1 * b - (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
+			answers.add(simp.getFraction((-1 * b - (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
 		}
 		if (choose == 1) {
 			questions.add("(" + i + ") What is the largest root of " + poly + "?");
-			answers.add(simplify.getFraction((-1 * b + (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
+			answers.add(simp.getFraction((-1 * b + (int) Math.sqrt(Math.pow(a, 2) - 4 * a * c)) + "/" + (2 * a)));
 		}
 	}
 

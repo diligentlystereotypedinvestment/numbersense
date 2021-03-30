@@ -16,12 +16,12 @@ class polygons {
 			}
 			if (problem == 1) { // area
 				questions.add("(" + i + ") What is the area of an equilateral triangle with a side length of " + sideLength + "?");
-				answers.add("$" + simplify.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false)
+				answers.add("$" + simp.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false)
 						+ "\\cdot\\sqrt{3}$");
 			}
 			if (problem == 2) { // side length from area
 				questions.add("(" + i + ") What is the side length of an equilateral triangle with an area of $"
-						+ simplify.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false) + "\\cdot\\sqrt{3} $?");
+						+ simp.getFraction((int) Math.pow(sideLength, 2) + "/" + 4, false) + "\\cdot\\sqrt{3} $?");
 				answers.add(String.valueOf(sideLength));
 			}
 		}
@@ -48,7 +48,7 @@ class polygons {
 				questions.add("(" + i + ") Rectangle ABCD is " + sideLength + "\" by " + side2
 						+ "\" and rectangle A\'B\'C\'D\' is " + side3 + "\" by" + side4
 						+ "\" What is the ratio of the area of A to B?");
-				answers.add(String.valueOf(simplify.getFraction((sideLength * side2) + "/" + (side3 * side4))));
+				answers.add(String.valueOf(simp.getFraction((sideLength * side2) + "/" + (side3 * side4))));
 			}
 		}
 
