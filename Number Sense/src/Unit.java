@@ -11,7 +11,7 @@ public enum Unit {
 	METER(Unit.LENGTH, 1), DEKAMETER(Unit.LENGTH, pow(10, 1)), HECTOMETER(Unit.LENGTH, pow(10, 2)),
 	KILOMETER(Unit.LENGTH, pow(10, 3)), INCH(Unit.LENGTH, CENTIMETER.value * 2.54), FOOT(Unit.LENGTH, INCH.value * 12),
 	YARD(Unit.LENGTH, FOOT.value * 3), MILE(Unit.LENGTH, FOOT.value * 5280),
-	NAUTICAL_MILE(Unit.LENGTH, METER.value * 1852), ROD(Unit.LENGTH, FOOT.value * 16.5), 
+	NAUTICAL_MILE(Unit.LENGTH, METER.value * 1852), ROD(Unit.LENGTH, FOOT.value * 16.5),
 
 	// 2 : time
 	MILLISECOND(Unit.TIME, pow(10, -3)), SECOND(Unit.TIME, 1), MINUTE(Unit.TIME, 60), HOUR(Unit.TIME, 3600),
@@ -19,47 +19,32 @@ public enum Unit {
 
 	// 3 : weight
 	MILLIGRAM(Unit.WEIGHT, pow(10, -3)), CENTIGRAM(Unit.WEIGHT, pow(10, -2)), DECIGRAM(Unit.WEIGHT, pow(10, -1)),
-	GRAM(Unit.WEIGHT, pow(10, 0)), DEKAGRAM(Unit.WEIGHT, pow(10, 1)), HECTOGRAM(Unit.WEIGHT, pow(10, 2)),
-	KILOGRAM(Unit.WEIGHT, pow(10, 3)), METRIC_TON(Unit.WEIGHT, KILOGRAM.value), POUND(Unit.WEIGHT, 453.59237),
+	GRAM(Unit.WEIGHT, 1), DEKAGRAM(Unit.WEIGHT, pow(10, 1)), HECTOGRAM(Unit.WEIGHT, pow(10, 2)),
+	KILOGRAM(Unit.WEIGHT, pow(10, 3)), METRIC_TON(Unit.WEIGHT, KILOGRAM.value * 1000), POUND(Unit.WEIGHT, 453.59237),
 	STONE(Unit.WEIGHT, POUND.value * 14), OUNCE(Unit.WEIGHT, POUND.value / 16), TON(Unit.WEIGHT, POUND.value * 2000),
 	LONG_TON(Unit.WEIGHT, POUND.value * 2240),
 
 	// 4 : area
-	SQUARE_METER(Unit.AREA, 1),
-	SQUARE_DECIMETER(Unit.AREA, pow(10, -2)),
-	SQUARE_CENTIMETER(Unit.AREA, pow(10, -4)),
-	SQUARE_MILIMETER(Unit.AREA, pow(10, -6)),
-	SQUARE_DEKAMETER(Unit.AREA, pow(10, 2)),
-	SQUARE_HECTOMETER(Unit.AREA, pow(10, 4)),
-	SQUARE_KILOMETER(Unit.AREA, pow(10, 6)),
-	SQUARE_INCH(Unit.AREA, pow(INCH.value, 2)/10000),
-	SQUARE_FOOT(Unit.AREA, SQUARE_INCH.value * 144),
-	SQUARE_YARD(Unit.AREA, SQUARE_FOOT.value * 9),
-	ACRE(Unit.AREA, 6272646 * SQUARE_INCH.value),
+	SQUARE_METER(Unit.AREA, 1), SQUARE_DECIMETER(Unit.AREA, pow(10, -2)), SQUARE_CENTIMETER(Unit.AREA, pow(10, -4)),
+	SQUARE_MILLIMETER(Unit.AREA, pow(10, -6)), SQUARE_DEKAMETER(Unit.AREA, pow(10, 2)),
+	SQUARE_HECTOMETER(Unit.AREA, pow(10, 4)), SQUARE_KILOMETER(Unit.AREA, pow(10, 6)),
+	SQUARE_INCH(Unit.AREA, pow(INCH.value, 2) / 10000), SQUARE_FOOT(Unit.AREA, SQUARE_INCH.value * 144),
+	SQUARE_YARD(Unit.AREA, SQUARE_FOOT.value * 9), ACRE(Unit.AREA, 6272646 * SQUARE_INCH.value),
 	SQUARE_MILE(Unit.AREA, 640 * ACRE.value),
 
 	// 5 : volume
-	CUBIC_METER(Unit.VOLUME, 1),
-	CUBIC_DECIMETER(Unit.VOLUME, pow(10, -3)),
-	CUBIC_CENTIMETER(Unit.VOLUME, pow(10, -6)),
-	CUBIC_MILIMETER(Unit.VOLUME, pow(10, -9)),
-	CUBIC_DEKAMETER(Unit.VOLUME, pow(10, 3)),
-	CUBIC_HECTOMETER(Unit.VOLUME, pow(10, 6)),
-	CUBIC_KILOMETER(Unit.VOLUME, pow(10, 9)),
-	CUBIC_INCH(Unit.VOLUME, pow(INCH.value, 3)/1000000),
-	CUBIC_FOOT(Unit.VOLUME, CUBIC_INCH.value * 1728),
-	CUBIC_YARD(Unit.VOLUME, CUBIC_FOOT.value * 27),
-	LITER(Unit.VOLUME, 1),
-	PECK(Unit.VOLUME, 0.0088097676),
-	BUSHEL(Unit.VOLUME, 4 * PECK.value),
+	CUBIC_METER(Unit.VOLUME, 1), CUBIC_DECIMETER(Unit.VOLUME, pow(10, -3)), CUBIC_CENTIMETER(Unit.VOLUME, pow(10, -6)),
+	CUBIC_MILLIMETER(Unit.VOLUME, pow(10, -9)), CUBIC_DEKAMETER(Unit.VOLUME, pow(10, 3)),
+	CUBIC_HECTOMETER(Unit.VOLUME, pow(10, 6)), CUBIC_KILOMETER(Unit.VOLUME, pow(10, 9)),
+	CUBIC_INCH(Unit.VOLUME, pow(INCH.value, 3) / 1000000), CUBIC_FOOT(Unit.VOLUME, CUBIC_INCH.value * 1728),
+	CUBIC_YARD(Unit.VOLUME, CUBIC_FOOT.value * 27), LITER(Unit.VOLUME, 1), PECK(Unit.VOLUME, 0.0088097676),
+	BUSHEL(Unit.VOLUME, 4 * PECK.value), GALLON(Unit.VOLUME, CUBIC_INCH.value * 231),
+	QUART(Unit.VOLUME, GALLON.value / 4), PINT(Unit.VOLUME, QUART.value / 2), CUP(Unit.VOLUME, PINT.value / 2),
+	FLUID_OUNCE(Unit.VOLUME, CUP.value / 8),
 
 	// 6 : speed
-	INCH_S(Unit.SPEED, 1),
-	FT_HR(Unit.SPEED, 300),
-	MI_HR(Unit.SPEED, FT_HR.value / 5280),
-	FT_MI(Unit.SPEED, FT_HR.value / 60),
-	FT_S(Unit.SPEED, 1/12),
-	INCH_MI(Unit.SPEED, 60),
+	INCH_SEC(Unit.SPEED, 1), INCH_MIN(Unit.SPEED, INCH_SEC.value / 60), FT_SEC(Unit.SPEED, INCH_SEC.value * 12),
+	FT_MIN(Unit.SPEED, FT_SEC.value / 60), FT_HR(Unit.SPEED, FT_MIN.value / 60), MI_HR(Unit.SPEED, FT_HR.value * 5280),
 
 	;
 
@@ -85,7 +70,7 @@ public enum Unit {
 			System.out.println(inputUnit.toString() + " is not of the same type as " + outputUnit.toString());
 			return Double.NaN;
 		} else {
-			return input * (outputUnit.value / inputUnit.value);
+			return (input * inputUnit.value) / (outputUnit.value);
 		}
 	}
 
@@ -105,45 +90,45 @@ public enum Unit {
 		SPEED_UNITS.clear();
 		for (Unit unit : values()) {
 			switch (unit.type) {
-				case 1:
-					LENGTH_UNITS.add(unit);
-					break;
-				case 2:
-					TIME_UNITS.add(unit);
-					break;
-				case 3:
-					WEIGHT_UNITS.add(unit);
-					break;
-				case 4:
-					AREA_UNITS.add(unit);
-					break;
-				case 5:
-					VOLUME_UNITS.add(unit);
-					break;
-				case 6:
-					SPEED_UNITS.add(unit);
-					break;
+			case 1:
+				LENGTH_UNITS.add(unit);
+				break;
+			case 2:
+				TIME_UNITS.add(unit);
+				break;
+			case 3:
+				WEIGHT_UNITS.add(unit);
+				break;
+			case 4:
+				AREA_UNITS.add(unit);
+				break;
+			case 5:
+				VOLUME_UNITS.add(unit);
+				break;
+			case 6:
+				SPEED_UNITS.add(unit);
+				break;
 			}
 		}
 	}
 
 	public static Unit getRandomUnit(int type) {
 		switch (type) {
-			case 1:
-				return getRandomUnitFromList(LENGTH_UNITS);
-			case 2:
-				return getRandomUnitFromList(TIME_UNITS);
-			case 3:
-				return getRandomUnitFromList(WEIGHT_UNITS);
-			case 4:
-				return getRandomUnitFromList(AREA_UNITS);
-			case 5:
-				return getRandomUnitFromList(VOLUME_UNITS);
-			case 6:
-				return getRandomUnitFromList(SPEED_UNITS);
-			default:
-				System.out.println("Invalid type value: " + type);
-				return NULL_UNIT;
+		case 1:
+			return getRandomUnitFromList(LENGTH_UNITS);
+		case 2:
+			return getRandomUnitFromList(TIME_UNITS);
+		case 3:
+			return getRandomUnitFromList(WEIGHT_UNITS);
+		case 4:
+			return getRandomUnitFromList(AREA_UNITS);
+		case 5:
+			return getRandomUnitFromList(VOLUME_UNITS);
+		case 6:
+			return getRandomUnitFromList(SPEED_UNITS);
+		default:
+			System.out.println("Invalid type value: " + type);
+			return NULL_UNIT;
 		}
 	}
 
@@ -152,9 +137,32 @@ public enum Unit {
 	private static Unit getRandomUnitFromList(ArrayList<Unit> list) {
 		return list.get(random.nextInt(list.size()));
 	}
-	
+
+	public static Object[] getProblem() {
+		int type = getRandomType();
+		String ans = "";
+		double dAns = 0;
+		Unit from;
+		Unit to;
+		int input = random.nextInt(5) * random.nextInt(4) + 1 + random.nextInt(10);
+		do {
+			from = getRandomUnit(type);
+			do {
+				to = getRandomUnit(type);
+			} while (to == from);
+			dAns = convert(input, from, to);
+			ans = dAns + "";
+		} while (ans.length() > 6 || ans.indexOf('E') > -1);
+		Object[] problem = new Object[] { input, from, to };
+		return problem;
+	}
+
+	private static int getRandomType() {
+		return random.nextInt(6) + 1;
+	}
+
 	public String getName() {
-		return toString().toLowerCase().replace("_", " ");
+		return toString().toLowerCase().replace("_", (type == SPEED) ? "/" : " ");
 	}
 
 }
