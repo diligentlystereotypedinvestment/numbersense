@@ -1,7 +1,13 @@
 import java.util.ArrayList;
 
 public class genRunner {
+	
+	public static void setup() {
+		Unit.init();
+	}
+	
 	public static void main(String[] args) {
+		setup();
 		ArrayList<String> questions = new ArrayList<>();
 		ArrayList<String> answers = new ArrayList<>();
 		System.out.println(
@@ -10,7 +16,7 @@ public class genRunner {
 
 			if (i % 10 == 0) { // Estimation problems
 				Estimation estimate = new Estimation(i);
-				answers.add((int)(.95 * estimate.getAnswer()) + " - " + (int)(1.05 * estimate.getAnswer()));
+				answers.add((int) (.95 * estimate.getAnswer()) + " - " + (int) (1.05 * estimate.getAnswer()));
 				questions.add(("*(" + i + ") " + estimate.getMess()));
 				// for (int q = 0; q < 60 - estimate.getMess().length(); q++) {
 				// System.out.print("\\textunderscore");
@@ -62,11 +68,12 @@ public class genRunner {
 			System.out.print("}\n\n");
 		}
 		System.out.println("\\end{flushleft}\\end{multicols}");
-		System.out.println("\n\\clearpage\n\\textbf{DO NOT DISTRIBUTE TO STUDENTS BEFORE OR DURING THE CONTEST}\n\n\\textbf{University Interscholastic League - Number Sense Answer Key HS $\\cdot$ Generated $\\cdot$ \\the\\year{}}\n\n\\textbf{*number) $x-y$ means an integer between $x$ and $y$ inclusive}\n\n\\textbf{NOTE: If an answer is of the type like $\\frac{2}{3}$ it cannot be written as a repeating decimal}");
+		System.out.println(
+				"\n\\clearpage\n\\textbf{DO NOT DISTRIBUTE TO STUDENTS BEFORE OR DURING THE CONTEST}\n\n\\textbf{University Interscholastic League - Number Sense Answer Key HS $\\cdot$ Generated $\\cdot$ \\the\\year{}}\n\n\\textbf{*number) $x-y$ means an integer between $x$ and $y$ inclusive}\n\n\\textbf{NOTE: If an answer is of the type like $\\frac{2}{3}$ it cannot be written as a repeating decimal}");
 		System.out.println("\n\\begin{multicols}{4}\n");
 		int i = 1;
 		for (String e : answers) {
-			if(i % 10 == 0){
+			if (i % 10 == 0) {
 				System.out.print("*");
 			}
 			if (e.indexOf("$") == -1) {
@@ -79,4 +86,5 @@ public class genRunner {
 		System.out.println("\n\n\\end{multicols}\n");
 		System.out.println("\n\n\\end{document}");
 	}
+	
 }
