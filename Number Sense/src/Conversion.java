@@ -63,7 +63,7 @@ public class Conversion {
 		return answers;
 	}
 
-	public static String getProblemInLatex(int problemNumber) {
+	public static String getUnitProblemInLatex(int problemNumber) {
 		Object[] problem = Unit.getProblem();
 		int initial = (Integer) problem[0];
 		Unit iUnit = (Unit) problem[1];
