@@ -47,8 +47,8 @@ public enum Unit {
 
 	public static final int LENGTH = 1, TIME = 2, WEIGHT = 3, AREA = 4, VOLUME = 5, SPEED = 6;
 
-	public final int type; // 1 is length, 2 is time, 3 is weight, 4 is area, 5 is volume, 6 is speed
-	public final double value;
+	private final int type; // 1 is length, 2 is time, 3 is weight, 4 is area, 5 is volume, 6 is speed
+	private final double value;
 
 	private Unit(int type, double value) {
 		this.type = type;
@@ -71,12 +71,12 @@ public enum Unit {
 		}
 	}
 
-	public final static ArrayList<Unit> LENGTH_UNITS = new ArrayList<>();
-	public final static ArrayList<Unit> TIME_UNITS = new ArrayList<>();
-	public final static ArrayList<Unit> WEIGHT_UNITS = new ArrayList<>();
-	public final static ArrayList<Unit> AREA_UNITS = new ArrayList<>();
-	public final static ArrayList<Unit> VOLUME_UNITS = new ArrayList<>();
-	public final static ArrayList<Unit> SPEED_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> LENGTH_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> TIME_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> WEIGHT_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> AREA_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> VOLUME_UNITS = new ArrayList<>();
+	private final static ArrayList<Unit> SPEED_UNITS = new ArrayList<>();
 
 	public static void init() {
 		for (Unit unit : values()) {
