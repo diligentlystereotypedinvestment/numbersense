@@ -62,4 +62,6 @@ fracOperations has methods for fraction arithmetic
 
 - fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations
 
-- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp
+~~- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp~~
+
+- extravalengt numbers
