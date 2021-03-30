@@ -44,6 +44,15 @@ public class Conversion {
 			question = ("(" + i + ") What is " + roman.getRoman() + " in arabic?");
 			answers = String.valueOf(roman.getArabic());
 		}
+		if(choosesys == 2){/*
+			int type = rand.nextInt(6) + 1;
+			int initial = rand.nextInt(20) + 1;
+			Unit iUnit = Unit.getRandomUnit();
+			Unit fUnit = Unit.getRandomUnit();
+			question = "(" + i + ") What is " + initial + " " + iUnit.toString() + " in " + fUnit.toString() + "?";
+			answers = iUnit.convert(initial, iUnit, fUnit);
+			*/
+		}
 	}
 
 	public String getQuestion() {
@@ -52,6 +61,22 @@ public class Conversion {
 
 	public String getAnswer() {
 		return answers;
+	}
+
+	public static void main(String[] args){
+		Random rand = new Random();
+		int type = rand.nextInt(6) + 1;
+		int i = 0;
+		int initial = rand.nextInt(20) + 2;
+		Unit.init();
+		Unit iUnit = Unit.getRandomUnit(type);
+		Unit fUnit = Unit.getRandomUnit(type);
+		while(fUnit.getName().equals(iUnit.getName())){
+			fUnit = Unit.getRandomUnit(type);
+		}
+		String question = "(" + i + ") What is " + initial + " " + iUnit.getName() + "s in " + fUnit.getName() + "s?";
+		String answers = String.valueOf(iUnit.convert(initial, iUnit, fUnit));
+		System.out.println(question + ", " + answers);
 	}
 
 }
