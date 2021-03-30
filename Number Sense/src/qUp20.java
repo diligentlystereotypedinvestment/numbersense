@@ -353,8 +353,8 @@ class qUp20 {
 			 */
 			// System.out.println();
 			// System.out.println();
-
 		}
+
 		if (random == 9) { // percent problems
 			int percent = (rand.nextInt(15) + 1) * 10;
 			int percent2 = (rand.nextInt(15) + 1) * 10;
@@ -516,7 +516,15 @@ class qUp20 {
 				pounds = .5 * (rand.nextInt(3) + 1);
 				postPrice = price * 16 * pounds / oz;
 			}
-			choose = rand.nextInt(2) + 1;
+			if(choose == 3){
+				int initial = 100 * (rand.nextInt(9) + 1);
+				int time = rand.nextInt(11) + 1;
+				double rate = time * (rand.nextInt(90) + 10) / 10.0;
+				printmess = "(" + i + ") What is the simple interest on $" + initial + ".00 with an interest rate of " + rate + "\\% for " + time + " months?";
+				answers.add("$" + Math.round(initial * rate * time / 12.0) / 100.0);
+			} else{
+				choose = rand.nextInt(2) + 1;
+			}
 			if (choose == 1) {
 				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$" + eliminateZero.money(price)
 						+ " then how much does " + pounds + " pounds cost?";
@@ -527,7 +535,6 @@ class qUp20 {
 						+ eliminateZero.money(postPrice) + " then how much does " + oz + " oz cost?";
 				answers.add(String.valueOf(pounds));
 			}
-			choose = rand.nextInt(2) + 1;
 			questions.add(printmess); // System.out.print(printmess);
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
