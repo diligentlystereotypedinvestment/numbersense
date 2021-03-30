@@ -42,13 +42,13 @@ fracOperations has methods for fraction arithmetic
 
 - More Problems
 
-    Conversion Library for units
+    Conversion Library for units -- completed
 
     Know what Substitution/Word-Problems are
 
     Simple Interest Problems
     
-    Theorems from Geometry - angle bisector, what else?
+    Theorems from Geometry - angle bisector, distance, 
     
     ~~Complex Numbers, there are a couple of problems with this (question number doubling up, $i$'s not printing)~~
     
