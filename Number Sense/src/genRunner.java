@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class genRunner {
 	
+	public static final long startTime = System.nanoTime();
+	
 	public static void setup() {
 		Unit.init();
 	}
@@ -85,6 +87,14 @@ public class genRunner {
 		}
 		System.out.println("\n\n\\end{multicols}\n");
 		System.out.println("\n\n\\end{document}");
+		
+		printTime();
+	}
+	
+	public static void printTime() {
+		System.out.println();
+		System.out.println("This program has ran for: " + (System.nanoTime() - startTime) / 1000000000.0 + " seconds");
+		System.out.println();
 	}
 	
 }
