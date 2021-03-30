@@ -41,7 +41,7 @@ public class sequences {
 					+ " + "
 					+ simplify.getFraction((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))
 					+ " + \\ldots = ");
-			answer = fracOperations.fracMult(beginning + "/1", denom + "/" + (denom - num));
+			answer = frac.fracMult(beginning + "/1", denom + "/" + (denom - num));
 		}
 		if (choose == 6) { // first m squares
 			int length = rand.nextInt(3) + 5;
@@ -83,7 +83,7 @@ public class sequences {
 				question = question + " + \\frac{1}{" + String.valueOf(ii * (ii + 1) / 2) + "}";
 			}
 			question = "(" + i + " ) " + question + " = $";
-			answer = (fracOperations.fracSub("2/" + initial, "2/" + (initial + length)));
+			answer = (frac.fracSub("2/" + initial, "2/" + (initial + length)));
 		}
 	}
 

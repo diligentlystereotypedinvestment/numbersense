@@ -16,10 +16,10 @@ public class threeDGeo {
 				boolean isRadius = rand.nextBoolean();
 				if (isRadius) {
 					questions.add("(" + i + ") What is the volume of a sphere with radius of " + radius + "?");
-					answers.add(fracOperations.fracMult("4/3", (int) Math.pow(radius, 3) + "\\pi"));
+					answers.add(frac.fracMult("4/3", (int) Math.pow(radius, 3) + "\\pi"));
 				} else {
 					questions.add("(" + i + ") What is the volume of a sphere with diameter of " + 2 * radius + "?");
-					answers.add(fracOperations.fracMult("4/3", (int) Math.pow(radius, 3) + "\\pi"));
+					answers.add(frac.fracMult("4/3", (int) Math.pow(radius, 3) + "\\pi"));
 				}
 			}
 		} else if (isCube) {

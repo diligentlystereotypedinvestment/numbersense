@@ -10,7 +10,7 @@ public class Addmix {
 	int addmix2 = rand.nextInt(9000) + 999;
 	int addfracn2 = rand.nextInt(maxnum2) + 1;
 	int addfracd2 = rand.nextInt(30 - addfracn2) + addfracn2;
-	String summix = "$" + fracOperations.properAdd((addmix * addfracd + addfracn) + "/" + addfracd,
+	String summix = "$" + frac.properAdd((addmix * addfracd + addfracn) + "/" + addfracd,
 			(addmix2 * addfracd2 + addfracn2) + "/" + addfracd2) + "$";
 	double dmix = (addmix + (addfracn / addfracd)) - (addmix2 + (addfracn2 / addfracd2));
 	double pmix = (addmix / 100 + (addfracn / addfracd)) * (addmix2 / 100 + (addfracn2 / addfracd2));

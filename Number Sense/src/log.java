@@ -81,16 +81,16 @@ public class log {
 
 	public static log add(log add1, log add2) {
 		if (add1.toString().indexOf("e") != -1) {
-			return new log(add1.getBase(), "e^" + fracOperations.fracMult(add1.toAns(), add2.toAns()));
+			return new log(add1.getBase(), "e^" + frac.fracMult(add1.toAns(), add2.toAns()));
 		}
-		return new log(add1.getBase(), fracOperations.fracMult(add1.toAns(), add2.toAns()));
+		return new log(add1.getBase(), frac.fracMult(add1.toAns(), add2.toAns()));
 	}
 
 	public static log sub(log add1, log add2) {
 		if (add1.toString().indexOf("e") != -1) {
-			return new log(add1.getBase(), "e^" + fracOperations.fracDivide(add1.toAns(), add2.toAns(), false));
+			return new log(add1.getBase(), "e^" + frac.fracDivide(add1.toAns(), add2.toAns(), false));
 		}
-		return new log(add1.getBase(), fracOperations.fracDivide(add1.toAns(), add2.toAns(), false));
+		return new log(add1.getBase(), frac.fracDivide(add1.toAns(), add2.toAns(), false));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
@@ -102,19 +102,19 @@ public class log {
 		}
 		if (problem == 1) { // add
 			questions.add("(" + i + ") What is $" + log1 + " + " + log2 + "$?");
-			answers.add(fracOperations.fracAdd(log1.toAns(), log2.toAns()));
+			answers.add(frac.fracAdd(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 2) { // sub
 			questions.add("(" + i + ") What is $" + log1 + " - " + log2 + "$?");
-			answers.add(fracOperations.fracSub(log1.toAns(), log2.toAns()));
+			answers.add(frac.fracSub(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 3) { // mult
 			questions.add("(" + i + ") What is $" + log1 + " \\cdot " + log2 + "$?");
-			answers.add(fracOperations.fracMult(log1.toAns(), log2.toAns(), false));
+			answers.add(frac.fracMult(log1.toAns(), log2.toAns(), false));
 		}
 		if (problem == 4) { // div
 			questions.add("(" + i + ") What is $" + log1 + " \\div" + log2 + "$?");
-			answers.add(fracOperations.fracDivide(log1.toAns(), log2.toAns(), false));
+			answers.add(frac.fracDivide(log1.toAns(), log2.toAns(), false));
 		}
 		if (problem == 5 || problem == 6 || problem == 7) { // OofO
 			OofO logar = new OofO();

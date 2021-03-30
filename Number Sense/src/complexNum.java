@@ -78,11 +78,11 @@ public class complexNum {
 		}
 		if (solveFor == 6) { // a + b
 			questions.add(question + "$a + b$?");
-			answers.add(fracOperations.fracAdd(quotient.getReal() + "/" + 1, quotient.getImaginary()));
+			answers.add(frac.fracAdd(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 		if (solveFor == 7) { // a - b
 			questions.add(question + "$a - b$?");
-			answers.add(fracOperations.fracSub(quotient.getReal() + "/" + 1, quotient.getImaginary()));
+			answers.add(frac.fracSub(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 	}
 

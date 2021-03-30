@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-public class fracOperations {
+public class frac {
 	private int num;
 	private int denom;
 	private static final String DOT = ".";
@@ -11,12 +11,12 @@ public class fracOperations {
 	private static final String LEFT_PARENTHESIS = "\\overline{";
 	private static final String RIGHT_PARENTHESIS = "}";
 
-	public fracOperations(int num, int denom) {
+	public frac(int num, int denom) {
 		this.num = num;
 		this.denom = denom;
 	}
 
-	public fracOperations(String fraction) {
+	public frac(String fraction) {
 		String[] parts = fraction.split("/");
 		this.num = Integer.parseInt(parts[0]);
 		this.denom = Integer.parseInt(parts[1]);
@@ -30,9 +30,9 @@ public class fracOperations {
 		return denom;
 	}
 
-	public fracOperations simp(fracOperations unSimp) {
+	public frac simp(frac unSimp) {
 		if (LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()) > 1) {
-			return new fracOperations(unSimp.getNum() / LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()),
+			return new frac(unSimp.getNum() / LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()),
 					unSimp.getDenom() / LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()));
 		}
 		// if(unSimp.getNum() == 0){
@@ -41,36 +41,36 @@ public class fracOperations {
 		return unSimp;
 	}
 
-	public fracOperations add(fracOperations frac1, fracOperations frac2) {
+	public frac add(frac frac1, frac frac2) {
 		int num1 = simp(frac1).getNum();
 		int num2 = simp(frac1).getNum();
 		int denom1 = simp(frac1).getDenom();
 		int denom2 = simp(frac1).getDenom();
-		return simp(new fracOperations(num1 * denom2 + num2 * denom1, denom1 * denom2));
+		return simp(new frac(num1 * denom2 + num2 * denom1, denom1 * denom2));
 	}
 
-	public fracOperations sub(fracOperations frac1, fracOperations frac2) {
+	public frac sub(frac frac1, frac frac2) {
 		int num1 = simp(frac1).getNum();
 		int num2 = simp(frac1).getNum();
 		int denom1 = simp(frac1).getDenom();
 		int denom2 = simp(frac1).getDenom();
-		return simp(new fracOperations(num1 * denom2 - num2 * denom1, denom1 * denom2));
+		return simp(new frac(num1 * denom2 - num2 * denom1, denom1 * denom2));
 	}
 
-	public fracOperations mult(fracOperations frac1, fracOperations frac2) {
+	public frac mult(frac frac1, frac frac2) {
 		int num1 = simp(frac1).getNum();
 		int num2 = simp(frac1).getNum();
 		int denom1 = simp(frac1).getDenom();
 		int denom2 = simp(frac1).getDenom();
-		return simp(new fracOperations(num1 * num2, denom1 * denom2));
+		return simp(new frac(num1 * num2, denom1 * denom2));
 	}
 
-	public fracOperations div(fracOperations frac1, fracOperations frac2) {
+	public frac div(frac frac1, frac frac2) {
 		int num1 = simp(frac1).getNum();
 		int num2 = simp(frac1).getNum();
 		int denom1 = simp(frac1).getDenom();
 		int denom2 = simp(frac1).getDenom();
-		return simp(new fracOperations(num1 * denom2, denom1 * num2));
+		return simp(new frac(num1 * denom2, denom1 * num2));
 	}
 
 	public String toDeci() {
@@ -233,7 +233,7 @@ public class fracOperations {
 	public static void main(String[] args){
 		log log1 = log.random();
 		log log2 = log.random();
-		System.out.println(fracOperations.fracMult("3", "5"));
+		System.out.println(frac.fracMult("3", "5"));
 		System.out.println(" What is $" + log1 + " + " + log2 + "$?");
 		System.out.println((log.add(log1, log2).toAns()));
 	}

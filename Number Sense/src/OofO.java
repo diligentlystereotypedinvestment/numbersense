@@ -305,36 +305,36 @@ public class OofO {
 		int operation = rand.nextInt(4);
 		if (first) {
 			if (operation == 0) {
-				answer = fracOperations.fracAdd(toAns(add), toAns(add));
+				answer = frac.fracAdd(toAns(add), toAns(add));
 				return add.toString() + " + " + add.toString() + ")";
 			}
 			if (operation == 1) {
-				answer = fracOperations.fracSub(toAns(add), toAns(add));
+				answer = frac.fracSub(toAns(add), toAns(add));
 				return add.toString() + " - " + add.toString() + ")";
 			}
 			if (operation == 2) {
-				answer = fracOperations.fracMult(toAns(mult), toAns(mult));
+				answer = frac.fracMult(toAns(mult), toAns(mult));
 				return mult.toString() + " \\cdot " + mult.toString() + ")";
 			}
 			if (operation == 3) {
-				answer = fracOperations.fracDivide(toAns(div), toAns(div), false);
+				answer = frac.fracDivide(toAns(div), toAns(div), false);
 				return " \\div " + div.toString() + ")";
 			}
 		}
 		if (operation == 0) {
-			answer = fracOperations.fracAdd(answer, toAns(add));
+			answer = frac.fracAdd(answer, toAns(add));
 			return " + " + add.toString() + ")";
 		}
 		if (operation == 1) {
-			answer = fracOperations.fracSub(answer, toAns(add));
+			answer = frac.fracSub(answer, toAns(add));
 			return " - " + add.toString() + ")";
 		}
 		if (operation == 2) {
-			answer = fracOperations.fracMult(answer, toAns(mult));
+			answer = frac.fracMult(answer, toAns(mult));
 			return " \\cdot " + mult.toString() + ")";
 		}
 		if (operation == 3) {
-			answer = fracOperations.fracDivide(answer, toAns(div), false);
+			answer = frac.fracDivide(answer, toAns(div), false);
 			return " \\div " + div.toString() + ")";
 		}
 		return "";

@@ -267,7 +267,7 @@ public class multshort {
 				int wholeNum = rand.nextInt(7) + 4;
 				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{"
 						+ (denom - num) + "}{" + denom + "} = ";
-				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
+				fullAnswer = frac.properMult((wholeNum + " " + num + "/" + denom),
 						(wholeNum + " " + (denom - num) + "/" + denom));
 			}
 			if (chooser == 2) {
@@ -277,7 +277,7 @@ public class multshort {
 				int scalar = rand.nextInt(2) + 2;
 				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{"
 						+ num + "}{" + denom + "} = ";
-				fullAnswer = fracOperations.properMult((wholeNum + " " + num + "/" + denom),
+				fullAnswer = frac.properMult((wholeNum + " " + num + "/" + denom),
 						(wholeNum * scalar + " " + num + "/" + denom));
 			}
 		}
