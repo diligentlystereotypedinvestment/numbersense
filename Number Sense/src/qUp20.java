@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.Collections;
 
 class qUp20 {
+
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
 		int random = rand.nextInt(14) + 1;
@@ -41,8 +42,8 @@ class qUp20 {
 			if (rand1_1 == 3) { // addition of two improper fractions
 				AddImpro addimpro = new AddImpro();
 				answers.add(String.valueOf(addimpro.sumimpro));
-				String printmess = ("(" + i + ") $\\frac{" + addimpro.addfracn + "}{" + addimpro.addfracd
-						+ "} +\\frac{" + addimpro.addfracn2 + "}{" + addimpro.addfracd2 + "}=$");
+				String printmess = ("(" + i + ") $\\frac{" + addimpro.addfracn + "}{" + addimpro.addfracd + "} +\\frac{"
+						+ addimpro.addfracn2 + "}{" + addimpro.addfracd2 + "}=$");
 				questions.add(printmess); // System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -94,8 +95,8 @@ class qUp20 {
 			if (rand1_1 == 7) { // subtract two improper fractions
 				AddImpro subimpro = new AddImpro();
 				answers.add(String.valueOf(subimpro.dimpro));
-				String printmess = ("(" + i + ") $\\frac{" + subimpro.addfracn + "}{" + subimpro.addfracd
-						+ "} -\\frac{" + subimpro.addfracn2 + "}{" + subimpro.addfracd2 + "}=$");
+				String printmess = ("(" + i + ") $\\frac{" + subimpro.addfracn + "}{" + subimpro.addfracd + "} -\\frac{"
+						+ subimpro.addfracn2 + "}{" + subimpro.addfracd2 + "}=$");
 				questions.add(printmess); // System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -423,8 +424,7 @@ class qUp20 {
 				for (int p = 0; p < integer.size(); p++) {
 					charseries = (charseries + String.valueOf(integer.get(p)) + " , ");
 				}
-				mode Mode = new mode();
-				answers.add(String.valueOf(1.0 * Mode.getMode(integer)));
+				answers.add(String.valueOf(1.0 * MeanMedianMode.getMode(integer)));
 				printmess = ("(" + i + ") What is the mode of " + charseries);
 			}
 			questions.add(printmess); // System.out.print(printmess);
@@ -516,13 +516,14 @@ class qUp20 {
 				pounds = .5 * (rand.nextInt(3) + 1);
 				postPrice = price * 16 * pounds / oz;
 			}
-			if(choose == 3){
+			if (choose == 3) {
 				int initial = 100 * (rand.nextInt(9) + 1);
 				int time = rand.nextInt(11) + 1;
 				double rate = time * (rand.nextInt(90) + 10) / 10.0;
-				printmess = "(" + i + ") What is the simple interest on $" + initial + ".00 with an interest rate of " + rate + "\\% for " + time + " months?";
+				printmess = "(" + i + ") What is the simple interest on $" + initial + ".00 with an interest rate of "
+						+ rate + "\\% for " + time + " months?";
 				answers.add("$" + Math.round(initial * rate * time / 12.0) / 100.0);
-			} else{
+			} else {
 				choose = rand.nextInt(2) + 1;
 			}
 			if (choose == 1) {
