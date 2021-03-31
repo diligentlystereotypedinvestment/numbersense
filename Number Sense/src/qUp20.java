@@ -9,7 +9,7 @@ class qUp20 {
 		int random = rand.nextInt(14) + 1;
 		// System.out.println(random);
 		// random = scan.nextInt();
-		if (random == 1) { // addition of two integers
+		if (random == 1 || i == 0) { // addition of two integers
 			int rand1_1 = rand.nextInt(16) + 1;
 
 			if (rand1_1 == 1) { // addition of two integers

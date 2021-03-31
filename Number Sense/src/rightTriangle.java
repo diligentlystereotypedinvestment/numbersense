@@ -2,9 +2,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class rightTriangle {
-	private final static int[] leg1 = { 5, 8, 9, 11, 13 };
-	private final static int[] leg2 = { 12, 15, 40, 60, 84 };
-	private final static int[] hypo = { 13, 17, 41, 61, 85 };
+	public final static int[] leg1 = { 5, 8, 9, 11, 13 };
+	public final static int[] leg2 = { 12, 15, 40, 60, 84 };
+	public final static int[] hypo = { 13, 17, 41, 61, 85 };
+
+	public static int[] getTriplet(){
+		Random rand = new Random();
+		int config = rand.nextInt(leg1.length);
+		return new int[] {leg1[config], leg2[config], hypo[config]};
+	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();

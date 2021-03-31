@@ -1,7 +1,7 @@
 # Texas' UIL Number Sense Test Generator Code
 
 Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf is popular. genRunner.java is the runner file. Here is a list of problems that still need to be coded:
-simple interest
+
 Approximation Problems are also incomplete
 
 # Problem 1 - 20
@@ -18,12 +18,12 @@ Approximation Problems are also incomplete
 
 ~~6) Squaring Numbers~~
 
-7) Conversion Problems (either way):
+~~7) Conversion Problems (either way):
  ~~Percent/Fractions,~~
  English/Metric,
  ~~Roman Numerals/Arabic Numerals,~~
  Measurement units
-(length, weight, capacity, time)
+(length, weight, capacity, time)~~
 
 ~~8) Greatest Common Divisor (GCD) and Least Common Multiple (LCM)~~
 
@@ -86,7 +86,7 @@ Approximation Problems are also incomplete
 
 ~~5) Inequalities~~
 
-6) Applications of Theorems from Geometry
+~~6) Applications of Theorems from Geometry~~
 
 ~~7) Direct and Inverse Variation~~
 

@@ -158,7 +158,7 @@ public class genRunner {
 		System.out.println("\n\n\\end{multicols}\n");
 		System.out.println("\n\n\\end{document}");
 
-		printTime();
+		//printTime();
 	}
 
 	public static void printTime() {
