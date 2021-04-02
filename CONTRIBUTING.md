@@ -48,7 +48,7 @@ fracOperations has methods for fraction arithmetic
 
     ~~Simple Interest Problems~~
     
-    Theorems from Geometry - angle bisector, what else?
+    ~~Theorems from Geometry - angle bisector, what else?~~
     
     ~~Complex Numbers, there are a couple of problems with this (question number doubling up, $i$'s not printing)~~
     
@@ -65,3 +65,5 @@ fracOperations has methods for fraction arithmetic
 ~~- simplify should be able to return things as a whole number~~
 
 ~~- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp~~
+
+- extravagent numbers
