@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-class QUp60 {
+public class QUp60 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
 		int random = rand.nextInt(97) + 1;

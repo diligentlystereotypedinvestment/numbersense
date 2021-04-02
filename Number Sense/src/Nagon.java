@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-class Nagon {
+public class Nagon {
 	Random rand = new Random();
 	private int sides;
 	private String name;

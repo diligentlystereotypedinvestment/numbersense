@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Collections;
 
-class QUp20 {
+public class QUp20 {
 
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
@@ -257,11 +257,11 @@ class QUp20 {
 			String printmess = "";
 			if (comparison == 1) {
 				printmess = ("(" + i + ") Which is greater, $\\frac{" + compare.addfracn + "}{" + compare.addfracd
-						+ "} \\text{ or } " + (double) ((int) (compare.addmix2 / 100)) / 100 + "$");
-				if ((1.0 * compare.addfracn / compare.addfracd) > (double) ((int) (compare.addmix2 / 100)) / 100) {
+						+ "} \\text{ or } " + (double) (compare.addmix2 / 100) / 100 + "$");
+				if ((1.0 * compare.addfracn / compare.addfracd) > (double) (compare.addmix2 / 100) / 100) {
 					answers.add(String.valueOf((1.0 * compare.addfracn / compare.addfracd)));
 				} else {
-					answers.add(String.valueOf((double) ((int) (compare.addmix2 / 100)) / 100));
+					answers.add(String.valueOf((double) (compare.addmix2 / 100) / 100));
 				}
 			} else {
 				printmess = ("(" + i + ") Which is greater, $\\frac{" + compare.addfracn + "}{" + compare.addfracd

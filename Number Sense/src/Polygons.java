@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.lang.Math;
 
-class Polygons {
+public class Polygons {
 
 	public void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();

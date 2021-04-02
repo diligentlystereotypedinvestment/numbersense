@@ -1,4 +1,4 @@
-class EliminateZero {
+public class EliminateZero {
 
 	public static String zero(double zero) {
 		if (zero % 1 == 0.0) {

@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
 
-class QUp40 {
+public class QUp40 {
 	public void Gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
 		int random = rand.nextInt(44) + 1;
