@@ -6,10 +6,10 @@ public class combin {
 	private int n;
 	private int k;
 
-	public combin(int n, int k, boolean comb) {
+	public combin(int n, int k, boolean isComb) {
 		this.n = n;
 		this.k = k;
-		this.comb = comb;
+		this.comb = isComb;
 	}
 
 	public int toAns() {
@@ -63,7 +63,7 @@ public class combin {
 		}
 		if (problem == 1) {
 			OofO comb = new OofO();
-			comb.placeholder(random(new range(3, 8)), random(new range(3, 6)), random(new range(3, 6)), 2);
+			comb.placeholder2(new combin(2,1,true), new range(3, 8), new range(3, 6), new range(3, 6), 2);
 			questions.add("(" + i + ") $" + comb.getQuest() + "$");
 			answers.add(comb.getAns());
 		}

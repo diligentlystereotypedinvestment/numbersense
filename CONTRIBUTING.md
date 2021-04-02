@@ -30,11 +30,11 @@ fracOperations has methods for fraction arithmetic
     
     idk if this is fixable, but answer key and question numbers not being aligned
     
-    I think that sequences isn't adding right
+    I think that sequences aren't adding right
     
     Exponents - I think answer key is wrong and question also needs "$=n^k$, what is $k$"
     
-    OofO's placeholder method, not generating a first term for the equation
+    ~~OofO's placeholder method, not generating a first term for the equation~~
     
 - More Add/Sub/Mult/Div Tricks/Common Problems
 
@@ -42,13 +42,13 @@ fracOperations has methods for fraction arithmetic
 
 - More Problems
 
-    Conversion Library for units -- completed
+    ~~Conversion Library for units~~
 
     Know what Substitution/Word-Problems are
 
-    Simple Interest Problems
+    ~~Simple Interest Problems~~
     
-    Theorems from Geometry - angle bisector, distance, 
+    Theorems from Geometry - angle bisector, what else?
     
     ~~Complex Numbers, there are a couple of problems with this (question number doubling up, $i$'s not printing)~~
     
@@ -60,8 +60,8 @@ fracOperations has methods for fraction arithmetic
 
 - balance problems more, i.e. no more $2^2$
 
-- fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations
+~~- fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations~~
+
+~~- simplify should be able to return things as a whole number~~
 
 ~~- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp~~
-
-- extravalengt numbers

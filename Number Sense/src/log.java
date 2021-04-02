@@ -118,7 +118,7 @@ public class log {
 		}
 		if (problem == 5 || problem == 6 || problem == 7) { // OofO
 			OofO logar = new OofO();
-			logar.placeholder(random(), random(), random(), 2);
+			logar.placeholder2(new log("1", "1"), new range(1, 3), new range(1, 3), new range(1, 3), 2);
 			questions.add("(" + i + ") $" + logar.getQuest() + "$");
 			answers.add(logar.getAns());
 		}

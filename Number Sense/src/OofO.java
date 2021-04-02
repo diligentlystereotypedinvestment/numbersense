@@ -292,7 +292,6 @@ public class OofO {
 	}
 
 	public void placeholder(Object add, Object mult, Object div, int length) {
-		Random rand = new Random();
 		String problem = "(" + genOp(add, mult, div, true);
 		for (int i = 0; i < length; i++) {
 			problem = "(" + problem + genOp(add, mult, div, false);
@@ -349,10 +348,81 @@ public class OofO {
 		}
 		return "";
 	}
+	//testing stuff below
+	
+	public void placeholder2(Object type, range add, range mult, range div, int length) {
+		String problem = "(" + genOp2(type, add, mult, div, true);
+		for (int i = 0; i < length - 2; i++) {
+			problem = "(" + problem + genOp2(type, add, mult, div, false);
+		}
+		question = problem;
+	}
+	
+	public Object random(Object type, range randRange) {
+		if (type instanceof log) {
+			return ((log) type).random();
+		}
+		if (type instanceof combin) {
+			return ((combin) type).random(randRange);
+		}
+		return "";
+	}
+	
+	public String genOp2(Object type, range add, range mult, range div, boolean first) {
+		Random rand = new Random();
+		int operation = rand.nextInt(4);
+		if (first) {
+			if (operation == 0) {
+				Object operand1 = random(type, add);
+				Object operand2 = random(type, add);
+				answer = frac.fracAdd(toAns(operand1), toAns(operand2));
+				return operand1.toString() + " + " + operand2.toString() + ")";
+			}
+			if (operation == 1) {
+				Object operand1 = random(type, add);
+				Object operand2 = random(type, add);
+				answer = frac.fracSub(toAns(operand1), toAns(operand2));
+				return operand1.toString() + " - " + operand2.toString() + ")";
+			}
+			if (operation == 2) {
+				Object operand1 = random(type, mult);
+				Object operand2 = random(type, mult);
+				answer = frac.fracMult(toAns(operand1), toAns(operand2), false);
+				return operand1.toString() + " \\cdot " + operand2.toString() + ")";
+			}
+			if (operation == 3) {
+				Object operand1 = random(type, div);
+				Object operand2 = random(type, div);
+				answer = frac.fracDivide(toAns(operand1), toAns(operand2), false);
+				return operand1.toString() + " \\div " + operand2.toString() + ")";
+			}
+		}
+		if (operation == 0) {
+			Object nextOperand = random(type, add);
+			answer = frac.fracAdd(answer, toAns(nextOperand));
+			return " + " + nextOperand.toString() + ")";
+		}
+		if (operation == 1) {
+			Object nextOperand = random(type, add);
+			answer = frac.fracSub(answer, toAns(nextOperand));
+			return " - " + nextOperand.toString() + ")";
+		}
+		if (operation == 2) {
+			Object nextOperand = random(type, mult);
+			answer = frac.fracMult(answer, toAns(nextOperand));
+			return " \\cdot " + nextOperand.toString() + ")";
+		}
+		if (operation == 3) {
+			Object nextOperand = random(type, div);
+			answer = frac.fracDivide(answer, toAns(nextOperand), false);
+			return " \\div " + nextOperand.toString() + ")";
+		}
+		return "";
+	}
 
 	public static void main(String[] args) {
 		OofO loga = new OofO();
-		loga.placeholder(log.random(), log.random(), log.random(), 2);
+		loga.placeholder2(new combin(1, 1, true), new range(1, 3), new range(1, 3), new range(1,3), 2);
 		System.out.println(loga.getQuest() + ", " + loga.getAns());
 	}
 }
