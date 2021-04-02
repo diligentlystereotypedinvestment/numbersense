@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class MeanMedianMode extends QuestionType{
+public class MeanMedianMode implements QuestionType{
 
 	static Random rand = new Random();
 	
