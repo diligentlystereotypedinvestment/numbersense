@@ -20,11 +20,6 @@ public class LCMandGCF {
 		}
 	}
 
-	public static void main(String[] args) {
-		System.out.println(GCF(462, 1071));
-		System.out.println(LCM(462, 1071));
-	}
-
 	public static int LCM(int... nums) {
 		if (nums.length == 0) {
 			System.out.println(nums.length + " is an invalid number of arguments for function LCM");
