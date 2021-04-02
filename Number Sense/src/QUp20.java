@@ -341,7 +341,7 @@ public class QUp20 {
 			}
 			if (choose == 3) { // gcf of three
 				printmess = ("(" + i + ") The GCF of " + num1 + ", " + num2 + ", and " + num3 + " is");
-				answers.add(String.valueOf(1.0 * LCMandGCF.GCF3(num1, num2, num3)));
+				answers.add(String.valueOf(1.0 * LCMandGCF.GCF(num1, num2, num3)));
 			}
 			if (choose == 4) { // lcm of three
 				printmess = ("(" + i + ") The LCM of " + num1 + ", " + (num1 * 1.5) + ", and " + (num1 * 2) + " is");
