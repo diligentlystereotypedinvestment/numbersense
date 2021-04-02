@@ -40,7 +40,7 @@ public class Conversion {
 			}
 		}
 		if (choosesys == 1) {
-			romanNum roman = new romanNum();
+			RomanNum roman = new RomanNum();
 			question = ("(" + i + ") What is " + roman.getRoman() + " in arabic?");
 			answers = String.valueOf(roman.getArabic());
 		}

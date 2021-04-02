@@ -1,5 +1,5 @@
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class OofO {
 	private String question;
@@ -251,9 +251,9 @@ public class OofO {
 		if (sign == 0) { // addition
 			first = rand.nextInt(100) + 40;
 			second = rand.nextInt(100) + 40;
-			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " + "
-					+ baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
-			answers.add(baseconvert.newnum(first + second, base));
+			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + " + "
+					+ Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(Baseconvert.newnum(first + second, base));
 		}
 		if (sign == 1) { // subtraction
 			first = rand.nextInt(100) + 40;
@@ -263,23 +263,23 @@ public class OofO {
 				first = second;
 				second = temp;
 			}
-			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " - "
-					+ baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
-			answers.add(baseconvert.newnum(first - second, base));
+			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + " - "
+					+ Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(Baseconvert.newnum(first - second, base));
 		}
 		if (sign == 2) { // multiplication
 			first = rand.nextInt(100) + 40;
 			second = base - (rand.nextInt(base - 1) + 1);
-			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + " \\cdot "
-					+ baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
-			answers.add(baseconvert.newnum(first * second, base));
+			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + " \\cdot "
+					+ Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(Baseconvert.newnum(first * second, base));
 		}
 		if (sign == 3) { // division
 			second = base - (rand.nextInt(base - 1) + 1);
 			first = (rand.nextInt(40) + 40) * second;
-			questions.add("(" + i + ") $" + baseconvert.newnum(first, base) + "_" + base + "\\div"
-					+ baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
-			answers.add(baseconvert.newnum(first / second, base));
+			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + "\\div"
+					+ Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			answers.add(Baseconvert.newnum(first / second, base));
 		}
 	}
 
@@ -291,130 +291,81 @@ public class OofO {
 		return String.valueOf(answer);
 	}
 
-	public void placeholder(Object add, Object mult, Object div, int length) {
-		String problem = "(" + genOp(add, mult, div, true);
-		for (int i = 0; i < length; i++) {
-			problem = "(" + problem + genOp(add, mult, div, false);
-		}
-		question = problem;
-	}
-
-	public String genOp(Object add, Object mult, Object div, boolean first) {
-		Random rand = new Random();
-		int operation = rand.nextInt(4);
-		if (first) {
-			if (operation == 0) {
-				answer = frac.fracAdd(toAns(add), toAns(add));
-				return add.toString() + " + " + add.toString() + ")";
-			}
-			if (operation == 1) {
-				answer = frac.fracSub(toAns(add), toAns(add));
-				return add.toString() + " - " + add.toString() + ")";
-			}
-			if (operation == 2) {
-				answer = frac.fracMult(toAns(mult), toAns(mult));
-				return mult.toString() + " \\cdot " + mult.toString() + ")";
-			}
-			if (operation == 3) {
-				answer = frac.fracDivide(toAns(div), toAns(div), false);
-				return " \\div " + div.toString() + ")";
-			}
-		}
-		if (operation == 0) {
-			answer = frac.fracAdd(answer, toAns(add));
-			return " + " + add.toString() + ")";
-		}
-		if (operation == 1) {
-			answer = frac.fracSub(answer, toAns(add));
-			return " - " + add.toString() + ")";
-		}
-		if (operation == 2) {
-			answer = frac.fracMult(answer, toAns(mult));
-			return " \\cdot " + mult.toString() + ")";
-		}
-		if (operation == 3) {
-			answer = frac.fracDivide(answer, toAns(div), false);
-			return " \\div " + div.toString() + ")";
-		}
-		return "";
-	}
-
 	public String toAns(Object unSolve) {
-		if (unSolve instanceof log) {
-			return ((log) unSolve).toAns();
+		if (unSolve instanceof Log) {
+			return ((Log) unSolve).toAns();
 		}
-		if (unSolve instanceof combin) {
-			return String.valueOf(((combin) unSolve).toAns());
+		if (unSolve instanceof Combin) {
+			return String.valueOf(((Combin) unSolve).toAns());
 		}
 		return "";
 	}
-	//testing stuff below
-	
-	public void placeholder2(Object type, range add, range mult, range div, int length) {
+
+	public void placeholder2(Object type, Range add, Range mult, Range div, int length) {
 		String problem = "(" + genOp2(type, add, mult, div, true);
 		for (int i = 0; i < length - 2; i++) {
 			problem = "(" + problem + genOp2(type, add, mult, div, false);
 		}
 		question = problem;
 	}
-	
-	public Object random(Object type, range randRange) {
-		if (type instanceof log) {
-			return ((log) type).random();
+
+	public Object random(Object type, Range randRange) {
+		if (type instanceof Log) {
+			return Log.random();
 		}
-		if (type instanceof combin) {
-			return ((combin) type).random(randRange);
+		if (type instanceof Combin) {
+			return Combin.random(randRange);
 		}
 		return "";
 	}
-	
-	public String genOp2(Object type, range add, range mult, range div, boolean first) {
+
+	public String genOp2(Object type, Range add, Range mult, Range div, boolean first) {
 		Random rand = new Random();
 		int operation = rand.nextInt(4);
 		if (first) {
 			if (operation == 0) {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
-				answer = frac.fracAdd(toAns(operand1), toAns(operand2));
+				answer = Frac.fracAdd(toAns(operand1), toAns(operand2));
 				return operand1.toString() + " + " + operand2.toString() + ")";
 			}
 			if (operation == 1) {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
-				answer = frac.fracSub(toAns(operand1), toAns(operand2));
+				answer = Frac.fracSub(toAns(operand1), toAns(operand2));
 				return operand1.toString() + " - " + operand2.toString() + ")";
 			}
 			if (operation == 2) {
 				Object operand1 = random(type, mult);
 				Object operand2 = random(type, mult);
-				answer = frac.fracMult(toAns(operand1), toAns(operand2), false);
+				answer = Frac.fracMult(toAns(operand1), toAns(operand2), false);
 				return operand1.toString() + " \\cdot " + operand2.toString() + ")";
 			}
 			if (operation == 3) {
 				Object operand1 = random(type, div);
 				Object operand2 = random(type, div);
-				answer = frac.fracDivide(toAns(operand1), toAns(operand2), false);
+				answer = Frac.fracDivide(toAns(operand1), toAns(operand2), false);
 				return operand1.toString() + " \\div " + operand2.toString() + ")";
 			}
 		}
 		if (operation == 0) {
 			Object nextOperand = random(type, add);
-			answer = frac.fracAdd(answer, toAns(nextOperand));
+			answer = Frac.fracAdd(answer, toAns(nextOperand));
 			return " + " + nextOperand.toString() + ")";
 		}
 		if (operation == 1) {
 			Object nextOperand = random(type, add);
-			answer = frac.fracSub(answer, toAns(nextOperand));
+			answer = Frac.fracSub(answer, toAns(nextOperand));
 			return " - " + nextOperand.toString() + ")";
 		}
 		if (operation == 2) {
 			Object nextOperand = random(type, mult);
-			answer = frac.fracMult(answer, toAns(nextOperand));
+			answer = Frac.fracMult(answer, toAns(nextOperand));
 			return " \\cdot " + nextOperand.toString() + ")";
 		}
 		if (operation == 3) {
 			Object nextOperand = random(type, div);
-			answer = frac.fracDivide(answer, toAns(nextOperand), false);
+			answer = Frac.fracDivide(answer, toAns(nextOperand), false);
 			return " \\div " + nextOperand.toString() + ")";
 		}
 		return "";
@@ -422,7 +373,7 @@ public class OofO {
 
 	public static void main(String[] args) {
 		OofO loga = new OofO();
-		loga.placeholder2(new combin(1, 1, true), new range(1, 3), new range(1, 3), new range(1,3), 2);
+		loga.placeholder2(new Combin(1, 1, true), new Range(1, 3), new Range(1, 3), new Range(1, 3), 2);
 		System.out.println(loga.getQuest() + ", " + loga.getAns());
 	}
 }
