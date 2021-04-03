@@ -55,6 +55,8 @@ fracOperations has methods for fraction arithmetic
     Unnecessary 0's after doubles
 
     Log - toString making the argument more simplified, i.e. 4^{3/2} -> 8, 3^3 -> 27, but 3^{3/2} -> 3^{3/2}, etc., needed for direct computation questions
+    
+    Problems like "If A is 40 more than B and C is 60 less than A, then C is how much less than B?"
 
 - Spaces after the question number
 
