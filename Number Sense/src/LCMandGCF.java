@@ -25,12 +25,16 @@ public class LCMandGCF {
 			System.out.println(nums.length + " is an invalid number of arguments for function LCM");
 			return -1;
 		} else {
-			int lcm = nums[0] / GCF(nums);
-			for (int i = 1; i < nums.length; i++) {
-				lcm *= nums[i];
+			int[] numsTemp = Arrays.copyOf(nums, nums.length);
+			int lcm = LCM(nums[0], nums[1]);
+			for(int i = 2; i < nums.length; i++){
+				lcm = LCM(lcm, nums[i]);
 			}
 			return lcm;
 		}
 	}
 
+	public static int LCM(int num1, int num2){
+		return num1 * num2 / GCF(num1, num2);
+	}
 }
