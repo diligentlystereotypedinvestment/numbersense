@@ -162,3 +162,7 @@ Approximation Problems are also incomplete
 ~~3) Dealing with second page of problems~~
 
 ~~4) Alignment problems in the introduction part~~
+
+# Libraries Used
+
+[JLaTeXMath](https://github.com/opencollab/jlatexmath)
