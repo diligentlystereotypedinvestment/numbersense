@@ -57,6 +57,12 @@ fracOperations has methods for fraction arithmetic
     Log - toString making the argument more simplified, i.e. 4^{3/2} -> 8, 3^3 -> 27, but 3^{3/2} -> 3^{3/2}, etc., needed for direct computation questions
     
     Problems like "If A is 40 more than B and C is 60 less than A, then C is how much less than B?"
+    
+    Advanced Remainder problems like "If 3x/5 has a remainder of 2 and 3y/5 has a remainder of 1, then xy/5 has a remainder of ___"
+    
+    Repeating decimal problems like "The first 4 digits of 427/990 are"
+    
+    more theorem from geo, diamter of circumscribed circle of right triangle
 
 - Spaces after the question number
 
