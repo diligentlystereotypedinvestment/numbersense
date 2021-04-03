@@ -301,10 +301,18 @@ public class OofO {
 		return "";
 	}
 
-	public void placeholder2(Object type, Range add, Range mult, Range div, int length) {
-		String problem = "(" + genOp2(type, add, mult, div, true);
+	public void absolute(Object type, Range add, Range mult, Range div, int length){
+		String problem = "|" + genAbsolute(type, add, mult, div, true) + "|";
 		for (int i = 0; i < length - 2; i++) {
-			problem = "(" + problem + genOp2(type, add, mult, div, false);
+			problem = "|" + problem + genAbsolute(type, add, mult, div, false) + "|";
+		}
+		question = problem;
+	}
+
+	public void placeholder2(Object type, Range add, Range mult, Range div, int length) {
+		String problem = "(" + genOp2(type, add, mult, div, true) + ")";
+		for (int i = 0; i < length - 2; i++) {
+			problem = "(" + problem + genOp2(type, add, mult, div, false) + ")";
 		}
 		question = problem;
 	}
@@ -316,7 +324,7 @@ public class OofO {
 		if (type instanceof Combin) {
 			return Combin.random(randRange);
 		}
-		return "";
+		return randRange.gen();
 	}
 
 	public String genOp2(Object type, Range add, Range mult, Range div, boolean first) {
@@ -327,53 +335,114 @@ public class OofO {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
 				answer = Frac.fracAdd(toAns(operand1), toAns(operand2));
-				return operand1.toString() + " + " + operand2.toString() + ")";
+				return operand1.toString() + " + " + operand2.toString();
 			}
 			if (operation == 1) {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
 				answer = Frac.fracSub(toAns(operand1), toAns(operand2));
-				return operand1.toString() + " - " + operand2.toString() + ")";
+				return operand1.toString() + " - " + operand2.toString();
 			}
 			if (operation == 2) {
 				Object operand1 = random(type, mult);
 				Object operand2 = random(type, mult);
 				answer = Frac.fracMult(toAns(operand1), toAns(operand2), false);
-				return operand1.toString() + " \\cdot " + operand2.toString() + ")";
+				return operand1.toString() + " \\cdot " + operand2.toString();
 			}
 			if (operation == 3) {
 				Object operand1 = random(type, div);
 				Object operand2 = random(type, div);
 				answer = Frac.fracDivide(toAns(operand1), toAns(operand2), false);
-				return operand1.toString() + " \\div " + operand2.toString() + ")";
+				return operand1.toString() + " \\div " + operand2.toString();
 			}
 		}
 		if (operation == 0) {
 			Object nextOperand = random(type, add);
 			answer = Frac.fracAdd(answer, toAns(nextOperand));
-			return " + " + nextOperand.toString() + ")";
+			return " + " + nextOperand.toString();
 		}
 		if (operation == 1) {
 			Object nextOperand = random(type, add);
 			answer = Frac.fracSub(answer, toAns(nextOperand));
-			return " - " + nextOperand.toString() + ")";
+			return " - " + nextOperand.toString();
 		}
 		if (operation == 2) {
 			Object nextOperand = random(type, mult);
 			answer = Frac.fracMult(answer, toAns(nextOperand));
-			return " \\cdot " + nextOperand.toString() + ")";
+			return " \\cdot " + nextOperand.toString();
 		}
 		if (operation == 3) {
 			Object nextOperand = random(type, div);
 			answer = Frac.fracDivide(answer, toAns(nextOperand), false);
-			return " \\div " + nextOperand.toString() + ")";
+			return " \\div " + nextOperand.toString();
 		}
 		return "";
 	}
 
+	//looking to replace Absolute class
+	public String genAbsolute(Object type, Range add, Range mult, Range div, boolean first) {
+		Random rand = new Random();
+		int operation = rand.nextInt(4);
+		if (first) {
+			if (operation == 0) {
+				Object operand1 = random(type, add);
+				Object operand2 = random(type, add);
+				answer = String.valueOf(Math.abs((int)(operand1) + (int)operand2));
+				return operand1.toString() + " + " + operand2.toString();
+			}
+			if (operation == 1) {
+				Object operand1 = random(type, add);
+				Object operand2 = random(type, add);
+				answer = String.valueOf(Math.abs((int)operand1 - (int)operand2));
+				return operand1.toString() + " - " + operand2.toString();
+			}
+			if (operation == 2) {
+				Object operand1 = random(type, mult);
+				Object operand2 = random(type, mult);
+				answer = String.valueOf(Math.abs((int)operand1 * (int)operand2));
+				return operand1.toString() + " \\cdot " + operand2.toString();
+			}
+			if (operation == 3) {
+				Object operand1 = random(type, div);
+				Object operand2 = random(type, div);
+				answer = absoluteString(Frac.fracDivide(String.valueOf(operand1), String.valueOf(operand2), false));
+				return operand1.toString() + " \\div " + operand2.toString();
+			}
+		}
+		if (operation == 0) {
+			Object nextOperand = random(type, add);
+			answer = absoluteString(Frac.fracAdd(answer, String.valueOf(nextOperand)));
+			return " + " + nextOperand.toString();
+		}
+		if (operation == 1) {
+			Object nextOperand = random(type, add);
+			answer = absoluteString(Frac.fracSub(answer, String.valueOf(nextOperand)));
+			return " - " + nextOperand.toString();
+		}
+		if (operation == 2) {
+			Object nextOperand = random(type, mult);
+			answer = absoluteString(Frac.fracMult(answer, String.valueOf(nextOperand)));
+			return " \\cdot " + nextOperand.toString();
+		}
+		if (operation == 3) {
+			Object nextOperand = random(type, div);
+			answer = absoluteString(Frac.fracDivide(answer, String.valueOf(nextOperand), false));
+			return " \\div " + nextOperand.toString();
+		}
+
+		return "";
+	}
+
+	public String absoluteString(String maybeNegative){
+		if(maybeNegative.indexOf("-") != -1){
+			return maybeNegative.substring(1);
+		}
+		return maybeNegative;
+	}
+
 	public static void main(String[] args) {
 		OofO loga = new OofO();
-		loga.placeholder2(new Combin(1, 1, true), new Range(1, 3), new Range(1, 3), new Range(1, 3), 2);
+		loga.absolute(new Absolute(), new Range(1, 3), new Range(1, 3), new Range(1, 3), 4);
 		System.out.println(loga.getQuest() + ", " + loga.getAns());
 	}
 }

@@ -3,6 +3,9 @@ import java.util.Random;
 public class Absolute {
 	public double outsolution = 0;
 
+	public Absolute(){
+	}
+
 	public String abolute() {
 		Random rand = new Random();
 		int Operations = rand.nextInt(3) + 2;
@@ -17,15 +20,15 @@ public class Absolute {
 			if (mathsign == 1) {
 				firstmess = ("|" + String.valueOf(operands[0]) + "+" + String.valueOf(operands[1]) + "|");
 				solution = Math.abs(operands[0] + operands[1]);
-			}
+			} else
 			if (mathsign == 2) {
 				firstmess = ("|" + String.valueOf(operands[0]) + "-" + String.valueOf(operands[1]) + "|");
 				solution = Math.abs(operands[0] - operands[1]);
-			}
+			} else
 			if (mathsign == 3) {
 				firstmess = ("|" + String.valueOf(operands[0]) + "\\cdot" + String.valueOf(operands[1]) + "|");
 				solution = Math.abs(operands[0] * operands[1]);
-			}
+			} else
 			if (mathsign == 4) {
 				firstmess = ("|" + String.valueOf(operands[0]) + "\\div" + String.valueOf(operands[1]) + "|");
 				solution = Math.abs(operands[0] / operands[1]);
@@ -37,15 +40,15 @@ public class Absolute {
 			if (mathsign == 1) {
 				secondmess = ("|" + firstmess + "+" + String.valueOf(operands[2]) + "|");
 				solution = Math.abs(solution + operands[2]);
-			}
+			} else
 			if (mathsign == 2) {
 				secondmess = ("|" + firstmess + "-" + String.valueOf(operands[2]) + "|");
 				solution = Math.abs(solution - operands[2]);
-			}
+			} else
 			if (mathsign == 3) {
 				secondmess = ("|" + firstmess + "\\cdot" + String.valueOf(operands[2]) + "|");
 				solution = Math.abs(solution * operands[2]);
-			}
+			} else
 			if (mathsign == 4) {
 				secondmess = ("|" + firstmess + "\\div" + String.valueOf(operands[2]) + "|");
 				solution = Math.abs(solution / operands[2]);
@@ -58,15 +61,15 @@ public class Absolute {
 			if (mathsign == 1) {
 				thirdmess = ("|" + secondmess + "+" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution + operands[length]);
-			}
+			} else
 			if (mathsign == 2) {
 				thirdmess = ("|" + secondmess + "-" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution - operands[length]);
-			}
+			} else
 			if (mathsign == 3) {
 				thirdmess = ("|" + secondmess + "\\cdot" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution * operands[length]);
-			}
+			} else
 			if (mathsign == 4) {
 				thirdmess = ("|" + secondmess + "\\div" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution / operands[length]);
@@ -79,15 +82,15 @@ public class Absolute {
 			if (mathsign == 1) {
 				fourthmess = ("|" + secondmess + "+" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution + operands[length]);
-			}
+			} else
 			if (mathsign == 2) {
 				fourthmess = ("|" + secondmess + "-" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution - operands[length]);
-			}
+			} else
 			if (mathsign == 3) {
 				fourthmess = ("|" + secondmess + "\\cdot" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution * operands[length]);
-			}
+			} else
 			if (mathsign == 4) {
 				fourthmess = ("|" + secondmess + "\\div" + String.valueOf(operands[length]) + "|");
 				solution = Math.abs(solution / operands[length]);

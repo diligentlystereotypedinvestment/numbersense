@@ -29,7 +29,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		}
+		} else
 		if (random == 17 || random == 18) { // substitution
 			// String printmess = "";
 			// int base = rand.nextInt(12) + 2;
@@ -44,7 +44,7 @@ public class QUp40 {
 			// //System.out.println();
 			// //System.out.println();
 			//
-		}
+		} else
 		if (random == 19 || random == 20) { // Word Problems
 			// String printmess = "";
 			// int base = rand.nextInt(12) + 2;
@@ -59,7 +59,7 @@ public class QUp40 {
 			// //System.out.println();
 			// //System.out.println();
 			//
-		}
+		} else
 
 		if (random == 21 || random == 22) { // Inverses
 			int choose = rand.nextInt(2) + 1;
@@ -81,7 +81,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		}
+		} else
 		if (random == 23 || random == 24) { // Absolute value
 			Absolute ooo = new Absolute();
 			String printmess = ("(" + i + ") $" + "" + ooo.abolute());
@@ -94,7 +94,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		}
+		} else
 		if (random == 25 || random == 26) { // Proportions
 			// Absolute ooo = new Absolute();
 			// String printmess = ("$(" + i + ") " + "" + ooo.abolute());
@@ -106,7 +106,7 @@ public class QUp40 {
 			// //System.out.println();
 			// //System.out.println();
 			//
-		}
+		} else
 		if (random == 27 || random == 28) { // Square roots/ cube roots
 			int choose = rand.nextInt(2) + 1;
 			String printmess = "";
@@ -127,7 +127,7 @@ public class QUp40 {
 			 */
 			// System.out.println();
 			// System.out.println();
-		}
+		} else
 		if (random == 29 || random == 30) { // Sets
 			Set<String> setA = new HashSet<String>();
 			Set<String> setB = new HashSet<String>();
@@ -190,7 +190,7 @@ public class QUp40 {
 			 */
 			// System.out.println();
 			// System.out.println();
-		}
+		} else
 		if (random == 31 || random == 32) { // Bases
 			int choose = rand.nextInt(3) + 1;
 			String printmess = "";
@@ -224,7 +224,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		}
+		} else
 		if (random == 33 || random == 34) { // Solving Simple Equations// System.out.print(printmess);
 			Equations.gen(i, questions, answers);
 			/*
@@ -234,7 +234,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		}
+		} else
 
 		if (random == 35 || random == 36) { // system of equations
 			int problem = rand.nextInt(2);
@@ -336,10 +336,10 @@ public class QUp40 {
 				questions.add(printmess);
 			}
 
-		}
+		} else
 		if (random == 37 || random == 38) { // repeating decimal to fraction
 			RepeatingFraction.gen(i, questions, answers);
-		}
+		} else
 		// power
 		if (random == 39 || random == 40) { // I think this is more remainder problems
 			int dividend = rand.nextInt(4) + 3;
@@ -351,13 +351,13 @@ public class QUp40 {
 			questions.add(printmess);
 			answers.add(String.valueOf(exponentr % dividend));
 
-		}
+		} else
 		if (random == 41 || random == 42) { // polynomial
 			Polynomial poly = new Polynomial();
 			poly.Gen(i);
 			questions.add(poly.getQuestion());
 			answers.add(String.valueOf(poly.getAnswer()));
-		}
+		} else
 		/*
 		 * if(random == 43 || random == 44){//exponents OofO exponent = new OofO();
 		 * questions.add("(" + i + ") " + exponent.exponent());
@@ -367,7 +367,7 @@ public class QUp40 {
 		 */
 		if (random == 43 || random == 44) { // ratios/proportions
 			Proportion.gen(questions, answers, i);
-		}
+		} else
 
 		if (random < 15) { // problems before it
 			QUp20 questions20 = new QUp20();
