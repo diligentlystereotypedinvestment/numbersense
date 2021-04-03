@@ -17,25 +17,23 @@ public class Conversion {
 			int choosefirstunit = rand.nextInt(4) + 1;
 			int percent = rand.nextInt(100) + 1;
 			if (choosefirstunit == 1) {
-				question = ("(" + i + ") What is " + percent + "$\\frac{" + num + "}{" + denom
-						+ "}$ \\% as a decimal?");
+				question = ("(" + i + ") What is " + percent + Simp.getFraction(num + "/" + denom) + "\\% as a decimal?");
 				answers = (String.valueOf((percent + (num / (1.0 * denom))) / 100.0));
 			}
 			if (choosefirstunit == 2) {
-				question = ("(" + i + ") What is " + num2 * 100 / denom2 + "$\\frac{" + (num2 * 100) % denom2 + "}{"
-						+ denom2 + "}\\%$ as a fraction?");
-				answers = ("$\\frac{" + num2 + "}{" + denom2 + "}$");
+				question = ("(" + i + ") What is " + num2 * 100 / denom2 + Simp.getFraction((num2 * 100) % denom2 + "/" + denom2) + "\\% as a fraction?");
+				answers = (Simp.getFraction(num2 + "/" + denom2));
 			}
 			if (choosefirstunit == 3) {
-				question = ("(" + i + ") What is $\\frac{" + num + "}{" + denom + "}$ \\% as a percent?");
+				question = ("(" + i + ") What is " + Simp.getFraction(num + "/" + denom) + "\\% as a percent?");
 				answers = (String.valueOf(num * 100.0 / denom) + "\\%");
 			}
 			if (choosefirstunit == 4) {
 				question = ("(" + i + ") What is " + num2 * 100.0 / denom2 + "\\% as a fraction?");
-				answers = ("$\\frac{" + num2 + "}{" + denom2 + "}$");
+				answers = (Simp.getFraction(num2 + "/" + denom2));
 			}
 			if (choosefirstunit == 5) {
-				question = ("(" + i + ") What is $\\frac{" + num2 + "}{" + denom2 + "}$ \\% as a decimal?");
+				question = ("(" + i + ") What is " + Simp.getFraction(num2 + "/" + denom2) + "\\% as a decimal?");
 				answers = (String.valueOf(num2 / denom2));
 			}
 		}

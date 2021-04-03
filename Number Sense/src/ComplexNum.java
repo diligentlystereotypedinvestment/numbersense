@@ -42,10 +42,14 @@ public class ComplexNum {
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
-		ComplexNum multipl1 = new ComplexNum(String.valueOf(rand.nextInt(11) - 5),
-				String.valueOf(rand.nextInt(11) - 5));
-		ComplexNum multipl2 = new ComplexNum(String.valueOf(rand.nextInt(11) - 5),
-				String.valueOf(rand.nextInt(11) - 5));
+		String[] coefs = new String[4];
+		for(int a = 0; a < coefs.length; a++){
+			do{
+				coefs[a] = String.valueOf(rand.nextInt(11) - 5);
+			} while(Integer.valueOf(coefs[a]) == 0);
+		}
+		ComplexNum multipl1 = new ComplexNum(coefs[0], coefs[1]);
+		ComplexNum multipl2 = new ComplexNum(coefs[2], coefs[3]);
 		ComplexNum product = ComplexNum.multiply(multipl1, multipl2);
 		int solveFor = rand.nextInt(8);
 		String question = "(" + i + ") If $(" + multipl1 + ")(" + multipl2 + " = a + bi$, what is ";
