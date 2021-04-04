@@ -1,12 +1,13 @@
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MoreGeo{
 	public static double distance;
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		Random rand = new Random();
 		int problem = rand.nextInt(6);
-		/*
 		if(problem == 0){//bisector
 			int AM = rand.nextInt(7) + 1;
 			int AB = rand.nextInt(7) + 1;
@@ -26,7 +27,7 @@ public class MoreGeo{
 			String listOfRemainingValues = sides.get(0) + ", " + sides.get(1) + ", and " + sides.get(2);
 			questions.add("(" + i + ") What is the length of " + solveForName + " in $\\triangle ABC$, $M$ is the point where the angle bisector of $\\angle B$ intercepts with $\\overline AC$, and " + listOfRemainingSides + " equals " + listOfRemainingValues + " in that order respectively?");
 			answers.add(solveFor.toString());
-		}
+		} else
 		if(problem == 1){//distance
 			int[] relativePos = rightTriangle.getTriplet();
 			int x = rand.nextInt(10) + 1;
@@ -52,9 +53,8 @@ public class MoreGeo{
 			}
 			questions.add("(" + i + ") What is the distance between the lines with the equations " + line1 + " and " + line2 + "?");
 			answers.add(simp.getFraction((int)(Math.abs(c1 - c2)) + "/" + relativePos[2]));
-		}
-		*/
-		if(problem == 3 || true){//rotations
+		} else
+		if(problem == 3){//rotations
 			int multiple = 90 * (rand.nextInt(3) + 1);
 			boolean isClockwise = rand.nextBoolean();
 			boolean isXUnknown = rand.nextBoolean();
