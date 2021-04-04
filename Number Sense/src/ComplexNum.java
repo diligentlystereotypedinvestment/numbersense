@@ -36,20 +36,24 @@ public class ComplexNum {
 		complexNum quotient = new complexNum(simplify.getFraction(product.getReal() + "/" + denom), simplify.getFraction(product.getReal() + "/" + denom));
 		return quotient;
 		*/
-		int denom = (int)Math.pow(Integer.valueOf(dividend.getReal()), 2) - (int)Math.pow(Integer.valueOf(dividend.getImaginary()), 2);
+		int denom = (int)Math.pow(Integer.valueOf(dividend.getReal()), 2) + (int)Math.pow(Integer.valueOf(dividend.getImaginary()), 2);
 		return new ComplexNum(Simp.getFraction(Integer.valueOf(divisor.getReal()) * Integer.valueOf(dividend.getReal()) + Integer.valueOf(divisor.getImaginary()) * Integer.valueOf(dividend.getImaginary()) + "/" + denom), Simp.getFraction(Integer.valueOf(dividend.getImaginary()) * Integer.valueOf(divisor.getReal()) - Integer.valueOf(dividend.getReal()) * Integer.valueOf(divisor.getImaginary()) + "/" + denom));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
 		Random rand = new Random();
 		String[] coefs = new String[4];
-		for(int a = 0; a < coefs.length; a++){
-			do{
-				coefs[a] = String.valueOf(rand.nextInt(11) - 5);
-			} while(Integer.valueOf(coefs[a]) == 0);
-		}
-		ComplexNum multipl1 = new ComplexNum(coefs[0], coefs[1]);
-		ComplexNum multipl2 = new ComplexNum(coefs[2], coefs[3]);
+		ComplexNum multipl1;
+		ComplexNum multipl2;
+		do{
+			for(int a = 0; a < coefs.length; a++){
+				do{
+					coefs[a] = String.valueOf(rand.nextInt(11) - 5);
+				} while(Integer.valueOf(coefs[a]) == 0);
+			}
+			multipl1 = new ComplexNum(coefs[0], coefs[1]);
+			multipl2 = new ComplexNum(coefs[2], coefs[3]);
+		} while(multipl1.equals(multipl2));
 		ComplexNum product = ComplexNum.multiply(multipl1, multipl2);
 		int solveFor = rand.nextInt(8);
 		String question = "(" + i + ") If $(" + multipl1 + ")(" + multipl2 + " = a + bi$, what is ";
@@ -100,14 +104,21 @@ public class ComplexNum {
 		}
 		if (stringTest == false) {
 		*/
-			if (Integer.valueOf(imaginary) > 0) {
+		if (imaginary.indexOf("0") != -1) {
+				return real;
+		}else if (imaginary.indexOf("-") != -1) {
 				return real + "+" + imaginary + "i";
-			} else if (Integer.valueOf(imaginary) == 0) {
-				return String.valueOf(real);
-			} else {
-				return real + "+" + imaginary + "i";
+			}  else {
+				return real + "-" + imaginary + "i";
 			}
 		//}
 		//return real + "+" + imaginary;
+	}
+
+	public boolean equals(ComplexNum other){
+		if(other.getImaginary().equals(imaginary) && other.getReal().equals(real)){
+			return false;
+		}
+		return true;
 	}
 }

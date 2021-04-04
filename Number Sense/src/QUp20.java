@@ -218,13 +218,13 @@ public class QUp20 {
 
 		if (random == 2) { // order of operation
 			OofO ooo = new OofO();
-			String printmess = ("(" + i + ") " + ooo.fstringmess());
-			questions.add(printmess); // System.out.print(printmess);
+			ooo.equation(new String(), new Range(1, 15), new Range(1, 15), new Range(1, 15), rand.nextInt(3) + 2);
+			questions.add("(" + i + ") $" + ooo.getQuest() + "$ = "); // System.out.print(printmess);
+			answers.add(ooo.getAns());
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
 			 * //System.out.print("\\textunderscore"); }
 			 */
-			answers.add(String.valueOf(ooo.outsolution));
 			// System.out.println();
 			// System.out.println();
 		} else
@@ -475,9 +475,10 @@ public class QUp20 {
 			// }
 			else if (dividend == 12) { // expression
 				OofO remainderex = new OofO();
-				printmess = ("(" + i + ") What is the remainder of " + remainderex.remainder() + " $\\div$ " + dividend
+				remainderex.equation(new String(), new Range(-16, 15), new Range(-9, 8), new Range(0,0), rand.nextInt(3) + 2);
+				printmess = ("(" + i + ") What is the remainder of $" + remainderex.getQuest() + "$ $\\div$ " + dividend
 						+ "?");
-				answers.add(String.valueOf(remainderex.outsolution % dividend));
+				answers.add(String.valueOf(Integer.valueOf(remainderex.getAns()) % dividend));
 			}
 			questions.add(printmess); // System.out.print(printmess);
 			/*

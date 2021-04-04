@@ -8,7 +8,7 @@ public class QUp60 {
 		if (random == 1 || random == 2 || random == 3) { // exponents
 			OofO o = new OofO();
 			questions.add("(" + i + ") " + o.exponent());
-			answers.add(String.valueOf(o.outsolution));
+			answers.add(String.valueOf(o.getAns()));
 		} else
 
 		if (random == 4 || random == 5 || random == 6) { // polygons

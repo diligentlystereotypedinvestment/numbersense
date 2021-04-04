@@ -40,6 +40,8 @@ fracOperations has methods for fraction arithmetic
 
 - Making the LaTeX formatting look more accurate
 
+- Figure out how to incorporate OofO's equation method with its exponent method
+
 - More Problems
 
     ~~Conversion Library for units~~

@@ -63,7 +63,7 @@ public class Combin {
 		}
 		if (problem == 1) {
 			OofO comb = new OofO();
-			comb.placeholder2(new Combin(2,1,true), new Range(3, 8), new Range(3, 6), new Range(3, 6), 2);
+			comb.equation(new Combin(2,1,true), new Range(3, 8), new Range(3, 6), new Range(3, 6), 2);
 			questions.add("(" + i + ") $" + comb.getQuest() + "$");
 			answers.add(comb.getAns());
 		}

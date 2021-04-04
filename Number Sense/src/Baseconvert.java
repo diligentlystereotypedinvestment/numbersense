@@ -1,5 +1,15 @@
+import java.util.Random;
 
 public class Baseconvert {
+	private int base;
+	private int num;
+	private Random rand = new Random();
+
+	public Baseconvert(int base, int num){
+		this.base = base;
+		this.num = num;
+	}
+
 	public static String newnum(int deci, int base) {
 		String tempnew = "";
 		if (base > 10) {
@@ -10,11 +20,11 @@ public class Baseconvert {
 				}
 				if (deci % base >= 10) {
 					overTen = (char) ((deci % base) + 55);
-					tempnew = (char) overTen + tempnew;
+					tempnew = overTen + tempnew;
 				} else {
 					tempnew = deci % base + tempnew;
 				}
-				deci = (int) (deci - (deci % (base))) / base;
+				deci = (deci - (deci % (base))) / base;
 			}
 		} else {
 			for (int i = 1; i < 10; i++) {
@@ -22,7 +32,7 @@ public class Baseconvert {
 					break;
 				}
 				tempnew = String.valueOf((deci % base)) + tempnew;
-				deci = (int) (deci - (deci % (base))) / base;
+				deci = (deci - (deci % (base))) / base;
 			}
 		}
 		return tempnew;
@@ -36,7 +46,7 @@ public class Baseconvert {
 					break;
 				}
 				tempog = (int) ((Integer.valueOf(deci) % 10) * Math.pow(base, i - 1) + tempog);
-				deci = String.valueOf((int) (Integer.valueOf(deci) - (Integer.valueOf(deci) % (10))) / 10);
+				deci = String.valueOf((Integer.valueOf(deci) - (Integer.valueOf(deci) % (10))) / 10);
 			}
 		} else {
 			String[] eachdeci = deci.split("");
@@ -44,7 +54,7 @@ public class Baseconvert {
 				char letter = 65;
 				for (int e = 0; e < 26; e++) {
 					if (eachdeci[eachdeci.length - j - 1].equals(String.valueOf(letter))) {
-						tempog = (int) (tempog + (int) (letter - 55) * Math.pow(base, j));
+						tempog = (int) (tempog + (letter - 55) * Math.pow(base, j));
 					}
 					letter++;
 				}
@@ -80,5 +90,19 @@ public class Baseconvert {
 			}
 		}
 		return tempog;
+	}
+
+	public int toAns(){
+		return ognum(String.valueOf(num), base);
+	}
+
+	/*
+	public Baseconvert random(){
+		return new Baseconvert(rand.nextInt(12) + 2;
+	}
+	*/
+
+	public String toString(){
+		return num + "_{" + base + "}";
 	}
 }

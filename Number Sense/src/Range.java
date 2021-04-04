@@ -13,4 +13,12 @@ public class Range {
 		Random rand = new Random();
 		return rand.nextInt(upper) + lower + 1;
 	}
+
+	public int getUpper(){
+		return upper;
+	}
+	
+	public int getLower(){
+		return lower;
+	}
 }

@@ -244,6 +244,7 @@ public class Frac {
 	public static void main(String[] args){
 		Log log1 = Log.random();
 		Log log2 = Log.random();
+		System.out.println(Frac.fracAdd("\\frac{-3}{5}", "\\frac{-6}{5}"));
 		System.out.println(Frac.fracMult("3", "5"));
 		System.out.println(" What is $" + log1 + " + " + log2 + "$?");
 		System.out.println((Log.add(log1, log2).toAns()));

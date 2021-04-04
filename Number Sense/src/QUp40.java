@@ -83,10 +83,11 @@ public class QUp40 {
 
 		} else
 		if (random == 23 || random == 24) { // Absolute value
-			Absolute ooo = new Absolute();
-			String printmess = ("(" + i + ") $" + "" + ooo.abolute());
+			OofO ooo = new OofO();
+			ooo.equation(new Absolute(), new Range(-16, 15), new Range(-9, 8), new Range(-9, 8), rand.nextInt(3) + 2);
+			String printmess = ("(" + i + ") $" + ooo.getQuest() + "$");
 			questions.add(printmess); // System.out.print(printmess);
-			answers.add(String.valueOf(1.0 * ooo.outsolution));
+			answers.add(String.valueOf(ooo.getAns()));
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
 			 * //System.out.print("\\textunderscore"); }
