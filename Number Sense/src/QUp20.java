@@ -39,7 +39,7 @@ public class QUp20 {
 			if (rand1_1 == 3) { // addition of two improper fractions
 				AddImpro addimpro = new AddImpro();
 				answers.add(addimpro.sumimpro);
-				String printmess = ("(" + i + ") " + Simp.getFraction(addimpro.addfracn + "/" + addimpro.addfracd) + "+" + Simp.getFraction(addimpro.addfracn2 + "/" + addimpro.addfracd2) + "=$");
+				String printmess = ("(" + i + ") " + Simp.getFraction(addimpro.addfracn + "/" + addimpro.addfracd) + "+" + Simp.getFraction(addimpro.addfracn2 + "/" + addimpro.addfracd2) + "=");
 				questions.add(printmess); // System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -166,7 +166,7 @@ public class QUp20 {
 			if (rand1_1 == 13) { // division of two integers
 				Addition div1 = new Addition();
 				String printmess = ("(" + i + ") $" + div1.num1 / 100 + "\\div" + div1.num2 / 100 + " = $ \\hrulefill (fraction)");
-				answers.add(Simp.getFraction(div1.num1 / 100 + "/" + div1.num2 / 100) + " or " + Simp.getProper(div1.num1 / 100 + "/" + div1.num2 / 100));
+				answers.add(Simp.getFraction(div1.num1 / 100 + "/" + div1.num2 / 100) + " or $" + Simp.getProper(div1.num1 / 100 + "/" + div1.num2 / 100) + "$");
 				questions.add(printmess); // System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {

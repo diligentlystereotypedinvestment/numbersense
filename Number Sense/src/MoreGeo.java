@@ -15,7 +15,7 @@ public class MoreGeo{
 			do{
 				MC = rand.nextInt(7) + 1;
 			} while(AM == MC);
-			frac BC = new frac(MC * AB, AM);
+			Frac BC = new Frac(MC * AB, AM);
 			List<String> sidesNames = new ArrayList<>(Arrays.asList("AM", "AB", "MC", "BC"));
 			List<Object> sides = new ArrayList<>(Arrays.asList(AM, AB, MC, BC));
 			int solveForIndex = rand.nextInt(4);
@@ -29,14 +29,14 @@ public class MoreGeo{
 			answers.add(solveFor.toString());
 		} else
 		if(problem == 1){//distance
-			int[] relativePos = rightTriangle.getTriplet();
+			int[] relativePos = RightTriangle.getTriplet();
 			int x = rand.nextInt(10) + 1;
 			int y = rand.nextInt(10) + 1;
 			questions.add("(" + i + ") What is the distance between the point $(" + (x + relativePos[0]) + ", " + (y + relativePos[1]) + ")$ and $(" + x + ", " + y + ")$?");
 			answers.add(String.valueOf(relativePos[2]));
 		} else
 		if(problem == 2){//distance between parallel lines 
-			int[] relativePos = rightTriangle.getTriplet();
+			int[] relativePos = RightTriangle.getTriplet();
 			boolean sign = rand.nextBoolean();
 			int c1 = rand.nextInt(15) - 5;
 			int c2;
@@ -52,7 +52,7 @@ public class MoreGeo{
 				line2 = "$" + relativePos[0] + "x - " + relativePos[1] + "y = " + (c2) + "$";
 			}
 			questions.add("(" + i + ") What is the distance between the lines with the equations " + line1 + " and " + line2 + "?");
-			answers.add(simp.getFraction((int)(Math.abs(c1 - c2)) + "/" + relativePos[2]));
+			answers.add(Simp.getFraction(Math.abs(c1 - c2) + "/" + relativePos[2]));
 		} else
 		if(problem == 3){//rotations
 			int multiple = 90 * (rand.nextInt(3) + 1);
@@ -126,7 +126,7 @@ public class MoreGeo{
 		if(problem == 5){//number of possible lines
 			int n = rand.nextInt(4) + 5;
 			questions.add("(" + i + ") What is the maximum number of lines formed by " + n + " points, given no three are colinear?");
-			answers.add(String.valueOf((int) (n * (n - 3)) / 2 + n));
+			answers.add(String.valueOf((n * (n - 3)) / 2 + n));
 		}
 		//if(problem == 6){//distance between point and line; Bryant Heath's book said this typically only appears in the last column
 		//}
