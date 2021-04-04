@@ -26,9 +26,9 @@ public class LCMandGCF {
 			return -1;
 		} else {
 			int[] numsTemp = Arrays.copyOf(nums, nums.length);
-			int lcm = LCM(nums[0], nums[1]);
-			for(int i = 2; i < nums.length; i++){
-				lcm = LCM(lcm, nums[i]);
+			int lcm = LCM(numsTemp[0], numsTemp[1]);
+			for(int i = 2; i < numsTemp.length; i++){
+				lcm = LCM(lcm, numsTemp[i]);
 			}
 			return lcm;
 		}
