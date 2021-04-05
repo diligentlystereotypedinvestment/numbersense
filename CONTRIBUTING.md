@@ -34,6 +34,10 @@ fracOperations has methods for fraction arithmetic
     
     Exponents - I think answer key is wrong and question also needs "$=n^k$, what is $k$"
     
+    make sure answers don't have letters(bases)
+    
+    Roman Numerals shouldn't have four symbols in a row
+    
     ~~OofO's placeholder method, not generating a first term for the equation~~
     
 - More Add/Sub/Mult/Div Tricks/Common Problems
