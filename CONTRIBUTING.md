@@ -69,6 +69,8 @@ fracOperations has methods for fraction arithmetic
     Repeating decimal problems like "The first 4 digits of 427/990 are"
     
     more theorem from geo, diamter of circumscribed circle of right triangle
+    
+    sets problems like A has n elements B has i elements and A U B has a elements, how many elements are in A ∩ B
 
 - Spaces after the question number
 
