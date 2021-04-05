@@ -72,7 +72,7 @@ public class OofO {
 	}
 
 	public String getAns() {
-		return String.valueOf(answer);
+		return Simp.getFraction(answer);
 	}
 
 	public void equation(Object type, Range add, Range mult, Range div, int length) {
@@ -102,16 +102,16 @@ public class OofO {
 				return operand1.toString() + " + " + operand2.toString();
 			}
 			if (operation == 1) {
-				Object operand1 = random(type, add);
-				Object operand2 = random(type, add);
-				answer = adjust(type, Frac.fracSub(toAns(operand1), toAns(operand2), false));
-				return operand1.toString() + " - " + operand2.toString();
-			}
-			if (operation == 2) {
 				Object operand1 = random(type, mult);
 				Object operand2 = random(type, mult);
 				answer = adjust(type, Frac.fracMult(toAns(operand1), toAns(operand2), false));
 				return (operand1.toString()) + " \\cdot " + (operand2.toString());
+			}
+			if (operation == 2) {
+				Object operand1 = random(type, add);
+				Object operand2 = random(type, add);
+				answer = adjust(type, Frac.fracSub(toAns(operand1), toAns(operand2), false));
+				return operand1.toString() + " - " + operand2.toString();
 			}
 			if (operation == 3) {
 				Object operand1 = random(type, div);
@@ -126,14 +126,14 @@ public class OofO {
 			return " + " + nextOperand.toString();
 		}
 		if (operation == 1) {
-			Object nextOperand = random(type, add);
-			answer = adjust(type, Frac.fracSub(answer, toAns(nextOperand)));
-			return " - " + nextOperand.toString();
-		}
-		if (operation == 2) {
 			Object nextOperand = random(type, mult);
 			answer = adjust(type, Frac.fracMult(answer, toAns(nextOperand)));
 			return " \\cdot " + nextOperand.toString();
+		}
+		if (operation == 2) {
+			Object nextOperand = random(type, add);
+			answer = adjust(type, Frac.fracSub(answer, toAns(nextOperand)));
+			return " - " + nextOperand.toString();
 		}
 		if (operation == 3) {
 			Object nextOperand = random(type, div);
@@ -145,7 +145,7 @@ public class OofO {
 
 	public String adjust(Object type, String reg){//adjusts answer for appropriate type
 		if(type instanceof Absolute){
-			if(reg.indexOf("-") != -1){
+			if(reg.indexOf("-") != -1 && reg.indexOf("frac") != -1){
 				return reg.substring(1);
 			}
 			return reg;

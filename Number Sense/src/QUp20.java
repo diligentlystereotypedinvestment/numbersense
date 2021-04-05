@@ -51,8 +51,7 @@ public class QUp20 {
 			if (rand1_1 == 4) { // addition of two decimals
 				AddDeci adddeci = new AddDeci();
 				answers.add(String.valueOf(adddeci.sumdeci));
-				String printmess = ("(" + i + ") $" + ((int) adddeci.adddeci / 100.0) + "+"
-						+ ((int) adddeci.adddeci2 / 100.0) + "=$");
+				String printmess = ("(" + i + ") $" + ((int) adddeci.adddeci / 100.0) + "+" + ((int) adddeci.adddeci2 / 100.0) + "=$");
 				questions.add(printmess); // System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -475,10 +474,13 @@ public class QUp20 {
 			// }
 			else if (dividend == 12) { // expression
 				OofO remainderex = new OofO();
-				remainderex.equation(new String(), new Range(-16, 15), new Range(-9, 8), new Range(0,0), rand.nextInt(3) + 2);
-				printmess = ("(" + i + ") What is the remainder of $" + remainderex.getQuest() + "$ $\\div$ " + dividend
-						+ "?");
-				answers.add(String.valueOf(Integer.valueOf(remainderex.getAns()) % dividend));
+				remainderex.equation(new String(), new Range(1, 15), new Range(2, 9), new Range(0,0), rand.nextInt(3) + 2);
+				printmess = ("(" + i + ") What is the remainder of $" + remainderex.getQuest() + "$ $\\div$ " + dividend + "?");
+				int ans = Integer.valueOf(remainderex.getAns()) % dividend;
+				while(ans < 0){
+					ans += dividend;
+				}
+				answers.add(String.valueOf(ans));
 			}
 			questions.add(printmess); // System.out.print(printmess);
 			/*
@@ -519,13 +521,11 @@ public class QUp20 {
 				choose = rand.nextInt(2) + 1;
 			}
 			if (choose == 1) {
-				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$" + EliminateZero.money(price)
-						+ " then how much does " + pounds + " pounds cost?";
+				printmess = "(" + i + ") If " + oz + " oz of a liquid costs \\$" + EliminateZero.money(price) + " then how much does " + pounds + " pounds cost?";
 				answers.add(String.valueOf(EliminateZero.money(postPrice)));
 			}
 			if (choose == 2) {
-				printmess = "(" + i + ") If " + pounds + " pounds of a liquid costs \\$"
-						+ EliminateZero.money(postPrice) + " then how much does " + oz + " oz cost?";
+				printmess = "(" + i + ") If " + pounds + " pounds of a liquid costs \\$" + EliminateZero.money(postPrice) + " then how much does " + oz + " oz cost?";
 				answers.add(String.valueOf(pounds));
 			}
 			questions.add(printmess); // System.out.print(printmess);
@@ -721,6 +721,7 @@ public class QUp20 {
 		}
 	}
 
+	/*
 	public static void main(String[] args) {
 		ArrayList<String> temp = new ArrayList<>();
 		ArrayList<String> temp2 = new ArrayList<>();
@@ -736,4 +737,5 @@ public class QUp20 {
 			System.out.println(e);
 		}
 	}
+	*/
 }

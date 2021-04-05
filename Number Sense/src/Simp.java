@@ -1,6 +1,9 @@
 public class Simp {
 
 	public static String getFraction(String fraction) {
+		if(fraction.indexOf("/") == -1){
+			return fraction;
+		}
 		int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
 		int den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
 		boolean negative = false;
@@ -24,6 +27,9 @@ public class Simp {
 	}
 
 	public static String getFraction(String fraction, boolean dollarSign) {
+		if(fraction.indexOf("/") == -1){
+			return fraction;
+		}
 		int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
 		int den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
 		boolean negative = false;
@@ -32,7 +38,6 @@ public class Simp {
 		}
 		num = Math.abs(num);
 		den = Math.abs(den);
-
 		if (1.0 * den / LCMandGCF.GCF(num, den) == 1.0) {
 			if(negative){
 				return "-" + String.valueOf(num / LCMandGCF.GCF(num, den));
@@ -63,9 +68,5 @@ public class Simp {
 			return (whole + " \\frac{" + ((num % den) / LCMandGCF.GCF(num, den)) + "}{"
 					+ (den / LCMandGCF.GCF(num, den)) + "}");
 		}
-	}
-
-	public static void main(String[] args) {
-		System.out.println(Simp.getFraction(2 + "/" + -3));
 	}
 }

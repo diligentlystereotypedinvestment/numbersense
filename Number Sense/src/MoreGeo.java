@@ -131,13 +131,4 @@ public class MoreGeo{
 		//if(problem == 6){//distance between point and line; Bryant Heath's book said this typically only appears in the last column
 		//}
 	}
-
-	public static void main(String[] args){
-		ArrayList<String> questions = new ArrayList<String>();
-		ArrayList<String> answers = new ArrayList<String>();
-		int i = 0;
-		MoreGeo.gen(questions, answers, i);
-		System.out.println(questions.get(0));
-		System.out.println(answers.get(0));
-	}
 }
