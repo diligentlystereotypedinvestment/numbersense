@@ -10,11 +10,11 @@ public class EliminateZero {
 
 	public static String money(double amount) {
 		String money = String.valueOf(amount);
-		String afterDeci = money.substring(money.indexOf("\\."));
-		if(afterDeci.length() == 0){
+		String afterDeci = money.substring(money.indexOf("."));
+		if(afterDeci.length() == 1){
 			return money + "00";
 		}
-		if(afterDeci.length() == 1){
+		if(afterDeci.length() == 2){
 			return money + "0";
 		}
 		return money;

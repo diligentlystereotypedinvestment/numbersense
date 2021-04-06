@@ -113,10 +113,10 @@ public class QUp40 {
 			}
 			if (choose == 2) {
 				base = rand.nextInt(20) + 1;
-				printmess = ("(" + i + ") $\\sqrt[3]{" + (int) Math.pow(base, 3) + ")=$");
+				printmess = ("(" + i + ") $\\sqrt[3]{" + (int) Math.pow(base, 3) + "}=$");
 			}
 			questions.add(printmess); // System.out.print(printmess);
-			answers.add(String.valueOf(1.0 * base));
+			answers.add(String.valueOf(base));
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
 			 * //System.out.print("\\textunderscore"); }
@@ -144,21 +144,21 @@ public class QUp40 {
 				Set<String> union = new HashSet<String>(setA);
 				union.addAll(setB);
 				printmess = ("(" + i + ") How many elements are in the union of " + setA + " and " + setB + "?");
-				answers.add(String.valueOf(1.0 * union.size()));
+				answers.add(String.valueOf(union.size()));
 			}
 			if (choose == 2) { // intercept
 				Set<String> intersection = new HashSet<String>(setA);
 				intersection.retainAll(setB);
 				printmess = ("(" + i + ") How many elements are in the intercept of " + setA + " and " + setB + "?");
-				answers.add(String.valueOf(1.0 * (intersection.size())));
+				answers.add(String.valueOf(intersection.size()));
 			}
 			if (choose == 3) { // proper
 				printmess = ("(" + i + ") How many proper subsets are in " + setA + "?");
-				answers.add(String.valueOf(1.0 * Math.pow(2, setA.size()) - 1));
+				answers.add(String.valueOf((int)Math.pow(2, setA.size()) - 1));
 			}
 			if (choose == 4) { // improper
 				printmess = ("(" + i + ") How many improper subsets are in " + setA + "?");
-				answers.add(String.valueOf(1.0));
+				answers.add(String.valueOf(1));
 			}
 			if (choose == 5) { // choose
 				// Combinations chose = new Combinations ();
@@ -166,15 +166,15 @@ public class QUp40 {
 				int doublechoose = rand.nextInt(2) + 1;
 				if (doublechoose == 1) {
 					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA+ "?");
-					answers.add(String.valueOf(1.0 * Combin.choose(setA.size(), chooselength)));
+					answers.add(String.valueOf(Combin.choose(setA.size(), chooselength)));
 				} else if (doublechoose == 2) {
 					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA+ " + subsets of length " + (setA.size() - chooselength) + " in " + setA + "?");
-					answers.add(String.valueOf(2.0 * Combin.choose(setA.size(), chooselength)));
+					answers.add(String.valueOf(2 * Combin.choose(setA.size(), chooselength)));
 				}
 			}
 			if (choose == 6) { // number of subsets
 				printmess = ("(" + i + ") How many subsets are there in " + setA + "?");
-				answers.add(String.valueOf(1.0 * Math.pow(2, setA.size())));
+				answers.add(String.valueOf(Math.pow(2, setA.size())));
 			}
 			questions.add(printmess); // System.out.print(printmess);
 			/*
@@ -197,7 +197,7 @@ public class QUp40 {
 				ognumber = rand.nextInt(104) + 5;
 				newnum = Baseconvert.newnum(ognumber, base);
 				printmess = ("(" + i + ") What is $" + newnum + "_ {" + base + "}$ in base 10");
-				answers.add(String.valueOf(1.0 * ognumber));
+				answers.add(String.valueOf(ognumber));
 			}else if (choose == 3) {
 				ognumber = rand.nextInt(104) + 5;
 				int choose2 = (int) Math.pow(2, rand.nextInt(3) + 1);
