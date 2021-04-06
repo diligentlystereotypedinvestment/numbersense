@@ -29,7 +29,7 @@ public class Frac {
 	public int getDenom() {
 		return denom;
 	}
-
+/*
 	public Frac simp(Frac unSimp) {
 		if (LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()) > 1) {
 			return new Frac(unSimp.getNum() / LCMandGCF.GCF(unSimp.getNum(), unSimp.getDenom()),
@@ -72,7 +72,7 @@ public class Frac {
 		int denom2 = simp(frac1).getDenom();
 		return simp(new Frac(num1 * denom2, denom1 * num2));
 	}
-
+*/
 	public String toDeci() {
 		return divide(num, denom);
 	}
@@ -81,7 +81,6 @@ public class Frac {
 		if (b == 0) {
 			return ERROR;
 		}
-
 		int value = a / b;
 		int remainder = a % b;
 		return String.valueOf(value) + DOT + divider(remainder, b);
@@ -90,18 +89,15 @@ public class Frac {
 	public static String divider(final int a, final int b) {
 		final Map<Integer, Integer> remainderIndexMap = new HashMap<>();
 		final List<Integer> values = new ArrayList<>();
-
 		int value;
 		int remainder = a;
 		while (!remainderIndexMap.containsKey(remainder)) {
 			remainderIndexMap.put(remainder, values.size());
-
 			remainder *= 10;
 			value = remainder / b;
 			remainder = remainder % b;
 			values.add(value);
 		}
-
 		final int index = remainderIndexMap.get(remainder);
 		final StringBuilder result = new StringBuilder();
 		for (int i = 0; i < index; i++) {
@@ -123,7 +119,7 @@ public class Frac {
 	}
 
 	// class should be pretty obvious
-	public static String fracAdd(String frac1, String frac2) {
+	public static String add(String frac1, String frac2) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);

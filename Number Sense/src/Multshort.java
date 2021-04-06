@@ -1,11 +1,8 @@
 import java.util.Random;
 
 /*
-   132 Factoring of Numerical Problems
    138 Multiplying Mixed Numbers
-
-   134 Sum of Squares: Factoring Method
-   */
+*/
 public class Multshort {
 	private double answer;
 	private String fullAnswer;
@@ -265,20 +262,16 @@ public class Multshort {
 				int denom = rand.nextInt(3) + 3;
 				int num = rand.nextInt(denom - 1) + 1;
 				int wholeNum = rand.nextInt(7) + 4;
-				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum + "\\frac{"
-						+ (denom - num) + "}{" + denom + "} = ";
-				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom),
-						(wholeNum + " " + (denom - num) + "/" + denom));
+				problem = "$" + wholeNum + Simp.getFraction(num + "/" + denom) + " \\times" + wholeNum + "\\frac{" + (denom - num) + "}{" + denom + "} = ";
+				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom), (wholeNum + " " + (denom - num) + "/" + denom));
 			}
 			if (chooser == 2) {
 				int denom = rand.nextInt(3) + 3;
 				int num = rand.nextInt(denom - 1) + 1;
 				int wholeNum = rand.nextInt(7) + 4;
 				int scalar = rand.nextInt(2) + 2;
-				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{"
-						+ num + "}{" + denom + "} = ";
-				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom),
-						(wholeNum * scalar + " " + num + "/" + denom));
+				problem = "$" + wholeNum + "\\frac{" + num + "}{" + denom + "} \\times" + wholeNum * scalar + "\\frac{" + num + "}{" + denom + "} = ";
+				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom), (wholeNum * scalar + " " + num + "/" + denom));
 			}
 		}
 		i++;

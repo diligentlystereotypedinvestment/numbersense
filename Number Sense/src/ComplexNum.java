@@ -86,7 +86,7 @@ public class ComplexNum {
 		}
 		if (solveFor == 6) { // a + b
 			questions.add(question + "$a + b$?");
-			answers.add(Frac.fracAdd(quotient.getReal() + "/" + 1, quotient.getImaginary()));
+			answers.add(Frac.add(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 		if (solveFor == 7) { // a - b
 			questions.add(question + "$a - b$?");

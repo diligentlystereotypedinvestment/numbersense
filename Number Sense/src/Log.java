@@ -102,7 +102,7 @@ public class Log {
 		}
 		if (problem == 1) { // add
 			questions.add("(" + i + ") What is $" + log1 + " + " + log2 + "$?");
-			answers.add(Frac.fracAdd(log1.toAns(), log2.toAns()));
+			answers.add(Frac.add(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 2) { // sub
 			questions.add("(" + i + ") What is $" + log1 + " - " + log2 + "$?");

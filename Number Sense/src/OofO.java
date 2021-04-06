@@ -122,7 +122,7 @@ public class OofO {
 		}
 		if (operation == 0) {
 			Object nextOperand = random(type, add);
-			answer = adjust(type, Frac.fracAdd(answer, toAns(nextOperand)));
+			answer = adjust(type, Frac.add(answer, toAns(nextOperand)));
 			return " + " + nextOperand.toString();
 		}
 		if (operation == 1) {
