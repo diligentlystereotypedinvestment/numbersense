@@ -36,8 +36,7 @@ public class Conversion {
 				question = ("(" + i + ") What is " + Simp.getFrac(num2 + "/" + denom2) + "\\% as a decimal?");
 				answers = (String.valueOf(num2 / denom2));
 			}
-		}
-		if (choosesys == 1) {
+		}else if (choosesys == 1) {
 			RomanNum roman = new RomanNum();
 			question = ("(" + i + ") What is " + roman.getRoman() + " in arabic?");
 			answers = String.valueOf(roman.getArabic());
@@ -67,6 +66,7 @@ public class Conversion {
 	public static String getUnitProblemInLatex(int problemNumber) {
 		Object[] problem = Unit.getProblem();
 		int initial = (Integer) problem[0];
+		System.out.println("bug");
 		Unit iUnit = (Unit) problem[1];
 		Unit fUnit = (Unit) problem[2];
 		iUnit.init();
