@@ -41,8 +41,7 @@ public class Conversion {
 			RomanNum roman = new RomanNum();
 			question = ("(" + i + ") What is " + roman.getRoman() + " in arabic?");
 			answers = String.valueOf(roman.getArabic());
-		}
-		if(choosesys == 2){
+		} else if(choosesys == 2){
 			String[] qAndA = getUnitProblemInLatex(i).split(",");
 			question = qAndA[0];
 			answers = qAndA[1];
@@ -70,7 +69,8 @@ public class Conversion {
 		int initial = (Integer) problem[0];
 		Unit iUnit = (Unit) problem[1];
 		Unit fUnit = (Unit) problem[2];
-		
+		fUNit.init();
+		iUnit.init();
 		String question = "(" + problemNumber + ") What is " + initial + " " + iUnit.getName() + "s in " + fUnit.getName() + "s?";
 		String answers = String.valueOf(Unit.convert(initial, iUnit, fUnit));
 		return question + "," + answers;
