@@ -69,8 +69,6 @@ public class Conversion {
 		System.out.println("bug");
 		Unit iUnit = (Unit) problem[1];
 		Unit fUnit = (Unit) problem[2];
-		iUnit.init();
-		fUnit.init();
 		String question = "(" + problemNumber + ") What is " + initial + " " + iUnit.getName() + "s in " + fUnit.getName() + "s?";
 		String answers = String.valueOf(Unit.convert(initial, iUnit, fUnit));
 		return question + "," + answers;

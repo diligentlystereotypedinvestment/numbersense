@@ -17,17 +17,11 @@ public class GenRunner {
 		under20.add(new MeanMedianMode());
 		under20.add(new Adding());
 
-		addAll(under20, under40);
-		addAll(under40, under60);
-		addAll(under60, under70);
-		addAll(under70, under80);
+		under40.addAll(under20);
+		under60.addAll(under40);
+		under70.addAll(under60);
+		under80.addAll(under70);
 		// add all types under20, 40, 60, etc.
-	}
-
-	public static void addAll(ArrayList<QuestionType> input, ArrayList<QuestionType> output) {
-		for (QuestionType e : input) {
-			output.add(e);
-		}
 	}
 
 	public static Question generateQuestionAt(int questionNumber) {
@@ -93,9 +87,8 @@ public class GenRunner {
 	}
 
 	public static void main(String[] args) {
-		// setup();
-		System.out.println(
-				"\\documentclass{article}\n\\usepackage[margin=0.5in]{geometry}\n\\usepackage{amsmath}\n\\usepackage{setspace}\n\\usepackage{multicol}\n%\\newcommand\\textbox[1]{\n%\\parbox{.333\\textwidth}{#1}%\n%}\n\\pagenumbering{gobble}\n\\begin{document}\n\\begin{center}\n\\textbf{The University Interscholastic League\\\\\nNumber Sense Test $\\cdot$ HS District $\\cdot$ \\date}\n\\end{center}\n\\hfill Final \\textunderscore\\textunderscore\\textunderscore\\textunderscore \\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent \\textbf{Contestant's Number} \\textunderscore\\textunderscore\\textunderscore\\textunderscore\\hfill  2nd \\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent   .\\hfill  1st \\textunderscore\\textunderscore\\textunderscore\\textunderscore \\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent \\textbf{Read directions carefully} \\hspace{.45in} {\\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score\\hspace {.05in} Initials}\n\n\\noindent \\textbf{before beginning test} \\hspace{1in}{\\textbf{UNTIL TOLD TO BEGIN}}\\hfill{}\n\n\n\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n\n\n\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n\n\n\\setstretch{2.1}\n\\begin{multicols}{2}\n\\begin{flushleft}");
+		setup();
+		System.out.println("\\documentclass{article}\n\\usepackage[margin=0.5in]{geometry}\n\\usepackage{amsmath}\n\\usepackage{setspace}\n\\usepackage{multicol}\n%\\newcommand\\textbox[1]{\n%\\parbox{.333\\textwidth}{#1}%\n%}\n\\pagenumbering{gobble}\n\\begin{document}\n\\begin{center}\n\\textbf{The University Interscholastic League\\\\\nNumber Sense Test $\\cdot$ HS District $\\cdot$ \\date}\n\\end{center}\n\\hfill Final \\textunderscore\\textunderscore\\textunderscore\\textunderscore \\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent \\textbf{Contestant's Number} \\textunderscore\\textunderscore\\textunderscore\\textunderscore\\hfill  2nd \\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent   .\\hfill  1st \\textunderscore\\textunderscore\\textunderscore\\textunderscore \\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\\textunderscore\n\n\\noindent \\textbf{Read directions carefully} \\hspace{.45in} {\\textbf{DO NOT UNFOLD THIS SHEET} }\\hfill{\\textbf{Score\\hspace {.05in} Initials}\n\n\\noindent \\textbf{before beginning test} \\hspace{1in}{\\textbf{UNTIL TOLD TO BEGIN}}\\hfill{}\n\n\n\\textbf{Directions}:  Do not turn this page until the person conducting this test gives the signal to begin. This is a ten-minute test. There are 80 problems. Solve accurately and quickly as many as you can in the order in which they appear. ALL  PROBLEMS  ARE  TO  BE SOLVED MENTALLY.  Make  no  calculations with paper and  pencil.  Write only the answer  in the space provided at the end of each problem.  Problems marked with a  ( * )  require approximate integral answers;  any answer to a starred problem  that is within five percent of the exact answer will be scored correct; all other problems require exact answers.\n\n\n\\textbf{The person conducting this contest should explain these directions to the contestants.}\n\n\\center{\\textbf{STOP -- WAIT FOR SIGNAL!}}\n\n\n\\setstretch{2.1}\n\\begin{multicols}{2}\n\\begin{flushleft}");
 
 		ArrayList<String> questions = new ArrayList<String>(), answers = new ArrayList<String>();
 
