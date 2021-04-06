@@ -164,5 +164,4 @@ public enum Unit {
 	public String getName() {
 		return toString().toLowerCase().replace("_", (type == SPEED) ? "/" : " ");
 	}
-
 }
