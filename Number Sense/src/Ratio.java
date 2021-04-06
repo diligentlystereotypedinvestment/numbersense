@@ -14,30 +14,26 @@ public class Ratio {
 				while (postVar == y) {
 					postVar = rand.nextInt(10) + 1;
 				}
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
-						+ "$ and vary directly, what is the value of $x$ when $y = " + postVar + "$?");
-				answers.add(Simp.getFraction(x * postVar + "/" + y));
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y+ "$ and vary directly, what is the value of $x$ when $y = " + postVar + "$?");
+				answers.add(Simp.getFrac(x * postVar + "/" + y));
 			}
 			if (solveFor == 1) { // y
 				while (postVar == x) {
 					postVar = rand.nextInt(10) + 1;
 				}
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
-						+ "$ and vary directly, what is the value of $y$ when $x = " + postVar + "$?");
-				answers.add(Simp.getFraction(y * postVar + "/" + x));
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y+ "$ and vary directly, what is the value of $y$ when $x = " + postVar + "$?");
+				answers.add(Simp.getFrac(y * postVar + "/" + x));
 			}
 		}
 		if (variation == 1) { // inverse
 			int scalar = rand.nextInt(10) + 1;
 			if (solveFor == 0) { // x
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
-						+ "$ and are inverses, what is the value of $x$ when $y = " + scalar * y + "$?");
-				answers.add(Simp.getFraction(x + "/" + scalar));
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y+ "$ and are inverses, what is the value of $x$ when $y = " + scalar * y + "$?");
+				answers.add(Simp.getFrac(x + "/" + scalar));
 			}
 			if (solveFor == 1) { // y
-				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y
-						+ "$ and are inverses, what is the value of $y$ when $x = " + scalar * x + "$?");
-				answers.add(Simp.getFraction(y + "/" + scalar));
+				questions.add("(" + i + ") If $x = " + x + "$ and $y = " + y+ "$ and are inverses, what is the value of $y$ when $x = " + scalar * x + "$?");
+				answers.add(Simp.getFrac(y + "/" + scalar));
 			}
 		}
 	}

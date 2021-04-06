@@ -4,6 +4,7 @@ import java.util.Random;
 public class OofO {
 	private String question;
 	private String answer;
+	private int base;
 	private static Random rand = new Random();
 
 	public String exponent() {
@@ -72,7 +73,7 @@ public class OofO {
 	}
 
 	public String getAns() {
-		return Simp.getFraction(answer);
+		return Simp.getFrac(answer);
 	}
 
 	public void equation(Object type, Range add, Range mult, Range div, int length) {
@@ -98,47 +99,47 @@ public class OofO {
 			if (operation == 0) {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
-				answer = adjust(type, Frac.fracAdd(toAns(operand1), toAns(operand2), false));
-				return operand1.toString() + " + " + operand2.toString();
+				answer = adjust(type, Frac.add(toAns(operand1), toAns(operand2), false));
+				return questAdj(type, operand1.toString()) + " + " + questAdj(type, operand2.toString());
 			}
 			if (operation == 1) {
-				Object operand1 = random(type, mult);
-				Object operand2 = random(type, mult);
-				answer = adjust(type, Frac.fracMult(toAns(operand1), toAns(operand2), false));
-				return (operand1.toString()) + " \\cdot " + (operand2.toString());
-			}
-			if (operation == 2) {
 				Object operand1 = random(type, add);
 				Object operand2 = random(type, add);
-				answer = adjust(type, Frac.fracSub(toAns(operand1), toAns(operand2), false));
-				return operand1.toString() + " - " + operand2.toString();
+				answer = adjust(type, Frac.sub(toAns(operand1), toAns(operand2), false));
+				return questAdj(type, operand1.toString()) + " - " + questAdj(type, operand2.toString());
+			}
+			if (operation == 2) {
+				Object operand1 = random(type, mult);
+				Object operand2 = random(type, mult);
+				answer = adjust(type, Frac.mult(toAns(operand1), toAns(operand2), false));
+				return questAdj(type, operand1.toString()) + " \\cdot " + questAdj(type, operand2.toString());
 			}
 			if (operation == 3) {
 				Object operand1 = random(type, div);
 				Object operand2 = random(type, div);
-				answer = adjust(type, Frac.fracDivide(toAns(operand1), toAns(operand2), false));
-				return operand1.toString() + " \\div " + operand2.toString();
+				answer = adjust(type, Frac.div(toAns(operand1), toAns(operand2), false));
+				return questAdj(type, operand1.toString()) + " \\div " + questAdj(type, operand2.toString());
 			}
 		}
 		if (operation == 0) {
 			Object nextOperand = random(type, add);
 			answer = adjust(type, Frac.add(answer, toAns(nextOperand)));
-			return " + " + nextOperand.toString();
+			return " + " + questAdj(type, nextOperand.toString());
 		}
 		if (operation == 1) {
 			Object nextOperand = random(type, mult);
-			answer = adjust(type, Frac.fracMult(answer, toAns(nextOperand)));
-			return " \\cdot " + nextOperand.toString();
+			answer = adjust(type, Frac.mult(answer, toAns(nextOperand)));
+			return " \\cdot " + questAdj(type, nextOperand.toString());
 		}
 		if (operation == 2) {
 			Object nextOperand = random(type, add);
-			answer = adjust(type, Frac.fracSub(answer, toAns(nextOperand)));
-			return " - " + nextOperand.toString();
+			answer = adjust(type, Frac.sub(answer, toAns(nextOperand)));
+			return " - " + questAdj(type, nextOperand.toString());
 		}
 		if (operation == 3) {
 			Object nextOperand = random(type, div);
-			answer = adjust(type, Frac.fracDivide(answer, toAns(nextOperand), false));
-			return " \\div " + nextOperand.toString();
+			answer = adjust(type, Frac.div(answer, toAns(nextOperand), false));
+			return " \\div " + questAdj(type, nextOperand.toString());
 		}
 		return "";
 	}
@@ -152,6 +153,17 @@ public class OofO {
 		} else{
 			return reg;
 		}
+	}
+
+	public String questAdj(Object type, String reg){
+		if(type instanceof Baseconvert){
+			return Baseconvert.newnum(Integer.valueOf(reg), base) + "_" + base;
+		}
+		return reg;
+	}
+
+	public void setBase(int base){
+		this.base = base;
 	}
 
 	public Object random(Object type, Range randRange) {
@@ -175,5 +187,12 @@ public class OofO {
 			return String.valueOf(((Baseconvert) unSolve).toAns());
 		}
 		return unSolve.toString();
+	}
+
+	public static void main(String[] args) {
+		OofO base = new OofO();
+		base.setBase(5);
+		base.equation(new Baseconvert(4, 5), new Range(0, 5), new Range(0,5), new Range(0,0), 4);
+		System.out.println(base.getQuest() + ", " + base.getAns());
 	}
 }

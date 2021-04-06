@@ -127,10 +127,10 @@ public class Frac {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return Simp.getFraction((num1 * denom2 + num2 * denom1) + "/" + (denom1 * denom2));
+		return Simp.getFrac((num1 * denom2 + num2 * denom1) + "/" + (denom1 * denom2));
 	}
 
-	public static String fracAdd(String frac1, String frac2, boolean latexFormat) {
+	public static String add(String frac1, String frac2, boolean latexFormat) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
@@ -141,7 +141,7 @@ public class Frac {
 		return (num1 * denom2 + num2 * denom1) + "/" + (denom1 * denom2);
 	}
 
-	public static String fracSub(String frac1, String frac2) {
+	public static String sub(String frac1, String frac2) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
@@ -149,10 +149,10 @@ public class Frac {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return Simp.getFraction((num1 * denom2 - num2 * denom1) + "/" + (denom1 * denom2));
+		return Simp.getFrac((num1 * denom2 - num2 * denom1) + "/" + (denom1 * denom2));
 	}
 
-	public static String fracSub(String frac1, String frac2, boolean dollarSigns){
+	public static String sub(String frac1, String frac2, boolean dollarSigns){
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
@@ -160,10 +160,10 @@ public class Frac {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return Simp.getFraction((num1 * denom2 - num2 * denom1) + "/" + (denom1 * denom2), false);
+		return Simp.getFrac((num1 * denom2 - num2 * denom1) + "/" + (denom1 * denom2), false);
 	}
 
-	public static String fracMult(String frac1, String frac2) {
+	public static String mult(String frac1, String frac2) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
@@ -171,10 +171,10 @@ public class Frac {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return Simp.getFraction((num1 * num2) + "/" + (denom1 * denom2));
+		return Simp.getFrac((num1 * num2) + "/" + (denom1 * denom2));
 	}
 
-	public static String fracMult(String frac1, String frac2, boolean latexFormat) {
+	public static String mult(String frac1, String frac2, boolean latexFormat) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
@@ -182,17 +182,17 @@ public class Frac {
 		int denom1 = Integer.valueOf((frac1.substring(frac1.indexOf("/") + 1)));
 		int num2 = Integer.valueOf((frac2.substring(0, frac2.indexOf("/"))));
 		int denom2 = Integer.valueOf((frac2.substring(frac2.indexOf("/") + 1)));
-		return Simp.getFraction((num1 * num2) + "/" + (denom1 * denom2), false);
+		return Simp.getFrac((num1 * num2) + "/" + (denom1 * denom2), false);
 	}
 
-	public static String fracDivide(String frac1, String frac2, boolean latexFormat) {
+	public static String div(String frac1, String frac2, boolean latexFormat) {
 		frac1 = verifyFrac(frac1);
 		frac2 = verifyFrac(frac2);
 		// verifyFrac(frac1, frac2);
 		if (latexFormat) {
-			return fracMult(frac1, reci(frac2));
+			return mult(frac1, reci(frac2));
 		} else {
-			return fracMult(frac1, reci(frac2), false);
+			return mult(frac1, reci(frac2), false);
 		}
 	}
 
@@ -202,7 +202,7 @@ public class Frac {
 	}
 
 	public static String properAdd(String frac1, String frac2) {
-		return Simp.getProper(fracAdd(frac1, frac2, false));
+		return Simp.getProper(add(frac1, frac2, false));
 	}
 
 	public static String properMult(String frac1, String frac2) {
@@ -210,15 +210,15 @@ public class Frac {
 		String[] parts2 = frac2.split(" ");
 		String[] answer = new String[4];
 		answer[0] = String.valueOf(Integer.valueOf(parts1[0]) * Integer.valueOf(parts2[0])) + "/1";
-		answer[1] = fracMult(parts1[0] + "/1", parts2[1], false);
-		answer[2] = fracMult(parts2[0] + "/1", parts1[1], false);
-		answer[3] = fracMult(parts1[1], parts2[1], false);
+		answer[1] = mult(parts1[0] + "/1", parts2[1], false);
+		answer[2] = mult(parts2[0] + "/1", parts1[1], false);
+		answer[3] = mult(parts1[1], parts2[1], false);
 		return Simp
-				.getProper(fracAdd(fracAdd(answer[0], answer[1], false), fracAdd(answer[2], answer[3], false), false));
+				.getProper(add(add(answer[0], answer[1], false), add(answer[2], answer[3], false), false));
 	}
 
 	public String toString() {
-		return Simp.getFraction(num + "/" + denom);
+		return Simp.getFrac(num + "/" + denom);
 	}
 
 	public String toString(boolean a) {

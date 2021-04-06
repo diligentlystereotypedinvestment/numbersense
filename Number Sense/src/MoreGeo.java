@@ -52,7 +52,7 @@ public class MoreGeo{
 				line2 = "$" + relativePos[0] + "x - " + relativePos[1] + "y = " + (c2) + "$";
 			}
 			questions.add("(" + i + ") What is the distance between the lines with the equations " + line1 + " and " + line2 + "?");
-			answers.add(Simp.getFraction(Math.abs(c1 - c2) + "/" + relativePos[2]));
+			answers.add(Simp.getFrac(Math.abs(c1 - c2) + "/" + relativePos[2]));
 		} else
 		if(problem == 3){//rotations
 			int multiple = 90 * (rand.nextInt(3) + 1);

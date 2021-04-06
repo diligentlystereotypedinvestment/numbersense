@@ -26,18 +26,15 @@ public class Equations {
 			sign = '-';
 		}
 		if (choose == 0) { // two variable with one being substituted
-			questions.add("(" + i + ") What is the value of $" + variable1 + " $ if $" + coef[0] + variable1 + " = "
-					+ coef[1] + variable2 + " " + sign + " " + coef[2] + "$ and $" + variable2 + " = " + variableVal
-					+ "$?");
-			answers.add(Simp.getFraction((variableVal * coef[1] + coef[2]) + "/" + coef[0]));
+			questions.add("(" + i + ") What is the value of $" + variable1 + " $ if $" + coef[0] + variable1 + " = "+ coef[1] + variable2 + " " + sign + " " + coef[2] + "$ and $" + variable2 + " = " + variableVal+ "$?");
+			answers.add(Simp.getFrac((variableVal * coef[1] + coef[2]) + "/" + coef[0]));
 		}
 		if (choose == 1) { // one variable
-			questions.add("(" + i + ") What is the value of $" + variable1 + "$ if $" + coef[0] + " = " + coef[1]
-					+ variable1 + " " + sign + " " + coef[2] + "$?");
+			questions.add("(" + i + ") What is the value of $" + variable1 + "$ if $" + coef[0] + " = " + coef[1]+ variable1 + " " + sign + " " + coef[2] + "$?");
 			if (sign == '+') {
-				answers.add(Simp.getFraction((coef[0] + coef[2]) + "/" + coef[1]));
+				answers.add(Simp.getFrac((coef[0] + coef[2]) + "/" + coef[1]));
 			} else {
-				answers.add(Simp.getFraction((coef[0] - coef[2]) + "/" + coef[1]));
+				answers.add(Simp.getFrac((coef[0] - coef[2]) + "/" + coef[1]));
 			}
 		}
 	}
@@ -83,6 +80,6 @@ public class Equations {
 		if (coef[0] < 0 && directionChoose == 3) {
 			questions.add(question + "\\geq$");
 		}
-		answers.add(Simp.getFraction((coef[2] - coef[1]) + "/" + coef[0]));
+		answers.add(Simp.getFrac((coef[2] - coef[1]) + "/" + coef[0]));
 	}
 }

@@ -8,8 +8,8 @@ public class AddImpro {
 	int addfracn = rand.nextInt(75 - addfracd);
 	int addfracd2 = rand.nextInt(maxnum2) + 2;
 	int addfracn2 = rand.nextInt(75 - addfracd2) + maxnum2;
-	String sumimpro = Frac.fracAdd(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
-	String dimpro = Frac.fracSub(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
-	String pimpro = Frac.fracMult(addfracn + "/" + addfracd, (addfracn2 + "/" +addfracd2), false);
-	String qimpro = Frac.fracDivide(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
+	String sumimpro = Frac.add(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
+	String dimpro = Frac.sub(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
+	String pimpro = Frac.mult(addfracn + "/" + addfracd, (addfracn2 + "/" +addfracd2), false);
+	String qimpro = Frac.div(addfracn + "/" + addfracd, addfracn2 + "/" + addfracd2, false);
 }

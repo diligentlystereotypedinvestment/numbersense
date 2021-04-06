@@ -30,33 +30,25 @@ public class RightTriangle {
 		if (chooser == 0) { // find one side
 			int sideToFind = rand.nextInt(3);
 			if (sideToFind == 0) { // hypotenuse
-				questions.add("(" + i
-						+ ") What is the hypotenuse of a right triangle with integer side lengths and one leg being $"
-						+ side1 + "$?");
+				questions.add("(" + i+ ") What is the hypotenuse of a right triangle with integer side lengths and one leg being $"+ side1 + "$?");
 				answers.add(String.valueOf(side3));
 			}
 			if (sideToFind == 1) { // side1
-				questions.add("(" + i
-						+ ") What is the shortest leg of a right triangle with integer side lengths and the hypotenuse being $"
-						+ side3 + "$?");
+				questions.add("(" + i+ ") What is the shortest leg of a right triangle with integer side lengths and the hypotenuse being $"+ side3 + "$?");
 				answers.add(String.valueOf(side1));
 			}
 			if (sideToFind == 2) { // side2
-				questions.add("(" + i
-						+ ") What is the longest leg of a right triangle with integer side lengths and the hypothenuse being $"
-						+ side3 + "$?");
+				questions.add("(" + i+ ") What is the longest leg of a right triangle with integer side lengths and the hypothenuse being $"+ side3 + "$?");
 				answers.add(String.valueOf(side2));
 			}
 		}
 		if (chooser == 1) { // median length
-			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a right triangle with sides $"
-					+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
-			answers.add(Simp.getFraction(side3 + "/" + 2) + ", " + side3 / 2.0);
+			questions.add("(" + i + ") What is the length of the median to the hypotenuse of a right triangle with sides $"+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
+			answers.add(Simp.getFrac(side3 + "/" + 2) + ", " + side3 / 2.0);
 		}
 		if (chooser == 2) { // altitude length
-			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a right triangle with sides $"
-					+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
-			answers.add(Simp.getFraction((side1 * side2) + "/" + side3) + ", " + (side1 * side2) / side3);
+			questions.add("(" + i + ") What is the length of the altitude to the hypotenuse of a right triangle with sides $"+ side1 + ", " + side2 + ", \\text{ and }" + side3 + "$?");
+			answers.add(Simp.getFrac((side1 * side2) + "/" + side3) + ", " + (side1 * side2) / side3);
 		}
 	}
 }

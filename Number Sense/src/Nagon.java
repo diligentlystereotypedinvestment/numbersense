@@ -48,7 +48,7 @@ public class Nagon {
 	}
 
 	public String getCenter() {
-		return Simp.getFraction(360 + "/" + sides);
+		return Simp.getFrac(360 + "/" + sides);
 	}
 
 	public static void gen(int sides, int sideLength, int tracker, int realPolySides, String name,

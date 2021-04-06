@@ -1,6 +1,6 @@
 public class Simp {
 
-	public static String getFraction(String fraction) {
+	public static String getFrac(String fraction) {
 		if(fraction.indexOf("/") == -1){
 			return fraction;
 		}
@@ -26,7 +26,7 @@ public class Simp {
 		}
 	}
 
-	public static String getFraction(String fraction, boolean dollarSign) {
+	public static String getFrac(String fraction, boolean dollarSign) {
 		if(fraction.indexOf("/") == -1){
 			return fraction;
 		}

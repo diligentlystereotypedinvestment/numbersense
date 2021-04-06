@@ -29,8 +29,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		} else
-		if (random == 17 || random == 18) { // substitution
+		} else if (random == 17 || random == 18) { // substitution
 			// String printmess = "";
 			// int base = rand.nextInt(12) + 2;
 			// int power = rand.nextInt(12) + 2;
@@ -44,8 +43,7 @@ public class QUp40 {
 			// //System.out.println();
 			// //System.out.println();
 			//
-		} else
-		if (random == 19 || random == 20) { // Word Problems
+		} else if (random == 19 || random == 20) { // Word Problems
 			// String printmess = "";
 			// int base = rand.nextInt(12) + 2;
 			// int power = rand.nextInt(12) + 2;
@@ -81,8 +79,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		} else
-		if (random == 23 || random == 24) { // Absolute value
+		} else if (random == 23 || random == 24) { // Absolute value
 			OofO ooo = new OofO();
 			ooo.equation(new Absolute(), new Range(-16, 15), new Range(-9, 8), new Range(-9, 8), rand.nextInt(3) + 2);
 			String printmess = ("(" + i + ") $" + ooo.getQuest() + "$");
@@ -95,8 +92,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		} else
-		if (random == 25 || random == 26) { // Proportions
+		} else if (random == 25 || random == 26) { // Proportions
 			// Absolute ooo = new Absolute();
 			// String printmess = ("$(" + i + ") " + "" + ooo.abolute());
 			// questions.add(printmess);//System.out.print(printmess);
@@ -107,18 +103,17 @@ public class QUp40 {
 			// //System.out.println();
 			// //System.out.println();
 			//
-		} else
-		if (random == 27 || random == 28) { // Square roots/ cube roots
+		} else if (random == 27 || random == 28) { // Square roots/ cube roots
 			int choose = rand.nextInt(2) + 1;
 			String printmess = "";
 			int base = 0;
 			if (choose == 1) {
 				base = rand.nextInt(65) + 1;
-				printmess = ("(" + i + ") $\\sqrt{" + Math.pow(base, 2) + "}=$");
+				printmess = ("(" + i + ") $\\sqrt{" + (int) Math.pow(base, 2) + "}=$");
 			}
 			if (choose == 2) {
 				base = rand.nextInt(20) + 1;
-				printmess = ("(" + i + ") $" + Math.pow(base, 3) + "^{\\frac{1}{3}}=$");
+				printmess = ("(" + i + ") $\\sqrt[3]{" + (int) Math.pow(base, 3) + ")=$");
 			}
 			questions.add(printmess); // System.out.print(printmess);
 			answers.add(String.valueOf(1.0 * base));
@@ -128,8 +123,7 @@ public class QUp40 {
 			 */
 			// System.out.println();
 			// System.out.println();
-		} else
-		if (random == 29 || random == 30) { // Sets
+		} else if (random == 29 || random == 30) { // Sets
 			Set<String> setA = new HashSet<String>();
 			Set<String> setB = new HashSet<String>();
 			ArrayList<String> array1 = new ArrayList<>();
@@ -171,12 +165,10 @@ public class QUp40 {
 				int chooselength = rand.nextInt(2) + 1;
 				int doublechoose = rand.nextInt(2) + 1;
 				if (doublechoose == 1) {
-					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA
-							+ "?");
+					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA+ "?");
 					answers.add(String.valueOf(1.0 * Combin.choose(setA.size(), chooselength)));
 				} else if (doublechoose == 2) {
-					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA
-							+ " + subsets of length " + (setA.size() - chooselength) + " in " + setA + "?");
+					printmess = ("(" + i + ") How many subsets with length " + chooselength + " are there in " + setA+ " + subsets of length " + (setA.size() - chooselength) + " in " + setA + "?");
 					answers.add(String.valueOf(2.0 * Combin.choose(setA.size(), chooselength)));
 				}
 			}
@@ -191,8 +183,7 @@ public class QUp40 {
 			 */
 			// System.out.println();
 			// System.out.println();
-		} else
-		if (random == 31 || random == 32) { // Bases
+		} else if (random == 31 || random == 32) { // Bases
 			int choose = rand.nextInt(3) + 1;
 			String printmess = "";
 			int base = rand.nextInt(11) + 2;
@@ -202,14 +193,12 @@ public class QUp40 {
 				ognumber = rand.nextInt(104) + 5;
 				printmess = ("(" + i + ") What is " + ognumber + " in base " + base);
 				answers.add(String.valueOf(Baseconvert.newnum(ognumber, base)));
-			}
-			if (choose == 2) {
+			}else if (choose == 2) {
 				ognumber = rand.nextInt(104) + 5;
 				newnum = Baseconvert.newnum(ognumber, base);
 				printmess = ("(" + i + ") What is $" + newnum + "_ {" + base + "}$ in base 10");
 				answers.add(String.valueOf(1.0 * ognumber));
-			}
-			if (choose == 3) {
+			}else if (choose == 3) {
 				ognumber = rand.nextInt(104) + 5;
 				int choose2 = (int) Math.pow(2, rand.nextInt(3) + 1);
 				int secondchoose2 = (int) Math.pow(2, rand.nextInt(3) + 1);
@@ -225,8 +214,7 @@ public class QUp40 {
 			// System.out.println();
 			// System.out.println();
 
-		} else
-		if (random == 33 || random == 34) { // Solving Simple Equations// System.out.print(printmess);
+		} else if (random == 33 || random == 34) { // Solving Simple Equations// System.out.print(printmess);
 			Equations.gen(i, questions, answers);
 			/*
 			 * for (int q = 0; q < 50 - printmess.length(); q++) {
@@ -276,8 +264,7 @@ public class QUp40 {
 					solve = " y ";
 				}
 				String printmess = "";
-				printmess = ("(" + i + ") $" + x1 + "x" + sign1 + y1 + "y = " + equal1 + " , " + x2 + "x" + sign2 + y2
-						+ "y = " + equal2 + "$ What is the value of " + solve);
+				printmess = ("(" + i + ") $" + x1 + "x" + sign1 + y1 + "y = " + equal1 + " , " + x2 + "x" + sign2 + y2+ "y = " + equal2 + "$ What is the value of " + solve);
 				if (sign2.contains("-") && sign1.contains("+")) {
 					if (solve.contains("x")) {
 						double ratio = y1 / y2;
@@ -337,8 +324,7 @@ public class QUp40 {
 				questions.add(printmess);
 			}
 
-		} else
-		if (random == 37 || random == 38) { // repeating decimal to fraction
+		} else if (random == 37 || random == 38) { // repeating decimal to fraction
 			RepeatingFraction.gen(i, questions, answers);
 		} else
 		// power
@@ -346,14 +332,12 @@ public class QUp40 {
 			int dividend = rand.nextInt(4) + 3;
 			int base = rand.nextInt(12) + 2;
 			int power = rand.nextInt(12) + 2;
-			String printmess = ("(" + i + ") What is the remainder of $" + base + "^{" + power + "}\\div" + dividend
-					+ "?$");
-			double exponentr = Math.pow(base, power);
+			String printmess = ("(" + i + ") What is the remainder of $" + base + "^{" + power + "}\\div" + dividend + "?$");
+			int exponentr = (int) Math.pow(base, power);
 			questions.add(printmess);
 			answers.add(String.valueOf(exponentr % dividend));
 
-		} else
-		if (random == 41 || random == 42) { // polynomial
+		} else if (random == 41 || random == 42) { // polynomial
 			Polynomial poly = new Polynomial();
 			poly.Gen(i);
 			questions.add(poly.getQuestion());

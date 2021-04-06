@@ -12,14 +12,12 @@ public class Proportion {
 			number3 = rand.nextInt(30) + 21;
 		}
 		if (solveFor == 0) { // w of x, _ of z
-			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2
-					+ "$ as \\textunderscore\\textunderscore\\textunderscore is to $" + number3 + "$");
-			answers.add(Simp.getFraction(number1 * number3 + "/" + number2));
+			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2 + "$ as \\textunderscore\\textunderscore\\textunderscore is to $" + number3 + "$");
+			answers.add(Simp.getFrac(number1 * number3 + "/" + number2));
 		}
 		if (solveFor == 0) { // w of x, y of ___
-			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2 + "$ as $" + number3
-					+ "$ is to\\textunderscore\\textunderscore\\textunderscore?");
-			answers.add(Simp.getFraction(number2 * number3 + "/" + number1));
+			questions.add("(" + i + ") $" + number1 + "$ is to $" + number2 + "$ as $" + number3 + "$ is to\\textunderscore\\textunderscore\\textunderscore?");
+			answers.add(Simp.getFrac(number2 * number3 + "/" + number1));
 		}
 	}
 }

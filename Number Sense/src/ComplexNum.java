@@ -20,11 +20,7 @@ public class ComplexNum {
 
 	public static ComplexNum multiply(ComplexNum multiplicand1, ComplexNum multiplicand2) {
 		ComplexNum product = new ComplexNum(
-				String.valueOf(Integer.valueOf(multiplicand1.getReal()) * Integer.valueOf(multiplicand2.getReal())
-					- Integer.valueOf(multiplicand1.getImaginary())
-					* Integer.valueOf(multiplicand2.getImaginary())),
-				String.valueOf(Integer.valueOf(multiplicand1.getReal()) * Integer.valueOf(multiplicand2.getImaginary())
-					+ Integer.valueOf(multiplicand1.getImaginary()) * Integer.valueOf(multiplicand2.getReal())));
+				String.valueOf(Integer.valueOf(multiplicand1.getReal()) * Integer.valueOf(multiplicand2.getReal()) - Integer.valueOf(multiplicand1.getImaginary()) * Integer.valueOf(multiplicand2.getImaginary())), String.valueOf(Integer.valueOf(multiplicand1.getReal()) * Integer.valueOf(multiplicand2.getImaginary()) + Integer.valueOf(multiplicand1.getImaginary()) * Integer.valueOf(multiplicand2.getReal())));
 		return product;
 	}
 
@@ -37,7 +33,7 @@ public class ComplexNum {
 		return quotient;
 		*/
 		int denom = (int)Math.pow(Integer.valueOf(dividend.getReal()), 2) + (int)Math.pow(Integer.valueOf(dividend.getImaginary()), 2);
-		return new ComplexNum(Simp.getFraction(Integer.valueOf(divisor.getReal()) * Integer.valueOf(dividend.getReal()) + Integer.valueOf(divisor.getImaginary()) * Integer.valueOf(dividend.getImaginary()) + "/" + denom), Simp.getFraction(Integer.valueOf(dividend.getImaginary()) * Integer.valueOf(divisor.getReal()) - Integer.valueOf(dividend.getReal()) * Integer.valueOf(divisor.getImaginary()) + "/" + denom));
+		return new ComplexNum(Simp.getFrac(Integer.valueOf(divisor.getReal()) * Integer.valueOf(dividend.getReal()) + Integer.valueOf(divisor.getImaginary()) * Integer.valueOf(dividend.getImaginary()) + "/" + denom), Simp.getFrac(Integer.valueOf(dividend.getImaginary()) * Integer.valueOf(divisor.getReal()) - Integer.valueOf(dividend.getReal()) * Integer.valueOf(divisor.getImaginary()) + "/" + denom));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
@@ -90,7 +86,7 @@ public class ComplexNum {
 		}
 		if (solveFor == 7) { // a - b
 			questions.add(question + "$a - b$?");
-			answers.add(Frac.fracSub(quotient.getReal() + "/" + 1, quotient.getImaginary()));
+			answers.add(Frac.sub(quotient.getReal() + "/" + 1, quotient.getImaginary()));
 		}
 	}
 

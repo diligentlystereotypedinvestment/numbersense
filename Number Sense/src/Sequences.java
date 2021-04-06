@@ -29,19 +29,15 @@ public class Sequences {
 			int interval = rand.nextInt(7) + 3;
 			int beginning = rand.nextInt(15) + 3;
 			int finalnum = (interval * (length - 1) + beginning);
-			question = ("(" + i + ") " + beginning + " + " + (interval + beginning) + " + " + (interval * 2 + beginning)
-					+ " + \\ldots " + finalnum + " = ");
+			question = ("(" + i + ") " + beginning + " + " + (interval + beginning) + " + " + (interval * 2 + beginning)+ " + \\ldots " + finalnum + " = ");
 			answer = String.valueOf(((finalnum + beginning) / 2) * ((finalnum - beginning) / interval + 1));
 		}
 		if (choose == 5) { // geometric
 			int denom = rand.nextInt(3) + 2;
 			int num = rand.nextInt(denom - 1) + 1;
 			int beginning = rand.nextInt(16) + 1;
-			question = ("(" + i + ") " + beginning + " + " + Simp.getFraction((num * beginning) + "/" + denom)
-					+ " + "
-					+ Simp.getFraction((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))
-					+ " + \\ldots = ");
-			answer = Frac.fracMult(beginning + "/1", denom + "/" + (denom - num));
+			question = ("(" + i + ") " + beginning + " + " + Simp.getFrac((num * beginning) + "/" + denom)+ " + "+ Simp.getFrac((int) (Math.pow(num, 2) * beginning) + "/" + (int) Math.pow(denom, 2))+ " + \\ldots = ");
+			answer = Frac.mult(beginning + "/1", denom + "/" + (denom - num));
 		}
 		if (choose == 6) { // first m squares
 			int length = rand.nextInt(3) + 5;
@@ -78,12 +74,12 @@ public class Sequences {
 		if (choose == 9) { // triangle reciprocals
 			int length = rand.nextInt(2) + 5;
 			int initial = rand.nextInt(3) + 1;
-			question = ("$" + Simp.getFraction("1/" + (initial * (initial + 1) / 2), true));
+			question = ("$" + Simp.getFrac("1/" + (initial * (initial + 1) / 2), true));
 			for (int ii = initial + 1; ii < initial + length; ii++) {
 				question = question + " + \\frac{1}{" + String.valueOf(ii * (ii + 1) / 2) + "}";
 			}
 			question = "(" + i + " ) " + question + " = $";
-			answer = (Frac.fracSub("2/" + initial, "2/" + (initial + length)));
+			answer = (Frac.sub("2/" + initial, "2/" + (initial + length)));
 		}
 	}
 

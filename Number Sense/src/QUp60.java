@@ -32,6 +32,11 @@ public class QUp60 {
 
 		if (random == 16 || random == 17 || random == 18) { // base operations
 			OofO.baseGen(questions, answers, i);
+			/*
+			OofO base = new OofO();
+			base.setBase(rand.nextInt(11) + 2);
+			base.equation(new Baseconvert(4,5), new Range(
+			*/
 		} else
 
 		if (random == 19 || random == 20 || random == 21) { // inverses/direct

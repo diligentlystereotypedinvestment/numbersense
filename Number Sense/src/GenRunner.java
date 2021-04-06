@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-import GenRunner.Adding;
-
 public class GenRunner {
 
 	public static final long startTime = System.nanoTime();

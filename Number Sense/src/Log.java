@@ -81,16 +81,16 @@ public class Log {
 
 	public static Log add(Log add1, Log add2) {
 		if (add1.toString().indexOf("e") != -1) {
-			return new Log(add1.getBase(), "e^" + Frac.fracMult(add1.toAns(), add2.toAns()));
+			return new Log(add1.getBase(), "e^" + Frac.mult(add1.toAns(), add2.toAns()));
 		}
-		return new Log(add1.getBase(), Frac.fracMult(add1.toAns(), add2.toAns()));
+		return new Log(add1.getBase(), Frac.mult(add1.toAns(), add2.toAns()));
 	}
 
 	public static Log sub(Log add1, Log add2) {
 		if (add1.toString().indexOf("e") != -1) {
-			return new Log(add1.getBase(), "e^" + Frac.fracDivide(add1.toAns(), add2.toAns(), false));
+			return new Log(add1.getBase(), "e^" + Frac.div(add1.toAns(), add2.toAns(), false));
 		}
-		return new Log(add1.getBase(), Frac.fracDivide(add1.toAns(), add2.toAns(), false));
+		return new Log(add1.getBase(), Frac.div(add1.toAns(), add2.toAns(), false));
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i) {
@@ -106,15 +106,15 @@ public class Log {
 		}
 		if (problem == 2) { // sub
 			questions.add("(" + i + ") What is $" + log1 + " - " + log2 + "$?");
-			answers.add(Frac.fracSub(log1.toAns(), log2.toAns()));
+			answers.add(Frac.sub(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 3) { // mult
 			questions.add("(" + i + ") What is $" + log1 + " \\cdot " + log2 + "$?");
-			answers.add(Frac.fracMult(log1.toAns(), log2.toAns(), false));
+			answers.add(Frac.mult(log1.toAns(), log2.toAns(), false));
 		}
 		if (problem == 4) { // div
 			questions.add("(" + i + ") What is $" + log1 + " \\div" + log2 + "$?");
-			answers.add(Frac.fracDivide(log1.toAns(), log2.toAns(), false));
+			answers.add(Frac.div(log1.toAns(), log2.toAns(), false));
 		}
 		if (problem == 5 || problem == 6 || problem == 7) { // OofO
 			OofO logar = new OofO();
