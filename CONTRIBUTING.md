@@ -71,6 +71,22 @@ fracOperations has methods for fraction arithmetic
     more theorem from geo, diamter of circumscribed circle of right triangle
     
     sets problems like A has n elements B has i elements and A U B has a elements, how many elements are in A ∩ B
+    
+    Base reminader problems
+    
+    time between hours/days 40-60
+    
+    Greatest integer - square roots
+    
+    wilson's theorem
+    
+    Approximation
+    
+        60 - irrational numbers like phi, pi, e, golden ratio, etc
+        
+        Long Division
+        
+        
 
 - Spaces after the question number
 
