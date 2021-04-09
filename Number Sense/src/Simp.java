@@ -1,5 +1,13 @@
 public class Simp {
 
+	public static String getFrac(int a, int b, boolean hasDollars){
+		if(hasDollars){
+			return getFrac(a + "/" + b);
+		} else{
+			return getFrac(a + "/" + b, false);
+		}
+	}
+
 	public static String getFrac(String fraction) {
 		if(fraction.indexOf("/") == -1){
 			return fraction;
