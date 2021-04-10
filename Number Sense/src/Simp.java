@@ -67,14 +67,20 @@ public class Simp {
 	}
 
 	public static String getProper(String fraction) {
-		int num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
-		int den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
+		int num, den;
+		if(fraction.indexOf("\\/") == -1){
+			num = Integer.valueOf(fraction.substring(fraction.indexOf("{") + 1, (fraction.indexOf("}"))));
+			String secondHalf = fraction.substring(fraction.indexOf("}") + 1);
+			den = Integer.valueOf(secondHalf.substring(secondHalf.indexOf("{") + 1, (secondHalf.indexOf("}"))));
+		} else{
+			num = Integer.valueOf(fraction.substring(0, fraction.indexOf("/")));
+			den = Integer.valueOf(fraction.substring(fraction.indexOf("/") + 1));
+		}
 		if (den / LCMandGCF.GCF(num, den) == 1) {
 			return String.valueOf(num / LCMandGCF.GCF(num, den));
 		} else {
 			int whole = num / den;
-			return (whole + " \\frac{" + ((num % den) / LCMandGCF.GCF(num, den)) + "}{"
-					+ (den / LCMandGCF.GCF(num, den)) + "}");
+			return (whole + " \\frac{" + ((num % den) / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}");
 		}
 	}
 }

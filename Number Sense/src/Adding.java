@@ -10,6 +10,7 @@ public class Adding implements QuestionType{
 		String answer = "";
 		String question = "";
 		int rand1_1 = rand.nextInt(16);
+		rand1_1 = scan.nextInt();
 		if(rand1_1 == 0){//adding reverses
 			int length = rand.nextInt(2) + 3;
 			int[] digits = new int[length];
@@ -17,7 +18,7 @@ public class Adding implements QuestionType{
 			int reverse = 0;
 			for(int a = 0; a < length; a++){
 				digits[a] = rand.nextInt(9) + 1;
-				norm += (int) Math.pow(10, length - a) * digits[a];
+				norm += (int) Math.pow(10, length - a - 1) * digits[a];
 				reverse += (int) Math.pow(10, a) * digits[a];
 			}
 			question = "(" + i + ") " + norm + " + " + reverse + " = ";
@@ -210,15 +211,15 @@ public class Adding implements QuestionType{
 				if(isFirst){
 					String first = (a - b) + "/" + b;
 					question = "(" + i + ") $" + first + " + " + Simp.getFrac(b, a, false) + "$ = ";
-					answer = Frac.add(first, b + "/" + a);
+					answer = Simp.getProper(Frac.add(first, b + "/" + a));
 				} else{
 					String second = (b - a) + "/" + a;
 					question = "(" + i + ") $" + Simp.getFrac(a, b, false) + " + " + second + "$ = ";
-					answer = Frac.add(a + "/" + b, second);
+					answer = Simp.getProper(Frac.add(a + "/" + b, second));
 				}
 			} else{
 				question = "(" + i + ") $" + Simp.getFrac(a, b, false) + " + " + Simp.getFrac(b, a, false) + "$ = ";
-				answer = Frac.add(a + "/" + b, b + "/" + a);
+				answer = Simp.getProper(Frac.add(a + "/" + b, b + "/" + a));
 			}
 		} else if(rand1_1 == 18){//series of fraction
 			int b = rand.nextInt(3) + 1;
@@ -230,8 +231,13 @@ public class Adding implements QuestionType{
 			question = "(" + i + ") $";
 			answer = "0";
 			for(int q = b; q < length + b; q++){
-				question = question + " + " + Simp.getFrac(a, q * (q + 1), false);
-				answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+				if(q == b){
+					question = Simp.getFrac(a, q * (q + 1), false);
+					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+				} else{
+					question = question + " + " + Simp.getFrac(a, q * (q + 1), false);
+					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+				}
 			}
 			question = question + "$ = ";
 		} else if(rand1_1 == 19){//deviating fraction
@@ -252,15 +258,19 @@ public class Adding implements QuestionType{
 			Frac frac1 = new Frac(a, b);
 			if(topPositive){
 				if(isSame){
-					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() + 1)).toLaTeX() + "$ = ";
+					question = frac1 + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() + 1)) + "$ = ";
+					answer = Frac.sub(frac1.toString(true), new Frac(frac2.getNum() + 1, frac2.getDenom() + 1).toString(true));
 				} else{
-					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() - 1)).toLaTeX() + "$ = ";
+					question = frac1 + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() - 1)) + "$ = ";
+					answer = Frac.sub(frac1.toString(true), new Frac(frac2.getNum() + 1, frac2.getDenom() - 1).toString(true));
 				}
 			} else{
 				if(isSame){
-					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() - 1)).toLaTeX() + "$ = ";
+					question = frac1 + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() - 1)) + "$ = ";
+					answer = Frac.sub(frac1.toString(true), new Frac(frac2.getNum() - 1, frac2.getDenom() - 1).toString(true));
 				} else{
-					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() + 1)).toLaTeX() + "$ = ";
+					question = frac1 + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() + 1)) + "$ = ";
+					answer = Frac.sub(frac1.toString(true), new Frac(frac2.getNum() - 1, frac2.getDenom() + 1).toString(true));
 				}
 			}
 		}
@@ -269,6 +279,8 @@ public class Adding implements QuestionType{
 
 	public static void main(String[] args) {
 		Adding add = new Adding();
-		System.out.print(add.generateQuestion(1));
+		Question quest = add.generateQuestion(1);
+		System.out.println(quest.question);
+		System.out.println(quest.answer);
 	}
 }

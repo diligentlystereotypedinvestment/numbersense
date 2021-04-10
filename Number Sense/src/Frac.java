@@ -225,9 +225,6 @@ public class Frac {
 		return num + "/" + denom;
 	}
 
-	public String toLaTeX(){
-		return "\\frac{" + num + "}{" + denom + "}";
-	}
 	public static String verifyFrac(String integer) {
 		if (integer.indexOf("\\frac") != -1) {
 			String[] parts = integer.split("\\{");

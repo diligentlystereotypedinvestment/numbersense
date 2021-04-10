@@ -39,6 +39,8 @@ fracOperations has methods for fraction arithmetic
     Roman Numerals shouldn't have four symbols in a row
     
     ~~OofO's placeholder method, not generating a first term for the equation~~
+
+    I think Adding has a problem with a/b + b/a has some weird problems with simplifying, like 1/2 + 9/9
     
 - More Add/Sub/Mult/Div Tricks/Common Problems
 
