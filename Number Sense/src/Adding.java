@@ -1,10 +1,12 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Adding implements QuestionType{
 	static Random rand = new Random();
 
 	@Override
 	public Question generateQuestion(int i) {
+		Scanner scan = new Scanner(System.in);
 		String answer = "";
 		String question = "";
 		int rand1_1 = rand.nextInt(16);
@@ -218,7 +220,55 @@ public class Adding implements QuestionType{
 				question = "(" + i + ") $" + Simp.getFrac(a, b, false) + " + " + Simp.getFrac(b, a, false) + "$ = ";
 				answer = Frac.add(a + "/" + b, b + "/" + a);
 			}
+		} else if(rand1_1 == 18){//series of fraction
+			int b = rand.nextInt(3) + 1;
+			int a;
+			do{
+				a = rand.nextInt(b - 1) + 1;
+			}while(!IsPrime.prime(a));
+			int length = rand.nextInt(3) + 3;
+			question = "(" + i + ") $";
+			answer = "0";
+			for(int q = b; q < length + b; q++){
+				question = question + " + " + Simp.getFrac(a, q * (q + 1), false);
+				answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+			}
+			question = question + "$ = ";
+		} else if(rand1_1 == 19){//deviating fraction
+			boolean topPositive = rand.nextBoolean();
+			boolean isSame = rand.nextBoolean();
+			boolean isTwo = rand.nextBoolean();
+			int a = rand.nextInt(9) + 1;
+			int b;
+			do{
+				b = rand.nextInt(9) + 1;
+			}while(b==a);
+			Frac frac2;
+			if(isTwo){
+				frac2 = new Frac(2 * a, 2 * b);
+			} else{
+				frac2 = new Frac(a, b);
+			}
+			Frac frac1 = new Frac(a, b);
+			if(topPositive){
+				if(isSame){
+					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() + 1)).toLaTeX() + "$ = ";
+				} else{
+					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() - 1)).toLaTeX() + "$ = ";
+				}
+			} else{
+				if(isSame){
+					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() - 1)).toLaTeX() + "$ = ";
+				} else{
+					question = "$" + frac1.toLaTeX() + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() + 1)).toLaTeX() + "$ = ";
+				}
+			}
 		}
 		return new Question(i, question, answer);
+	}
+
+	public static void main(String[] args) {
+		Adding add = new Adding();
+		System.out.print(add.generateQuestion(1));
 	}
 }
