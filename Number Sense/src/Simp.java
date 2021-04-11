@@ -97,7 +97,7 @@ public class Simp {
 
 	public static String getProper(String fraction) {
 		int num, den;
-		if(fraction.indexOf("\\/") == -1){
+		if(fraction.indexOf("/") == -1){
 			num = Integer.valueOf(fraction.substring(fraction.indexOf("{") + 1, (fraction.indexOf("}"))));
 			String secondHalf = fraction.substring(fraction.indexOf("}") + 1);
 			den = Integer.valueOf(secondHalf.substring(secondHalf.indexOf("{") + 1, (secondHalf.indexOf("}"))));

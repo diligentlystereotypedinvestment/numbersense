@@ -1,18 +1,18 @@
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Multshort {
 	private double answer;
 	private String fullAnswer;
 
 	public String multishort() {
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		String problem = "";
 		int i = 1;
 		int choose = rand.nextInt(21) + 1;
-		choose = scan.nextInt();
+		//choose = scan.nextInt();
 		if (choose == i) { // 25
 			int mult = rand.nextInt(100) + 19;
 			problem = "25 $\\cdot$ " + mult + " = ";
@@ -307,7 +307,7 @@ public class Multshort {
 			int whole = rand.nextInt(9) + 3;
 			int denom = rand.nextInt(17) + 5;
 			int deviation = rand.nextInt(denom - 2) + 1;
-			problem = (whole + Simp.getFrac(denom - deviation, denom, false) + " \\cdot " + whole + Simp.getFrac(deviation, denom, false) + "$ = ");
+			problem = "$" + (whole + Simp.getFrac(denom - deviation, denom, false) + " \\cdot " + whole + Simp.getFrac(deviation, denom, false) + "$ = ");
 			fullAnswer = whole * (whole + 1) + Simp.getFrac(deviation * (denom - deviation) , denom, true);
 		} else if(choose == i++){//other mixed numbers
 			int whole1 = rand.nextInt(9) + 4;

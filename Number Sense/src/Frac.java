@@ -197,8 +197,7 @@ public class Frac {
 	}
 
 	public static String reci(String frac) {
-		return Integer.valueOf((frac.substring(frac.indexOf("/") + 1))) + "/"
-				+ Integer.valueOf((frac.substring(0, frac.indexOf("/"))));
+		return Integer.valueOf((frac.substring(frac.indexOf("/") + 1))) + "/" + Integer.valueOf((frac.substring(0, frac.indexOf("/"))));
 	}
 
 	public static String properAdd(String frac1, String frac2) {
