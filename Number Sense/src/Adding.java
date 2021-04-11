@@ -1,16 +1,16 @@
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Adding implements QuestionType{
 	static Random rand = new Random();
 
 	@Override
 	public Question generateQuestion(int i) {
-		Scanner scan = new Scanner(System.in);
+		//Scanner scan = new Scanner(System.in);
 		String answer = "";
 		String question = "";
 		int rand1_1 = rand.nextInt(16);
-		rand1_1 = scan.nextInt();
+		//rand1_1 = scan.nextInt();
 		if(rand1_1 == 0){//adding reverses
 			int length = rand.nextInt(2) + 3;
 			int[] digits = new int[length];

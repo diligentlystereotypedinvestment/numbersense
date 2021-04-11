@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 
 public class PrimeDivisors {
-	public ArrayList<Integer> prime(int num) {
-		IsPrime check = new IsPrime();
+	public static ArrayList<Integer> prime(int num) {
 		ArrayList<Integer> list1 = new ArrayList<>();
 		for (int i = 1; i <= num / 2; i++) {
 			if (num % i == 0) {
-				if (check.prime(i)) {
+				if (IsPrime.prime(i)) {
 					list1.add(i);
 				}
 			}

@@ -6,7 +6,7 @@ Approximation Problems are also incomplete
 
 # Problem 1 - 20
 
-1) ~~Addition, subtraction~~, multiplication, & division of Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done
+~~1) ~~Addition, subtraction~~, multiplication, & division of Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done~~
 
 ~~2) Order of Operations~~
 

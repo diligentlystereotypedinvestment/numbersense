@@ -11,198 +11,270 @@ public class QUp20 {
 		// random = scan.nextInt();
 
 		if (random == 1 || i == 1) { // addition of two integers
-			int rand1_1 = rand.nextInt(16) + 1;
+			int rand1_1 = rand.nextInt(19);
+			if(rand1_1 == 0){//adding reverses
+				int length = rand.nextInt(2) + 3;
+				int[] digits = new int[length];
+				int norm = 0;
+				int reverse = 0;
+				for(int a = 0; a < length; a++){
+					digits[a] = rand.nextInt(9) + 1;
+					norm += (int) Math.pow(10, length - a - 1) * digits[a];
+					reverse += (int) Math.pow(10, a) * digits[a];
+				}
+				questions.add("(" + i + ") " + norm + " + " + reverse + " = ");
+				answers.add(String.valueOf(norm + reverse));
+			}
 			if (rand1_1 == 1) { // addition of two integers
 				Addition add1 = new Addition();
 				answers.add(EliminateZero.zero(add1.sum));
-				String printmess = ("(" + i + ") $" + add1.num1 + "+" + add1.num2 + " = $");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + add1.num1 + "+" + add1.num2 + " = $");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 2) { // addition of two mixed numbers
+			} else if (rand1_1 == 2) { // addition of two mixed numbers
 				Addmix addmix = new Addmix();
 				answers.add(String.valueOf(addmix.summix));
-				String printmess = ("(" + i + ") $" + addmix.addmix + "\\frac{" + addmix.addfracn + "}{" + addmix.addfracd + "} +" + addmix.addmix2 + "\\frac{" + addmix.addfracn2 + "}{" + addmix.addfracd2 + "}=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + addmix.addmix + "\\frac{" + addmix.addfracn + "}{" + addmix.addfracd + "} +" + addmix.addmix2 + "\\frac{" + addmix.addfracn2 + "}{" + addmix.addfracd2 + "}=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 3) { // addition of two improper fractions
+			} else if (rand1_1 == 3) { // addition of two improper fractions
 				AddImpro addimpro = new AddImpro();
 				answers.add(addimpro.sumimpro);
-				String printmess = ("(" + i + ") " + Simp.getFrac(addimpro.addfracn + "/" + addimpro.addfracd) + "+" + Simp.getFrac(addimpro.addfracn2 + "/" + addimpro.addfracd2) + "=");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") " + Simp.getFrac(addimpro.addfracn + "/" + addimpro.addfracd) + "+" + Simp.getFrac(addimpro.addfracn2 + "/" + addimpro.addfracd2) + "=");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 4) { // addition of two decimals
+			} else if (rand1_1 == 4) { // addition of two decimals
 				AddDeci adddeci = new AddDeci();
 				answers.add(String.valueOf(adddeci.sumdeci));
-				String printmess = ("(" + i + ") $" + ((int) adddeci.adddeci / 100.0) + "+" + ((int) adddeci.adddeci2 / 100.0) + "=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + ((int) adddeci.adddeci / 100.0) + "+" + ((int) adddeci.adddeci2 / 100.0) + "=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 5) { // subtraction of two integers
+			} else if (rand1_1 == 5) { // subtraction of two integers
 				Addition sub1 = new Addition();
 				answers.add(EliminateZero.zero(sub1.d));
-				String printmess = ("(" + i + ") $" + sub1.num1 + "-" + sub1.num2 + " = $");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + sub1.num1 + "-" + sub1.num2 + " = $");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 6) { // subtraction of two mixed numbers
+			} else if (rand1_1 == 6) { // subtraction of two mixed numbers
 				Addmix submix = new Addmix();
 				answers.add(String.valueOf(submix.dmix));
-				String printmess = ("(" + i + ") $" + submix.addmix + "\\frac{" + submix.addfracn + "}{" + submix.addfracd + "} -" + submix.addmix2 + "\\frac{" + submix.addfracn2 + "}{" + submix.addfracd2 + "}=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + submix.addmix + "\\frac{" + submix.addfracn + "}{" + submix.addfracd + "} -" + submix.addmix2 + "\\frac{" + submix.addfracn2 + "}{" + submix.addfracd2 + "}=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 7) { // subtract two improper fractions
+			} else if (rand1_1 == 7) { // subtract two improper fractions
 				AddImpro subimpro = new AddImpro();
 				answers.add(subimpro.dimpro);
-				String printmess = ("(" + i + ") $\\frac{" + subimpro.addfracn + "}{" + subimpro.addfracd + "} -\\frac{"+ subimpro.addfracn2 + "}{" + subimpro.addfracd2 + "}=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $\\frac{" + subimpro.addfracn + "}{" + subimpro.addfracd + "} -\\frac{"+ subimpro.addfracn2 + "}{" + subimpro.addfracd2 + "}=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 8) { // subtract two decimals
+			} else if (rand1_1 == 8) { // subtract two decimals
 				AddDeci subdeci = new AddDeci();
 				answers.add(String.valueOf(subdeci.ddeci));
-				String printmess = ("(" + i + ") $" + ((int) subdeci.adddeci / 100.0) + "-"+ ((int) subdeci.adddeci2 / 100.0) + "=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + ((int) subdeci.adddeci / 100.0) + "-"+ ((int) subdeci.adddeci2 / 100.0) + "=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 9) { // multiplication of two integers
+			} else if (rand1_1 == 9) { // multiplication of two integers
 				Addition mult1 = new Addition();
 				answers.add(EliminateZero.zero(mult1.p));
-				String printmess = ("(" + i + ") $" + mult1.num1 / 10 + "\\cdot" + mult1.num2 / 10 + " = $");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + mult1.num1 / 10 + "\\cdot" + mult1.num2 / 10 + " = $");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 10) { // multiplication of two mixed numbers
+			} else if (rand1_1 == 10) { // multiplication of two mixed numbers
 				Addmix multmix = new Addmix();
 				answers.add(String.valueOf(multmix.pmix));
-				String printmess = ("(" + i + ") $" + multmix.addmix / 1000 + "\\frac{" + multmix.addfracn + "}{"+ multmix.addfracd + "} \\cdot" + multmix.addmix2 / 1000 + "\\frac{" + multmix.addfracn2 + "}{"+ multmix.addfracd2 + "}=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + multmix.addmix / 1000 + "\\frac{" + multmix.addfracn + "}{"+ multmix.addfracd + "} \\cdot" + multmix.addmix2 / 1000 + "\\frac{" + multmix.addfracn2 + "}{"+ multmix.addfracd2 + "}=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 11) { // multiplication of two improper fractions
+			} else if (rand1_1 == 11) { // multiplication of two improper fractions
 				AddImpro multimpro = new AddImpro();
 				answers.add(multimpro.pimpro);
-				String printmess = ("(" + i + ") $\\frac{" + multimpro.addfracn + "}{" + multimpro.addfracd+ "} \\cdot\\frac{" + multimpro.addfracn2 + "}{" + multimpro.addfracd2 + "}=" + "$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $\\frac{" + multimpro.addfracn + "}{" + multimpro.addfracd+ "} \\cdot\\frac{" + multimpro.addfracn2 + "}{" + multimpro.addfracd2 + "}=" + "$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 12) { // multiplication of two decimals
+			} else if (rand1_1 == 12) { // multiplication of two decimals
 				AddDeci multdeci = new AddDeci();
 				answers.add(String.valueOf(multdeci.pdeci));
-				String printmess = ("(" + i + ") $" + ((int) (multdeci.adddeci / 100) / 100.0) + "\\cdot"+ ((int) (multdeci.adddeci2 / 100) / 100.0) + "=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + ((int) (multdeci.adddeci / 100) / 100.0) + "\\cdot"+ ((int) (multdeci.adddeci2 / 100) / 100.0) + "=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 13) { // division of two integers
+			} else if (rand1_1 == 13) { // division of two integers
 				Addition div1 = new Addition();
-				String printmess = ("(" + i + ") $" + div1.num1 / 100 + "\\div" + div1.num2 / 100 + " = $ \\hrulefill (fraction)");
+				questions.add("(" + i + ") $" + div1.num1 / 100 + "\\div" + div1.num2 / 100 + " = $ \\hrulefill (fraction)");
 				answers.add(Simp.getFrac(div1.num1 / 100 + "/" + div1.num2 / 100) + " or $" + Simp.getProper(div1.num1 / 100 + "/" + div1.num2 / 100) + "$");
-				questions.add(printmess); // System.out.print(printmess);
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 14) { // division of two mixed numbers
+			} else if (rand1_1 == 14) { // division of two mixed numbers
 				Addmix divmix = new Addmix();
 				answers.add(String.valueOf(divmix.qmix));
-				String printmess = ("(" + i + ") $" + divmix.addmix / 1000 + "\\frac{" + divmix.addfracn + "}{"+ divmix.addfracd + "} \\div" + divmix.addmix2 / 1000 + "\\frac{" + divmix.addfracn2 + "}{"+ divmix.addfracd2 + "}=$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + divmix.addmix / 1000 + "\\frac{" + divmix.addfracn + "}{"+ divmix.addfracd + "} \\div" + divmix.addmix2 / 1000 + "\\frac{" + divmix.addfracn2 + "}{"+ divmix.addfracd2 + "}=$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 15) { // division of two improper fractions
+			} else if (rand1_1 == 15) { // division of two improper fractions
 				AddImpro divimpro = new AddImpro();
 				answers.add(divimpro.qimpro);
-				String printmess = ("(" + i + ") $\\frac{" + divimpro.addfracn + "}{" + divimpro.addfracd+ "} \\div\\frac{" + divimpro.addfracn2 + "}{" + divimpro.addfracd2 + "}=" + "$");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $\\frac{" + divimpro.addfracn + "}{" + divimpro.addfracd+ "} \\div\\frac{" + divimpro.addfracn2 + "}{" + divimpro.addfracd2 + "}=" + "$");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
-			} else
-			if (rand1_1 == 16) { // division of two decimals
+			} else if (rand1_1 == 16) { // division of two decimals
 				AddDeci divdeci = new AddDeci();
 				answers.add(String.valueOf((divdeci.adddeci / 10.0) / (divdeci.adddeci2 / 1000)));
-				String printmess = ("(" + i + ") $" + ((int) divdeci.adddeci / 10.0) + "\\div" + (divdeci.adddeci2 / 1000) + "=$ \\hrulefill (Decimal)");
-				questions.add(printmess); // System.out.print(printmess);
+				questions.add("(" + i + ") $" + ((int) divdeci.adddeci / 10.0) + "\\div" + (divdeci.adddeci2 / 1000) + "=$ \\hrulefill (Decimal)");
+				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
 				 * //System.out.print("\\textunderscore"); }
 				 */
 				// System.out.println();
 				// System.out.println();
+			} else if(rand1_1 == 17){//a/b + b/a
+				int a = rand.nextInt(17) + 5;
+				int b;
+				do{
+					b = rand.nextInt(17) + 5;
+				} while(a == b);
+				boolean isLess = rand.nextBoolean();
+				if(isLess){
+					boolean isFirst = rand.nextBoolean();
+					if(isFirst){
+						String first = (a - b) + "/" + b;
+						questions.add("(" + i + ") $" + first + " + " + Simp.getFrac(b, a, false) + "$ = ");
+						answers.add(Simp.getProper(Frac.add(first, b + "/" + a)));
+					} else{
+						String second = (b - a) + "/" + a;
+						questions.add("(" + i + ") $" + Simp.getFrac(a, b, false) + " + " + second + "$ = ");
+						answers.add(Simp.getProper(Frac.add(a + "/" + b, second)));
+					}
+				} else{
+					questions.add("(" + i + ") $" + Simp.getFrac(a, b, false) + " + " + Simp.getFrac(b, a, false) + "$ = ");
+					answers.add(Simp.getProper(Frac.add(a + "/" + b, b + "/" + a)));
+				}
+			} else if(rand1_1 == 18){//series of fraction
+				int b = rand.nextInt(3) + 1;
+				int a;
+				do{
+					a = rand.nextInt(b - 1) + 1;
+				}while(!IsPrime.prime(a));
+				int length = rand.nextInt(3) + 3;
+				String question = ("(" + i + ") $");
+				String answer = "0";
+				for(int q = b; q < length + b; q++){
+					if(q == b){
+						question = (Simp.getFrac(a, q * (q + 1), false));
+						answers.add(Frac.add(answer, Simp.getFrac(a, q * (q + 1), false)));
+					} else{
+						question = (question + " + " + Simp.getFrac(a, q * (q + 1), false));
+						answers.add(Frac.add(answer, Simp.getFrac(a, q * (q + 1), false)));
+					}
+				}
+				questions.add(question + "$ = ");
+			} else if(rand1_1 == 19){//deviating fraction
+				boolean topPositive = rand.nextBoolean();
+				boolean isSame = rand.nextBoolean();
+				boolean isTwo = rand.nextBoolean();
+				int a = rand.nextInt(9) + 1;
+				int b;
+				do{
+					b = rand.nextInt(9) + 1;
+				}while(b==a);
+				Frac frac2;
+				if(isTwo){
+					frac2 = new Frac(2 * a, 2 * b);
+				} else{
+					frac2 = new Frac(a, b);
+				}
+				Frac frac1 = new Frac(a, b);
+				if(topPositive){
+					if(isSame){
+						questions.add(frac1 + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() + 1)) + "$ = ");
+						answers.add(Frac.sub(frac1.toString(true), new Frac(frac2.getNum() + 1, frac2.getDenom() + 1).toString(true)));
+					} else{
+						questions.add(frac1 + " - " + (new Frac(frac2.getNum() + 1, frac2.getDenom() - 1)) + "$ = ");
+						answers.add(Frac.sub(frac1.toString(true), new Frac(frac2.getNum() + 1, frac2.getDenom() - 1).toString(true)));
+					}
+				} else{
+					if(isSame){
+						questions.add(frac1 + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() - 1)) + "$ = ");
+						answers.add(Frac.sub(frac1.toString(true), new Frac(frac2.getNum() - 1, frac2.getDenom() - 1).toString(true)));
+					} else{
+						questions.add(frac1 + " - " + (new Frac(frac2.getNum() - 1, frac2.getDenom() + 1)) + "$ = ");
+						answers.add(Frac.sub(frac1.toString(true), new Frac(frac2.getNum() - 1, frac2.getDenom() + 1).toString(true)));
+					}
+				}
 			}
 		} else
 

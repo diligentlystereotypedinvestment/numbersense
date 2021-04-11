@@ -1,10 +1,39 @@
 public class Simp {
 
 	public static String getFrac(int a, int b, boolean hasDollars){
+		int num = a;
+		int den = b;
+		boolean negative = false;
+		if((num < 0)^(den < 0)){
+			negative = true;
+		}
+		num = Math.abs(num);
+		den = Math.abs(den);
 		if(hasDollars){
-			return getFrac(a + "/" + b);
+			if (1.0 * den / LCMandGCF.GCF(num, den) == 1.0) {
+				if(negative){
+					return "-" + String.valueOf(num / LCMandGCF.GCF(num, den));
+				}
+				return String.valueOf(num / LCMandGCF.GCF(num, den));
+			} else {
+				if(negative){
+					return "-" + ("$\\frac{" + (num / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}$");
+				}
+				return ("$\\frac{" + (num / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}$");
+			}
+
 		} else{
-			return getFrac(a + "/" + b, false);
+			if (1.0 * den / LCMandGCF.GCF(num, den) == 1.0) {
+				if(negative){
+					return "-" + String.valueOf(num / LCMandGCF.GCF(num, den));
+				}
+				return String.valueOf(num / LCMandGCF.GCF(num, den));
+			} else {
+				if(negative){
+					return "-" + ("\\frac{" + (num / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}");
+				}
+				return ("\\frac{" + (num / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}");
+			}
 		}
 	}
 

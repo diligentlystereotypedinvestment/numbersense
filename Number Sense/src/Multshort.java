@@ -1,18 +1,19 @@
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-/*
-   138 Multiplying Mixed Numbers
-   */
 public class Multshort {
 	private double answer;
 	private String fullAnswer;
 
 	public String multishort() {
+		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		String problem = "";
 		int i = 1;
-		int choose = rand.nextInt(7) + 1;
-		if (choose == i++) { // 25
+		int choose = rand.nextInt(21) + 1;
+		choose = scan.nextInt();
+		if (choose == i) { // 25
 			int mult = rand.nextInt(100) + 19;
 			problem = "25 $\\cdot$ " + mult + " = ";
 			answer = mult * 25;
@@ -224,7 +225,7 @@ public class Multshort {
 					problem = "$" + 1073 + " \\div" + multiplicand + " =$ ?";
 					answer = 1073 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$37 \\cot 27 =$ ?";
+					problem = "$37 \\cdot 27 =$ ?";
 					answer = 1073;
 				}
 			}
@@ -234,7 +235,7 @@ public class Multshort {
 					problem = "$" + 1073 + " \\div" + multiplicand + " = $ ?";
 					answer = 1073 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$37 \\cot 29 =$ ?";
+					problem = "$37 \\cdot 29 =$ ?";
 					answer = 1073;
 				}
 			}
@@ -244,7 +245,7 @@ public class Multshort {
 					problem = "$10101 \\div" + multiplicand + " = $ ?";
 					answer = 10101 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$3367 \\cot 3 =$ ?";
+					problem = "$3367 \\cdot 3 =$ ?";
 					answer = 10101;
 				}
 			}
@@ -255,10 +256,10 @@ public class Multshort {
 					problem = "$" + (1001 * multiplicand) + " \\div" + 13 + " = $ ?";
 					answer = (1001 * multiplicand) / 13;
 				}else if (convert == 2) {
-					problem = "$" + (77 * multiplicand) + " \\cot 13 =$ ?";
+					problem = "$" + (77 * multiplicand) + " \\cdot 13 =$ ?";
 					answer = (77 * multiplicand) * 13;
 				}else if (convert == 2) {
-					problem = "$" + (13 * multiplicand) + " \\cot 77 =$ ?";
+					problem = "$" + (13 * multiplicand) + " \\cdot 77 =$ ?";
 					answer = (13 * multiplicand) * 77;
 				}
 			}
@@ -267,12 +268,12 @@ public class Multshort {
 					problem = "$10101 \\div 3 = $ ?";
 					answer = 3367;
 				}else if (convert == 2) {
-					problem = "$3367 \\cot 3 =$ ?";
+					problem = "$3367 \\cdot 3 =$ ?";
 					answer = 10101;
 				}
 				int multiplicand = 3 * (rand.nextInt(5) + 1);
 				if (convert == 3) {
-					problem = "$3367 \\cot " + multiplicand + " =$ ?";
+					problem = "$3367 \\cdot " + multiplicand + " =$ ?";
 					answer = 3367 * multiplicand;
 				}
 			}
@@ -282,10 +283,10 @@ public class Multshort {
 					problem = "$10101 \\div 7 = $ ?";
 					answer = 1443;
 				}else if (convert == 2) {
-					problem = "$1443 \\cot 7 =$ ?";
+					problem = "$1443 \\cdot 7 =$ ?";
 					answer = 10101;
 				}else if (convert == 3) {
-					problem = "$1443 \\cot " + multiplicand + " =$ ?";
+					problem = "$1443 \\cdot " + multiplicand + " =$ ?";
 					answer = 1443 * multiplicand;
 				}
 			}
@@ -295,13 +296,29 @@ public class Multshort {
 					problem = "$10010 \\div 7 = $ ?";
 					answer = 1430;
 				}else if (convert == 2) {
-					problem = "$1430 \\cot 7 =$ ?";
+					problem = "$1430 \\cdot 7 =$ ?";
 					answer = 10010;
 				}else if (convert == 3) {
-					problem = "$1430 \\cot " + multiplicand + " =$ ?";
+					problem = "$1430 \\cdot " + multiplicand + " =$ ?";
 					answer = 1430 * multiplicand;
 				}
 			}
+		} else if(choose == i++){//mixed numbers with fractional parts adding to 1
+			int whole = rand.nextInt(9) + 3;
+			int denom = rand.nextInt(17) + 5;
+			int deviation = rand.nextInt(denom - 2) + 1;
+			problem = (whole + Simp.getFrac(denom - deviation, denom, false) + " \\cdot " + whole + Simp.getFrac(deviation, denom, false) + "$ = ");
+			fullAnswer = whole * (whole + 1) + Simp.getFrac(deviation * (denom - deviation) , denom, true);
+		} else if(choose == i++){//other mixed numbers
+			int whole1 = rand.nextInt(9) + 4;
+			int whole2 = rand.nextInt(9) + 4;
+			ArrayList<Integer> factors1 = PrimeDivisors.factor(whole1);
+			ArrayList<Integer> factors2 = PrimeDivisors.factor(whole2);
+			int denom1 = factors1.get(rand.nextInt(factors1.size()) + 1);
+			int denom2 = factors2.get(rand.nextInt(factors2.size()) + 1);
+			int num1 = rand.nextInt(denom1 - 1) + 1;
+			int num2 = rand.nextInt(denom2 - 1) + 1;
+			problem = "$" + whole1 + Simp.getFrac(num2, denom2, false) + "\\cdot" + whole2 + Simp.getFrac(num1, denom1, false) + "$";
 		}
 		return problem;
 	}
