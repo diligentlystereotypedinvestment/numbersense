@@ -64,7 +64,7 @@ public class Multshort {
 			}
 			int lownum = midnum - difference;
 			int highnum = midnum + difference;
-			problem = "$" + lownum + " //cdot " + highnum + " = ";
+			problem = "$" + lownum + " //cdot " + highnum + " $= ";
 			answer = lownum * highnum;
 		} else if (choose == i++) { // multiplying reverses
 			int tens = rand.nextInt(9) + 1;
@@ -76,7 +76,7 @@ public class Multshort {
 		} else if (choose == i++) { // a * a/b
 			int a = rand.nextInt(5) + 3;
 			int b = rand.nextInt(4) + a - 1;
-			problem = a + "$//cdot //frac{" + a + "} { " + b + "} $ = ";
+			problem = a + "$//cdot \\frac{" + a + "} { " + b + "} $ = ";
 			answer = a * ((double) a / b);
 		} else if (choose == i++) { // sum of squares special
 			int tens1 = rand.nextInt(8) + 1;
@@ -206,14 +206,14 @@ public class Multshort {
 				int denom = rand.nextInt(3) + 3;
 				int num = rand.nextInt(denom - 1) + 1;
 				int wholeNum = rand.nextInt(7) + 4;
-				problem = "$" + wholeNum + Simp.getFrac(num + "/" + denom) + " \\times" + wholeNum + Simp.getFrac((denom - num) + "/" + denom) + " = ";
+				problem = "$" + wholeNum + Simp.getFrac(num + "/" + denom, false) + " \\times" + wholeNum + Simp.getFrac((denom - num) + "/" + denom, false) + " $= ";
 				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom), (wholeNum + " " + (denom - num) + "/" + denom));
 			}else if (chooser == 2) {
 				int denom = rand.nextInt(3) + 3;
 				int num = rand.nextInt(denom - 1) + 1;
 				int wholeNum = rand.nextInt(7) + 4;
 				int scalar = rand.nextInt(2) + 2;
-				problem = "$" + wholeNum + Simp.getFrac(num + "/" + denom, false) + "\\times" + wholeNum * scalar + Simp.getFrac(num + "/" + denom, false) + "  = ";
+				problem = "$" + wholeNum + Simp.getFrac(num + "/" + denom, false) + "\\times" + wholeNum * scalar + Simp.getFrac(num + "/" + denom, false) + "  $= ";
 				fullAnswer = Frac.properMult((wholeNum + " " + num + "/" + denom), (wholeNum * scalar + " " + num + "/" + denom));
 			}
 		} else if (choose == i++) { // special numbers

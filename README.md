@@ -114,7 +114,7 @@ Approximation Problems are also incomplete
 
 ~~1) Volume & Surface Area~~
 
-2) Greatest Integer
+~~2) Greatest Integer~~
 
 3) Application of Remainder Theorem
 

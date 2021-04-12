@@ -233,10 +233,10 @@ public class Adding implements QuestionType{
 			for(int q = b; q < length + b; q++){
 				if(q == b){
 					question = Simp.getFrac(a, q * (q + 1), false);
-					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false), true);
 				} else{
 					question = question + " + " + Simp.getFrac(a, q * (q + 1), false);
-					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false));
+					answer = Frac.add(answer, Simp.getFrac(a, q * (q + 1), false), true);
 				}
 			}
 			question = question + "$ = ";

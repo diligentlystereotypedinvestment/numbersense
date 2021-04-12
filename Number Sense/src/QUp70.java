@@ -9,6 +9,10 @@ public class QUp70 {
 			MoreGeo.gen(questions, answers, i);
 		} else
 
+		if(random == 5 || random == 6 || random == 7 || random == 8){
+			GreatestInt.gen(questions, answers, i);
+		} else
+
 		if (random < 97) {
 			QUp60 questions60 = new QUp60();
 			questions60.Gen(questions, answers, i);

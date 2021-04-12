@@ -13,19 +13,25 @@ public class PrimeDivisors {
 		return list1;
 	}
 
-	public int primesum(int base) {
+	public static int primesum(int base) {
 		int sum = 0;
+		for(int i: prime(base)){
+			sum += i;
+		}
+		return sum;
+		/*
 		for (int i = 1; i <= base / 2; i++) {
 			if (base % i == 0) {
 				sum = sum + i;
 			}
 		}
 		return sum;
+		*/
 	}
 
 	public static ArrayList<Integer> factor(int num) {
 		ArrayList<Integer> list1 = new ArrayList<>();
-		for (int i = 1; i <= num / 2; i++) {
+		for (int i = 1; i <= num; i++) {
 			if (num % i == 0) {
 				list1.add(i);
 			}

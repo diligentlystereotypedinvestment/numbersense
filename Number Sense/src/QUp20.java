@@ -224,7 +224,7 @@ public class QUp20 {
 					answers.add(Simp.getProper(Frac.add(a + "/" + b, b + "/" + a)));
 				}
 			} else if(rand1_1 == 18){//series of fraction
-				int b = rand.nextInt(3) + 1;
+				int b = rand.nextInt(3) + 2;
 				int a;
 				do{
 					a = rand.nextInt(b - 1) + 1;
@@ -234,7 +234,7 @@ public class QUp20 {
 				String answer = "0";
 				for(int q = b; q < length + b; q++){
 					if(q == b){
-						question = (Simp.getFrac(a, q * (q + 1), false));
+						question = question + (Simp.getFrac(a, q * (q + 1), false));
 						answers.add(Frac.add(answer, Simp.getFrac(a, q * (q + 1), false)));
 					} else{
 						question = (question + " + " + Simp.getFrac(a, q * (q + 1), false));
@@ -602,17 +602,16 @@ public class QUp20 {
 			// etc.
 			int choose = rand.nextInt(15) + 1;
 			int base = rand.nextInt(100) + 21;
-			PrimeDivisors primes = new PrimeDivisors();
 			SumOfDivisors composite = new SumOfDivisors();
 			Relativeprimeundern relative = new Relativeprimeundern();
 			String printmess = "";
 			if (choose == 1) { // number of prime divisors
 				printmess = ("(" + i + ") How many prime divisors in " + base + "?");
-				answers.add(String.valueOf(primes.prime(base).size()));
+				answers.add(String.valueOf(PrimeDivisors.prime(base).size()));
 			}
 			if (choose == 2) { // sum of prime divisors
 				printmess = ("(" + i + ") What is the sum of the prime divisors " + base + "?");
-				answers.add(String.valueOf(primes.primesum(base)));
+				answers.add(String.valueOf(PrimeDivisors.primesum(base)));
 			}
 			if (choose == 3) { // number of composite integers
 				printmess = ("(" + i + ") How many divisors does " + base + " have?");
