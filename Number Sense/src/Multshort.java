@@ -7,11 +7,10 @@ public class Multshort {
 	private String fullAnswer;
 
 	public String multishort() {
-		//Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		String problem = "";
 		int i = 1;
-		int choose = rand.nextInt(21) + 1;
+		int choose = rand.nextInt(22) + 1;
 		//choose = scan.nextInt();
 		if (choose == i) { // 25
 			int mult = rand.nextInt(100) + 19;
@@ -319,6 +318,17 @@ public class Multshort {
 			int num1 = rand.nextInt(denom1 - 1) + 1;
 			int num2 = rand.nextInt(denom2 - 1) + 1;
 			problem = "$" + whole1 + Simp.getFrac(num2, denom2, false) + "\\cdot" + whole2 + Simp.getFrac(num1, denom1, false) + "$";
+		}
+		int[] tricks = {111, 1111, 101};
+		for(int a = 0; a < tricks.length; a++){
+			if(choose == i++){
+				int multiplicand = rand.nextInt(9990) + 10;
+				while(String.valueOf(multiplicand).indexOf("0") != -1){
+					multiplicand = rand.nextInt(9990) + 10;
+				}
+				problem = "$" + tricks[a] + " \\times " + multiplicand + "$";
+				answer = tricks[a] * multiplicand;
+			}
 		}
 		return problem;
 	}

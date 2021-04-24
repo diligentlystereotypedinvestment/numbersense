@@ -19,37 +19,47 @@ public class Estimation {
 			for (int i = 0; i < big.size(); i++) {
 				answer += big.get(i);
 			}
-		}
+		} else
+
 		if (questionNum == 20) {
 			setOfTen = 2;
+			int length = rand.nextInt(2) + 2;
+			for(int a = 0; a < length; a++){
+			}
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 30) {
 			setOfTen = 3;
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 40) {
 			setOfTen = 4;
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 50) {
 			setOfTen = 5;
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 60) {
 			setOfTen = 6;
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 70) {
 			setOfTen = 7;
 			mess = "";
 			answer = 0;
-		}
+		} else
+
 		if (questionNum == 80) {
 			setOfTen = 8;
 			mess = "";
