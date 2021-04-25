@@ -150,7 +150,7 @@ public class Multshort {
 		} else if (choose == i++) { // factoring of numerical problems
 			int chooser = rand.nextInt(5) + 1;
 			if (chooser == 1) {
-				double beforeMult = (rand.nextInt(40) + 1) / (10 * rand.nextInt(2));
+				double beforeMult = (rand.nextInt(35) + 5);// / (10 * rand.nextInt(2));
 				int scalar = 3 * rand.nextInt(2) + 2;
 				problem = "$" + (beforeMult * scalar) + "^2 + " + beforeMult + "^2 = $";
 				answer = (beforeMult * (Math.pow(scalar, 2) + 1));
@@ -313,8 +313,8 @@ public class Multshort {
 			int whole2 = rand.nextInt(9) + 4;
 			ArrayList<Integer> factors1 = PrimeDivisors.factor(whole1);
 			ArrayList<Integer> factors2 = PrimeDivisors.factor(whole2);
-			int denom1 = factors1.get(rand.nextInt(factors1.size()) + 1);
-			int denom2 = factors2.get(rand.nextInt(factors2.size()) + 1);
+			int denom1 = factors1.get(rand.nextInt(factors1.size() - 1) + 1);
+			int denom2 = factors2.get(rand.nextInt(factors2.size() - 1) + 1);
 			int num1 = rand.nextInt(denom1 - 1) + 1;
 			int num2 = rand.nextInt(denom2 - 1) + 1;
 			problem = "$" + whole1 + Simp.getFrac(num2, denom2, false) + "\\cdot" + whole2 + Simp.getFrac(num1, denom1, false) + "$";

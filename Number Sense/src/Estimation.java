@@ -24,14 +24,33 @@ public class Estimation {
 		if (questionNum == 20) {
 			setOfTen = 2;
 			int length = rand.nextInt(2) + 2;
+			boolean division = false;
+			String problem = "";
+			answer = 1;
 			for(int a = 0; a < length; a++){
+				boolean isDivision = rand.nextBoolean();
+				if(isDivision){
+					int divisor = rand.nextInt(9000) + 101;
+					problem += "\\div" + divisor;
+					answer /= divisor;
+				} else{
+					int multiplicand = rand.nextInt(90000) + 10001;
+					problem += "\\times" + multiplicand;
+					answer *= multiplicand;
+				}
 			}
-			mess = "";
-			answer = 0;
+			mess = "$" + problem + "$";
 		} else
 
 		if (questionNum == 30) {
 			setOfTen = 3;
+			int problemType = rand.nextInt(3);
+			if(problemType == 0){//squaring
+				int[] multiplicands = {rand.nextInt(40)+20, rand.nextInt(40)+20};
+				int[] divisors = {rand.nextInt(7)+3, rand.nextInt(7)+3};
+				mess = "$(" + multiplicands[0] + "\\div" + divisors[0] + "\\times" + multiplicands[1] + "\\div" + divisors[1] + ")^2$";
+				answer = (int) (multiplicands[0] / (1.0 * divisors[0]) * multiplicands[1] / (1.0 * divisors[1]));
+			}
 			mess = "";
 			answer = 0;
 		} else
