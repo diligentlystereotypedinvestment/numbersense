@@ -4,6 +4,8 @@ Needs to be run through a LaTeX compiler. Texmaker is good and I think Overleaf 
 
 Approximation Problems are also incomplete
 
+Answers to Estimation Problems may be slightly off
+
 # Problem 1 - 20
 
 ~~1) ~~Addition, subtraction~~, multiplication, & division of Integers, Mixed Numbers, Fractions, and Decimals - Mostly Done~~
