@@ -109,7 +109,7 @@ public class Log {
 			answers.add(Frac.sub(log1.toAns(), log2.toAns()));
 		}
 		if (problem == 3) { // mult
-			questions.add("(" + i + ") What is $" + log1 + " \\cdot " + log2 + "$?");
+			questions.add("(" + i + ") What is $" + log1 + " \\times " + log2 + "$?");
 			answers.add(Frac.mult(log1.toAns(), log2.toAns(), false));
 		}
 		if (problem == 4) { // div

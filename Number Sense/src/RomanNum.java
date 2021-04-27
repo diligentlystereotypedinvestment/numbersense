@@ -27,6 +27,7 @@ public class RomanNum {
 			backupArabic -= multiples * NUMBERS[i];
 		}
 		cleanup();
+		System.out.println(romanChars);
 		for (int i = 0; i < romanChars.size(); i++) {
 			roman = roman + romanChars.get(i);
 		}
@@ -44,14 +45,26 @@ public class RomanNum {
 		 * 2).equals(romanChars.get(i - 3))){ String fourInARow = romanChars.get(i); int
 		 * currentSpot = LETTERS.indexOf(romanChars.get(i)); romanChars.remove } }
 		 */
-		int i = 0;
-		while (!inARow(i) && i < romanChars.size() - 4) {
+		ArrayList<String> tempChars = new ArrayList<>();
+		for(int i = 0; i < romanChars.size() - 3; i++){
+			if(inARow(i)){
+				tempChars.add(i, romanChars.get(i));
+			} else{
+				tempChars.add(i, romanChars.get(i));
+				tempChars.add(i + 1, LETTERS[getIndex(LETTERS, romanChars.get(i)) - 1]);
+				i+=4;
+			}
+			/*
+		while (!inARow(i)) {
 			romanChars.remove(i + 1);
-			romanChars.remove(i + 2);
-			romanChars.remove(i + 3);
+			romanChars.remove(i + 1);
+			romanChars.remove(i + 1);
 			romanChars.add(i, LETTERS[getIndex(LETTERS, romanChars.get(i)) - 1]);
 			i++;
 		}
+		*/
+		}
+		romanChars = tempChars;
 	}
 
 	public int getArabic() {
@@ -59,8 +72,7 @@ public class RomanNum {
 	}
 
 	public boolean inARow(int i) { // code to detect when there are four in a row
-		if (romanChars.get(i).equals(romanChars.get(i + 1)) && romanChars.get(i + 1).equals(romanChars.get(i + 2))
-				&& romanChars.get(i + 2).equals(romanChars.get(i + 3))) {
+		if (romanChars.get(i).equals(romanChars.get(i + 1)) && romanChars.get(i + 1).equals(romanChars.get(i + 2)) && romanChars.get(i + 2).equals(romanChars.get(i + 3))) {
 			return false;
 		}
 		return true;

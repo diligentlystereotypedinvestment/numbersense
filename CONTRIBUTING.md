@@ -87,8 +87,6 @@ fracOperations has methods for fraction arithmetic
         60 - irrational numbers like phi, pi, e, golden ratio, etc
         
         Long Division
-        
-        
 
 - Spaces after the question number
 
@@ -101,3 +99,5 @@ fracOperations has methods for fraction arithmetic
 ~~- rename and replace all fracOperations with just "frac", and rename and replace simplify with simp~~
 
 - extravagent numbers
+
+- make comparison more challenging, i.e. +- num/denom of two fractions, round and +- .01

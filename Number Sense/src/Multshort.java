@@ -14,29 +14,29 @@ public class Multshort {
 		//choose = scan.nextInt();
 		if (choose == i) { // 25
 			int mult = rand.nextInt(100) + 19;
-			problem = "25 $\\cdot$ " + mult + " = ";
+			problem = "25 $\\times$ " + mult + " = ";
 			answer = mult * 25;
 		} else if (choose == i++) { // 11
 			int mult = rand.nextInt(800) + 190;
-			problem = "11 $\\cdot$ " + mult + " = ";
+			problem = "11 $\\times$ " + mult + " = ";
 			answer = mult * 11;
 		} else if (choose == i++) { // 101
 			int mult = rand.nextInt(800) + 190;
-			problem = "101 $\\cdot$ " + mult + " = ";
+			problem = "101 $\\times$ " + mult + " = ";
 			answer = mult * 101;
 		} else if (choose == i++) { // 75
 			int mult = rand.nextInt(100) + 19;
-			problem = "75 $\\cdot$ " + mult + " = ";
+			problem = "75 $\\times$ " + mult + " = ";
 			answer = mult * 75;
 		} else if (choose == i++) { // near 100
 			int mult = rand.nextInt(28) + 86;
 			int mult2 = rand.nextInt(28) + 86;
-			problem = mult + " $\\cdot$ " + mult2 + " = ";
+			problem = mult + " $\\times$ " + mult2 + " = ";
 			answer = mult * mult2;
 		} else if (choose == i++) { // multiply two ending in 5
 			int mult = 5 * (rand.nextInt(13) + 6);
 			int mult2 = 5 * (rand.nextInt(13) + 6);
-			problem = mult + " $\\cdot$ " + mult2 + " = ";
+			problem = mult + " $\\times$ " + mult2 + " = ";
 			answer = mult * mult2;
 		} else if (choose == i++) { // squares 41-59
 			int mult = rand.nextInt(18) + 41;
@@ -63,19 +63,19 @@ public class Multshort {
 			}
 			int lownum = midnum - difference;
 			int highnum = midnum + difference;
-			problem = "$" + lownum + " //cdot " + highnum + " $= ";
+			problem = "$" + lownum + " \\times " + highnum + " $= ";
 			answer = lownum * highnum;
 		} else if (choose == i++) { // multiplying reverses
 			int tens = rand.nextInt(9) + 1;
 			int ones = rand.nextInt(9) + 1;
 			int num1 = tens * 10 + ones;
 			int num2 = ones * 10 + tens;
-			problem = num1 + " $ //cdot $ " + num2;
+			problem = num1 + " $ \\times $ " + num2;
 			answer = num1 * num2;
 		} else if (choose == i++) { // a * a/b
 			int a = rand.nextInt(5) + 3;
 			int b = rand.nextInt(4) + a - 1;
-			problem = a + "$//cdot \\frac{" + a + "} { " + b + "} $ = ";
+			problem = a + "$\\times \\frac{" + a + "} { " + b + "} $ = ";
 			answer = a * ((double) a / b);
 		} else if (choose == i++) { // sum of squares special
 			int tens1 = rand.nextInt(8) + 1;
@@ -109,14 +109,14 @@ public class Multshort {
 			int second = 0;
 			if (chooser == 1) {
 				second = 4 * first;
-				problem = "$" + first + " \\cdot " + second + " =$ ?";
+				problem = "$" + first + " \\times " + second + " =$ ?";
 			}else if (chooser == 2) {
 				int five = 10 * (rand.nextInt(3) + 2) + 5;
 				while (five != 25) {
 					five = 5 * (rand.nextInt(7) + 2) + 5;
 				}
 				second = 2 * (rand.nextInt(40) + 11);
-				problem = "$" + first + " \\cdot " + second + " =$ ?";
+				problem = "$" + first + " \\times " + second + " =$ ?";
 			}
 			answer = second * first;
 		} else if (choose == i++) { // fraction of 1000(333.3333, 125, 166.6666, 375, 666.6666, 111.11111)
@@ -224,7 +224,7 @@ public class Multshort {
 					problem = "$" + 1073 + " \\div" + multiplicand + " =$ ?";
 					answer = 1073 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$37 \\cdot 27 =$ ?";
+					problem = "$37 \\times 27 =$ ?";
 					answer = 1073;
 				}
 			}
@@ -234,7 +234,7 @@ public class Multshort {
 					problem = "$" + 1073 + " \\div" + multiplicand + " = $ ?";
 					answer = 1073 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$37 \\cdot 29 =$ ?";
+					problem = "$37 \\times 29 =$ ?";
 					answer = 1073;
 				}
 			}
@@ -244,7 +244,7 @@ public class Multshort {
 					problem = "$10101 \\div" + multiplicand + " = $ ?";
 					answer = 10101 / multiplicand;
 				}else if (convert == 2) {
-					problem = "$3367 \\cdot 3 =$ ?";
+					problem = "$3367 \\times 3 =$ ?";
 					answer = 10101;
 				}
 			}
@@ -255,10 +255,10 @@ public class Multshort {
 					problem = "$" + (1001 * multiplicand) + " \\div" + 13 + " = $ ?";
 					answer = (1001 * multiplicand) / 13;
 				}else if (convert == 2) {
-					problem = "$" + (77 * multiplicand) + " \\cdot 13 =$ ?";
+					problem = "$" + (77 * multiplicand) + " \\times 13 =$ ?";
 					answer = (77 * multiplicand) * 13;
 				}else if (convert == 2) {
-					problem = "$" + (13 * multiplicand) + " \\cdot 77 =$ ?";
+					problem = "$" + (13 * multiplicand) + " \\times 77 =$ ?";
 					answer = (13 * multiplicand) * 77;
 				}
 			}
@@ -267,12 +267,12 @@ public class Multshort {
 					problem = "$10101 \\div 3 = $ ?";
 					answer = 3367;
 				}else if (convert == 2) {
-					problem = "$3367 \\cdot 3 =$ ?";
+					problem = "$3367 \\times 3 =$ ?";
 					answer = 10101;
 				}
 				int multiplicand = 3 * (rand.nextInt(5) + 1);
 				if (convert == 3) {
-					problem = "$3367 \\cdot " + multiplicand + " =$ ?";
+					problem = "$3367 \\times " + multiplicand + " =$ ?";
 					answer = 3367 * multiplicand;
 				}
 			}
@@ -282,10 +282,10 @@ public class Multshort {
 					problem = "$10101 \\div 7 = $ ?";
 					answer = 1443;
 				}else if (convert == 2) {
-					problem = "$1443 \\cdot 7 =$ ?";
+					problem = "$1443 \\times 7 =$ ?";
 					answer = 10101;
 				}else if (convert == 3) {
-					problem = "$1443 \\cdot " + multiplicand + " =$ ?";
+					problem = "$1443 \\times " + multiplicand + " =$ ?";
 					answer = 1443 * multiplicand;
 				}
 			}
@@ -295,10 +295,10 @@ public class Multshort {
 					problem = "$10010 \\div 7 = $ ?";
 					answer = 1430;
 				}else if (convert == 2) {
-					problem = "$1430 \\cdot 7 =$ ?";
+					problem = "$1430 \\times 7 =$ ?";
 					answer = 10010;
 				}else if (convert == 3) {
-					problem = "$1430 \\cdot " + multiplicand + " =$ ?";
+					problem = "$1430 \\times " + multiplicand + " =$ ?";
 					answer = 1430 * multiplicand;
 				}
 			}
@@ -306,7 +306,7 @@ public class Multshort {
 			int whole = rand.nextInt(9) + 3;
 			int denom = rand.nextInt(17) + 5;
 			int deviation = rand.nextInt(denom - 2) + 1;
-			problem = "$" + (whole + Simp.getFrac(denom - deviation, denom, false) + " \\cdot " + whole + Simp.getFrac(deviation, denom, false) + "$ = ");
+			problem = "$" + (whole + Simp.getFrac(denom - deviation, denom, false) + " \\times " + whole + Simp.getFrac(deviation, denom, false) + "$ = ");
 			fullAnswer = whole * (whole + 1) + Simp.getFrac(deviation * (denom - deviation) , denom, true);
 		} else if(choose == i++){//other mixed numbers
 			int whole1 = rand.nextInt(9) + 4;
@@ -317,7 +317,7 @@ public class Multshort {
 			int denom2 = factors2.get(rand.nextInt(factors2.size() - 1) + 1);
 			int num1 = rand.nextInt(denom1 - 1) + 1;
 			int num2 = rand.nextInt(denom2 - 1) + 1;
-			problem = "$" + whole1 + Simp.getFrac(num2, denom2, false) + "\\cdot" + whole2 + Simp.getFrac(num1, denom1, false) + "$";
+			problem = "$" + whole1 + Simp.getFrac(num2, denom2, false) + "\\times" + whole2 + Simp.getFrac(num1, denom1, false) + "$";
 		}
 		int[] tricks = {111, 1111, 101};
 		for(int a = 0; a < tricks.length; a++){

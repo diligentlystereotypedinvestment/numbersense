@@ -16,10 +16,10 @@ public class Polygons {
 			}
 			else if (problem == 1) { // area
 				questions.add("(" + i + ") What is the area of an equilateral triangle with a side length of " + sideLength + "?");
-				answers.add("$" + Simp.getFrac((int) Math.pow(sideLength, 2) + "/" + 4, false)+ "\\cdot\\sqrt{3}$");
+				answers.add("$" + Simp.getFrac((int) Math.pow(sideLength, 2) + "/" + 4, false)+ "\\times\\sqrt{3}$");
 			}
 			else if (problem == 2) { // side length from area
-				questions.add("(" + i + ") What is the side length of an equilateral triangle with an area of $"+ Simp.getFrac((int) Math.pow(sideLength, 2) + "/" + 4, false) + "\\cdot\\sqrt{3} $?");
+				questions.add("(" + i + ") What is the side length of an equilateral triangle with an area of $"+ Simp.getFrac((int) Math.pow(sideLength, 2) + "/" + 4, false) + "\\times\\sqrt{3} $?");
 				answers.add(String.valueOf(sideLength));
 			}
 		}

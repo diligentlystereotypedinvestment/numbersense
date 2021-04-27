@@ -57,7 +57,7 @@ public class OofO {
 		if (sign == 2) { // multiplication
 			first = rand.nextInt(100) + 40;
 			second = base - (rand.nextInt(base - 1) + 1);
-			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + " \\cdot " + Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
+			questions.add("(" + i + ") $" + Baseconvert.newnum(first, base) + "_" + base + " \\times " + Baseconvert.newnum(second, base) + "_" + base + "= \\hrulefill_" + base + "$");
 			answers.add(Baseconvert.newnum(first * second, base));
 		} else
 		if (sign == 3) { // division
@@ -112,7 +112,7 @@ public class OofO {
 				Object operand1 = random(type, mult);
 				Object operand2 = random(type, mult);
 				answer = adjust(type, Frac.mult(toAns(operand1), toAns(operand2), false));
-				return questAdj(type, operand1.toString()) + " \\cdot " + questAdj(type, operand2.toString());
+				return questAdj(type, operand1.toString()) + " \\times " + questAdj(type, operand2.toString());
 			}
 			if (operation == 3) {
 				Object operand1 = random(type, div);
@@ -129,7 +129,7 @@ public class OofO {
 		if (operation == 1) {
 			Object nextOperand = random(type, mult);
 			answer = adjust(type, Frac.mult(answer, toAns(nextOperand)));
-			return " \\cdot " + questAdj(type, nextOperand.toString());
+			return " \\times " + questAdj(type, nextOperand.toString());
 		}
 		if (operation == 2) {
 			Object nextOperand = random(type, add);

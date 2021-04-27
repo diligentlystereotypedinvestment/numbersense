@@ -1,11 +1,11 @@
 import java.util.Random;
 
 public class Conversion {
-	Random rand = new Random();
-	String unit1 = "";
-	String unit2 = "";
-	String answers = "";
-	String question = "";
+	private Random rand = new Random();
+	private String unit1 = "";
+	private String unit2 = "";
+	private String answers = "";
+	private String question = "";
 
 	public void questionGen(int i) {
 		int choosesys = rand.nextInt(3);
@@ -66,7 +66,6 @@ public class Conversion {
 	public static String getUnitProblemInLatex(int problemNumber) {
 		Object[] problem = Unit.getProblem();
 		int initial = (Integer) problem[0];
-		System.out.println("bug");
 		Unit iUnit = (Unit) problem[1];
 		Unit fUnit = (Unit) problem[2];
 		String question = "(" + problemNumber + ") What is " + initial + " " + iUnit.getName() + "s in " + fUnit.getName() + "s?";
@@ -78,20 +77,6 @@ public class Conversion {
 		
 		Unit.init(); // once this is moved to normal genRunner, no need to include it, because it is called in setup() method at the very beginning
 		System.out.println(getUnitProblemInLatex(4));
-		
-//		Random rand = new Random();
-//		int type = 6;
-//		int i = 0;
-//		int initial = rand.nextInt(20) + 2;
-//		Unit.init();
-//		Unit iUnit = Unit.getRandomUnit(type);
-//		Unit fUnit = Unit.getRandomUnit(type);
-//		while(fUnit.getName().equals(iUnit.getName())){
-//			fUnit = Unit.getRandomUnit(type);
-//		}
-//		String question = "(" + i + ") What is " + initial + " " + iUnit.getName() + "s in " + fUnit.getName() + "s?";
-//		String answers = String.valueOf(Unit.convert(initial, iUnit, fUnit));
-//		System.out.println(question + ", " + answers);
 	}
 
 }

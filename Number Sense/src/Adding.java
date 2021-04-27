@@ -114,7 +114,7 @@ public class Adding implements QuestionType{
 		} else if(rand1_1 == 9) { // multiplication of two integers
 			Addition mult1 = new Addition();
 			answer = (EliminateZero.zero(mult1.p));
-			question = ("(" + i + ") $" + mult1.num1 / 10 + "\\cdot" + mult1.num2 / 10 + " = $");
+			question = ("(" + i + ") $" + mult1.num1 / 10 + "\\times" + mult1.num2 / 10 + " = $");
 			// System.out.print(printmess);
 			/*
 			 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -125,7 +125,7 @@ public class Adding implements QuestionType{
 		} else if(rand1_1 == 10) { // multiplication of two mixed numbers
 			Addmix multmix = new Addmix();
 			answer = (String.valueOf(multmix.pmix));
-			question = ("(" + i + ") $" + multmix.addmix / 1000 + "\\frac{" + multmix.addfracn + "}{"+ multmix.addfracd + "} \\cdot" + multmix.addmix2 / 1000 + "\\frac{" + multmix.addfracn2 + "}{"+ multmix.addfracd2 + "}=$");
+			question = ("(" + i + ") $" + multmix.addmix / 1000 + "\\frac{" + multmix.addfracn + "}{"+ multmix.addfracd + "} \\times" + multmix.addmix2 / 1000 + "\\frac{" + multmix.addfracn2 + "}{"+ multmix.addfracd2 + "}=$");
 			// System.out.print(printmess);
 			/*
 			 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -136,7 +136,7 @@ public class Adding implements QuestionType{
 		} else if(rand1_1 == 11) { // multiplication of two improper fractions
 			AddImpro multimpro = new AddImpro();
 			answer = (multimpro.pimpro);
-			question = ("(" + i + ") $\\frac{" + multimpro.addfracn + "}{" + multimpro.addfracd+ "} \\cdot\\frac{" + multimpro.addfracn2 + "}{" + multimpro.addfracd2 + "}=" + "$");
+			question = ("(" + i + ") $\\frac{" + multimpro.addfracn + "}{" + multimpro.addfracd+ "} \\times\\frac{" + multimpro.addfracn2 + "}{" + multimpro.addfracd2 + "}=" + "$");
 			// System.out.print(printmess);
 			/*
 			 * for (int q = 0; q < 60 - printmess.length(); q++) {
@@ -147,7 +147,7 @@ public class Adding implements QuestionType{
 		} else if(rand1_1 == 12) { // multiplication of two decimals
 			AddDeci multdeci = new AddDeci();
 			answer = (String.valueOf(multdeci.pdeci));
-			question = ("(" + i + ") $" + ((int) (multdeci.adddeci / 100) / 100.0) + "\\cdot"+ ((int) (multdeci.adddeci2 / 100) / 100.0) + "=$");
+			question = ("(" + i + ") $" + ((int) (multdeci.adddeci / 100) / 100.0) + "\\times"+ ((int) (multdeci.adddeci2 / 100) / 100.0) + "=$");
 			// System.out.print(printmess);
 			/*
 			 * for (int q = 0; q < 60 - printmess.length(); q++) {
