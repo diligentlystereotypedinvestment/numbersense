@@ -150,7 +150,7 @@ Answers to Estimation Problems may be slightly off
 
 7) Determining Critical Values
 
-8) Maximum & Minimum Problems
+~~8) Maximum & Minimum Problems~~
 
 9) Definite Integration
 
