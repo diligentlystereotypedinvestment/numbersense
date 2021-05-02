@@ -182,7 +182,7 @@ public class QUp20 {
 			} else if (rand1_1 == 15) { // division of two improper fractions
 				AddImpro divimpro = new AddImpro();
 				answers.add(divimpro.qimpro);
-				questions.add("(" + i + ") $" + Simp.getFrac(divimpro.addfracn, divimpro.addfracd, false) + "\\div" + Simp.getFrac(divimpro.addfracn2, divimpro.addfracd2, false) + "}=" + "$");
+				questions.add("(" + i + ") $" + Simp.getFrac(divimpro.addfracn, divimpro.addfracd, false) + "\\div" + Simp.getFrac(divimpro.addfracn2, divimpro.addfracd2, false) + "=" + "$");
 				// System.out.print(printmess);
 				/*
 				 * for (int q = 0; q < 60 - printmess.length(); q++) {
