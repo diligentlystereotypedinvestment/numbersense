@@ -122,7 +122,7 @@ Answers to Estimation Problems may be slightly off
 
 4) Trigonometry
 
-5) Determinants
+~~5) Determinants~~
 
 6) Matrices
 
