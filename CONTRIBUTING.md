@@ -48,6 +48,8 @@ fracOperations has methods for fraction arithmetic
 
 - Figure out how to incorporate OofO's equation method with its exponent method
 
+- Matrix multiplication, absolute value bar notation for determinants
+
 - More Problems
 
     ~~Conversion Library for units~~
