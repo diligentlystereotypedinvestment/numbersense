@@ -13,6 +13,8 @@ public class QUp70 {
 			GreatestInt.gen(questions, answers, i);
 		} else if(check(i, 9)){
 			AdvRemainders.gen(questions, answers, i);
+		} else if(check(i, 13)){
+			Matrix.gen(questions, answers, i);
 		}
 
 		if (random < 97) {
