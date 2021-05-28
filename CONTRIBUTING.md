@@ -94,6 +94,12 @@ fracOperations has methods for fraction arithmetic
 
 - balance problems more, i.e. no more $2^2$
 
+- L'Hopital Rule for Limits
+
+- bigger polynomial multiplication
+
+- add some calculus stuff to the function class like derivatives and integrals
+
 ~~- fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations~~
 
 ~~- simplify should be able to return things as a whole number~~

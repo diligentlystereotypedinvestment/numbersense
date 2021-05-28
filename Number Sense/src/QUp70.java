@@ -8,13 +8,14 @@ public class QUp70 {
 		if(random == 1 || random == 2 || random == 3 || random == 4){
 			MoreGeo.gen(questions, answers, i);
 		} else
-
 		if(random == 5 || random == 6 || random == 7 || random == 8){
 			GreatestInt.gen(questions, answers, i);
-		} else if(check(i, 9)){
+		} else if(check(random, 9)){
 			AdvRemainders.gen(questions, answers, i);
-		} else if(check(i, 13)){
+		} else if(check(random, 13)){
 			Matrix.gen(questions, answers, i);
+		} else if(check(random, 17)){
+			Function.genComposite(questions, answers, i);
 		}
 
 		if (random < 97) {
@@ -23,10 +24,10 @@ public class QUp70 {
 		}
 	}
 
-	public static boolean check(int qNum, int questionType){
+	private static boolean check(int random, int questionType){
 		for(int i = 0; i < 4; i++){
 			questionType++;
-			if(qNum == questionType){
+			if(random == questionType){
 				return true;
 			}
 		}

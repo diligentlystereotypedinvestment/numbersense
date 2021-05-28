@@ -128,7 +128,7 @@ Answers to Estimation Problems may be slightly off
 
 7) Vectors
 
-8) Composite Functions
+~~8) Composite Functions~~
 
 9) Bases Involving Decimals or Fractions
 
@@ -140,7 +140,7 @@ Answers to Estimation Problems may be slightly off
 
 2) Modular Arithmetic
 
-3) Limits
+~~3) Limits~~
 
 4) Derivatives
 
@@ -154,7 +154,7 @@ Answers to Estimation Problems may be slightly off
 
 9) Definite Integration
 
-10) Inverse functions
+~~10) Inverse functions~~
 
 # Formatting
 ~~1) Horizontal line for each question~~
