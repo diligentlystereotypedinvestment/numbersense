@@ -37,6 +37,11 @@ public class Function {
 		degree = coefAr.length - 1;
 	}
 
+	public Function(int[] coef){
+		this.coef = coef;
+		degree = coefAr.length - 1;
+	}
+
 	public String toString(){
 		String written = "";
 		for(int i = degree; i > 0; i--){
@@ -76,6 +81,15 @@ public class Function {
 		return new Function(coef[0] * multicand.getCoef(0), coef[1] * multicand.getCoef(0) + coef[0] * multicand.getCoef(1), multicand.getCoef(1) * coef[1]);
 	}
 
+	public Function derivative(){
+		int[] coef = new int[degree];
+		for(int i = degree - 1; i >= 0){
+			coef[degree - i - 1] = i * this.coef[degree - i - 1];
+		}
+		return new Function(coef);
+
+	}
+
 	public static void genInverse(ArrayList<String> questions, ArrayList<String> answers, int i){
 		int random;
 		do{
@@ -97,6 +111,15 @@ public class Function {
 			ans = h.eval(g.eval(random));
 		}
 		questions.add("(" + i + ") If $g = " + g + "$ and $h =" + h + "$, what is " + order);
+		answers.add(String.valueOf(ans));
+	}
+
+	public static void genDeriv(ArrayList<String> questions, ArrayList<String> answers, int i){
+		Function f = new Function();
+		Function fPrime = f.derivative();
+		int x = rand.nextInt(15) - 7;
+		int ans = fPrime.eval(x);
+		questions.add("(" + i + ") $f(x) = " + f + ", f'(" + x + ") = ?$");
 		answers.add(String.valueOf(ans));
 	}
 }

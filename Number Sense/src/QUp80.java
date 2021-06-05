@@ -13,6 +13,8 @@ public class QUp80 {
 			Limit.gen(questions, answers, i);
 		} else if(check(random, questionType)){
 			Function.genInverse(questions, answers, i);
+		} else if(check(random, questionType)){
+			
 		}
 		else if (random < 137) {
 			QUp70 questions70 = new QUp70();

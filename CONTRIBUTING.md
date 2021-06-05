@@ -98,7 +98,9 @@ fracOperations has methods for fraction arithmetic
 
 - bigger polynomial multiplication
 
-- add some calculus stuff to the function class like derivatives and integrals
+- add some calculus stuff to the function class like ~~derivatives~~ and integrals
+
+    Integrals - may need to rework fraction class and Function's coef array to make reverse power rule work well
 
 ~~- fracOperations negative signs should be in front of the fraction, but also continue to work with the other operations~~
 
