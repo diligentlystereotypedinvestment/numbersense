@@ -112,4 +112,29 @@ public class Simp {
 			return (whole + " \\frac{" + ((num % den) / LCMandGCF.GCF(num, den)) + "}{" + (den / LCMandGCF.GCF(num, den)) + "}");
 		}
 	}
+
+	public static Frac getFrac(Frac unSimp){
+		if(unSimp.getDenom() == 1){
+			return unSimp;
+		}
+		int num = unSimp.getNum();
+		int den = unSimp.getDenom();
+		boolean negative = false;
+		if((num < 0)^(den < 0)){
+			negative = true;
+		}
+		num = Math.abs(num);
+		den = Math.abs(den);
+		if (1.0 * den / LCMandGCF.GCF(num, den) == 1.0) {
+			if(negative){
+				return new Frac(-1 * num / LCMandGCF.GCF(num, den), 1);
+			}
+			return new Frac(num / LCMandGCF.GCF(num, den), 1);
+		} else {
+			if(negative){
+				return new Frac(-1 * num / LCMandGCF.GCF(num, den), den / LCMandGCF.GCF(num, den));
+			}
+			return new Frac(num / LCMandGCF.GCF(num, den), den / LCMandGCF.GCF(num, den));
+		}
+	}
 }

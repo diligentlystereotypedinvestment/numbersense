@@ -67,6 +67,23 @@ public class Matrix {
 		return new Matrix(matrix);
 	}
 
+	public Matrix add(Matrix addend){
+		int[][] sum = new int[matrix.length][matrix[0].length];
+		for(int row = 0; row < matrix.length; row++){
+			for(int column = 0; column < matrix[row].length; column++){
+				sum[row][column] = matrix[row][column] + addend.getElement(row, column);
+			}
+		}
+		return new Matrix(sum);
+	}
+
+	public int[] getPair(){
+		int[] pair = new int[2];
+		pair[0] = rand.nextInt(matrix.length);
+		pair[1] = rand.nextInt(matrix[0].length);
+		return pair;
+	}
+
 	public String toString(){
 		String firstLine = "$\\big[\\begin{smallmatrix}\n";
 		String entries = "";
@@ -96,46 +113,87 @@ public class Matrix {
 		return firstLine + entries + lastLine;
 	}
 	
-	public String toString(int row, int column){//replacing a matrix element with k
-		String firstLine = "$\\big[\\begin{smallmatrix}\n";
-		String entries = "";
-		for(int i = 0; i < matrix.length; i++){
-			for(int a = 0; a < matrix[i].length; a++){
-				if(a != 0){
-					entries += " & ";
+	public String toString(int row, int column, boolean isLetter){//replacing a matrix element with k
+		if(!isLetter){
+			String firstLine = "$\\big[\\begin{smallmatrix}\n";
+			String entries = "";
+			for(int i = 0; i < matrix.length; i++){
+				for(int a = 0; a < matrix[i].length; a++){
+					if(a != 0){
+						entries += " & ";
+					}
+					if(i == row && a == column){
+						entries += "k";
+					} else{
+						entries += matrix[i][a];
+					}
+					if(a == matrix.length - 1 && i != matrix.length - 1){
+						entries += "\\\\";
+					}
 				}
-				if(i == row && a == column){
-					entries += "k";
-				} else{
-					entries += matrix[i][a];
-				}
-				if(a == matrix.length - 1 && i != matrix.length - 1){
-					entries += "\\\\";
-				}
+				entries += "\n";
 			}
-			entries += "\n";
+			String lastLine = "\\end{smallmatrix}\\big]$";
+			return firstLine + entries + lastLine;
+		} else{
+			String firstLine = "$\\big[\\begin{smallmatrix}\n";
+			String entries = "";
+			char character = 97;
+			for(int i = 0; i < matrix.length; i++){
+				for(int a = 0; a < matrix[i].length; a++){
+					if(a != 0){
+						entries += " & ";
+					}
+					if(i == row && a == column){
+						entries += "k";
+					} else{
+						entries += String.valueOf(character);
+						character++;
+					}
+					if(a == matrix.length - 1 && i != matrix.length - 1){
+						entries += "\\\\";
+					}
+				}
+				entries += "\n";
+			}
+			String lastLine = "\\end{smallmatrix}\\big]$";
+			return firstLine + entries + lastLine;
 		}
-		String lastLine = "\\end{smallmatrix}\\big]$";
-		return firstLine + entries + lastLine;
 	}
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		int size = rand.nextInt(2) + 2;
 		Matrix matrix = random(size);
 		if(size == 2){//many possibile variations here; missing element, determinant, etc
-			int type = rand.nextInt(2);
+			int type = rand.nextInt(3);
 			if(type == 0){
 				questions.add("(" + i + ") What is the determinant of " + matrix.toString() + "?");
 				answers.add(String.valueOf(matrix.determinant()));
 			} else if(type == 1){
 				int row = rand.nextInt(2);
 				int column = rand.nextInt(2);
-				questions.add("(" + i + ") What is the value of $k$ if " + matrix.toString(row, column) + " = " + matrix.determinant() + "?");
+				questions.add("(" + i + ") What is the value of $k$ if " + matrix.toString(row, column, false) + " = " + matrix.determinant() + "?");
 				answers.add(String.valueOf(matrix.getElement(row, column)));
+			} else if(type == 2){
+				Matrix matrix2 = random(size);
+				Matrix sum = matrix.add(matrix2);
+				int[] k = sum.getPair();
+				questions.add("(" + i + ") What is the value of $k$ if $" + matrix.toString() + " + " + matrix2.toString() + " = ");
+				answers.add(String.valueOf(sum.getElement(k[0], k[1])));
 			}
 		} else{
-			questions.add("(" + i + ") What is the determinant of " + matrix.toString() + "?");
-			answers.add(String.valueOf(matrix.determinant()));
+			int type = rand.nextInt(2);
+			if(type == 0){
+				questions.add("(" + i + ") What is the determinant of " + matrix.toString() + "?");
+				answers.add(String.valueOf(matrix.determinant()));
+			} else if(type == 1){
+				Matrix matrix2 = random(size);
+				Matrix sum = matrix.add(matrix2);
+				int[] k = sum.getPair();
+				questions.add("(" + i + ") What is the value of $k$ if $" + matrix.toString() + " + " + matrix2.toString() + " = ");
+				answers.add(String.valueOf(sum.getElement(k[0], k[1])));
+			}
+
 		}
 	}
 }

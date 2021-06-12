@@ -5,7 +5,39 @@ import java.util.Arrays;
 public class Function {
 	private int degree;
 	private int[] coef;
+	private Frac[] iCoef;
 	private static Random rand = new Random();
+
+	public void integrate(){
+		int index = 0;
+		for(int i = degree; i >= 0; i--){
+			iCoef[index] = Simp.getFrac(new Frac(coef[index] + "/" + (i + 1)));
+		}
+	}
+
+	public Frac evalIntegral(int x){
+		Frac sum = new Frac(Frac.verifyFrac(Frac.mult((int)Math.pow(x, degree + 1) + "/" + 1, iCoef[0].toString(false))));
+		int tempDegree = degree;
+		for(int i = 1; i < coef.length; i++){
+			sum = new Frac(Frac.verifyFrac(Frac.add(sum.toString(false), Frac.mult((int)Math.pow(x, tempDegree) + "/" + 1, iCoef[i].toString(false)))));
+			tempDegree--;
+		}
+		return sum;
+	}
+
+	public Frac evalDef(int upper, int lower){
+		integrate();
+		return new Frac(Frac.verifyFrac(Frac.sub(evalIntegral(upper).toString(false), evalIntegral(lower).toString(false))));
+	}
+
+	public Function derivative(){
+		int[] derivative = new int[degree];
+		int index = 0;
+		for(int i = derivative.length - 1; i > 0; i++){
+			derivative[index] = coef[index] * i;
+		}
+		return new Function(derivative);
+	}
 
 	public Function(){
 		degree = rand.nextInt();
@@ -20,6 +52,7 @@ public class Function {
 	}
 
 	public Function(int degree){
+		coef = new int[degree + 1];
 		this.degree = degree;
 		for(int i = 0; i < degree; i++){
 			if(degree == 3){
@@ -31,15 +64,9 @@ public class Function {
 		}
 	}
 
-	public Function(int... coef){
-		int[] coefAr = Arrays.copyOf(coef, coef.length);
-		this.coef = coefAr;
-		degree = coefAr.length - 1;
-	}
-
 	public Function(int[] coef){
-		this.coef = coef;
-		degree = coefAr.length - 1;
+		coef = this.coef;
+		degree = coef.length - 1;
 	}
 
 	public String toString(){
@@ -72,22 +99,13 @@ public class Function {
 	public int eval(int x){
 		int answer = 0;
 		for(int i = degree; i > 0; i--){
-			answer += Math.pow(x, i) * coef[i];
+			answer += (int)Math.pow(x, i) * coef[i];
 		}
 		return answer + coef[coef.length - 1];
 	}
 	
 	public Function multiply(Function multicand){//Only binomial multiplication
-		return new Function(coef[0] * multicand.getCoef(0), coef[1] * multicand.getCoef(0) + coef[0] * multicand.getCoef(1), multicand.getCoef(1) * coef[1]);
-	}
-
-	public Function derivative(){
-		int[] coef = new int[degree];
-		for(int i = degree - 1; i >= 0){
-			coef[degree - i - 1] = i * this.coef[degree - i - 1];
-		}
-		return new Function(coef);
-
+		return new Function(new int[] {coef[0] * multicand.getCoef(0), coef[1] * multicand.getCoef(0) + coef[0] * multicand.getCoef(1), multicand.getCoef(1) * coef[1]});
 	}
 
 	public static void genInverse(ArrayList<String> questions, ArrayList<String> answers, int i){
@@ -114,12 +132,18 @@ public class Function {
 		answers.add(String.valueOf(ans));
 	}
 
-	public static void genDeriv(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void genIntegral(ArrayList<String> questions, ArrayList<String> answers, int i){
 		Function f = new Function();
-		Function fPrime = f.derivative();
-		int x = rand.nextInt(15) - 7;
-		int ans = fPrime.eval(x);
-		questions.add("(" + i + ") $f(x) = " + f + ", f'(" + x + ") = ?$");
-		answers.add(String.valueOf(ans));
+		int upper = rand.nextInt(11) - 5;
+		int lower = rand.nextInt(11) - 5;
+		questions.add("(" + i + ") If $f(x) = " + f + ", $ then what is $\\int_{" + lower + "}^{" + upper + "} " + f + "dx$?");
+		answers.add(f.evalDef(upper, lower).toString());
+	}
+
+	public static void genDerivative(ArrayList<String> questions, ArrayList<String> answers, int i){
+		Function f = new Function();
+		int x = rand.nextInt(11) - 5;
+		questions.add("(" + i + ") If $f(x) = " + f + ", $ then what is $f'(" + x + ")?$");
+		answers.add(String.valueOf(f.derivative().eval(x)));
 	}
 }
