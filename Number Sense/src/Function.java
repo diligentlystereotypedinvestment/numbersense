@@ -96,7 +96,7 @@ public class Function {
 		return degree;
 	}
 
-	public void changeElement(int index, int element){
+	public void changeCoef(int index, int element){
 		coef[index] = element;
 	}
 

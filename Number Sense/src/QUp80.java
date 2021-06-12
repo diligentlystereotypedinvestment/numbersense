@@ -20,7 +20,7 @@ public class QUp80 {
 		} else if(check(random, questionType)){
 			Function.genIntegral(questions, answers, i);
 		} else if(check(random, questionType)){
-			Asymptote.gen(questions, answers, i);
+			Asymptotes.gen(questions, answers, i);
 		} else if(check(random, questionType)){
 			Function.genTangent(questions, answers, i);
 		}

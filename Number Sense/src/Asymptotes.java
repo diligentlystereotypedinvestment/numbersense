@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Asymptotes {
-	private Random rand = new Random();
+	private static Random rand = new Random();
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		String ans;
@@ -16,7 +16,7 @@ public class Asymptotes {
 			if(denom.getDeg() > num.getDeg()){
 				ans = "0";
 			} else{
-				ans = Simp.getFrac(num.getCoef(0), denom.getCoef(0));
+				ans = Simp.getFrac(num.getCoef(0), denom.getCoef(0), false);
 			}
 			questions.add("(" + i + ") What is the horizontal asymptote of $\\frac{" + num + "}{" + denom + "}$?");
 			answers.add(ans);
@@ -24,10 +24,10 @@ public class Asymptotes {
 			Function r = new Function(1);
 			Function s = new Function(1);
 			num = r.multiply(s);
-			num.changeElement(num.getDeg(), num.getElement(num.getDeg()) + 1)
+			num.changeCoef(num.getDeg(), num.getCoef(num.getDeg()) + 1);
 			if(rand.nextBoolean()){
 				denom = r;
-				ans = String,valueOf(r.getCoef(1));
+				ans = String.valueOf(r.getCoef(1));
 			} else{
 				denom = s;
 				ans = String.valueOf(s.getCoef(1));
