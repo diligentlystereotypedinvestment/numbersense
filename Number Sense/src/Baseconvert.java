@@ -1,9 +1,9 @@
-import java.util.Random;
+//import java.util.Random;
 
 public class Baseconvert {
 	private int base;
 	private int num;
-	private Random rand = new Random();
+	//private static Random rand = new Random();
 
 	public Baseconvert(int base, int num){
 		this.base = base;

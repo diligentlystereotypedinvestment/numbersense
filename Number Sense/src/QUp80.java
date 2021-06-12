@@ -23,6 +23,8 @@ public class QUp80 {
 			Asymptotes.gen(questions, answers, i);
 		} else if(check(random, questionType)){
 			Function.genTangent(questions, answers, i);
+		} else if(check(random, questionType)){
+			Modulus.gen(questions,answers,i);
 		}
 		else if (random < 137) {
 			QUp70 questions70 = new QUp70();

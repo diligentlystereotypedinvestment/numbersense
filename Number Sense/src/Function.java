@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Function {
 	private int degree;
@@ -92,6 +91,10 @@ public class Function {
 		return coef[index];
 	}
 
+	public int[] getCoefs(){
+		return coef;
+	}
+
 	public int getDeg(){
 		return degree;
 	}
@@ -136,7 +139,7 @@ public class Function {
 		answers.add(String.valueOf(ans));
 	}
 
-	public static void genIntegral(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void genIntegral(ArrayList<String> questions, ArrayList<String> answers, int i){//integrals with C, i.e. If f'(c) = ...
 		Function f = new Function();
 		int upper = rand.nextInt(11) - 5;
 		int lower = rand.nextInt(11) - 5;
@@ -145,13 +148,22 @@ public class Function {
 	}
 
 	public static void genDerivative(ArrayList<String> questions, ArrayList<String> answers, int i){
+		int choose = rand.nextInt(2);
 		Function f = new Function();
-		int x = rand.nextInt(11) - 5;
-		questions.add("(" + i + ") If $f(x) = " + f + ", $ then what is $f'(" + x + ")?$");
-		answers.add(String.valueOf(f.derivative().eval(x)));
+		if(choose == 0){
+			int x = rand.nextInt(11) - 5;
+			questions.add("(" + i + ") If $f(x) = " + f + ", $ then what is $f'(" + x + ")?$");
+			answers.add(String.valueOf(f.derivative().eval(x)));
+		} else if(choose == 1){
+			Function fPrime = f.derivative();
+			Polynomial derivative = new Polynomial(fPrime.getCoefs());
+			derivative.Gen(i);
+			questions.add(derivative.getQuestion());
+			answers.add(derivative.getAnswer());
+		}
 	}
 
-	public static void genTangent(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void genTangent(ArrayList<String> questions, ArrayList<String> answers, int i){//include x and y
 		boolean isCircle = rand.nextBoolean();
 		if(isCircle){
 			int x = rand.nextInt(11) - 5;

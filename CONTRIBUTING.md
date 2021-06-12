@@ -111,3 +111,13 @@ fracOperations has methods for fraction arithmetic
 - extravagent numbers
 
 - make comparison more challenging, i.e. +- num/denom of two fractions, round and +- .01
+
+- implement harmonic means as well
+
+- greatest int using math constants
+
+Trig
+
+- double angle
+
+- well known trig things to n power

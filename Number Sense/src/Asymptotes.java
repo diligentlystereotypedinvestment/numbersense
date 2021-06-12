@@ -4,7 +4,7 @@ import java.util.Random;
 public class Asymptotes {
 	private static Random rand = new Random();
 
-	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
+	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){//intersection of horizontal and vertical, sum the pair, num of asymptote counter
 		String ans;
 		boolean isHorizontal = rand.nextBoolean();
 		Function denom;

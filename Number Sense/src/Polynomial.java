@@ -8,6 +8,11 @@ public class Polynomial {
 	private int[] coefficients = new int[4];
 	private int power;
 
+	public Polynomial(int[] coef){
+		coefficients = coef;
+		power = coef.length - 1;
+	}
+
 	public Polynomial() {
 		Random rand = new Random();
 		power = 2;
@@ -43,7 +48,7 @@ public class Polynomial {
 		problem = "$" + problem + coefficients[power] + "$";
 	}
 
-	public void Gen(int i) {
+	public void Gen(int i) {//problems over different combinations of the roots, like sum of squares
 		int power = this.power;
 		Random rand = new Random();
 		Polynomial problem = new Polynomial();
@@ -51,9 +56,8 @@ public class Polynomial {
 		int choose = rand.nextInt(3);
 		if (choose == 0) {
 			this.problem = "(" + i + ") What is the sum of roots of " + tempProblem + "?";
-			answer = Simp.getFrac(String.valueOf(-1 * problem.getCoef(1)) + "/" + problem.getCoef(0));
-		}
-		if (choose == 1 && power == 2) {
+			answer = Simp.getFrac((-1 * problem.getCoef(1)) + "/" + problem.getCoef(0));
+		} else if (choose == 1 && power == 2) {
 			int decrimType = rand.nextInt(2);
 			if (decrimType == 0) { // 0
 				int evenSquare = 2 * (rand.nextInt(4) + 3);
@@ -62,8 +66,7 @@ public class Polynomial {
 				int c = ac / a;
 				this.problem = "$" + a + "x^2 + " + evenSquare + "x + " + c + "$";
 				answer = "0";
-			}
-			if (decrimType == 1) { // 1
+			} else if (decrimType == 1) { // 1
 				int oddSquare = 2 * (rand.nextInt(4) + 3) + 1;
 				int ac = (int) (Math.pow(oddSquare, 2) - 1) / 4;
 				int a = PrimeDivisors.factor(ac).get(rand.nextInt(PrimeDivisors.factor(ac).size()));
@@ -75,13 +78,31 @@ public class Polynomial {
 		} else if (choose == 1 && power == 3) {
 			this.problem = "(" + i + ") What is the sum of the roots of " + problem + " taken two at a time?";
 			answer = Simp.getFrac(problem.getCoef(2) + "/" + problem.getCoef(0));
-		}
-		if (choose == 2) {
+		} else if (choose == 2) {
 			this.problem = "(" + i + ") What is the product of the roots of " + problem;
-			answer = Simp
-					.getFrac(problem.getCoef(power) + "/" + (problem.getCoef(0) * (int) Math.pow(-1, power)));
+			answer = Simp.getFrac(problem.getCoef(power) + "/" + (problem.getCoef(0) * (int) Math.pow(-1, power)));
 		}
+	}
 
+	public void gen(int i){
+		int power = this.power;
+		Random rand = new Random();
+		Polynomial problem = this;
+		String tempProblem = problem.toString();
+		int choose = rand.nextInt(3);
+		while(choose == 1 && power == 2){
+			choose = rand.nextInt(3);
+		} 
+		if (choose == 0) {
+			this.problem = "(" + i + ") What is the sum of the critical values of " + tempProblem + "?";
+			answer = Simp.getFrac((-1 * problem.getCoef(1)) + "/" + problem.getCoef(0));
+		} else if (choose == 1 && power == 3) {
+			this.problem = "(" + i + ") What is the sum of the the critical values of " + problem + " taken two at a time?";
+			answer = Simp.getFrac(problem.getCoef(2) + "/" + problem.getCoef(0));
+		} else if (choose == 2) {
+			this.problem = "(" + i + ") What is the product of the the critical values of " + problem;
+			answer = Simp.getFrac(problem.getCoef(power) + "/" + (problem.getCoef(0) * (int) Math.pow(-1, power)));
+		}
 	}
 
 	public static void polynomialRoots(ArrayList<String> questions, ArrayList<String> answers, int i) {
