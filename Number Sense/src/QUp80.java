@@ -13,6 +13,16 @@ public class QUp80 {
 			Limit.gen(questions, answers, i);
 		} else if(check(random, questionType)){
 			Function.genInverse(questions, answers, i);
+		} else if(check(random, questionType)){
+			Function.genComposite(questions, answers, i);
+		} else if(check(random, questionType)){
+			Function.genDerivative(questions, answers, i);
+		} else if(check(random, questionType)){
+			Function.genIntegral(questions, answers, i);
+		} else if(check(random, questionType)){
+			Asymptote.gen(questions, answers, i);
+		} else if(check(random, questionType)){
+			Function.genTangent(questions, answers, i);
 		}
 		else if (random < 137) {
 			QUp70 questions70 = new QUp70();

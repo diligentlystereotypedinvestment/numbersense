@@ -96,6 +96,10 @@ public class Function {
 		return degree;
 	}
 
+	public void changeElement(int index, int element){
+		coef[index] = element;
+	}
+
 	public int eval(int x){
 		int answer = 0;
 		for(int i = degree; i > 0; i--){
@@ -145,5 +149,32 @@ public class Function {
 		int x = rand.nextInt(11) - 5;
 		questions.add("(" + i + ") If $f(x) = " + f + ", $ then what is $f'(" + x + ")?$");
 		answers.add(String.valueOf(f.derivative().eval(x)));
+	}
+
+	public static void genTangent(ArrayList<String> questions, ArrayList<String> answers, int i){
+		boolean isCircle = rand.nextBoolean();
+		if(isCircle){
+			int x = rand.nextInt(11) - 5;
+			int y = rand.nextInt(11) - 5;
+			String xPart = "(x - " + x + ")^2";
+			if(x == 0){
+				xPart = "x^2";
+			} else if(x < 0){
+				xPart = "(x + " + (-1 * x) + ")^2";
+			}
+			String yPart = "(y - " + x + ")^2";
+			if(y == 0){
+				yPart = "y^2";
+			} else if(x < 0){
+				yPart = "(y + " + (-1 * x) + ")^2";
+			}
+			questions.add("(" + i + ") What is the slope of the tangent line at $x=" + x + "$ of the equation $" + xPart + " + " + yPart + " = " + (int)Math.pow(rand.nextInt(5) + 1,2) + "$?");
+			answers.add("0");
+		} else{
+			Function f = new Function();
+			int x = rand.nextInt(11) - 5;
+			questions.add("(" + i + ") What is the slope of the line tangent to $" + x + "$ for the function $" + f + "?$");
+			answers.add(String.valueOf(f.derivative().eval(x)));
+		}
 	}
 }

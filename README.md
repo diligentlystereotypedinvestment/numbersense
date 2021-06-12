@@ -124,7 +124,7 @@ Answers to Estimation Problems may be slightly off
 
 ~~5) Determinants~~
 
-6) Matrices
+~~6) Matrices~~
 
 7) Vectors
 
@@ -142,17 +142,17 @@ Answers to Estimation Problems may be slightly off
 
 ~~3) Limits~~
 
-4) Derivatives
+~~4) Derivatives~~
 
-5) Slopes of Tangent Lines
+~~5) Slopes of Tangent Lines~~
 
-6) Horizontal & Vertical Asymptotes
+~~6) Horizontal & Vertical Asymptotes~~
 
 7) Determining Critical Values
 
 ~~8) Maximum & Minimum Problems~~
 
-9) Definite Integration
+~~9) Definite Integration~~
 
 ~~10) Inverse functions~~
 

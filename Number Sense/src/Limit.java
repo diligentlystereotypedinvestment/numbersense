@@ -31,7 +31,7 @@ public class Limit {
 		} else if(type == 2){//infty
 			denom = new Function();
 			int numDeg = rand.nextInt(denom.getDeg())  + 1;
-			num = new Function();
+			num = new Function(numDeg);
 			limit = "+\\infty";
 			if(denom.getDeg() > num.getDeg()){
 				ans = "0";
