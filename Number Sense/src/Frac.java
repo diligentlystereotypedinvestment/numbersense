@@ -77,6 +77,10 @@ public class Frac {
 		return divide(num, denom);
 	}
 
+	public double toDecimal(){
+		return Double.valueOf(divide(num,denom));
+	}
+
 	public static String divide(final int a, final int b) {
 		if (b == 0) {
 			return ERROR;
@@ -235,5 +239,26 @@ public class Frac {
 			return integer;
 		}
 	}
+	
+	public boolean equals(Object other){
+		if(other == this){
+			return true;
+		}
+		if(other == null){
+			return false;
+		}
+		if(!(other instanceof Frac)) {
+			return false;
+		}
+		Frac o = (Frac) other;
+		return o.getNum() == num && o.getDenom() == denom;
+	}
 
+	public static int indexOf(Frac[] array, Frac fraction){
+		for(int i = 0; i < array.length; i++){
+			if(array[i].equals(fraction))
+				return i;
+		}
+		return -1;
+	}
 }

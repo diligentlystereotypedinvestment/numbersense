@@ -15,7 +15,9 @@ public class QUp70 {
 			Matrix.gen(questions, answers, i);
 		} else if(check(random, 17)){
 			Function.genComposite(questions, answers, i);
-		} else
+		} else if(check(random, 21)){
+			Polar.gen(questions, answers, i);
+		}
 
 		if (random < 97) {
 			QUp60 questions60 = new QUp60();

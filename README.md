@@ -130,9 +130,9 @@ Answers to Estimation Problems may be slightly off
 
 ~~8) Composite Functions~~
 
-9) Bases Involving Decimals or Fractions
+~~9) Bases Involving Decimals or Fractions~~
 
-10) Polar/Rectangular Coordinates
+~~10) Polar/Rectangular Coordinates~~
 
 # Problems 71 -80
 
@@ -148,7 +148,7 @@ Answers to Estimation Problems may be slightly off
 
 ~~6) Horizontal & Vertical Asymptotes~~
 
-7) Determining Critical Values
+~~7) Determining Critical Values~~
 
 ~~8) Maximum & Minimum Problems~~
 
