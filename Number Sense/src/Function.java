@@ -72,11 +72,11 @@ public class Function {
 		String written = "";
 		for(int i = degree; i > 0; i--){
 			if(coef[0] == 1){
-				written += "x^" + i;
+				written += "x^{" + i + "}";
 			} else if(coef[0] > 0){
-				written += "+" + coef[0] + "x^" + i;
+				written += "+" + coef[0] + "x^{" + i + "}";
 			} else{
-				written += coef[0] + "x^" + i;
+				written += coef[0] + "x^{" + i + "}";
 			}
 		}
 		if(coef[coef.length - 1] > 0){

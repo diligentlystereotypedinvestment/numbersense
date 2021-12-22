@@ -1,16 +1,14 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Vectors {
-	int[][] pymag;
-
-	public Vectors(){
-		pymag = new int[RightTriangle.leg1.length][];
-		for(int i = 0; i < RightTriangle.leg1.length; i++){
-			pymag[i] = new int[] {RightTriangle.leg1[i], RightTriangle.leg2[i], RightTriangle.hypo[i]};
-		}
-	}
+	static int[][] pymag;
 
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
+		pymag = new int[RightTriangle.leg1.length][];
+		for(int a = 0; a < RightTriangle.leg1.length; a++){
+			pymag[a] = new int[] {RightTriangle.leg1[a], RightTriangle.leg2[a], RightTriangle.hypo[a]};
+		}
 		Random rand = new Random();
 		boolean isMag = rand.nextBoolean();
 		if(isMag){
@@ -27,13 +25,13 @@ public class Vectors {
 			int y2 = rand.nextInt(40) - 20;
 			int operation = rand.nextInt(3);
 			if(operation == 0){
-				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + "), and $u+v = (x,y)$, then what is $x+y$?");
+				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + ")$, and $u+v = (x,y)$, then what is $x+y$?");
 				answers.add(String.valueOf(x1+x2+y1+y2));
 			} else if(operation == 1){
-				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + "), and $u+v = (x,y)$, then what is $x-y$?");
+				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + ")$, and $u+v = (x,y)$, then what is $x-y$?");
 				answers.add(String.valueOf(x1-x2+y1-y2));
 			} else if(operation == 1){
-				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + "), and $u+v = (x,y)$, then what is $x\\cdot y$?");
+				questions.add("(" + i + ") If \\(\\vec{u} = (" + x1 + ", " + y1 + ")\\), $\\vec{v} = (" + x2 + ", " + y2 + ")$, and $u+v = (x,y)$, then what is $x\\cdot y$?");
 				answers.add(String.valueOf((x1+x2) * (y2+y1)));
 			}
 

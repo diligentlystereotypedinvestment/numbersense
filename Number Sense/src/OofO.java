@@ -26,8 +26,8 @@ public class OofO {
 				solution = exponent[i] - solution;
 			}
 		}
-		question = question + "$";
-		answer = String.valueOf(solution);
+		question = question + "= x$";
+		answer = "If" + String.valueOf(solution) + ". then what is $log_{" + base + "} x$?";
 		return question;
 	}
 

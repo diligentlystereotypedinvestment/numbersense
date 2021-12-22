@@ -84,7 +84,7 @@ public class Matrix {
 	}
 
 	public String toString(){
-		String firstLine = "$\\big[\\begin{smallmatrix}\n";
+		String firstLine = "$\\begin{pmatrix}\n";
 		String entries = "";
 		for(int i = 0; i < matrix.length; i++){
 			if(i == matrix.length - 1){
@@ -108,13 +108,13 @@ public class Matrix {
 			}
 			entries += "\n";
 		}
-		String lastLine = "\\end{smallmatrix}\\big]$";
+		String lastLine = "\\end{pmatrix}$";
 		return firstLine + entries + lastLine;
 	}
 	
 	public String toString(int row, int column, boolean isLetter){//replacing a matrix element with k
 		if(!isLetter){
-			String firstLine = "$\\big[\\begin{smallmatrix}\n";
+			String firstLine = "$\\begin{pmatrix}\n";
 			String entries = "";
 			for(int i = 0; i < matrix.length; i++){
 				for(int a = 0; a < matrix[i].length; a++){
@@ -132,10 +132,10 @@ public class Matrix {
 				}
 				entries += "\n";
 			}
-			String lastLine = "\\end{smallmatrix}\\big]$";
+			String lastLine = "\\end{pmatrix}$";
 			return firstLine + entries + lastLine;
 		} else{
-			String firstLine = "$\\big[\\begin{smallmatrix}\n";
+			String firstLine = "$\\begin{pmatrix}\n";
 			String entries = "";
 			char character = 97;
 			for(int i = 0; i < matrix.length; i++){
@@ -155,7 +155,7 @@ public class Matrix {
 				}
 				entries += "\n";
 			}
-			String lastLine = "\\end{smallmatrix}\\big]$";
+			String lastLine = "\\end{smallmatrix}$";
 			return firstLine + entries + lastLine;
 		}
 	}
@@ -163,7 +163,7 @@ public class Matrix {
 	public static void gen(ArrayList<String> questions, ArrayList<String> answers, int i){
 		int size = rand.nextInt(2) + 2;
 		Matrix matrix = random(size);
-		if(size == 2){//many possibile variations here; missing element, determinant, etc
+		if(size == 2){//many possibile variations here; missing element, determinant, etc, determinant of operations (+,-,*)
 			int type = rand.nextInt(3);
 			if(type == 0){
 				questions.add("(" + i + ") What is the determinant of " + matrix.toString() + "?");

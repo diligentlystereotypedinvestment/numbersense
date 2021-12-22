@@ -126,7 +126,7 @@ Answers to Estimation Problems may be slightly off
 
 ~~6) Matrices~~
 
-7) Vectors
+~~7) Vectors~~
 
 ~~8) Composite Functions~~
 

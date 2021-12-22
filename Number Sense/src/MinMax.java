@@ -47,9 +47,9 @@ public class MinMax {
 			} else if(type == 1){
 				boolean isSine = rand.nextBoolean();
 				if(isSine){
-					questions.add("What is the " + minMax.getQuest() + " value of $y = " + coeff[0] + "sin(" + coeff[1] + "x + " + coeff[2] + ") + " + coeff[3] + "?");
+					questions.add("What is the " + minMax.getQuest() + " value of $y = " + coeff[0] + "sin(" + coeff[1] + "x + " + coeff[2] + ") + " + coeff[3] + "$?");
 				} else{
-					questions.add("What is the " + minMax.getQuest() + " value of $y = " + coeff[0] + "cos(" + coeff[1] + "x + " + coeff[2] + ") + " + coeff[3] + "?");
+					questions.add("What is the " + minMax.getQuest() + " value of $y = " + coeff[0] + "cos(" + coeff[1] + "x + " + coeff[2] + ") + " + coeff[3] + "$?");
 				}
 				answers.add(String.valueOf(coeff[0] * minMax.getAnswer() + coeff[3]));
 			}
